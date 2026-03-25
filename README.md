@@ -66,7 +66,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 
 | Command | What it does |
 |---------|--------------|
-| `/audit` | Assess project AI readiness across docs, tests, onboarding |
+| `/audit` | Challenge whether you're doing the right work. Evidence, alignment, drift |
 
 ### The PM Slop Test
 

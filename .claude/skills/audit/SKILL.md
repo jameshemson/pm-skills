@@ -1,144 +1,162 @@
 ---
 name: audit
-description: Assess a project's AI readiness across documentation, testing, processes, and onboarding. Team-level, not org-level.
+description: Challenge whether you're doing the right work. Checks evidence, strategic alignment, discovery gaps, and priority drift. The Cagan/Perri bullshit detector.
 user-invokable: true
 args:
-  - name: area
-    description: Specific area to audit (optional - audits everything by default)
+  - name: subject
+    description: "What to audit - a feature, initiative, roadmap item, or the current focus. Can be a description or path to a doc."
     required: false
 ---
 
 ## MANDATORY PREPARATION
 
-Use the product-management skill - it contains PM principles and the **Context Gathering Protocol**. Follow the protocol before proceeding. If no product context exists yet, you MUST run teach-pm first.
+Use the product-management skill - it contains PM principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding. If no product context exists yet, you MUST run teach-pm first.
 
-Additionally, read the [specification reference](../product-management/reference/specification.md) for documentation quality standards and the [prompting reference](../product-management/reference/prompting.md) for AI readiness criteria.
+Additionally, read:
+- [Discovery reference](../product-management/reference/discovery.md) for evidence quality and validation
+- [Prioritisation reference](../product-management/reference/prioritisation.md) for outcome thinking and the build trap
+- [Decision-making reference](../product-management/reference/decision-making.md) for bias checks
 
 ---
 
-Assess a project's readiness for effective AI-assisted product work. This is a team-level assessment (not org-level) that scores across concrete dimensions and recommends specific improvements.
+This skill doesn't check whether your document is well-written. That's what `/pm:review` does. This skill checks whether you should be writing the document at all.
 
-The goal: can a PM or engineer sit down with Claude Code and be productive within 30 minutes? If not, what's blocking that?
+It asks the questions a good VP Product or CPO would ask: Why this? Why now? What's the evidence? Have you talked to anyone? Is this the highest-value thing you could be doing?
 
-## Step 1: Scan the Project
+## Step 1: Understand What's Being Worked On
 
-Systematically examine the project across all dimensions. Don't ask questions yet - gather evidence first.
+If the user provides a feature, initiative, or document, read it. If not, ask what they're currently working on or about to commit to.
 
-### Documentation Audit
-- **README quality**: Does it explain what the product does, how to set it up, and how to contribute? Score: 0 (missing) to 5 (comprehensive).
-- **Architecture docs**: Is the system architecture documented? Can someone understand how components relate?
-- **API documentation**: Are APIs documented with examples, error codes, and authentication requirements?
-- **ADRs (Architecture Decision Records)**: Are significant technical decisions recorded with context and reasoning?
-- **Inline documentation**: Is the code self-documenting? Are complex sections explained?
-- **CLAUDE.md or similar**: Is there AI-specific context configured?
+Then ask:
 
-### Specification Quality
-- **Spec existence**: Do specs/PRDs exist for recent features?
-- **Spec quality**: Sample 2-3 recent specs and run the PM Slop Test:
-  - Audience specified?
-  - Problem stated with evidence?
-  - Success metrics defined?
-  - Edge cases covered?
-  - Scope bounded?
-  - Dependencies named?
-- **Spec accessibility**: Can you find specs easily? Are they linked from code or tickets?
+- **Where did this come from?** Stakeholder request, user research, data, competitor move, intuition, roadmap inheritance?
+- **What's the expected outcome?** Not "ship feature X" but what changes for users or the business?
+- **How long has this been in the plan?** Is this fresh thinking or something that's been sitting on a roadmap for months without re-evaluation?
 
-### Testing Maturity
-- **Test existence**: Are there tests? What percentage of code is covered?
-- **Test quality**: Do tests test behaviour (good) or implementation details (fragile)?
-- **Test types**: Unit tests? Integration tests? E2E tests? What's the balance?
-- **CI/CD**: Do tests run automatically? Is the pipeline healthy?
-- **Test documentation**: Can someone understand what's being tested and why?
+## Step 2: Check the Evidence
 
-### Development Process
-- **Commit quality**: Are commit messages descriptive? Do they explain why, not just what?
-- **Branch strategy**: Is it clear how code gets from idea to production?
-- **Code review**: Is there a review process? Are reviews substantive?
-- **Release process**: Is deployment documented and repeatable?
-- **Feature flags**: Is there a mechanism for gradual rollout?
+Assess the evidence supporting this work:
 
-### Onboarding Quality
-- **Setup instructions**: Can a new person set up the project from the README alone?
-- **Contributing guide**: Is it clear how to contribute?
-- **Domain glossary**: Are domain-specific terms defined somewhere?
-- **Architecture overview**: Can someone understand the system without tribal knowledge?
-- **"Why" documentation**: Are historical decisions explained, especially ones that look wrong?
+### Have You Talked to Users?
 
-### AI Readiness (Specific)
-- **Context availability**: Is there enough written context for AI to be useful?
-- **Prompt-friendliness**: Is the codebase structured so AI can navigate it effectively? (Clear naming, modular architecture, typed interfaces)
-- **Security considerations**: Are there clear boundaries for what AI should and shouldn't access?
-- **Team norms**: Are there documented guidelines for AI usage?
+- How many users or customers have you spoken to about this problem?
+- Were those conversations truth-seeking (Mom Test) or pitching?
+- What specific behaviours did you observe? Not opinions - actions.
+- If the answer is zero conversations: flag this immediately. Building without discovery is gambling.
 
-## Step 2: Score Each Dimension
+### What Data Supports This?
 
-Use a 1-5 scale:
+- Is there quantitative evidence the problem exists? (Usage data, support tickets, churn reasons, conversion drop-offs)
+- How strong is it? One angry customer is anecdote. A trend across a segment is signal.
+- Is the data current or stale? A pain point from 6 months ago may have been solved by a workaround.
 
-| Score | Meaning |
+### Evidence Quality Verdict
+
+| Level | What it means |
 |---|---|
-| 1 | Missing or severely lacking |
-| 2 | Exists but has major gaps |
-| 3 | Adequate - functional but could improve |
-| 4 | Good - above average, minor gaps |
-| 5 | Excellent - could serve as an example |
+| **Strong** | Multiple data sources + user conversations with specific past behaviour |
+| **Medium** | Some data or qualitative signal, but gaps remain |
+| **Weak** | Opinions, single requests, or "we've always planned to do this" |
+| **None** | No evidence. Pure assumption or stakeholder mandate |
 
-## Step 3: Generate the Audit Report
+Be blunt about where evidence is weak. "We think users want this" is not evidence.
 
-### Executive Summary
-- Overall readiness score (average across dimensions)
-- Top 3 strengths (be specific about what's working)
-- Top 3 gaps (be specific about impact)
-- Estimated effort to reach "AI-productive" state
+## Step 3: Check Strategic Alignment
 
-### Detailed Scores
+Using the product context (.pmcontext.md), assess:
 
-| Dimension | Score | Key Finding |
+- **Does this serve the stated outcome?** What's the connection between this work and the metric that matters?
+- **Does this fit the current strategic focus?** Or is it drift?
+- **Is this the highest-value use of this team's time?** What else could they be doing? What's the opportunity cost?
+- **Has the strategy changed since this was planned?** Roadmap items that made sense last quarter may not make sense now.
+
+### Drift Detection
+
+Common drift patterns to flag:
+- **Stakeholder-driven drift**: "The CEO mentioned it once" becoming a priority without evidence
+- **Competitor-driven drift**: Building because a competitor shipped it, not because users need it
+- **Sunk cost drift**: Continuing because you've already invested, not because it's still the right call
+- **Shiny object drift**: Chasing a new idea before finishing what's in flight
+- **Roadmap inertia**: "It's on the roadmap" as justification for not re-evaluating
+
+## Step 4: Check the Four Risks
+
+For the work being audited, assess each risk:
+
+**Value risk** - Will anyone actually want this?
+- What's the evidence of demand? (Strong/Medium/Weak/None)
+- Have you validated the problem, or just the solution?
+- What's the switching behaviour? (Moesta forces: is the push strong enough?)
+
+**Usability risk** - Can people figure it out?
+- Has any version of this been tested with users?
+- How complex is the interaction? Simple change or new mental model?
+
+**Feasibility risk** - Can you actually build it?
+- Are there technical unknowns? Have you spiked them?
+- Dependencies on other teams or systems?
+
+**Viability risk** - Should you build it?
+- Legal, compliance, operational implications?
+- Does this create maintenance burden disproportionate to the value?
+- Does it align with the business model?
+
+## Step 5: Check for Product Theater
+
+Is this real work or theater?
+
+- **Is the spec polished but the thinking shallow?** A beautifully formatted PRD with no user evidence is theater.
+- **Are you building to learn or building to ship?** If there's high uncertainty, should this be an experiment instead of a feature?
+- **Is this solving a problem or fulfilling a process?** "We need a PRD" is process. "Engineering needs clarity on X before they can build" is a real need.
+- **Could you validate the riskiest assumption in a week without building anything?** If yes, why aren't you doing that first?
+
+## Step 6: Deliver the Audit
+
+### Verdict
+
+One of:
+- **Green: Build it.** Evidence is strong, alignment is clear, risks are understood.
+- **Yellow: Validate first.** There are gaps in evidence or alignment that should be addressed before committing resources.
+- **Red: Stop and reconsider.** Weak evidence, poor alignment, or signs of drift. This needs re-evaluation before proceeding.
+
+### Evidence Assessment
+- Source: [Where this came from]
+- User evidence: [Strong/Medium/Weak/None - with specifics]
+- Data evidence: [Strong/Medium/Weak/None - with specifics]
+- Overall: [Honest assessment]
+
+### Strategic Alignment
+- Connection to stated outcome: [Clear / Tenuous / Missing]
+- Drift detected: [Yes/No - which pattern]
+- Opportunity cost: [What else could this team do instead]
+
+### Risk Summary
+| Risk | Level | Key concern |
 |---|---|---|
-| Documentation | X/5 | [One-line summary] |
-| Specification Quality | X/5 | [One-line summary] |
-| Testing Maturity | X/5 | [One-line summary] |
-| Development Process | X/5 | [One-line summary] |
-| Onboarding Quality | X/5 | [One-line summary] |
-| AI Readiness | X/5 | [One-line summary] |
+| Value | High/Med/Low | [One line] |
+| Usability | High/Med/Low | [One line] |
+| Feasibility | High/Med/Low | [One line] |
+| Viability | High/Med/Low | [One line] |
 
-### Detailed Findings by Dimension
+### Theater Check
+- [Any signs of theater flagged, or "No theater detected"]
 
-For each dimension, provide:
-- **What's working**: Specific things done well (with examples)
-- **What's missing**: Specific gaps (with concrete impact)
-- **Recommendations**: Specific actions to improve (ordered by impact)
+### Recommendation
+- [Specific: what to do next. Not vague - "talk to 5 enterprise customers about X" not "do more research"]
+- [If yellow/red: what would change the verdict to green? Be specific about what evidence or validation is needed]
 
-### Quick Wins (Do This Week)
+### The Hard Question
+[One question the team is avoiding. Name it directly.]
 
-The 3-5 improvements that have the highest impact for the lowest effort. For each:
-- What to do (specific action, not "improve documentation")
-- Expected impact (what changes for the team)
-- Effort estimate (hours, not days)
-
-### Strategic Improvements (Do This Quarter)
-
-Larger improvements that require more investment but create lasting value. For each:
-- What to do
-- Why it matters
-- Suggested approach
-- Dependencies or prerequisites
-
-### PM Skills Recommendations
-
-Based on the audit, recommend which PM skills would have the most impact:
-- If specs are weak: "/pm:spec and /pm:review would immediately improve specification quality"
-- If context is missing: "/pm:teach-pm to establish product context, then /pm:setup for team CLAUDE.md"
-- If communication is a gap: "/pm:translate to bridge the gap between technical and non-technical stakeholders"
-
-## Output Notes
-
-- Be direct about what's good and what's not. Inflated scores help nobody.
-- Every recommendation must be specific and actionable. "Improve documentation" is not actionable. "Add a system architecture diagram showing how the API, database, and frontend connect" is.
-- Prioritise ruthlessly. A team that tries to fix everything fixes nothing. Focus on the 3-5 changes that would make the biggest difference.
-- If the project is in great shape, say so. Not every audit needs a long list of problems.
+## NEVER
+- Accept "it's on the roadmap" as justification
+- Accept "the stakeholder wants it" without asking about evidence and alignment
+- Accept "users are asking for it" without asking how many, which users, and what they actually said
+- Soften a red verdict to avoid conflict - the point is to catch bad bets early
+- Audit the document quality - that's /pm:review's job. This audits the thinking.
 
 ## What's Next
 
-- Run `/pm:teach-pm` if product context is missing - it's the single highest-impact improvement for AI readiness.
-- Run `/pm:setup` to generate a team CLAUDE.md based on the audit findings.
-- Address the quick wins identified above, then re-run `/pm:audit` to measure progress.
+- If **green**: Run `/pm:brief` or `/pm:spec` to produce the engineering output.
+- If **yellow**: Run `/pm:discover plan` to design the validation conversations needed.
+- If **red**: Run `/pm:prioritise` to reassess what should be worked on instead.
