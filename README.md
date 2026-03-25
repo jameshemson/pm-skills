@@ -1,6 +1,6 @@
 # PM Skills
 
-The product expertise your AI is missing. 1 core skill, 8 commands, and curated frameworks for product managers who ship substance.
+The product expertise your AI is missing. 1 core skill, 10 commands, and curated frameworks for product managers who ship substance.
 
 > **Quick start:** Visit [pmskills.co](https://pmskills.co) or jump to [Installation](#installation).
 
@@ -10,7 +10,7 @@ Ask AI to write a PRD and you get a 10000 word dissertation that says nothing. G
 
 PM Skills fights that with:
 - **A core knowledge skill** with established PM frameworks ([view source](source/skills/product-management/))
-- **8 command skills** that push back on your thinking before producing output
+- **10 command skills** that push back on your thinking before producing output
 - **The PM Slop Test** that catches vague specs before engineering does
 
 ## What's Included
@@ -30,18 +30,42 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | [positioning](source/skills/product-management/reference/positioning.md) | Product positioning, smallest viable audience |
 | [prompting](source/skills/product-management/reference/prompting.md) | Working with AI as a PM, anti-slop patterns |
 
-### 8 Commands
+### 10 Commands
+
+**Get started**
 
 | Command | What it does |
 |---------|--------------|
 | `/teach-pm` | One-time setup: gather product context, save for all skills |
+| `/setup` | Generate a CLAUDE.md for your product team |
+
+**Discover**
+
+| Command | What it does |
+|---------|--------------|
+| `/discover` | Plan customer conversations + debrief with forces analysis |
+| `/prioritise` | Stack-rank work against outcomes and strategy |
+
+**Create**
+
+| Command | What it does |
+|---------|--------------|
 | `/brief` | Engineering brief from a feature description or screenshot |
 | `/spec` | Full spec with metrics, risks, rollout plan |
 | `/stories` | JTBD-framed user stories with testable acceptance criteria |
+
+**Sharpen**
+
+| Command | What it does |
+|---------|--------------|
 | `/review` | Adversarial review: finds gaps, contradictions, slop |
 | `/decide` | Structured decision with weighted criteria and bias checks |
 | `/translate` | Rewrite for any audience: exec, engineering, customer, sales |
-| `/setup` | Generate a CLAUDE.md for your product team |
+
+**Assess**
+
+| Command | What it does |
+|---------|--------------|
 | `/audit` | Assess project AI readiness across docs, tests, onboarding |
 
 ### The PM Slop Test
@@ -79,6 +103,8 @@ cp -r .claude/skills your-project/.claude/
 Every skill checks for product context before generating. Run `/pm:teach-pm` once per project. After that, skills inherit your product context automatically.
 
 ```
+/pm:discover        # Plan or debrief customer conversations
+/pm:prioritise      # Stack-rank against outcomes
 /pm:brief           # Generate engineering brief
 /pm:spec            # Write full specification
 /pm:review          # Adversarial review of any doc

@@ -1,7 +1,7 @@
 {
   "name": "pm",
-  "description": "Product management skills for Claude Code. Includes 10 skills (9 user-invokable: /brief, /spec, /stories, /translate, /review, /decide, /setup, /audit, /teach-pm) and a core PM knowledge base with frameworks from 15+ books.",
-  "version": "1.0.0",
+  "description": "Product management skills for Claude Code. Includes 12 skills (11 user-invokable: /teach-pm, /setup, /discover, /prioritise, /brief, /spec, /stories, /review, /decide, /translate, /audit) and a core PM knowledge base with frameworks from 15+ books.",
+  "version": "1.1.0",
   "author": {
     "name": "James Hemson"
   },
