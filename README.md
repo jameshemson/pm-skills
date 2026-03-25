@@ -2,7 +2,7 @@
 
 The product expertise your AI is missing. 1 core skill, 8 commands, and curated frameworks for product managers who ship substance.
 
-> **Quick start:** Visit [skillsfor.pm](https://skillsfor.pm) or jump to [Installation](#installation).
+> **Quick start:** Visit [pmskills.co](https://pmskills.co) or jump to [Installation](#installation).
 
 ## Why PM Skills?
 
