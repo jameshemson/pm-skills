@@ -9,7 +9,7 @@ The product expertise your AI is missing. 1 core skill, 8 commands, and curated 
 Ask AI to write a PRD and you get a 10000 word dissertation that says nothing. Generic preambles, vague success metrics, happy-path specs. Engineering reads it and sends back a bunch of questions in the first hour.
 
 PM Skills fights that with:
-- **A core knowledge skill** built on 15 established PM books ([view source](source/skills/product-management/))
+- **A core knowledge skill** with established PM frameworks ([view source](source/skills/product-management/))
 - **8 command skills** that push back on your thinking before producing output
 - **The PM Slop Test** that catches vague specs before engineering does
 
@@ -21,13 +21,13 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 
 | Reference | Covers |
 |-----------|--------|
-| [discovery](source/skills/product-management/reference/discovery.md) | Mom Test, JTBD, Sprint validation |
-| [decision-making](source/skills/product-management/reference/decision-making.md) | Thinking in Bets, cognitive biases, strategy cascades |
+| [discovery](source/skills/product-management/reference/discovery.md) | Customer interviews, jobs-to-be-done, rapid validation |
+| [decision-making](source/skills/product-management/reference/decision-making.md) | Cognitive biases, strategy cascades, decision quality |
 | [specification](source/skills/product-management/reference/specification.md) | Writing specs engineering trusts, the PM Slop Test |
-| [communication](source/skills/product-management/reference/communication.md) | SUCCESs framework, audience translation, clarity |
-| [prioritisation](source/skills/product-management/reference/prioritisation.md) | Outcome thinking, the build trap, four risks |
-| [leadership](source/skills/product-management/reference/leadership.md) | Empowered teams, trust, change management |
-| [positioning](source/skills/product-management/reference/positioning.md) | 5-component positioning, smallest viable audience |
+| [communication](source/skills/product-management/reference/communication.md) | Making ideas stick, audience translation, clarity |
+| [prioritisation](source/skills/product-management/reference/prioritisation.md) | Outcome thinking, avoiding the build trap, four risks |
+| [leadership](source/skills/product-management/reference/leadership.md) | Team empowerment, trust, change management |
+| [positioning](source/skills/product-management/reference/positioning.md) | Product positioning, smallest viable audience |
 | [prompting](source/skills/product-management/reference/prompting.md) | Working with AI as a PM, anti-slop patterns |
 
 ### 8 Commands
