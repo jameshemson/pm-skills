@@ -1,0 +1,11 @@
+{
+  "name": "pm",
+  "description": "Product management skills for Claude Code. Includes 10 skills (9 user-invokable: /brief, /spec, /stories, /translate, /review, /decide, /setup, /audit, /teach-pm) and a core PM knowledge base with frameworks from 15+ books.",
+  "version": "1.0.0",
+  "author": {
+    "name": "James Hemson"
+  },
+  "homepage": "https://github.com/jameshemson/pm-skills",
+  "repository": "https://github.com/jameshemson/pm-skills",
+  "skills": "./.claude/skills"
+}
