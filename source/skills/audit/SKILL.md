@@ -136,3 +136,9 @@ Based on the audit, recommend which PM skills would have the most impact:
 - Every recommendation must be specific and actionable. "Improve documentation" is not actionable. "Add a system architecture diagram showing how the API, database, and frontend connect" is.
 - Prioritise ruthlessly. A team that tries to fix everything fixes nothing. Focus on the 3-5 changes that would make the biggest difference.
 - If the project is in great shape, say so. Not every audit needs a long list of problems.
+
+## What's Next
+
+- Run `/pm:teach-pm` if product context is missing - it's the single highest-impact improvement for AI readiness.
+- Run `/pm:setup` to generate a team CLAUDE.md based on the audit findings.
+- Address the quick wins identified above, then re-run `/pm:audit` to measure progress.

@@ -131,3 +131,8 @@ Structure the recommendation:
 Deliver the full decision structure. Tables for evaluation. Clear headers. The recommendation should be readable independently from the analysis - someone should be able to read just the recommendation section and understand the decision, the trade-offs, and the confidence level.
 
 **Remember**: A decision document that presents the chosen option as obviously correct isn't a decision document - it's a justification. The value is in making the trade-offs visible, not in making the choice feel inevitable.
+
+## What's Next
+
+- Run `/pm:brief` or `/pm:spec` to turn the chosen option into an actionable engineering document.
+- Run `/pm:translate` to present this decision to a different audience (exec summary, team announcement, etc.).

@@ -88,3 +88,8 @@ If any check fails, fix it before delivering. Call out which assumptions you've 
 Deliver as a structured document with clear headers. Bullet points and tables over prose. Every section must earn its place - if a section has nothing meaningful, drop it rather than filling it with generic content.
 
 **Remember**: A brief that generates 10 engineering questions in the first hour is slop. Anticipate the questions.
+
+## What's Next
+
+- Run `/pm:spec` to expand this brief into a full product specification with success metrics, risks, and rollout plan.
+- Or run `/pm:review` to get an adversarial review of this brief before sharing it with engineering.

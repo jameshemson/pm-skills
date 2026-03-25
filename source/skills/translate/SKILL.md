@@ -141,3 +141,8 @@ Deliver the translated content directly, formatted for the target audience and c
 - What was cut and why (in case they want to add it back)
 - What was added and why
 - Suggested delivery method if not already specified
+
+## What's Next
+
+- Run `/pm:review` on the translated output if it's a spec or brief heading to engineering.
+- Run `/pm:translate` again with a different audience or format to create another version of the same content.

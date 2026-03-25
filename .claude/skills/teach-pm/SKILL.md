@@ -88,3 +88,8 @@ Write this to `.pmcontext.md` in the project root. If the file already exists, u
 Then STOP and call the AskUserQuestion tool to ask whether they'd also like the Product Context appended to CLAUDE.md. If yes, append or update the section there as well.
 
 Confirm completion and summarize the key product context that will now guide all future PM skill work.
+
+## What's Next
+
+- Run `/pm:setup` to generate a CLAUDE.md for your product team - it builds on the context you just created.
+- Or jump straight into `/pm:brief` to write your first engineering brief with full product context.

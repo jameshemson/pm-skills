@@ -131,3 +131,9 @@ State: "An engineer reading this spec should be able to start work with no more 
 Structured document with numbered sections, clear headers, and scannable formatting. Tables for comparisons. Bullet points for lists. Prose only where narrative is genuinely needed.
 
 Every section must contain substance. If a section would only contain generic content, drop it and note why in Open Questions.
+
+## What's Next
+
+- Run `/pm:review` to get an adversarial review of this spec before it goes to engineering.
+- Run `/pm:stories` to break this spec into sprint-sized user stories with acceptance criteria.
+- Run `/pm:translate` to rewrite the spec for a different audience (exec summary, customer-facing, etc.).

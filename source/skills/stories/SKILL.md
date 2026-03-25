@@ -140,3 +140,8 @@ Present stories in a numbered list with clear structure:
 ```
 
 End with the dependency map and suggested sequencing.
+
+## What's Next
+
+- Run `/pm:review` on individual stories if any feel underspecified or risky.
+- Run `/pm:translate` to turn the stories into a stakeholder update, sprint plan, or engineering handoff doc.

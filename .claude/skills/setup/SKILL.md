@@ -123,3 +123,8 @@ Present the generated CLAUDE.md and ask:
 - Should this include the Product Context from .pmcontext.md?
 
 Incorporate feedback and write the final version to CLAUDE.md in the project root. If a CLAUDE.md already exists, present a diff of proposed changes rather than overwriting.
+
+## What's Next
+
+- Run `/pm:audit` to assess your project's AI readiness now that team context is in place.
+- Or start creating: `/pm:brief` for an engineering brief, `/pm:spec` for a full specification.

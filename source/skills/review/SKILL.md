@@ -124,3 +124,9 @@ What's done well. Specific, genuine strengths - not filler praise.
 - Overall readiness: Ready / Needs Work / Not Ready
 
 **Remember**: This review exists to make the document better, not to make the author feel bad. Be specific about what's wrong, concrete about how to fix it, and honest about what's good. But don't pull punches - a polite review that misses real problems is worse than a tough one that catches them.
+
+## What's Next
+
+- Fix the issues found, then run `/pm:review` again to verify.
+- Run `/pm:stories` to break the reviewed spec into sprint-sized user stories.
+- Run `/pm:translate` to adapt the reviewed document for a different audience.
