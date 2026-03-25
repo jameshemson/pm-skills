@@ -24,23 +24,34 @@ Note what you've learned and what remains unclear. Code tells you what was built
 
 STOP and call the AskUserQuestion tool to clarify. Focus only on what you couldn't infer from the codebase:
 
-### Product and Users
+### What Is This?
 - What does this product do in one sentence?
-- Who are the primary users? What's their context when using it?
-- What job are they hiring this product to do? What were they doing before?
-- What's the product's current stage? (Pre-launch, early traction, scaling, mature)
+- B2B, B2C, B2B2C, platform, or internal tool?
+- If B2B: who's the buyer vs the end user? Same person or different?
+- Business model: SaaS, marketplace, transactional, freemium, enterprise?
+- Growth model: product-led, sales-led, marketing-led, partnerships?
 
-### Business Model and Strategy
-- How does this product make money (or plan to)?
-- What's the primary growth lever? (Sales-led, product-led, content, partnerships)
-- Who are the real competitive alternatives? (Not just direct competitors - include spreadsheets, manual processes, doing nothing)
+### Who Are the Users?
+- Who are the primary users? What's their context when using it?
+- What job are they hiring this product to do? (The underlying struggle, not the feature request)
+- What were they doing before? What's the real competitive alternative?
+
+### Where Are You?
+- Lifecycle stage: pre-product-market-fit, growth, scale, mature, or sunset?
+- If pre-PMF: what's your biggest unknown? If post-PMF: what's the evidence you have it?
+- Are you output-focused (shipping features) or outcome-focused (moving metrics)? Be honest.
+
+### Where Are You Going?
+- Is there a product vision? What does the world look like in 3-5 years if you succeed?
+- Does the team know the vision and can they articulate it?
 - What's the current strategic focus? What are you explicitly NOT doing right now?
 
-### Team and Decision-Making
+### How Does the Team Work?
+- Empowered product teams or feature teams? (Discovering solutions vs taking requirements)
+- How much time goes to discovery vs delivery? Is anything validated before building?
 - What does the product team look like? (Size, roles, cross-functional or siloed)
 - How do product decisions get made? Who are the key stakeholders?
-- What's the biggest source of tension in product decisions? (Speed vs quality, stakeholder demands vs user needs, etc.)
-- What does "done" mean for your team? (Ship and iterate? Polished release? Data-validated?)
+- What does "done" mean? (Ship and iterate? Polished release? Data-validated?)
 
 ### Technical Constraints
 - What's easy to change and what's hard? (Architecture constraints, legacy systems, shared infrastructure)
@@ -48,8 +59,8 @@ STOP and call the AskUserQuestion tool to clarify. Focus only on what you couldn
 - What are the deployment constraints? (Release cadence, feature flags, environments)
 
 ### Current Challenges
+- Which of the four risks keeps you up at night? (Value, usability, feasibility, viability)
 - What's the hardest product problem you're facing right now?
-- What's the last product decision that felt wrong or uncertain?
 - What do you wish your PM process did better?
 
 Skip questions where the answer is already clear from the codebase exploration.
@@ -62,25 +73,25 @@ Synthesize your findings and the user's answers into a structured product contex
 ## Product Context
 
 ### Product
-[What it does, current stage, how it makes money]
+[What it does, B2B/B2C/other, business model, growth model. If B2B: buyer vs user distinction]
+
+### Lifecycle and Strategy
+[Stage (pre-PMF/growth/scale/mature), product vision, current strategic focus, what you're NOT doing]
 
 ### Users
-[Who they are, their context, the job they're hiring this product to do]
+[Who they are, their context, the job they're hiring this product to do, what they did before]
 
 ### Competitive Landscape
-[Real alternatives - not just direct competitors. What were users doing before?]
-
-### Strategy
-[Current focus, what you're explicitly NOT doing, key bets]
+[Real alternatives - not just direct competitors. Spreadsheets, manual processes, doing nothing]
 
 ### Team and Process
-[Team structure, decision-making, definition of done]
+[Empowered or feature teams, discovery vs delivery balance, decision-making, definition of done]
 
 ### Technical Constraints
 [What's easy, what's hard, known limitations]
 
 ### Current Challenges
-[The hardest problems right now, open questions]
+[Biggest risk (value/usability/feasibility/viability), hardest problems, open questions]
 ```
 
 Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place.

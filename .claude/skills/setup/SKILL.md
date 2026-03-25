@@ -34,18 +34,22 @@ STOP and call the AskUserQuestion tool. Ask about what you couldn't infer from t
 
 ### Product Domain
 - What does this product do? (One sentence)
-- Who are the users and what's their context?
-- What's the current product stage and primary focus?
-- What are the key domain concepts the team uses? (Any specific terminology)
+- B2B, B2C, B2B2C, platform, or internal tool?
+- If B2B: who's the buyer vs the end user?
+- Lifecycle stage: pre-PMF, growth, scale, mature?
+- What's the product vision? (3-5 year view, if one exists)
+- What are the key domain concepts the team uses? (Specific terminology)
 
 ### Team Structure
+- Empowered product teams or feature teams? (Discovering solutions vs delivering requirements)
 - Who's on the product team? (Roles, not names)
 - How are decisions made? (Who has authority for what)
 - Who are the key stakeholders and what do they care about?
-- What's the team's biggest collaboration challenge?
+- How much time goes to discovery vs delivery?
 
 ### Ways of Working
 - What does your development process look like? (Sprint length, ceremonies, workflow)
+- Are you output-focused (shipping features) or outcome-focused (moving metrics)?
 - What's "done" mean? (Ship and iterate? Polished release? Specific quality gates?)
 - How do specs/PRDs get written and reviewed?
 - How do you handle tech debt vs feature work?
