@@ -94,6 +94,10 @@ In Claude Code, run:
 /plugin install pm@pm-skills
 ```
 
+To get updates automatically, enable auto-update for the marketplace:
+
+`/plugin` → Marketplaces → select `pm-skills` → Update Marketplace → Enable auto-update
+
 Then set up product context once per project:
 
 ```
