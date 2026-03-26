@@ -18,6 +18,8 @@ Additionally, read the [decision-making reference](../product-management/referen
 
 Structure a product decision. This skill pushes back if you haven't done enough thinking. It doesn't produce a decision doc from a one-liner - it forces you to articulate the trade-offs you're actually making.
 
+**Check for preferences**: If `.pmcontext.md` has a **Ways of Working** section with a preferred decision framework, use that as the primary structure. Layer in bias checks and pre-mortem from the steps below regardless - those always apply.
+
 ## Step 1: Challenge the Decision
 
 Before structuring anything, interrogate the decision:

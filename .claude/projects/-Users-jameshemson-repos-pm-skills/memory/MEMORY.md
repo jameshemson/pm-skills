@@ -1,0 +1,1 @@
+- [Plugin update flow](feedback_plugin_updates.md) - Third-party plugins don't auto-update; users must manually update marketplace and enable auto-update

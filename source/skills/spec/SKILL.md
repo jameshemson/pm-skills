@@ -22,6 +22,8 @@ Additionally, read:
 
 Write a full product specification. This is deeper than a brief - it's the contract between product and engineering about what "done" means, why it matters, and how we'll know it worked.
 
+**Check for preferences**: If `.pmcontext.md` has a **Ways of Working** section with preferred spec formats, structures, or checklists, use those. Otherwise use the default structure below.
+
 ## Step 1: Challenge the Premise
 
 Before writing anything, interrogate the feature:

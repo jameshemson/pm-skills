@@ -18,6 +18,8 @@ Additionally, read the [specification reference](../product-management/reference
 
 Generate an engineering brief that anticipates questions, covers edge cases, and connects to real user value. A brief is lighter than a full spec but must still be rigorous enough that engineering can estimate and plan from it.
 
+**Check for preferences**: If `.pmcontext.md` has a **Ways of Working** section with preferred brief formats or structures, use those. Otherwise use the default structure below.
+
 ## Step 1: Understand the Feature
 
 If the user provided a feature description, design, or screenshot, analyse it thoroughly. If not, ask what they want to brief.

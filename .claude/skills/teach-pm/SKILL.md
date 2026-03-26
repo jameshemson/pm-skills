@@ -1,6 +1,6 @@
 ---
 name: teach-pm
-description: One-time setup that gathers product context for your project and saves it for all PM skills. Run once to establish persistent product guidelines.
+description: One-time setup that gathers product context and your preferred ways of working, then saves both for all PM skills. Run once per project.
 user-invokable: true
 ---
 
@@ -63,6 +63,15 @@ STOP and call the AskUserQuestion tool to clarify. Focus only on what you couldn
 - What's the hardest product problem you're facing right now?
 - What do you wish your PM process did better?
 
+### How You Work
+- Do you have a preferred framework for making product decisions? (e.g. RICE, ICE, a custom scorecard, something your team invented)
+- Any checklist or set of considerations you always run through before greenlighting work?
+- Are there specific formats or structures you prefer for specs, briefs, or decision docs?
+- Any frameworks or approaches that you've tried and don't like? Things you want to avoid?
+- Anything else about how you personally work that would help skills give you better output?
+
+If they don't have strong preferences, that's fine - skip this section. The default frameworks in each skill will apply.
+
 Skip questions where the answer is already clear from the codebase exploration.
 
 ## Step 3: Write Product Context
@@ -92,6 +101,9 @@ Synthesize your findings and the user's answers into a structured product contex
 
 ### Current Challenges
 [Biggest risk (value/usability/feasibility/viability), hardest problems, open questions]
+
+### Ways of Working
+[Preferred decision frameworks, checklists, doc formats, approaches to avoid. Only include this section if the user has preferences - omit entirely if they use defaults.]
 ```
 
 Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place.
