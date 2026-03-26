@@ -38,7 +38,6 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 |---------|--------------|
 | `/teach-pm` | One-time setup: gather product context, save for all skills |
 | `/setup` | Generate a CLAUDE.md for your product team |
-| `/stakeholders` | Build a stakeholder map with engagement plans |
 
 **Discover**
 
@@ -65,6 +64,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | `/review` | Adversarial review: finds gaps, contradictions, slop |
 | `/decide` | Structured decision with weighted criteria and bias checks |
 | `/translate` | Rewrite for any audience: exec, engineering, customer, sales |
+| `/stakeholders` | Craft the right message for the right person |
 
 **Assess**
 

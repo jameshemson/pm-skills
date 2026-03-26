@@ -1,10 +1,10 @@
 ---
 name: stakeholders
-description: Build a stakeholder map. Understand who matters, what they care about, what messages land, and how to work with them.
+description: Craft the right message for the right person. Helps you communicate with stakeholders, get buy-in, and navigate tough conversations.
 user-invokable: true
 args:
-  - name: context
-    description: The initiative, decision, or situation to map stakeholders for (optional)
+  - name: situation
+    description: "Who you need to communicate with and about what (e.g. 'update VP Engineering on the delay', 'get buy-in from data team')"
     required: false
 ---
 
@@ -15,162 +15,123 @@ Use the product-management skill - it contains PM principles, anti-patterns, and
 Additionally, read:
 - [Leadership reference](../product-management/reference/leadership.md) for BRAVING trust, stakeholder management, and change management
 - [Communication reference](../product-management/reference/communication.md) for audience translation and the SUCCESs framework
-- [Decision-making reference](../product-management/reference/decision-making.md) for cognitive biases in stakeholder interactions
 
 ---
 
-This skill builds a stakeholder map - not an org chart, but a practical guide to who matters, what they care about, and how to work with them effectively. PMs spend a huge amount of time managing stakeholders. Most do it by intuition. This skill makes it deliberate.
+This skill helps you communicate with specific people effectively - crafting messages, preparing for conversations, getting buy-in, or navigating difficult situations. It's not about building a map and filing it away. It's about the message you need to send right now.
 
-**This skill asks detailed questions about each stakeholder.** The value is in the specificity. "VP of Engineering cares about quality" is useless. "VP of Engineering's team is under pressure to reduce incident rate, and she judges product work by whether it creates operational burden" is actionable.
+**This skill asks pointed questions about the person you're communicating with.** Generic advice ("be clear and concise") is useless. The value is in understanding their specific context and tailoring your approach.
 
-## Step 1: Identify the Stakeholders
+**Important: This skill does not persist or store information about stakeholders.** Organisational dynamics are sensitive. Everything stays in the conversation.
 
-Start broad, then narrow. For the current initiative or product area:
+## Step 1: Understand the Situation
 
-### Who has influence?
-- Who can block or approve this work?
-- Who controls the resources (budget, people, timeline)?
-- Who has political capital that affects this initiative?
+Ask:
 
-### Who is affected?
-- Which teams will need to change how they work?
-- Who will inherit the operational burden?
-- Whose metrics will be affected (positively or negatively)?
+- **Who are you communicating with?** Name, role, team.
+- **What's the goal?** What do you need from this interaction? (Approval, awareness, buy-in, feedback, alignment, de-escalation)
+- **What's the context?** What's happening right now that makes this conversation necessary?
+- **What's at stake?** What happens if this goes badly? What happens if you don't have the conversation at all?
 
-### Who has context you need?
-- Who understands the customer problem best?
-- Who has historical context on why things are the way they are?
-- Who has technical context you need?
+If the user provides a situation upfront ("I need to tell the CTO we're dropping the migration"), start there and fill in gaps.
 
-### Who's missing?
-- Is there someone who should be involved but isn't?
-- Is there a team downstream that will be surprised by this?
+## Step 2: Understand the Person
 
-Push back on:
-- Only listing supporters - who's skeptical or opposed?
-- Only listing senior people - are there influential ICs you're missing?
-- Missing the "silent stakeholders" - the team that will maintain this in production, the support team that will field the tickets
+Ask about the specific person or team:
 
-## Step 2: Map Each Stakeholder
+### What do they care about?
+- What are they measured on? What's their team focused on right now?
+- What pressures are they under? (Headcount, deadlines, political dynamics, their own stakeholders)
+- What does a good outcome look like from their perspective - not yours?
 
-For each stakeholder, gather:
+### How do they operate?
+- How do they prefer to receive information? (Detailed doc, quick Slack message, face-to-face, structured meeting)
+- How do they make decisions? (Data-first, gut feel, consensus, authority)
+- What framing has worked with them before? What hasn't?
 
-### Profile
-- **Name and role**: Who are they?
-- **Team**: What team are they on? What's the team's current focus?
-- **Relationship to this work**: How does this initiative affect them?
-
-### What They Care About
-- **Their primary metric**: What are they measured on? What keeps them up at night?
-- **Their current priorities**: What are they focused on right now?
-- **Their constraints**: What pressures are they under? (Headcount, deadlines, technical debt, political dynamics)
-- **Their wins**: What would a good outcome look like from their perspective?
-- **Their fears**: What are they worried this initiative might cause?
-
-### How to Work With Them
-- **Communication preference**: How do they like to receive information? (Detailed doc vs. quick summary, async vs. sync, data vs. narrative)
-- **Decision style**: How do they make decisions? (Data-driven, intuition, consensus, authority)
-- **What lands with them**: What framing or evidence has worked in the past?
-- **What doesn't land**: What triggers resistance or disengagement?
-- **Trust level**: How much do they trust the product team right now? (High/Medium/Low - and why)
-
-### Influence and Position
-- **Power**: High/Medium/Low - can they block or accelerate this?
-- **Interest**: High/Medium/Low - how much do they care?
-- **Current stance**: Supportive / Neutral / Skeptical / Opposed
-- **Desired stance**: Where do you need them to be?
+### Where are they on this topic?
+- What's their current understanding of the situation?
+- Are they likely supportive, neutral, skeptical, or opposed?
+- What's their likely first question or concern?
 
 Push back on:
-- Generic descriptions ("she cares about quality") - push for specifics
-- Assuming you know their priorities without asking
-- Missing the gap between current stance and desired stance - that gap is your work
+- "I don't know what they care about" - then you're not ready for this conversation. What can you find out first?
+- "They're supportive" without specifics - supportive of what exactly? People who seem supportive can flip when details emerge.
+- Generic descriptions - "she's technical" doesn't help. "She'll want to know the migration risk to uptime" does.
 
-## Step 3: Identify the Dynamics
+## Step 3: Identify the Gap
 
-### Alliances and Tensions
-- Which stakeholders are aligned with each other?
-- Which are in tension? Over what?
-- Are there rivalries or political dynamics that affect this work?
+What needs to shift?
 
-### Decision-Making Path
-- What's the actual decision path for this initiative?
-- Who needs to agree for this to move forward?
-- Is there a formal process, or is it relationship-dependent?
-- Where are the bottlenecks?
+- **Knowledge gap**: They don't know something they need to know. Lead with information.
+- **Alignment gap**: They disagree on direction. Lead with shared goals, then address the disagreement.
+- **Trust gap**: They don't trust the team or the process. Lead with evidence and accountability.
+- **Priority gap**: They don't think this is important enough. Lead with what matters to them, not what matters to you.
+- **Emotional gap**: They're frustrated, anxious, or feel unheard. Lead with acknowledgment before content.
 
-### Power Dynamics
-- Who has formal authority vs. informal influence?
-- Are there influencers who don't have a title but shape opinions?
-- Is there anyone who can single-handedly kill this?
+Most failed stakeholder conversations fail because the PM leads with their own priority instead of addressing the actual gap.
 
-## Step 4: Build the Engagement Plan
+## Step 4: Craft the Approach
 
-For each stakeholder who isn't already where you need them:
+Based on the gap and the person:
 
-### What Needs to Change
-- Current stance to desired stance
-- What's blocking the shift?
+### Message Structure
+- **Open with their context**: Start with what matters to them, not your update. "I know your team is focused on reducing incidents - here's how this affects that" not "Here's a project update."
+- **State the core message**: One clear sentence. What's the thing they need to know or decide?
+- **Anticipate their questions**: What will they ask? Have answers ready. If you don't know, say so honestly.
+- **Make the ask explicit**: What do you need from them? Don't make them guess.
 
-### Engagement Approach
-Using the communication reference:
-- **Lead with what matters to THEM**: Not your roadmap update - their metric, their problem, their constraint
-- **Use their language**: Engineering thinks in systems and trade-offs. Execs think in outcomes and risk. Sales thinks in deals and objections.
-- **Choose the right format**: Don't send a 10-page doc to someone who wants a 3-bullet Slack message
-- **Anticipate their questions**: What will they ask? Have answers ready.
+### Format and Channel
+- Match their preference. A detailed person gets the doc. A busy exec gets three bullets.
+- Bad news in person or on a call, never buried in a Slack thread.
+- Decisions that need a paper trail go in writing, even if you discuss verbally first.
 
-### Trust-Building Actions
+### For Difficult Conversations
+
 Using the BRAVING framework:
-- **Boundaries**: Be clear about what's in scope and what isn't
-- **Reliability**: Do what you say you'll do - especially the small things
-- **Accountability**: Own mistakes openly
-- **Vault**: Don't share their concerns with others without permission
-- **Integrity**: Push back when needed, even when it's uncomfortable
-- **Non-judgment**: Create safety for them to express concerns
-- **Generosity**: Assume good intent behind their requests
+- **Be honest about what's happening** - clear is kind. Softening bad news erodes trust faster than the bad news itself.
+- **Own what's yours** - if the team dropped the ball, say so before they have to point it out.
+- **Separate the problem from the person** - "The timeline slipped" not "You gave us an unrealistic timeline."
+- **Come with options, not just problems** - "Here's what happened, here are three paths forward, here's what I recommend."
 
-### Change Management
-If you need a stakeholder to change how they work, use the Rider-Elephant-Path framework:
-- **Direct the Rider**: Give them a clear, specific action (not "be more customer-centric")
-- **Motivate the Elephant**: Help them feel why this matters (share a customer story, not just data)
-- **Shape the Path**: Make the new behaviour easy (template, meeting invite, Slack channel)
+### For Getting Buy-In
 
-## Step 5: Deliver the Stakeholder Map
+Using the Rider-Elephant-Path framework:
+- **Direct the Rider** (rational mind): Give them a clear, specific ask. Not "support this initiative" but "I need you to approve two engineers for three weeks."
+- **Motivate the Elephant** (emotional mind): Help them feel why it matters. A customer story beats a slide deck.
+- **Shape the Path** (make it easy): Reduce friction. "I've drafted the email, can you review and forward?" not "Can you communicate this to your team?"
 
-### Stakeholder Overview
+## Step 5: Deliver the Output
 
-| Stakeholder | Role | Power | Interest | Current Stance | Desired Stance |
-|---|---|---|---|---|---|
-| ... | ... | H/M/L | H/M/L | Supportive/Neutral/Skeptical/Opposed | ... |
+Depending on what the user needs:
 
-### Detailed Profiles
-[For each key stakeholder: what they care about, how to work with them, what lands, what doesn't]
+### If they need a message draft:
+Write the actual message - Slack, email, or talking points. Tailored to the person, the channel, and the gap. Short enough to actually send.
 
-### Power-Interest Grid
-- **High power, high interest** (Manage closely): [Names]
-- **High power, low interest** (Keep satisfied): [Names]
-- **Low power, high interest** (Keep informed): [Names]
-- **Low power, low interest** (Monitor): [Names]
+### If they need conversation prep:
+- **Opening**: How to start (their context, not yours)
+- **Core message**: The one thing they need to hear
+- **Anticipated pushback**: What they'll say, and how to respond
+- **The ask**: What you need from them, stated clearly
+- **Fallback**: If they say no, what's your next move?
 
-### Key Dynamics
-[Alliances, tensions, decision path, bottlenecks]
-
-### Engagement Plan
-[For each stakeholder needing a stance shift: specific actions, timing, and success signals]
-
-### Risk Stakeholders
-[Who could derail this? What's the early warning signal? What's your mitigation?]
+### If they need to navigate a difficult dynamic:
+- **What's really going on**: Name the underlying tension
+- **What they're likely feeling**: Not just thinking - feeling
+- **Approach**: Specific actions, not generic advice
+- **What to avoid**: The thing that would make it worse
 
 ## NEVER
 
-- Map stakeholders without asking about their constraints and pressures - understanding their world is the point
-- Treat this as a political exercise - it's about empathy and effectiveness, not manipulation
-- Assume supportive stakeholders will stay supportive without engagement
-- Ignore skeptical stakeholders - their concerns often surface real risks
-- Produce a map and never update it - stakeholder dynamics shift constantly
-- Reduce stakeholders to one-dimensional descriptions ("she's supportive") - push for depth
+- Store, persist, or write stakeholder information to files - organisational dynamics are sensitive
+- Produce a generic "stakeholder communication plan" - this skill is about specific interactions
+- Give advice that ignores the person's actual context and pressures
+- Suggest manipulation tactics - this is about empathy and effectiveness, not politics
+- Assume the user's framing is complete - always ask what the other person's perspective might be
+- Skip the "what do they care about" step - it's the foundation of everything else
 
 ## What's Next
 
-- Run `/pm:translate` to adapt a specific message for a key stakeholder.
-- Run `/pm:discover plan` if you need to better understand a stakeholder's real concerns.
-- Run `/pm:decide` if stakeholder alignment is blocking a key decision.
+- Run `/pm:translate` to rewrite an existing document for this person's audience.
+- Run `/pm:decide` if the stakeholder interaction is about resolving a contested decision.
+- Run `/pm:discover plan` if you realise you need to understand their concerns better before the conversation.
