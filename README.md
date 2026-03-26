@@ -38,6 +38,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 |---------|--------------|
 | `/teach-pm` | One-time setup: gather product context, save for all skills |
 | `/setup` | Generate a CLAUDE.md for your product team |
+| `/stakeholders` | Build a stakeholder map with engagement plans |
 
 **Discover**
 
@@ -47,7 +48,6 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | `/position` | Define what your product is, who it's for, and why it wins |
 | `/strategy` | Define where to play and how to win using the choice cascade |
 | `/prioritise` | Stack-rank work against outcomes and strategy |
-| `/stakeholders` | Build a stakeholder map with engagement plans |
 
 **Create**
 

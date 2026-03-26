@@ -34,7 +34,16 @@ Ask:
 - **What risks did you identify?** What were the pre-mortem failure modes?
 - **What was the timeline?** How long did you expect it to take vs. how long it actually took?
 
-If the user can't answer these: that's the first finding. You shipped without a clear hypothesis, which means you can't evaluate whether it worked - only whether people seem to like it.
+### If There Were No Upfront Metrics
+
+Most teams ship without a clear hypothesis. That's reality. Don't let it block the retro - work backwards instead:
+
+1. **What did you ship and for whom?** Start with what actually went out the door.
+2. **What problem was this supposed to solve?** Even without a formal hypothesis, someone had a reason. Reconstruct it.
+3. **How would you know it worked?** If you had to prove to a skeptical exec that this was worth doing, what would you show them? That's your retrospective primary metric.
+4. **What were you afraid might go wrong?** Even informally - this surfaces the risks you were carrying.
+
+Now you have a reconstructed hypothesis to evaluate against. It won't be as clean as one defined upfront, but it's honest. Flag the gap as a process improvement: next time, run `/pm:metrics` before shipping.
 
 ## Step 2: Gather the Evidence
 
