@@ -88,7 +88,17 @@ source/skills/
 │   └── SKILL.md
 ├── prioritise/                      # /pm:prioritise (stack-rank work)
 │   └── SKILL.md
-└── audit/                           # /pm:audit (product thinking audit)
+├── audit/                           # /pm:audit (product thinking audit)
+│   └── SKILL.md
+├── strategy/                        # /pm:strategy (choice cascade)
+│   └── SKILL.md
+├── position/                        # /pm:position (five-component positioning)
+│   └── SKILL.md
+├── metrics/                         # /pm:metrics (success metrics)
+│   └── SKILL.md
+├── retro/                           # /pm:retro (product retrospective)
+│   └── SKILL.md
+└── stakeholders/                    # /pm:stakeholders (stakeholder map)
     └── SKILL.md
 ```
 
@@ -219,6 +229,21 @@ Stack-rank work against outcomes and strategy. Forces trade-offs, checks for dri
 
 ### /pm:audit
 Challenge whether you're doing the right work. Checks evidence, strategic alignment, discovery gaps, and priority drift. The product thinking audit.
+
+### /pm:strategy
+Walk through the Playing to Win choice cascade to define or pressure-test product strategy. Forces integrated choices across winning aspiration, where to play, how to win, capabilities, and management systems. Tests for coherence and flags broken links in the cascade. Requires explicit "what we're NOT doing" for every dimension.
+
+### /pm:position
+Define product positioning using the five-component framework from Obviously Awesome. Walks through competitive alternatives, unique attributes, value, target customers, and market category in order. Tests positioning for differentiation, clarity, and pitfalls. Checks for repositioning signals.
+
+### /pm:metrics
+Define success metrics that measure whether something actually worked. Structures metrics as primary (one only), secondary (2-3), guardrail (things that must not get worse), and counter-metrics (gaming detection). Forces baselines, specific targets, measurement plans, and confounding factor analysis. Pushes back on vanity metrics.
+
+### /pm:retro
+Product retrospective that compares what you expected with what actually happened. Reconstructs the original hypothesis before looking at results (prevents hindsight bias). Uses outcome fielding from Thinking in Bets to separate decision quality from outcome quality. Produces specific learnings and next actions: double down, pivot, investigate, or kill.
+
+### /pm:stakeholders
+Build a stakeholder map for an initiative or product area. Maps each stakeholder's priorities, constraints, communication preferences, decision style, trust level, and current stance. Identifies power dynamics, alliances, and decision paths. Creates engagement plans using BRAVING trust framework and Rider-Elephant-Path change management.
 
 ---
 

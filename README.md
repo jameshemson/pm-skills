@@ -1,6 +1,6 @@
 # PM Skills
 
-The product expertise your AI is missing. 1 core skill, 11 commands, and curated frameworks for product managers who ship substance.
+The product expertise your AI is missing. 1 core skill, 16 commands, and curated frameworks for product managers who ship substance.
 
 > **Quick start:** Visit [pmskills.co](https://pmskills.co) or jump to [Installation](#installation).
 
@@ -10,7 +10,7 @@ Ask AI to write a PRD and you get a 10000 word dissertation that says nothing. G
 
 PM Skills fights that with:
 - **A core knowledge skill** with established PM frameworks ([view source](source/skills/product-management/))
-- **10 command skills** that push back on your thinking before producing output
+- **16 command skills** that push back on your thinking before producing output
 - **The PM Slop Test** that catches vague specs before engineering does
 
 ## What's Included
@@ -30,7 +30,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | [positioning](source/skills/product-management/reference/positioning.md) | Product positioning, smallest viable audience |
 | [prompting](source/skills/product-management/reference/prompting.md) | Working with AI as a PM, anti-slop patterns |
 
-### 11 Commands
+### 16 Commands
 
 **Get started**
 
@@ -44,7 +44,10 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | Command | What it does |
 |---------|--------------|
 | `/discover` | Plan customer conversations + debrief with forces analysis |
+| `/position` | Define what your product is, who it's for, and why it wins |
+| `/strategy` | Define where to play and how to win using the choice cascade |
 | `/prioritise` | Stack-rank work against outcomes and strategy |
+| `/stakeholders` | Build a stakeholder map with engagement plans |
 
 **Create**
 
@@ -52,6 +55,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 |---------|--------------|
 | `/brief` | Engineering brief from a feature description or screenshot |
 | `/spec` | Full spec with metrics, risks, rollout plan |
+| `/metrics` | Define success metrics: primary, secondary, guardrail |
 | `/stories` | JTBD-framed user stories with testable acceptance criteria |
 
 **Sharpen**
@@ -67,6 +71,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | Command | What it does |
 |---------|--------------|
 | `/audit` | Challenge whether you're doing the right work. Evidence, alignment, drift |
+| `/retro` | Evaluate what shipped against what you expected. Close the learning loop |
 
 ### The PM Slop Test
 
@@ -109,10 +114,15 @@ Every skill checks for product context before generating. Run `/pm:teach-pm` onc
 
 ```
 /pm:discover        # Plan or debrief customer conversations
+/pm:position        # Define product positioning
+/pm:strategy        # Define where to play and how to win
 /pm:prioritise      # Stack-rank against outcomes
+/pm:stakeholders    # Build stakeholder map
 /pm:brief           # Generate engineering brief
 /pm:spec            # Write full specification
+/pm:metrics         # Define success metrics
 /pm:review          # Adversarial review of any doc
+/pm:retro           # Evaluate what shipped vs. expected
 /pm:translate       # Rewrite for different audience
 ```
 
