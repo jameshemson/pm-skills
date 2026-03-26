@@ -230,7 +230,7 @@ Challenge whether you're doing the right work. Checks evidence, strategic alignm
 - Solution: what the skill pack does differently (anti-theater, opinionated, framework-backed)
 - Skills showcase: list of skills with descriptions
 - How it works: install command, example workflow
-- Install CTA: `npx skills add [repo]` or Claude Code marketplace command
+- Install CTA: `/plugin marketplace add jameshemson/pm-skills` then `/plugin install pm@pm-skills`
 - Social proof section (placeholder for now)
 - Footer with GitHub link
 

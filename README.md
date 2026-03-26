@@ -1,6 +1,6 @@
 # PM Skills
 
-The product expertise your AI is missing. 1 core skill, 10 commands, and curated frameworks for product managers who ship substance.
+The product expertise your AI is missing. 1 core skill, 11 commands, and curated frameworks for product managers who ship substance.
 
 > **Quick start:** Visit [pmskills.co](https://pmskills.co) or jump to [Installation](#installation).
 
@@ -30,7 +30,7 @@ A comprehensive PM knowledge base with 8 domain-specific references ([view skill
 | [positioning](source/skills/product-management/reference/positioning.md) | Product positioning, smallest viable audience |
 | [prompting](source/skills/product-management/reference/prompting.md) | Working with AI as a PM, anti-slop patterns |
 
-### 10 Commands
+### 11 Commands
 
 **Get started**
 
@@ -82,17 +82,22 @@ Every skill runs this before delivering:
 
 ## Installation
 
-```bash
-# Claude Code plugin
+In Claude Code, run:
+
+```
 /plugin marketplace add jameshemson/pm-skills
+/plugin install pm@pm-skills
+```
 
-# Or copy directly
-cp -r .claude/skills your-project/.claude/
+Then set up product context once per project:
 
-# Run once to set up product context
+```
 /pm:teach-pm
+```
 
-# Then use any skill
+After that, use any skill:
+
+```
 /pm:brief "User can filter dashboard by date range"
 /pm:review path/to/spec.md
 /pm:decide "Should we build SSO or focus on onboarding?"
