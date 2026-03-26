@@ -25,6 +25,8 @@ PM skills produce generic output without product context. You MUST have confirme
 
 Without context, you will produce product theater. Context IS the quality gate.
 
+**Respecting PM preferences**: If `.pmcontext.md` or CLAUDE.md contains a **Ways of Working** section with preferred frameworks, checklists, or doc formats, use those instead of (or alongside) the defaults in each skill. The user's way of working takes precedence over the skill's built-in framework.
+
 ---
 
 ## PM Principles

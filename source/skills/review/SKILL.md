@@ -24,6 +24,8 @@ This skill is deliberately adversarial. Its job is to find everything wrong with
 
 Think like a skeptical senior engineer, a demanding VP, and a confused new user - all at once.
 
+**Check for preferences**: If `.pmcontext.md` has a **Ways of Working** section with specific checklists or quality criteria the user always checks, incorporate those into the review alongside the standard checks below.
+
 ## Step 1: Read the Document
 
 Read the entire document. Note your first impressions:

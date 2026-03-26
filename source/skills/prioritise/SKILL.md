@@ -23,6 +23,8 @@ Prioritise a set of options against outcomes and strategy. This skill doesn't ju
 
 Prioritisation without trade-offs is a to-do list. This skill makes the trade-offs visible.
 
+**Check for preferences**: If `.pmcontext.md` has a **Ways of Working** section with a preferred prioritisation framework (e.g. RICE, a custom scorecard), use that as the ranking structure. The steps below for evidence assessment, trade-offs, and drift checks still apply on top.
+
 ## Step 1: Understand What You're Prioritising
 
 If the user hasn't provided a list, ask for one. Then clarify:
