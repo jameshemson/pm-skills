@@ -133,6 +133,40 @@ Teach yourself to recognise these patterns in AI output. Once you see them, you 
 **Pattern**: Restating your input back to you in slightly different words, disguised as analysis.
 **Fix**: "Tell me something I don't already know. What's the non-obvious insight?"
 
+### 8. AI Voice Slop - Word Choice
+**Pattern**: Words that are rare in human writing but vastly overrepresented in AI output. If you see these, the text hasn't been humanised.
+
+**Banned words** (replace or rephrase every instance):
+delve, tapestry, landscape, realm, beacon, cacophony, nuanced, multifaceted, robust, meticulous, meticulously, pivotal, underscore, intricate, intricacies, interplay, garner, foster, fostering, bolster, harness, illuminate, facilitate, streamline, showcase, showcasing, vibrant, enduring
+
+**Overused qualifiers** (cut or replace):
+arguably, it's worth noting, importantly, notably, furthermore, consequently, ultimately
+
+**Fix**: Replace with plain English. "Delve into the data" becomes "look at the data." "A robust framework" becomes "a framework that handles X." If the sentence sounds like a thesaurus wrote it, simplify.
+
+### 9. AI Voice Slop - Sentence Patterns
+**Pattern**: Structural tells that signal AI authorship, even when individual words are fine.
+
+- **"It's not X, it's Y"** - The single most recognised AI tell. Rephrase to say what it IS without the false contrast.
+- **Verb inflation** - Replacing "is/are" with "serves as", "stands as", "represents", "marks". Use the simpler verb.
+- **Uniform sentence length** - AI produces sentences of roughly equal length. Vary rhythm: short punchy sentences after longer ones.
+- **Opening with a restatement** - Restating the question or topic before answering. Delete and start with the answer.
+- **Closing with an upbeat summary** - Wrapping up with an optimistic restatement of value. Cut the last paragraph and see if anything is lost.
+- **Colon-into-list for every explanation** - Not everything needs a colon and bullet points. Sometimes a sentence works better.
+- **Bold key phrases mid-sentence** - Bolding for emphasis is fine in headers and labels. Bolding random phrases mid-paragraph is an AI tell.
+- **Headers for every 2-3 paragraphs** - Not everything needs a subheading. Use them for navigation, not decoration.
+
+**Fix**: Read the output aloud. If it sounds like a press release or a corporate blog post, rewrite it to sound like you're explaining it to a colleague.
+
+### 10. AI Voice Slop - Em Dashes and Punctuation
+**Pattern**: Overuse of em dashes for parenthetical asides, excessive colons before lists, and formulaic punctuation patterns.
+
+- **Em dash overuse** - AI defaults to em dashes where commas, parentheses, or separate sentences would be more natural. Never use em dashes in output.
+- **Colon-then-bullets** for every explanation when prose would be clearer
+- **Semicolons to sound sophisticated** when a period works fine
+
+**Fix**: Use commas for brief asides, parentheses for genuine parentheticals, and periods for new thoughts. If you're reaching for an em dash, restructure the sentence instead.
+
 ---
 
 ## PM-Specific Prompt Patterns

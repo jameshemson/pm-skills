@@ -1,4 +1,20 @@
-# PM Skills — Claude Code Skill Pack for Product Managers
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Development
+
+There is no build system. Skills are markdown files used directly by Claude Code.
+
+**Source/compiled sync**: `source/skills/` is the authoritative source. `.claude/skills/` is an identical copy used at runtime (referenced by `.claude-plugin/plugin.json`). When editing any skill, always update both locations. After editing source files, copy them to `.claude/skills/` to keep them in sync.
+
+**Skill invocation**: All user-invokable skills use the `pm:` prefix (e.g. `/pm:brief`, `/pm:review`). The core `product-management` skill is NOT user-invokable - it's loaded as a dependency by other skills.
+
+**Plugin config**: `.claude-plugin/plugin.json` (metadata, version) and `.claude-plugin/marketplace.json` (marketplace listing). Update skill counts and descriptions in both when adding/removing skills.
+
+---
+
+# PM Skills - Claude Code Skill Pack for Product Managers
 
 ## What This Project Is
 
@@ -68,7 +84,11 @@ source/skills/
 │   └── SKILL.md
 ├── setup/                           # /pm:setup (CLAUDE.md generator)
 │   └── SKILL.md
-└── audit/                           # /pm:audit (AI readiness)
+├── discover/                        # /pm:discover (customer conversations)
+│   └── SKILL.md
+├── prioritise/                      # /pm:prioritise (stack-rank work)
+│   └── SKILL.md
+└── audit/                           # /pm:audit (product thinking audit)
     └── SKILL.md
 ```
 
@@ -149,12 +169,13 @@ Read the book summaries in James's private notes to build each reference file. T
 - Demand specificity. Numbers, names, examples. State assumptions.
 - AI is a collaborator not an oracle. "Stress-test this" not "what should I do?"
 
-**The slop taxonomy (teach users to recognise these):**
-1. Generic preamble slop ("In today's fast-paced...")
-2. False confidence slop (invented stats as fact)
-3. Sycophantic slop ("That's a great question!")
-4. List-ification slop (everything becomes 5-7 equal-weight bullets)
-5. Hedge slop ("It depends on various factors...")
+**The slop taxonomy (substance + voice):**
+
+Substance slop (1-8): generic preambles, false confidence, sycophantic filler, list-ification, hedge language, buzzwords, scope creep, happy-path-only.
+
+Voice slop (9-11): AI vocabulary (delve, tapestry, landscape, robust, etc.), sentence patterns ("It's not X, it's Y", verb inflation, uniform length), formatting tells (em dashes, colon-into-list, mid-sentence bold, unnecessary headers).
+
+See `prompting.md` for the full taxonomy with detection rules and fixes.
 
 **PM-specific prompt patterns for each workflow:**
 - Specs: problem + personas + constraints → structure + edge cases
@@ -190,8 +211,14 @@ Structure a decision. Requires: what you're deciding, options considered, evalua
 ### /pm:setup
 Generate a CLAUDE.md for a product team. Interviews about team structure, product domain, tech stack, communication norms, definition of done, stakeholder expectations. Produces a tailored CLAUDE.md that makes AI useful for the whole team. This IS the CLAUDE.md generator tool.
 
+### /pm:discover
+Plan customer conversations that get truth, not politeness. Uses Mom Test and Demand-Side Sales forces. Can also debrief after conversations to extract real signal.
+
+### /pm:prioritise
+Stack-rank work against outcomes and strategy. Forces trade-offs, checks for drift, and connects decisions to what actually matters.
+
 ### /pm:audit
-Assess a project's AI readiness. Scans for: documentation quality, test coverage, CI/CD maturity, code comments, README quality, onboarding docs. Scores across dimensions. Recommends specific improvements. Team-level (not org-level) assessment.
+Challenge whether you're doing the right work. Checks evidence, strategic alignment, discovery gaps, and priority drift. The product thinking audit.
 
 ---
 
@@ -223,7 +250,6 @@ Assess a project's AI readiness. Scans for: documentation quality, test coverage
 
 ## Do NOT
 
-- Do not commit to git. Keep everything local.
 - Do not use em dashes (—) in any user-facing copy. Use regular dashes or rephrase.
 - Do not produce generic marketing copy. Every sentence should be specific and earned.
 - Do not over-engineer. Skills are markdown files. The website is a single page. Keep it simple.

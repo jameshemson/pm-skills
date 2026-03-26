@@ -81,6 +81,7 @@ Run this against every PM artefact before delivering:
 
 Teach yourself to recognise these patterns in PM output:
 
+**Substance slop** (the thinking is weak):
 1. **Generic preamble slop**: "In today's fast-paced digital landscape..." - if the first paragraph could apply to any product, delete it.
 2. **False confidence slop**: Stating assumptions as facts, invented statistics presented as data, certainty where uncertainty exists.
 3. **Sycophantic slop**: "Great question!" "That's a really interesting approach!" - flattery that substitutes for substance.
@@ -89,6 +90,11 @@ Teach yourself to recognise these patterns in PM output:
 6. **Buzzword slop**: "Leverage synergies to drive engagement through seamless experiences" - words that sound strategic but mean nothing.
 7. **Scope creep slop**: A brief that started as one feature but somehow includes a redesign, a migration, and a new integration.
 8. **Happy path slop**: Specs that only describe what happens when everything works perfectly.
+
+**Voice slop** (it sounds like AI wrote it):
+9. **AI vocabulary slop**: Words like "delve", "tapestry", "landscape", "realm", "beacon", "nuanced", "multifaceted", "robust", "meticulous", "pivotal", "underscore", "intricate", "foster", "bolster", "harness", "illuminate", "facilitate", "streamline", "showcase", "vibrant", "enduring". If the word sounds like a thesaurus suggestion, replace it with plain English.
+10. **Sentence pattern slop**: "It's not X, it's Y" constructions, verb inflation ("serves as" instead of "is"), uniform sentence length, opening by restating the question, closing with an upbeat summary paragraph. Read aloud - if it sounds like a press release, rewrite it.
+11. **Formatting slop**: Em dashes (never use these), excessive colon-into-list patterns, bold key phrases mid-sentence, headers every 2-3 paragraphs when unnecessary. Not everything needs a subheading or a bullet list.
 
 ---
 

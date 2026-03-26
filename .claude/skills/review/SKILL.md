@@ -36,7 +36,7 @@ Read the entire document. Note your first impressions:
 
 Apply every check from the PM Slop Test in the product-management skill:
 
-### Slop Detection
+### Substance Slop Detection
 - [ ] **Generic preamble**: Does it open with filler that could apply to any product? ("In order to improve the user experience...")
 - [ ] **Vague audience**: Does it say "users" instead of specifying which users in what context?
 - [ ] **Unmeasurable success**: Are success metrics vague or missing? ("Improve satisfaction")
@@ -45,6 +45,12 @@ Apply every check from the PM Slop Test in the product-management skill:
 - [ ] **Hidden assumptions**: Are there unstated assumptions baked into the solution?
 - [ ] **Missing trade-offs**: Is the proposed solution presented as obviously correct with no alternatives considered?
 - [ ] **Buzzword density**: Could sentences be simplified to half their length without losing meaning?
+
+### Voice Slop Detection
+- [ ] **AI vocabulary**: Scan for: delve, tapestry, landscape, realm, beacon, nuanced, multifaceted, robust, meticulous, pivotal, underscore, intricate, foster, bolster, harness, illuminate, facilitate, streamline, showcase, vibrant, enduring. Flag every instance.
+- [ ] **Sentence patterns**: Check for "It's not X, it's Y" constructions, verb inflation ("serves as"/"stands as"/"represents" instead of "is"), and uniform sentence length throughout.
+- [ ] **Structural tells**: Opening paragraphs that restate the problem instead of adding new information. Closing paragraphs that are upbeat summaries adding no substance. Headers every 2-3 paragraphs when the content doesn't warrant them.
+- [ ] **Formatting tells**: Em dashes (banned - rephrase or use commas), excessive colon-into-list patterns, bold phrases mid-sentence for emphasis, overuse of qualifiers like "arguably", "it's worth noting", "importantly".
 
 Flag every instance with the specific text that triggers it.
 
