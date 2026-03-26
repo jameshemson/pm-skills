@@ -11,7 +11,7 @@
     {
       "name": "pm",
       "description": "Product management skills for Claude Code. 16 commands: /teach-pm, /setup, /discover, /position, /strategy, /prioritise, /stakeholders, /brief, /spec, /metrics, /stories, /review, /decide, /translate, /audit, /retro. Framework-backed, anti-theater, opinionated.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": {
         "name": "James Hemson"
       },

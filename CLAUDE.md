@@ -12,6 +12,8 @@ There is no build system. Skills are markdown files used directly by Claude Code
 
 **Plugin config**: `.claude-plugin/plugin.json` (metadata, version) and `.claude-plugin/marketplace.json` (marketplace listing). Update skill counts and descriptions in both when adding/removing skills.
 
+**Versioning**: Bump the version in both `plugin.json` and `marketplace.json` with every release. Use semver: patch for fixes, minor for new/changed skills, major for breaking changes.
+
 ---
 
 # PM Skills - Claude Code Skill Pack for Product Managers
