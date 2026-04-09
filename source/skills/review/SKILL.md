@@ -17,12 +17,13 @@ Additionally, read:
 - [Discovery reference](../product-management/reference/discovery.md) for validating customer evidence
 - [Prioritisation reference](../product-management/reference/prioritisation.md) for the four risks framework
 - [Communication reference](../product-management/reference/communication.md) for clarity standards
+- [Review Personas reference](../product-management/reference/review-personas.md) for persona-based review perspectives
 
 ---
 
 This skill is deliberately adversarial. Its job is to find everything wrong with a spec, brief, or PRD before engineering does. Better to get hard questions now than clarification requests mid-sprint.
 
-Think like a skeptical senior engineer, a demanding VP, and a confused new user - all at once.
+This review uses **persona-based perspectives** from the Review Personas reference. Each persona catches different gaps. You review from each perspective independently - finish one persona's full assessment before starting the next. No cross-contamination between perspectives.
 
 **Check for preferences**: If `.pmcontext.md` has a **Ways of Working** section with specific checklists or quality criteria the user always checks, incorporate those into the review alongside the standard checks below.
 
@@ -56,45 +57,36 @@ Apply every check from the PM Slop Test in the product-management skill:
 
 Flag every instance with the specific text that triggers it.
 
-## Step 3: Check for Gaps
+## Step 3: Persona-Based Gap Analysis
 
-### Requirements Gaps
-- Are acceptance criteria testable? Could a QA engineer write tests from them without asking questions?
-- Are error states specified? What happens when things fail?
-- Are boundary conditions addressed? (Maximum data, minimum data, empty states)
-- Are permission models covered? (Who can do what? What about edge permission cases?)
-- Is data migration addressed? (If changing existing behaviour, what happens to existing data/users?)
+Select 3-4 personas from the Review Personas reference based on the document type (use the Persona Selection Table). For each persona, adopt their perspective INDEPENDENTLY. Complete each persona's full review before moving to the next. The value is in independent assessment - do not let one persona's findings influence another's.
 
-### Logic Gaps
-- Are there contradictions between sections?
-- Does the proposed solution actually solve the stated problem?
-- Are there circular dependencies?
-- Do the success metrics measure what the problem statement describes?
+For each selected persona:
 
-### Context Gaps
-- Is the problem grounded in evidence or just assumed?
-- Are competitive alternatives acknowledged?
-- Is strategic alignment explained?
-- Are dependencies identified with owners and timelines?
+1. **State which persona** you are reviewing as (e.g., "Reviewing as Dev (Senior Engineer)")
+2. **Walk through the document** from their perspective, using their test questions and red flags from the reference
+3. **List every gap, concern, and question** that persona would raise
+4. **Rank each finding** by severity: P0 (blocking), P1 (important), P2 (minor)
 
-### Risk Gaps
-- Are all four risks addressed? (Value, usability, feasibility, viability)
-- Is there a rollback plan?
-- What's the worst case scenario and how would you know it's happening?
-- Has a pre-mortem been done?
+After completing all persona reviews independently, **synthesize**:
+- Where do multiple personas flag the same issue? (High confidence - this is a real gap)
+- Where does only one persona flag an issue? (Still valid - may be a specialised concern)
+- What did the persona-based review surface that a single-perspective review would miss?
 
-## Step 4: Generate Engineering Questions
+## Step 4: Consolidated Questions by Priority
 
-Put yourself in the shoes of an engineer who just received this document. Write every question they'd ask before starting work, ranked by severity:
+Merge all persona findings into a single ranked list. Each question is attributed to the persona(s) that raised it, so the reader understands the perspective behind it.
 
 **P0 - Blocking** (Can't start work without an answer):
-Questions about fundamental ambiguity, missing requirements, or contradictory instructions.
+Questions about fundamental ambiguity, missing requirements, or contradictory instructions. Include which persona(s) raised each question.
 
 **P1 - Important** (Can start but will need answers soon):
-Questions about edge cases, technical approach, dependencies.
+Questions about edge cases, technical approach, dependencies, evidence gaps. Include which persona(s) raised each question.
 
 **P2 - Nice to Know** (Can probably figure it out, but would be faster with an answer):
-Questions about preference, style, or non-critical details.
+Questions about preference, style, or non-critical details. Include which persona(s) raised each question.
+
+Questions flagged by multiple personas should be ranked higher than single-persona findings at the same severity level.
 
 ## Step 5: Assess Against Product Context
 
@@ -116,8 +108,19 @@ The top 3-5 issues that would cause the most problems if unaddressed. For each:
 - **Why it matters** (concrete consequence, not abstract concern)
 - **Suggested fix** (specific, not "add more detail")
 
+### Persona Findings
+For each persona used in the review, list their 2-3 most critical findings. Keep it compact - the detail is in the consolidated questions below.
+
+**Dev (Senior Engineer)**: [top findings about buildability and technical clarity]
+**Tester (QA Lead)**: [top findings about testability and missing states]
+**Exec (VP Stakeholder)**: [top findings about strategic clarity and ROI]
+**Customer (End User)**: [top findings about user value and workflow fit]
+**Critic (Skeptical PM)**: [top findings about evidence quality and rigor]
+
+Only include the personas you selected for this review.
+
 ### Engineering Questions
-The full ranked list of questions from Step 4.
+The full ranked list of questions from Step 4, with persona attribution.
 
 ### Contradiction Report
 Any places where the document contradicts itself or where requirements conflict.

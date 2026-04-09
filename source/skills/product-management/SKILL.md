@@ -29,6 +29,73 @@ Without context, you will produce product theater. Context IS the quality gate.
 
 ---
 
+## PM Reflex Rejection Procedure
+
+AI models produce predictable PM output regardless of context. The same personas, the same metrics, the same acceptance criteria, the same risk sections. This procedure forces you to name and reject those defaults before generating anything.
+
+**This fires PRE-generation** (before you write). The PM Slop Test (below) fires POST-generation (after you write, before you deliver). Both must pass.
+
+### Step 1: Anchor in the specific product context
+
+Before generating any PM artefact, write down three concrete words that describe the specific product situation. Not generic labels like "enterprise", "SaaS", or "mobile app". Situation-specific anchors like "high-churn, regulated, legacy-migration" or "pre-PMF, developer-tool, open-source-competitor". Every sentence you write should connect to these three words.
+
+### Step 2: List your reflex defaults, then reject them
+
+For the artefact you are about to generate, check each relevant category below. If what you were about to write matches an item in the reflex list, stop and replace it with something specific to the product context from Step 1.
+
+<pm_reflex_defaults_to_reject>
+
+**Personas**
+- "Busy professionals aged 25-45 who value efficiency"
+- "Tech-savvy early adopters" / "Non-technical business users" (the universal binary)
+- Any persona that is a demographic sentence rather than a specific person in a specific situation with a specific job to be done
+- Replacement test: could this persona description apply to 50 different products? If yes, it's a reflex.
+
+**Problem statements**
+- "Users need a better way to X" (restates the feature as a problem)
+- "There is currently no easy way to X" (absence of your solution is not a problem statement)
+- "The current experience is suboptimal" (compared to what? for whom? measured how?)
+- Replacement test: does this describe something you could observe a real person struggling with? If not, it's a reflex.
+
+**Metrics**
+- NPS as a primary metric for anything
+- CSAT without a baseline or measurement plan
+- "Engagement" without defining what engagement means in this context
+- "Adoption rate" or "conversion rate" without a specific target and timeline
+- "User satisfaction" as a success metric (unmeasurable without defining the instrument)
+- Replacement test: could an engineer build a dashboard for this metric today, with the information in this document? If not, it's a reflex.
+
+**Acceptance criteria**
+- "User can successfully complete the action" (what does success look like specifically?)
+- "System handles X appropriately" (appropriately how?)
+- "Experience is smooth/seamless/intuitive" (not testable)
+- Any criterion containing "easily", "quickly", "properly" without specific thresholds
+- Replacement test: could a QA engineer write a pass/fail test from this criterion alone? If not, it's a reflex.
+
+**Risk mitigations**
+- "Risk of low adoption. Mitigation: communicate the value proposition clearly." (the mitigation restates the problem)
+- "Risk of scope creep. Mitigation: manage scope carefully." (circular)
+- "Risk of technical complexity. Mitigation: take an iterative approach." (not a mitigation, just a platitude)
+- Replacement test: does the mitigation describe a specific action a specific person will take by a specific date? If not, it's a reflex.
+
+**Out-of-scope sections**
+- Empty sections
+- "Will be addressed in a future phase" with no specifics
+- "To be determined" or "TBD"
+- Replacement test: could someone read this section and know exactly what NOT to build? If not, it's a reflex.
+
+</pm_reflex_defaults_to_reject>
+
+### Step 3: Generate with the replacements
+
+Now produce the artefact. Use context-specific alternatives from your product context instead of the rejected defaults. Every persona, metric, acceptance criterion, and risk should be specific enough that it could only belong to THIS product.
+
+### Step 4: Cross-check the result
+
+After generating, scan your output for any reflex defaults that crept back in. Check each section against the reflex list above. If the personas read like a marketing demographic, the metrics are vanity metrics, or the risk mitigations are circular, revise before delivering.
+
+---
+
 ## PM Principles
 
 These are non-negotiable. Every skill enforces them.
