@@ -257,7 +257,7 @@ Build a stakeholder map for an initiative or product area. Maps each stakeholder
 - Solution: what the skill pack does differently (anti-theater, opinionated, framework-backed)
 - Skills showcase: list of skills with descriptions
 - How it works: install command, example workflow
-- Install CTA: `/plugin marketplace add smonggliddery/pm-skills` then `/plugin install pm@pm-skills`
+- Install CTA: `/plugin marketplace add jameshemson/pm-skills` then `/plugin install pm@pm-skills`
 - Social proof section (placeholder for now)
 - Footer with GitHub link
 

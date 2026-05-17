@@ -5,7 +5,7 @@
   "author": {
     "name": "James Hemson"
   },
-  "homepage": "https://github.com/smonggliddery/pm-skills",
-  "repository": "https://github.com/smonggliddery/pm-skills",
+  "homepage": "https://github.com/jameshemson/pm-skills",
+  "repository": "https://github.com/jameshemson/pm-skills",
   "skills": "./.claude/skills"
 }

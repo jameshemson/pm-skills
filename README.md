@@ -90,7 +90,7 @@ Every skill runs this before delivering:
 In Claude Code, run:
 
 ```
-/plugin marketplace add smonggliddery/pm-skills
+/plugin marketplace add jameshemson/pm-skills
 /plugin install pm@pm-skills
 ```
 
