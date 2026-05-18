@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-skills",
   "metadata": {
-    "description": "PM expertise as AI skills. 1 core knowledge base, 16 commands, and frameworks from 15+ books for product managers who ship substance, not theater."
+    "description": "Product management expertise as one Claude Code skill. Nine modes for PM work, framework-backed and anti-theater. Claude generates, the pack critiques."
   },
   "owner": {
     "name": "James Hemson"
@@ -10,15 +10,15 @@
   "plugins": [
     {
       "name": "pm",
-      "description": "Product management skills for Claude Code. 16 commands: /teach-pm, /setup, /discover, /position, /strategy, /prioritise, /stakeholders, /brief, /spec, /metrics, /stories, /review, /decide, /translate, /audit, /retro. Framework-backed, anti-theater, opinionated.",
-      "version": "1.5.1",
+      "description": "Product management as one skill with nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Framework-backed, anti-theater, opinionated. Claude generates, the pack critiques.",
+      "version": "2.0.0",
       "author": {
         "name": "James Hemson"
       },
       "source": "./",
       "category": "product-management",
       "homepage": "https://github.com/jameshemson/pm-skills",
-      "tags": ["product-management", "pm", "specs", "briefs", "stories", "decisions", "discovery", "prioritisation", "strategy", "positioning", "metrics", "stakeholders", "skills", "commands"]
+      "tags": ["product-management", "pm", "specs", "briefs", "user-stories", "decisions", "discovery", "metrics", "critique", "skills"]
     }
   ]
 }
