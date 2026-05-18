@@ -81,3 +81,59 @@ Strategy is not a vision, a plan, or a list of goals. It's a set of integrated c
 **Reverse engineering**: Test any strategy by asking "what would have to be true for this to work?" Then assess which of those conditions is least likely - that's your biggest risk. This turns abstract strategy debate into testable hypotheses.
 
 **Where to play before how to win**: The playing field determines the game. Pick where your strengths create asymmetric advantage before deciding tactics. A great how-to-win in the wrong where-to-play is a losing strategy.
+
+---
+
+## Critiquing this artifact
+
+This file covers two different artifact types. Apply the relevant section.
+
+---
+
+### Critiquing a strategy document
+
+A strategy document must make integrated choices, not state a set of aspirations. Use this checklist.
+
+**What a strong strategy document must contain:**
+
+- [ ] **Winning aspiration stated as customer impact**, not a financial target. Revenue targets are outcomes of strategy, not strategy itself.
+- [ ] **Where to play is specific.** Names the customer segments, problems, and channels you are competing in. "Mid-market SaaS teams with 20-200 employees managing engineering workflows" is specific. "B2B software buyers" is not.
+- [ ] **Explicit not-doing list.** For every where-to-play choice, the document names what is excluded. A strategy with no exclusions is not a strategy.
+- [ ] **How to win is differentiated.** The stated advantage would not apply to your nearest competitor. "Best-in-class UX" is not differentiation unless you have evidence your UX is genuinely and measurably better in ways that matter to the target customer.
+- [ ] **Capabilities and management systems are specified.** What must the team be uniquely good at? What metrics, processes, and structures make the strategy operational day to day?
+- [ ] **The cascade is coherent.** Each level reinforces the others. If where-to-play says enterprise but capabilities are built for self-serve, the cascade is broken. Check every level for contradictions.
+- [ ] **At least one "what would have to be true" test is run.** The document names the key assumptions and identifies the most fragile one.
+
+**Common failure modes for strategy documents:**
+
+- Winning aspiration is a financial target or a market position claim without explaining why customers would choose you
+- Where to play covers multiple segments with nothing that differentiates the approach for each - this is not strategy, it is scope
+- How to win is identical to competitor claims (every competitor says "best experience", "easiest to use", "most integrations")
+- Capabilities section lists desirable qualities rather than specific investments and trade-offs
+- No exclusions anywhere in the document - the team is trying to win everywhere
+- The cascade falls apart on inspection: where-to-play and capabilities point in different directions
+- Strategy was written top-down without any reverse-engineering ("what would have to be true?")
+
+---
+
+### Critiquing a retro or post-launch review
+
+A retro must separate decision quality from outcome quality. The purpose is learning, not retrospective justification of what happened.
+
+**What a strong retro must contain:**
+
+- [ ] **Original hypothesis reconstructed before results are discussed.** The retro must state what was predicted to happen - what metric, by how much, over what period - before presenting actuals. If no pre-launch hypothesis exists, the retro must flag this as the primary finding.
+- [ ] **Decision quality assessment separate from outcome quality.** "The outcome was bad, was the decision bad?" and "the outcome was good, was the decision good?" are different questions. A lucky good outcome on a bad decision is not a success. An unlucky bad outcome on a sound decision is not a failure.
+- [ ] **Honest outcome fielding.** Results are attributed across three buckets: decisions made (controllable), execution quality (partly controllable), and external factors (uncontrollable). A retro that assigns 100% of failure to external factors is not honest.
+- [ ] **Specific learnings.** Each learning names what assumption was wrong, why it was wrong, and what evidence now contradicts it. "We should have done more research" is not a learning.
+- [ ] **Explicit next actions.** Each learning maps to one of: double down, pivot, investigate further, or kill. No learning without an action.
+
+**Common failure modes for retros:**
+
+- Results are presented without a prior hypothesis - the team is reverse-engineering the story from the outcome
+- Outcomes are rated as skill (success) or luck (failure) depending on what the team wants to conclude
+- All failure is attributed to external factors; all success is attributed to the team's decisions
+- Learnings are generic ("communicate earlier", "involve engineering sooner") without specifics about what was miscommunicated and why
+- The retro stops at "what happened" and never asks "was the decision itself good given what we knew at the time?"
+- Pre-mortem from the original spec is not revisited to check which predicted failures actually materialised
+- No actions assigned to owners with a date

@@ -141,3 +141,45 @@ You need to reposition when:
 - Customers describe you differently than you describe yourself
 - Your best customers use you for something different than what you designed for
 - "What do you do?" requires a five-minute explanation
+
+---
+
+## Critiquing this artifact
+
+Use this checklist when reviewing a positioning document, positioning one-pager, or messaging framework. Apply it in order - each component builds on the previous one.
+
+### What a strong positioning document must contain
+
+- [ ] **Competitive alternatives identified from the customer's perspective.** The document names what customers actually do today when the product does not exist. Spreadsheets, manual processes, nothing, a different category of tool. Naming only direct SaaS competitors is incomplete.
+- [ ] **Unique attributes are genuinely unique.** Each stated attribute is absent from the competitive alternatives. If two or more competitors can make the same claim, the attribute is not unique - remove it or find the real differentiator.
+- [ ] **Value is translated from attributes.** For each unique attribute, the document explicitly states what it enables for the customer. Attributes are facts; value is what those facts mean for the customer's work. A positioning doc that lists features without translation has stopped halfway.
+- [ ] **Target customer is specific.** Names a job, seniority level, company stage, or context narrow enough that a specific person could read it and say "that is me." "Teams of all sizes" or "anyone who manages projects" is not a target.
+- [ ] **Market category is chosen deliberately.** The document explains which category the product is placed in and why that category makes the value obvious to the target customer. If the category is new, the document acknowledges the cost of category creation.
+- [ ] **The five components are internally consistent.** The target customer, their alternatives, the unique attributes, the value, and the category all point at the same customer situation. Any component that contradicts another must be reconciled.
+
+### Checklist for the positioning one-pager specifically
+
+- [ ] A best-fit customer could read the headline and self-identify within five seconds
+- [ ] A bad-fit customer could read it and self-select out (positioning for everyone is positioning for no one)
+- [ ] The "why us over X" question is answerable from the document without additional context
+- [ ] No category hedging ("we are a cross between X and Y") - a specific category is named
+
+### Common failure modes
+
+**Differentiation failures** - the positioning is not actually differentiated:
+- Unique attributes include "ease of use", "great customer support", "best-in-class UX" - these are claims, not facts, and every competitor makes them
+- Value statements are generic benefits that apply to every product in the category ("save time", "reduce friction", "improve collaboration")
+- Target customer is defined so broadly that the positioning cannot be tested against a real person
+
+**Structural failures** - the five-component logic breaks down:
+- Alternatives are listed as SaaS competitors only, ignoring non-consumption and manual processes
+- Attributes are listed without translation to value - the reader must infer the "so what"
+- The cascade has gaps: attributes that do not connect to stated value, or value claims with no supporting attribute
+- Category choice is not explained - the document names a category without explaining why it was chosen over alternatives
+
+**Completeness failures** - sections missing or underdeveloped:
+- No market category named at all ("we are a new kind of tool")
+- Positioning was not tested with sales or support to check whether it matches the language of actual deals
+- No mention of repositioning signals - the document has no mechanism for knowing when the positioning needs to change
+
+**The sales reality test**: ask whether the stated positioning matches the language that closes deals. If sales consistently uses different framing when positioning in live calls, the document does not reflect real positioning.

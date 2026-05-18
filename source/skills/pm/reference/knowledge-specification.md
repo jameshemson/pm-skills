@@ -168,3 +168,53 @@ Common questions that reveal spec gaps:
 - **State assumptions explicitly.** "We're assuming the existing member API can support search. If not, backend work is needed and timeline extends by ~2 weeks."
 - **Version the spec.** Decisions change. Track what changed and why. Don't silently edit history.
 - **Keep it skimmable.** Engineers will reference this during development. Use headers, bullet points, and tables. Nobody reads a 15-page prose spec twice.
+
+---
+
+## Critiquing this artifact
+
+Use this checklist when reviewing a spec, PRD, brief, or set of user stories. Work through each check in order. Every item is pass/fail - do not award partial credit.
+
+### What a strong spec must contain
+
+- [ ] **Specific problem statement.** Names the user, the context, and the observable struggle. Could a stranger identify the problem without asking follow-up questions?
+- [ ] **Evidence the problem exists.** Support tickets, usage data, research findings, or quote from a real interview. "Customers said they wanted it" is not evidence.
+- [ ] **Concrete solution description.** Specific enough that an engineer can estimate the work. Not a wireframe with handwavy copy.
+- [ ] **Testable acceptance criteria.** Every criterion has a clear pass/fail state. Numbers, not adjectives. "Within 200ms" not "fast". "Returns 0 results" not "handles empty state gracefully".
+- [ ] **Edge cases section.** Covers empty data, maximum data, network failure, invalid input, concurrent users, missing permissions, and data migration. If these are not explicitly addressed, the spec is a happy-path sketch.
+- [ ] **Explicit out-of-scope list.** Names what is NOT being built with enough specificity that no one could argue it was implied. "TBD" and blank sections are failures.
+- [ ] **Dependencies with owners and timelines.** Every dependency names who owns it and what happens if it slips.
+- [ ] **Primary success metric with a baseline and target.** One number. Measurable by an existing or planned instrument. "Increase user satisfaction" does not qualify.
+- [ ] **Guardrail metrics.** At least one metric that must not degrade.
+- [ ] **Four risks addressed.** Value, usability, feasibility, viability. Not boilerplate - actual assessment with evidence or a plan to test.
+- [ ] **Rollout plan.** Includes feature flag or rollback criteria. Not just "gradual rollout."
+
+### Checklist for user stories specifically
+
+- [ ] Each story is independently deployable. If story B can't ship without story A in production, they are not independent.
+- [ ] Each story delivers user-visible value on its own.
+- [ ] Acceptance criteria use Given/When/Then or equivalent structure that QA can automate.
+- [ ] JTBD framing: "so that [specific outcome]" names a real job the user is trying to accomplish, not an internal product goal.
+- [ ] Dependencies between stories are explicitly flagged, not left for the sprint planner to discover.
+
+### Common failure modes
+
+**Slop failure modes** - these invalidate the artifact:
+- Problem statement describes the solution ("users need a search box") instead of the struggle
+- Acceptance criteria contain "appropriately", "smoothly", "as expected", "where relevant"
+- No edge cases section or a section that only covers the happy path
+- Out-of-scope section is empty or lists only obvious non-starters
+- Success metrics are process metrics (pages viewed, features used) not outcome metrics
+
+**Scope and risk failures** - these require a rewrite before build:
+- Four risks section gives every risk the same severity (means no one actually assessed)
+- Dependencies listed without owners or timelines
+- Rollback plan says "we will revert" without specifying the trigger condition
+- Pre-mortem reads as boilerplate (generic failure modes, no product-specific risks)
+
+**Evidence failures** - these mean discovery is not done:
+- Key decisions stated as settled facts with no supporting evidence
+- Customer research cited as "interviews confirmed interest" without specifics
+- "We are confident" or "we expect" with nothing to back it
+
+**The engineering read-through test**: hand the spec to an engineer who was not in the planning meetings. If they return more than 3 clarifying questions, the spec has gaps. 10 or more questions means it is not ready to build.
