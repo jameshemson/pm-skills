@@ -567,16 +567,7 @@ execution_manifest:
 
 ## Workflow artifacts
 
-Run under `/build` with slug `pm-v2`. Artifacts under `.build/plans/`:
-
-- `pm-v2-plan.md`: this plan. Written Phase 1, read by every later phase.
-- `pm-v2-context.md`: repo conventions, constraints, discovered patterns, out-of-scope. Written Phase 1, read Phases 2 to 4.
-- `pm-v2-requirements.md`: canonical `REQ`/`D`/`A`, acceptance criteria, `must_haves`. Written Phase 1, read Phases 2 to 4.
-- `pm-v2-state.md`: phase, `base_ref`, completed task IDs, history. Written Phase 1, updated by every phase.
-- `pm-v2-review.md`: plan review findings and verdict. Written Phase 2, read Phase 3.
-- `pm-v2-implementation-summary.md`: waves completed, task IDs, files changed, deviations, blockers. Written and updated through Phase 3, read Phases 3c and 4.
-- `pm-v2-verify.md`: verification report with command evidence. Written Phase 3c, read Phase 4.
-- `pm-v2-architect-review.md`: architect review findings and verdict. Written Phase 4.
+N/A — standalone plan, not a `/build`-orchestrated run. This file, `PM-2.0-PLAN.md`, is the durable plan artifact and lives at the repo root (matching the existing `CROSS-PLATFORM-PORT.md` convention). The next step is `/review-plan` against this file, per the build order in `CLAUDE.md`. If the rebuild later moves to `/build`, the manifest above transfers directly.
 
 ---
 
