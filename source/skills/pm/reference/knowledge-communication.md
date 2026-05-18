@@ -152,3 +152,57 @@ For any message, before sending:
 - [ ] Have I cut everything they don't need?
 - [ ] Have I anticipated their first two questions?
 - [ ] Would this make sense if they read nothing else about the topic?
+
+---
+
+## Critiquing this artifact
+
+This file covers two artifact types: an audience-targeted rewrite and a stakeholder message. Apply the relevant section.
+
+---
+
+### Critiquing an audience-targeted rewrite
+
+An audience-targeted rewrite must lead with what matters to the recipient, use their language, and cut everything they do not need. Use this checklist.
+
+**What a strong audience-targeted rewrite must contain:**
+
+- [ ] **Audience explicitly named.** The rewrite targets one specific audience (engineering, exec, customer, sales, support). A document aimed at "everyone" has been translated for no one.
+- [ ] **Leads with what matters to that audience.** The first sentence answers the reader's first question: "why should I care?" For engineering: what is the problem. For execs: what is the business outcome. For customers: what changes for them. If the opening sentence is context-setting preamble, the rewrite has failed.
+- [ ] **Jargon from the original is translated or removed.** Every piece of internal terminology is replaced with the audience's language. "Acquisition funnel conversion" becomes "how many visitors sign up" for a customer audience.
+- [ ] **Detail level matches the audience.** Engineering gets technical specifics. Execs get one page. Customers get the benefit, not the mechanism. If the same level of detail appears in every version, the translation has not happened.
+- [ ] **The SUCCESs principles are applied.** Is the core message simple (one thing)? Is there something concrete and specific? Is there a credible claim or specific number? Is the reader given a reason to care emotionally or practically?
+- [ ] **The curse of knowledge is not present.** A reader unfamiliar with the original context could understand this without asking questions.
+
+**Common failure modes for rewrites:**
+
+- The opening paragraph explains background and context before stating the point - the reader's first question is not answered until paragraph three
+- Jargon is replaced with different jargon ("conversion funnel" becomes "customer journey") rather than plain language
+- The same structure is used for every audience (executive summary, background, details, conclusion) regardless of how that audience actually reads documents
+- The "so what" for the specific audience is buried or missing - the document informs but does not answer "what does this mean for me?"
+- Passive voice and hedge language survive translation ("it has been noted that", "it may be the case that")
+
+---
+
+### Critiquing a stakeholder message
+
+A stakeholder message must be calibrated to the specific person: their priorities, their constraints, their decision style, and their current stance on the topic.
+
+**What a strong stakeholder message must contain:**
+
+- [ ] **The recipient's goal is named first.** The message starts from what the stakeholder is trying to achieve, then connects the ask to that goal. Not "we need your sign-off on X" but "this helps you hit [their stated objective], here is how."
+- [ ] **The ask is explicit and specific.** Every stakeholder message has a clear ask. Decision, input, information, or action - it is stated once, clearly, near the top.
+- [ ] **Anticipated objections are addressed preemptively.** The message addresses the two most likely objections that this specific person would raise, given their known priorities and constraints. Generic objection handling is not sufficient.
+- [ ] **The message is calibrated to their decision style.** An analytical stakeholder gets evidence and structure. A relationship-driven stakeholder gets context and connection. A politically sensitive stakeholder gets their concerns acknowledged before the ask. One-size-fits-all messages are not calibrated messages.
+- [ ] **The right length.** No longer than the stakeholder will read given their relationship to this topic and their current workload. An exec who is already aligned needs three sentences, not three pages.
+- [ ] **Tone is appropriate for the current trust level.** A stakeholder who is sceptical of this initiative requires a different tone than one who is already supportive.
+
+**Common failure modes for stakeholder messages:**
+
+- The message opens with what the sender wants, not what the recipient cares about
+- The ask is buried at the end after three paragraphs of context
+- The message treats all stakeholders as a group ("wanted to share an update with everyone") rather than addressing one person's specific situation
+- Objections that are predictable for this specific person are not addressed, leaving them to surface in the meeting instead
+- The message is one length regardless of the relationship - a three-paragraph update to a daily collaborator or a three-sentence ask to someone who needs full context
+- The level of formality does not match the actual relationship (over-formal with a close collaborator, too casual with a new executive)
+- The message is informational when it should be a request, or is a request disguised as information to soften the ask
