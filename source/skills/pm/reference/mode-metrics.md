@@ -1,8 +1,4 @@
----
-name: mode-metrics
-description: Define success metrics that measure what matters. Primary, secondary, guardrail structure with measurement plans. Anti-vanity, pro-outcome.
-user-invokable: false
----
+# Mode: metrics
 
 Define metrics that tell you whether something actually worked - not metrics that make a dashboard look good. "Increase engagement" is not a metric. It is a wish.
 

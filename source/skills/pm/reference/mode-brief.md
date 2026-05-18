@@ -1,8 +1,4 @@
----
-name: mode-brief
-description: Generate a brief from a feature description, design, or screenshot. Audience-aware, structured, gap-free.
-user-invokable: false
----
+# Mode: brief
 
 Generate a brief that anticipates questions, covers edge cases, and connects to real user value. A brief is lighter than a full spec but must still be rigorous enough to estimate and plan from.
 
