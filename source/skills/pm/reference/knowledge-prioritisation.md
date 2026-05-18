@@ -184,3 +184,53 @@ You can't mandate missionary teams. You create them by:
 - Trusting them to find the best approach
 - Celebrating outcomes, not output
 - Including them in discovery, not just delivery
+
+---
+
+## Critiquing this artifact
+
+Use this checklist when reviewing a roadmap or a prioritisation decision. Both require the same underlying standard: connection to outcomes and honest trade-off reasoning.
+
+---
+
+### Critiquing a roadmap
+
+**What a strong roadmap must contain:**
+
+- [ ] **Outcome-framed items.** Each item on the roadmap names the problem being solved or the metric being moved, not just the feature being built. "Member search for large teams - reduce time-to-assign" not just "member search."
+- [ ] **Strategic connection.** The roadmap connects to the current strategic bets. A reader should be able to see why this set of work, in this order, advances the stated where-to-play and how-to-win. If the roadmap could belong to any product team at any company, it is not connected to strategy.
+- [ ] **Time horizon is appropriate.** Near-term items (1-3 months) are specific and committed. Medium-term items (3-6 months) are directional. Long-term items (6+ months) are aspirational. A roadmap with the same level of specificity across 12 months is either lying about confidence or lying about time.
+- [ ] **Explicit trade-offs.** The roadmap shows what is NOT being done and why. If everything fits comfortably, either the team is under-resourced relative to ambitions or nothing hard was excluded.
+- [ ] **Discovery and delivery balance.** The roadmap allocates time to discovery work (experiments, research, validation) not just delivery. A roadmap that is 100% delivery work has a build trap problem.
+- [ ] **Dependencies are visible.** Items that depend on other teams' work are flagged, with those dependencies having their own confidence ratings.
+
+**Common failure modes for roadmaps:**
+
+- Every item is a feature name with no outcome attached - this is a feature list, not a roadmap
+- The roadmap is sorted by stakeholder seniority rather than outcome impact
+- The most important strategic work is perpetually in the "next quarter" column and never gets scheduled
+- Confidence level is the same for items 1 month out and items 9 months out
+- No exclusions anywhere - the roadmap says yes to everything and is therefore impossible to execute
+- Time allocations are missing or implied - it is unclear whether an item is a one-week build or a three-month investment
+
+---
+
+### Critiquing a prioritisation
+
+**What a strong prioritisation must contain:**
+
+- [ ] **Options considered before a decision.** The prioritisation names all the options that were in contention, not just the winner. If only one option was ever discussed, it is not a prioritisation, it is an announcement.
+- [ ] **Criteria are explicit and weighted.** The criteria used to evaluate options are stated. If all criteria are equally weighted, that is a choice that must be stated. Implicit criteria that favour a predetermined answer must be surfaced.
+- [ ] **Evidence is cited for impact estimates.** High impact scores must be justified. "We think this will move retention by 20%" needs supporting evidence or must be flagged as an assumption.
+- [ ] **Opportunity cost is stated.** What is not getting done because of this choice? A prioritisation that does not name the opportunity cost has not fully considered the trade-off.
+- [ ] **The four risks are addressed.** Value risk, usability risk, feasibility risk, viability risk. A prioritisation that addresses only feasibility ("can we build it in time?") has missed three risks.
+- [ ] **The decision is revisable.** The prioritisation names the conditions under which it would be reconsidered. Sunk cost language ("we've already started") must not appear as a reason to continue.
+
+**Common failure modes for prioritisation:**
+
+- Scores were reverse-engineered to justify a decision already made - the winning item has suspiciously high confidence, impact, and ease regardless of evidence
+- The framework score is the decision rather than an input to the decision (a 72 vs a 68 ICE score is statistical noise, not a mandate)
+- All items have the same impact score, suggesting the team inflated scores across the board rather than differentiating
+- Customer value and business value are conflated - an item that helps the business but does not help users is treated as high-value without acknowledging the tension
+- Out-of-scope or deprioritised items are listed without explanation, making the trade-off reasoning invisible
+- Strategic context is absent - the prioritisation does not reference where-to-play or how-to-win, so there is no way to evaluate whether the choices advance the strategy

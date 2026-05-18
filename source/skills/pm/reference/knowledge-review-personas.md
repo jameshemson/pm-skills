@@ -171,3 +171,55 @@ Pick 3-4 personas based on what you're reviewing.
 - Pre-mortem with low-probability ratings on every risk (performative, not honest)
 - No mention of what was tried before or what alternatives were considered
 - Customer quotes that sound like compliments rather than descriptions of struggle
+
+---
+
+## Critiquing this artifact
+
+This section explains how to apply the personas when running a critique on a document. The personas are not decorative - they are lenses that surface different failure modes. Apply them in a structured sequence, not simultaneously.
+
+### How to select and sequence personas
+
+Use the Persona Selection Table at the top of this file to pick 3-4 personas based on document type. Do not use all five on every document - that produces noise, not signal.
+
+**Run one persona completely before starting the next.** Each persona must read the document fresh from their perspective. If you let the Dev persona inform the Critic persona mid-review, you cross-contaminate the perspectives and the Critic will miss what the Critic alone would catch.
+
+For each persona, work through the full set of test questions and red flags before recording any findings. Do not pre-filter - if the question is in the persona's list, answer it, even if the answer is "this is fine."
+
+### Applying personas to different document types
+
+**Specs and briefs**: Start with Dev (can I build this?) then Tester (can I verify it?) then Critic (was discovery done?). Add Customer if the feature is user-facing. Add Exec if budget or strategic sign-off is needed. This order matters: Dev and Tester catch structural gaps that make Critic and Exec questions premature.
+
+**Strategy and positioning docs**: Start with Exec (does this connect to business outcomes?) then Critic (is the evidence there?). Dev and Tester are not useful here - they are not trained to evaluate strategic coherence.
+
+**Metrics frameworks**: Start with Critic (can these be gamed?) then Exec (do these connect to what we care about?). A metric that passes the Critic's gaming test but fails the Exec's relevance test is still a bad metric.
+
+**Decision docs**: Use all three of Critic, Exec, and Dev. Critic checks the reasoning quality. Exec checks strategic alignment and opportunity cost. Dev checks whether the feasibility assumptions are grounded.
+
+**Retros and post-launch reviews**: Use Critic primarily. The Critic is the only persona trained to separate decision quality from outcome quality and to check whether outcome fielding is honest.
+
+### How to report findings from persona-based review
+
+For each finding, record:
+- Which persona surfaced it
+- The specific test question or red flag it triggered
+- The exact location in the document (section and quote)
+- The severity: blocker (requires revision before use), concern (requires discussion), observation (worth noting)
+
+Do not aggregate findings across personas before reporting. Keep them separated by persona - this shows the document owner which type of reader will have which type of problem.
+
+### When persona findings conflict
+
+Different personas will sometimes reach opposite conclusions. The Dev wants more detail; the Exec wants less. The Customer wants plain language; the Tester needs precise technical criteria.
+
+These conflicts are real. Do not resolve them silently. Surface the tension explicitly: "Dev needs precise error state specifications, but the current spec is written for an exec audience and lacks them." The document owner must decide whether to write two versions or resolve the conflict in one.
+
+### Calibrating the Customer persona before review
+
+The Customer persona is only as useful as the product context it draws on. Before running a Customer review:
+1. Read the Users section of `.pmcontext.md` or CLAUDE.md
+2. Identify the specific user type most affected by the document under review
+3. Set the persona's context explicitly: job title, daily workflow, current tools, key frustrations, level of technical sophistication
+4. If no product context file exists, flag this before starting the review - a Customer review without real user context produces a generic "end user advocate" perspective that misses the actual users
+
+A Customer review on a developer-facing API feature should think like a developer (API ergonomics, documentation quality, error message clarity). A Customer review on a field operations tool should think like a field worker under time pressure. The persona name is fixed; the persona's worldview is not.
