@@ -1,8 +1,4 @@
----
-name: mode-stories
-description: Break a feature into user stories with testable acceptance criteria. JTBD-framed, dependency-aware, sprint-sized.
-user-invokable: false
----
+# Mode: stories
 
 Break a feature into user stories that are independently valuable, testable, and small enough for one sprint. Stories that are just tasks in disguise are slop.
 
