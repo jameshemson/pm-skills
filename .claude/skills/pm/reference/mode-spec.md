@@ -1,8 +1,4 @@
----
-name: mode-spec
-description: Write a full product specification with success metrics, risks, rollout plan, and the PM Slop Test. Deeper than a brief.
-user-invokable: false
----
+# Mode: spec
 
 Write a full product specification: the contract between product and engineering about what "done" means, why it matters, and how you will know it worked.
 
