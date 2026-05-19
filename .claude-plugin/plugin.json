@@ -1,6 +1,6 @@
 {
   "name": "pm",
-  "description": "Product management as one Claude Code skill. The pm skill routes to nine modes (teach, setup, brief, spec, stories, metrics, review, decide, discover) backed by a curated PM knowledge base. Claude generates, the pack critiques.",
+  "description": "Product management as one Claude Code skill. The pm skill routes to nine modes (teach, setup, brief, spec, stories, metrics, review, decide, discover) backed by a curated PM knowledge base. Claude generates, pm-skills critiques.",
   "version": "2.0.0",
   "author": {
     "name": "James Hemson"

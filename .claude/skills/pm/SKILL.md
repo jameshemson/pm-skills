@@ -5,7 +5,7 @@ description: Use when the user is doing product management work: writing or shar
 argument-hint: "[teach · setup · brief · spec · stories · metrics · review · decide · discover] [target]"
 ---
 
-Opinionated, framework-backed product management as a set of modes. Claude generates, the pack critiques: every mode forces real thinking and rejects the polished, generic output that passes for PM work.
+Opinionated, framework-backed product management as a set of modes. Claude generates, pm-skills critiques: every mode forces real thinking and rejects the polished, generic output that passes for PM work.
 
 ## Context Gathering Protocol
 
