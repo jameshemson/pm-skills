@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const PM_DIR = join(ROOT, 'source', 'skills', 'pm');
+const PM_DIR = join(ROOT, '.claude', 'skills', 'pm');
 const SKILL_MD = join(PM_DIR, 'SKILL.md');
 const REF_DIR = join(PM_DIR, 'reference');
 

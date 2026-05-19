@@ -4,7 +4,7 @@ The flagship mode. The user brings a document they or Claude already wrote; `rev
 
 This mode absorbs four old skills. Their function lives inside the loop, not as separate modes:
 - **translate**: rewriting a doc for a different audience (handled in Frame and Refine).
-- **stakeholders**: crafting a message for a specific person (handled in Frame and Refine).
+- **stakeholders**: sharpening a message so it lands with its audience (handled in Frame and Refine).
 - **audit**: checking strategic alignment, evidence, and drift (a Critique check).
 - **retro**: evaluating a launch against expectations (the `retro` document type).
 
@@ -14,8 +14,8 @@ Run a **Frame -> Critique -> Refine** loop. Do not skip Frame. Do not dead-end a
 
 Before critiquing, understand the situation. Critiquing in a vacuum produces generic findings. Ask only what the user has not already told you:
 
-- **What is this document, and what is it for?** A spec, a strategy doc, a stakeholder message, a retro? What decision or action does it need to drive?
-- **Who is the audience?** Not "stakeholders" but which people, what level, what function. If the doc is aimed at one specific person, ask what that person is measured on, how they make decisions, and where they currently stand on the topic.
+- **What is this document, and what is it for?** A spec, a strategy doc, a message, a retro? What decision or action does it need to drive?
+- **Who is the audience?** Not "users" or "stakeholders" but which people, what level, what function, and what they care about. If the document is a message to one specific person, their role and what they want from it is enough; do not profile the person. Keep what you learn about the audience in this conversation, not in a file.
 - **What is the situation?** What is happening right now that makes this document necessary? What is at stake if it lands badly?
 - **What does the user want from the review?** Sharpen for the same audience, retarget to a new audience, or pressure-test the thinking itself?
 
@@ -40,7 +40,7 @@ Then load **one** knowledge file by document type. Each knowledge file carries a
 | positioning doc, one-pager | [knowledge-positioning.md](knowledge-positioning.md) |
 | metrics doc | [knowledge-metrics.md](knowledge-metrics.md) |
 | retro, post-launch review | [knowledge-decision-making.md](knowledge-decision-making.md) |
-| stakeholder message, comms | [knowledge-communication.md](knowledge-communication.md) |
+| a message, announcement, or internal comms | [knowledge-communication.md](knowledge-communication.md) |
 | roadmap, prioritisation | [knowledge-prioritisation.md](knowledge-prioritisation.md) |
 | other or unclassified | the generic fallback checklist below |
 
@@ -62,7 +62,7 @@ Deliver: a slop verdict, the top 3-5 critical gaps (what is wrong, why it matter
 Do not stop at a list of problems. Once the situation is understood, help fix the draft.
 
 - **Be surgical.** Targeted edits to the specific lines that failed Critique, not a wholesale rewrite. Show the original text and the replacement so the user sees the change. A rewrite that loses the author's voice and intent is not a refinement.
-- **If the review was a retarget** (translate or stakeholder-message function): lead with what matters to the new audience, strip what they do not need, add what they do, and match their format and channel. Confirm the new structure with the user before producing the full draft.
+- **If the review was a retarget** (rewriting for a different audience): lead with what matters to that audience, strip what they do not need, add what they do, and match their format and channel. Confirm the new structure with the user before producing the full draft.
 - **Slop-test the output.** The refined text must itself pass the PM Slop Test before you show it. Refining one slop into another is failure. If a fix you wrote does not pass, fix the fix.
 
 Deliver the refined sections (or the retargeted draft), plus a short note on what changed and why.
