@@ -37,7 +37,7 @@ The `review` mode is document-type-aware and absorbs the critique function of tr
 - Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover
 - Flat `reference/` directory: `foundations.md`, nine `mode-*.md` files, ten `knowledge-*.md` files
 - `review` mode: document-type-aware Frame, Critique, Refine loop
-- Positioning line: "Claude generates, the pack critiques"
+- Positioning line: "Claude generates, pm-skills critiques"
 
 ---
 

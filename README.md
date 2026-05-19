@@ -1,16 +1,16 @@
-# PM Skills
+# pm-skills
 
-One skill. Nine modes. The product expertise your AI is missing.
+Claude can draft your PRD. It can't tell you it's slop.
 
-Claude generates, the pack critiques.
+pm-skills can. One skill, nine modes that critique and sharpen the product docs your AI generates.
 
 > **Quick start:** Visit [pmskills.co](https://pmskills.co) or jump to [Installation](#installation).
 
-## Why PM Skills?
+## Why pm-skills?
 
 Ask AI to write a PRD and you get a ten-thousand word dissertation that says nothing. Generic preambles, vague success metrics, happy-path specs. Engineering reads it and sends back questions in the first hour.
 
-PM Skills fights that with:
+pm-skills fights that with:
 - **One skill, nine modes** covering every core PM workflow
 - **Framework-backed critique** that pushes back before producing output
 - **The PM Slop Test** that catches vague artifacts before engineering does
@@ -19,7 +19,7 @@ PM Skills fights that with:
 
 One user-invokable skill that routes to nine modes by keyword. Invoke it as `/pm`, describe your task, and the router finds the right mode. Or name the mode directly: `/pm review my-spec.md`.
 
-Reference files at [source/skills/pm/](source/skills/pm/).
+Reference files at [.claude/skills/pm/](.claude/skills/pm/).
 
 ## The Nine Modes
 

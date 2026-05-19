@@ -20,7 +20,7 @@ There is no build system. Skills are markdown files used directly by Claude Code
 
 ## What This Project Is
 
-A Claude Code skill pack for product managers. One skill, nine modes. Opinionated PM expertise encoded as a single AI skill that routes to the right workflow by keyword. The positioning: "Claude generates, the pack critiques."
+A Claude Code skill pack for product managers. One skill, nine modes. Opinionated PM expertise encoded as a single AI skill that routes to the right workflow by keyword. The positioning: "Claude generates, pm-skills critiques."
 
 **Tagline:** "Stop adding tools. Start adding skills."
 
