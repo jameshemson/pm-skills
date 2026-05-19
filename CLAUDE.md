@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 There is no build system. Skills are markdown files used directly by Claude Code.
 
-**Source/compiled sync**: `source/skills/` is the authoritative source. `.claude/skills/` is an identical copy used at runtime (referenced by `.claude-plugin/plugin.json`). When editing any skill, always update both locations. After editing source files, copy them to `.claude/skills/` to keep them in sync.
+**Skill location**: the skill lives at `.claude/skills/pm/` and is edited there directly. `.claude-plugin/plugin.json` references `./.claude/skills`. There is one copy; there is no source-to-runtime sync step.
 
 **Skill invocation**: The single user-invokable skill is `pm` (invoked as `/pm`). It routes to nine modes via keyword matching. There are no separate per-mode commands.
 
@@ -40,7 +40,7 @@ The architecture mirrors impeccable 3.1.1. Reference files are at:
 ### File Structure
 
 ```
-source/skills/pm/
+.claude/skills/pm/
 ├── SKILL.md                      # Router: shared context, commands table, routing rules
 └── reference/
     ├── foundations.md            # PM Reflex Rejection, slop taxonomy, anti-patterns
@@ -65,14 +65,12 @@ source/skills/pm/
     └── knowledge-metrics.md
 ```
 
-Plugin config and runtime copy:
+Plugin config:
 
 ```
 .claude-plugin/
 ├── plugin.json          # Plugin metadata
 └── marketplace.json     # Marketplace registration
-.claude/
-└── skills/              # Runtime copy of source/skills/ (must be kept in sync manually)
 ```
 
 ### SKILL.md Format
