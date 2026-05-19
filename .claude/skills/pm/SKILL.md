@@ -1,7 +1,7 @@
 ---
 name: pm
 user-invokable: true
-description: Use when the user is doing product management work: writing or sharpening an engineering brief, a product spec, a PRD, user stories, or success metrics; reviewing, critiquing, auditing, or pressure-testing a doc, plan, roadmap, strategy, positioning, or stakeholder message; structuring or stress-testing a decision; planning customer discovery interviews or debriefing them; translating a doc for a different audience; or setting up product context for a project. Triggers on brief, spec, PRD, user stories, acceptance criteria, success metrics, review, critique, audit, retro, decide, prioritise, strategy, positioning, discovery, customer interviews, stakeholder comms, product context. Not for writing or debugging code.
+description: Use when the user is writing, sharpening, critiquing, reviewing, auditing, or pressure-testing a product document, structuring a decision, or planning customer research. Covers engineering briefs, product specs, PRDs, user stories, success metrics, roadmaps, strategy and positioning docs, and stakeholder messages. Handles audience framing, jobs-to-be-done, prioritisation, counter-metrics, trade-offs and bias checks, scope and edge cases, and product-context setup. Also use for a brief engineering keeps sending back with questions, a roadmap that is really just a feature list, or a metric that games easily. Not for writing or debugging code.
 argument-hint: "[teach · setup · brief · spec · stories · metrics · review · decide · discover] [target]"
 ---
 
