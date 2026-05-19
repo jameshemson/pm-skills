@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.1 - 2026-05-19
+
+### Changed
+
+- Rewrote the `pm` skill description for sharper invocation matching: a five-part structure (use when, covers, handles, also use for, not for) with concrete scenarios, modelled on the impeccable skill.
+
+---
+
 ## 2.0.0 - 2026-05-18
 
 ### Breaking
