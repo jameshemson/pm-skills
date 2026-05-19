@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-skills",
   "metadata": {
-    "description": "Product management expertise as one Claude Code skill. Nine modes for PM work, framework-backed and anti-theater. Claude generates, the pack critiques."
+    "description": "Product management expertise as one Claude Code skill. Nine modes for PM work, framework-backed and anti-theater. Claude generates, pm-skills critiques."
   },
   "owner": {
     "name": "James Hemson"
@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "pm",
-      "description": "Product management as one skill with nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Framework-backed, anti-theater, opinionated. Claude generates, the pack critiques.",
+      "description": "Product management as one skill with nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Framework-backed, anti-theater, opinionated. Claude generates, pm-skills critiques.",
       "version": "2.0.0",
       "author": {
         "name": "James Hemson"
