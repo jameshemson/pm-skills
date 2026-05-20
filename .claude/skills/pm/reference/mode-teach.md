@@ -97,7 +97,7 @@ Synthesize findings and answers into a structured context file:
 [Preferred decision frameworks, checklists, doc formats, approaches to avoid. Only include if the user has preferences - omit entirely if they use defaults.]
 ```
 
-Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place.
+Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place. Do not overwrite or remove other sections (for example, a `## Settings` section managed by other modes such as `decide`).
 
 Then STOP and call the AskUserQuestion tool: ask whether to also append the Product Context to CLAUDE.md. If yes, append or update the section there.
 
