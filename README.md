@@ -44,7 +44,7 @@ Reference files at [.claude/skills/pm/](.claude/skills/pm/).
 | Mode | What it does |
 |------|--------------|
 | `review` | Adversarial critique of any doc, plan, strategy, or message |
-| `decide` | Structured decision with weighted criteria and bias checks |
+| `decide` | Structured decision with weighted criteria and bias checks - and log to `pmdecisions.md` |
 | `discover` | Plan customer conversations for truth, or debrief them |
 
 ## The PM Slop Test

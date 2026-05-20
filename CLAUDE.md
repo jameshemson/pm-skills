@@ -139,6 +139,16 @@ Plan customer conversations that get truth, not politeness. Uses Mom Test and De
 
 ---
 
+## Project-root artifacts and naming
+
+Modes that write working files to the user's project root use the `pm`-prefix-no-hyphen root: `pmdecisions.md`. This matches the existing `.pmcontext.md` convention. Modifier suffixes use a single hyphen: `pmdecisions-archive.md`.
+
+The `.pmcontext.md` file keeps its dotfile form because it is configuration set up once via `teach` mode and rarely edited, not a working file.
+
+The `decisions_log: enabled | disabled` key under a `## Settings` section in `.pmcontext.md` controls whether `decide` mode writes to `pmdecisions.md` in this repo. The key is set on first `decide` run via the AskUserQuestion tool and persists across sessions.
+
+Future modes that produce project-root artifacts should follow this pattern: lowercase `pm` prefix, no hyphen between prefix and root, single hyphen separating modifier suffixes. Any mode that updates `.pmcontext.md` must preserve sections it does not own (for example, `## Settings`).
+
 ## Do NOT
 
 - Do not use em dashes in any user-facing copy. Use regular dashes or rephrase.
