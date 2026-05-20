@@ -19,6 +19,8 @@ Gathering order, fastest first:
 2. **`.pmcontext.md`**: if not, read `.pmcontext.md` from the project root. If it exists with product, users, business model, team, and technical constraints, proceed.
 3. **`teach` mode (required)**: if neither source has context, route into the `teach` mode NOW, before the requested work. Do not skip it. Do not infer strategy, personas, or constraints from the codebase.
 
+The `decide` mode additionally reads `pmdecisions.md` at the project root if present, and the `decisions_log:` key from `.pmcontext.md`. See [reference/mode-decide.md](reference/mode-decide.md).
+
 If a **Ways of Working** section exists in `.pmcontext.md` or CLAUDE.md, prefer the user's frameworks, checklists, and doc formats over a mode's defaults. The user's way of working takes precedence.
 
 Without context, the output is theater. Context is the quality gate.
@@ -63,7 +65,7 @@ The heavier procedures, the full PM Reflex Rejection that fires pre-generation, 
 | `stories` | Break a feature into testable, JTBD-framed user stories | [reference/mode-stories.md](reference/mode-stories.md) |
 | `metrics` | Define primary, secondary, guardrail, and counter-metrics | [reference/mode-metrics.md](reference/mode-metrics.md) |
 | `review` | Adversarially critique a doc, plan, strategy, or message | [reference/mode-review.md](reference/mode-review.md) |
-| `decide` | Structure a decision: options, weighted criteria, trade-offs, bias | [reference/mode-decide.md](reference/mode-decide.md) |
+| `decide` | Structure a decision: options, weighted criteria, trade-offs, bias - and log to `pmdecisions.md` | [reference/mode-decide.md](reference/mode-decide.md) |
 | `discover` | Plan customer conversations for truth, or debrief them | [reference/mode-discover.md](reference/mode-discover.md) |
 
 ## Routing rules

@@ -6,6 +6,17 @@ Consult [knowledge-decision-making.md](knowledge-decision-making.md) for the Thi
 
 If `.pmcontext.md` has a **Ways of Working** section with a preferred decision framework, use that as the primary structure. Layer in bias checks and pre-mortem regardless - those always apply.
 
+## Step 0: Read prior decisions
+
+Before challenging the new decision, check the project's decision history.
+
+If `.pmcontext.md` does not exist at the project root, this mode does not run - SKILL.md routes to `teach` first per the Context Gathering Protocol. Step 0 assumes `.pmcontext.md` is present.
+
+- Read `pmdecisions.md` at the project root if it exists. Scan for entries with `status: open` or with a `revisit:` value whose condition looks met against current product context. If any are surfaced, name them to the user before proceeding to Step 1 - the fresh decision may be a continuation of an open thread, not a new question. Read what you can; do not block on entries you cannot parse.
+- Read `.pmcontext.md` for the `decisions_log:` key under a `## Settings` section. Values: `enabled` or `disabled`. Remember the value for Step 8. If the key is absent, Step 8 will ask once and persist the answer.
+
+Step 0 is a context load. It does not block Step 1.
+
 ## Step 1: Challenge the Decision
 
 Before structuring anything, interrogate the decision:
@@ -109,6 +120,70 @@ For each failure mode (top 3-5):
 
 ### Dissenting View
 [The strongest argument against this recommendation. Who would disagree and why? What are they right about?]
+
+## Step 8: Log the decision
+
+The recommendation is in conversation. Step 8 makes it durable so future sessions can recover the context.
+
+If Step 1 was skipped (no constraint articulated, no options ruled out, no trade-offs made visible), do not log. The whole point of the log is durability of *real* decisions. Stop here.
+
+### First-time setup
+
+If `.pmcontext.md` does not have a `decisions_log:` key under a `## Settings` section:
+
+- STOP and call the AskUserQuestion tool. Question: "Log decisions to `pmdecisions.md` in this repo by default?" Options: "Yes", "No".
+- Write the answer to `.pmcontext.md` as `decisions_log: enabled` or `decisions_log: disabled` under a `## Settings` section. If the section does not exist, create it; if it exists, update the key in place. Do not modify any other section of `.pmcontext.md`.
+
+If `decisions_log: disabled`, do not log. Stop here.
+
+### Write the entry
+
+If `decisions_log: enabled`, append a new entry to `pmdecisions.md` at the top of the entries list (newest first), under the `# Decisions` header. If the file does not exist, create it with a `# Decisions` header followed by the new entry.
+
+Format:
+
+```
+## YYYY-MM-DD: Title - short summary
+`status: decided` · `confidence: medium` · `revisit: when condition`
+
+**Decision:** [one sentence]
+
+**Bet:** [why this beats the alternatives - one sentence]
+
+**Ruled out:** [option]: reason; [option]: reason
+
+**Accepting:** [trade-offs - what we are giving up]
+
+---
+```
+
+- Status values: `open` (decision deferred), `decided` (current default), `superseded` (overridden by a later decision), `revisited` (reopened and re-affirmed).
+- Confidence values: `low`, `medium`, `high`. Matches the percentage-range prose from Step 7's Confidence Level subsection.
+- The `revisit:` value is free text describing the condition that should reopen the decision (e.g., "when EU revenue > 30%"). Step 0 evaluates it semantically on future runs.
+
+### Supersede flow
+
+Before writing the new entry, ask the user: "Does this decision supersede a prior one? If so, name it by date or topic." Do not infer supersede from conversation content alone - user-initiated only.
+
+If the user names a prior decision:
+- Locate the prior entry in `pmdecisions.md` by date-slug.
+- Update its metadata line: change `status: decided` to `status: superseded` and append `· superseded-by: YYYY-MM-DD-slug` (the new entry's date-slug).
+- Do not modify any other field of the prior entry.
+
+### Archival
+
+After writing, count entries (lines matching `^## ` in `pmdecisions.md`) and total lines (`wc -l`). If either count exceeds 30 entries OR 600 lines, whichever first:
+
+- STOP and call the AskUserQuestion tool. Question: "`pmdecisions.md` is getting long. Move superseded entries to `pmdecisions-archive.md`?" Options: "Yes", "Not now".
+- If yes, move every entry with `status: superseded` from `pmdecisions.md` to `pmdecisions-archive.md` (create `pmdecisions-archive.md` if absent, same format, archived entries appended in chronological order). Do not delete - only move.
+
+### Error handling
+
+If any file write fails (read-only mount, permission denied, disk full, file locked), surface this one-line acknowledgement to the user: "Could not write pmdecisions.md - decision kept in conversation only." Continue without crashing. The decision remains in the transcript.
+
+### Concurrency
+
+`pmdecisions.md` is not multi-writer safe. If two `decide` sessions write at the same time, last writer wins. This is a personal log, not a team-write target.
 
 ---
 

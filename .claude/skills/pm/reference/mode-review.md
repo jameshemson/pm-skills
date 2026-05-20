@@ -8,7 +8,7 @@ This mode absorbs four old skills. Their function lives inside the loop, not as 
 - **audit**: checking strategic alignment, evidence, and drift (a Critique check).
 - **retro**: evaluating a launch against expectations (the `retro` document type).
 
-Run a **Frame -> Critique -> Refine** loop. Do not skip Frame. Do not dead-end at Critique.
+Run a **Frame -> Critique -> Refine** loop. Do not skip Frame. After Critique, always emit the Refine prompt before completing. Both accept and decline are valid exits.
 
 ## Phase 1: Frame
 
@@ -57,9 +57,13 @@ Rank every finding: **P0** blocking (cannot proceed), **P1** important (proceed 
 
 Deliver: a slop verdict, the top 3-5 critical gaps (what is wrong, why it matters concretely, a specific fix), persona findings, the ranked question list with persona attribution, any contradictions, genuine strengths, and a readiness verdict (Ready / Needs Work / Not Ready).
 
+Then stop and emit this exact prompt to the user: **"Want me to draft fixes for the P0s and P1s now?"** If zero P0 or P1 findings exist, the prompt becomes: **"Want me to refine the P2s, or is this ready?"** Wait for the user's answer.
+
 ## Phase 3: Refine
 
-Do not stop at a list of problems. Once the situation is understood, help fix the draft.
+Run Phase 3 only if the user accepted the Refine prompt. On decline, exit cleanly with the Critique output as the final deliverable.
+
+Once the situation is understood, help fix the draft. Do not stop at a list of problems.
 
 - **Be surgical.** Targeted edits to the specific lines that failed Critique, not a wholesale rewrite. Show the original text and the replacement so the user sees the change. A rewrite that loses the author's voice and intent is not a refinement.
 - **If the review was a retarget** (rewriting for a different audience): lead with what matters to that audience, strip what they do not need, add what they do, and match their format and channel. Confirm the new structure with the user before producing the full draft.
