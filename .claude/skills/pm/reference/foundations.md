@@ -171,11 +171,18 @@ Before and after:
 - Setups (the skeleton, the bracketed slot varies):
   - Present-state compression: "we run [access and posture] today", "today we do [X and Y]". States current scope crisply to tee up a gap.
   - Proof and gap: "two vendors prove the model and show the gap", "[X] proves the thesis and exposes the opening".
+  - Trajectory inflation: "it points us to where the market is going", "this signals where things are heading", "this is where the puck is going". A single present signal recast as the direction of a whole market, with no basis for the extrapolation.
   - Structural blind spot: "the rest of the field misses this for structural reasons", "incumbents can't follow for structural reasons".
   - The held tension: "one tension to hold honestly", "a tension to hold here", "two things to hold at once".
   - Game framing: calling decisions "moves" ("the move here is", "the smart move is", "they're out of moves").
 - Fakes: strategic clarity and operator judgement. The shorthand asserts the thesis, the gap, and the moat at once, with evidence for none of them.
 - Fix: name the actual capability, the actual gap with the evidence for it, and the actual reason a competitor has not closed it. Cut the "move" framing and the "to hold honestly" flourish.
+
+**12. The bolt-on significance sentence.** A free-floating claim of broader importance dropped onto a paragraph, usually as the opening sentence or tacked on with "it also...", wired only loosely to the content around it. This is a structural tell, not a vocabulary one: the sentence is there to inflate stakes, not to carry information. Trajectory inflation (family 11) is a frequent payload, but the slot takes anything that gestures at a bigger picture.
+- Tells: "it also points us to where the market is going", "there's a bigger story here", "this connects to a broader pattern", "and that has implications well beyond this", "zooming out, this matters because...".
+- Test: delete the sentence. If the paragraph loses no information, it was bolted on.
+- Fakes: significance and synthesis. Real significance is argued in its own right, not asserted as an aside.
+- Fix: cut it. If the broader point is real and worth making, give it its own claim with the reasoning that supports it.
 
 **Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux". Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.5.0 - 2026-06-04
+
+### Added
+
+- New Claudism family: **the bolt-on significance sentence** (family 12). A free-floating claim of broader importance dropped onto a paragraph (often the opener, or tacked on with "it also..."), wired only loosely to the content. Structural tell, with a delete-test: if cutting the sentence loses no information, it was bolted on.
+- New sub-tell under the strategy-memo register (family 11): **trajectory inflation**. A single present signal recast as the direction of a whole market ("it points us to where the market is going").
+
+---
+
 ## 2.4.0 - 2026-06-04
 
 ### Added
