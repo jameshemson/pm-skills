@@ -23,6 +23,8 @@ Push back on:
 
 ## Step 2: Define the Metric Stack
 
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+
 Use the framework in [knowledge-metrics.md](knowledge-metrics.md): primary, secondary, guardrail, and counter-metrics. Apply it as follows.
 
 **Primary metric**: The one number that tells you whether this solved the problem. One only.

@@ -21,6 +21,8 @@ Push back on vague inputs. "We need a better dashboard" is not spec-ready. "Ente
 
 ## Step 2: Write the Specification
 
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+
 ### 1. Problem Statement
 The specific problem, for whom, in what context. Observable in the wild - not a restated feature request.
 

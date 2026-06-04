@@ -31,6 +31,8 @@ This map reveals the natural story boundaries: each meaningful step or decision 
 
 ## Step 3: Write the Stories
 
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+
 ### Story Format
 
 JTBD framing: **When** [situation/trigger], **I want to** [action/capability], **so I can** [outcome/progress].
