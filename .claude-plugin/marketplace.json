@@ -11,7 +11,7 @@
     {
       "name": "pm",
       "description": "Product management as one skill with nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Framework-backed, anti-theater, opinionated. Claude generates, pm-skills critiques.",
-      "version": "2.1.0",
+      "version": "2.3.0",
       "author": {
         "name": "James Hemson"
       },

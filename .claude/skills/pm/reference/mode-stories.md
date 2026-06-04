@@ -96,6 +96,10 @@ For each story: which sprint it fits in and why it is sequenced there.
 - Missing stories (gaps in the user journey no story covers)
 - Stories that are really tasks in disguise
 
+## Step 7: Voice Pass
+
+Scan the prose in each story (the JTBD framing, the notes, any rationale) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. Stories that read as generated get less trust in planning. If a fix introduces a new tell, fix the fix.
+
 ## Output Format
 
 ```
