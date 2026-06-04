@@ -93,6 +93,8 @@ The spec must pass ALL checks:
 
 **Engineering read-through test**: "An engineer reading this spec should be able to start work with no more than 3 clarifying questions. If they would have more, the following gaps exist: [list them]."
 
+**Voice pass.** Then scan every prose section (problem statement, context, rationale, risks) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A spec that reads as generated loses authority with engineering. If a fix introduces a new tell, fix the fix.
+
 ## Output Format
 
 Structured document with numbered sections, clear headers, scannable formatting. Tables for comparisons. Bullets for lists. Prose only where narrative is genuinely needed. Every section must contain substance; if a section would be generic, drop it and note why in Open Questions.

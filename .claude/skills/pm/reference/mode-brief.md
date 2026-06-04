@@ -75,6 +75,8 @@ Before delivering, check:
 
 If any check fails, fix it before delivering. State which assumptions you made and what you could not verify.
 
+**Voice pass.** Then scan every prose section against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A brief that reads as generated loses authority with the team. If a fix introduces a new tell, fix the fix.
+
 ## Output Format
 
 Structured document with clear headers. Bullets and tables over prose. Every section must earn its place; if a section has nothing meaningful, drop it rather than filling with generic content.

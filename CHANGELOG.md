@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.3.0 - 2026-06-04
+
+### Added
+
+- **The Claudism Catalogue** in `reference/foundations.md`: a curated, growable catalogue of distinctly-Claude analytical-register tells, distinct from the older slop taxonomy (which covers the GPT-era tells like delve/tapestry and em dashes). Eleven families: performative pushback, the reframe announcement, naming the move, structural metaphor and forced conceit, the antithesis flip, false candor plus the validation stamp, the aphoristic closer, emphasis and rhythm tics, the false universal, the clean mental model, and the strategy-memo register; plus a register-vocabulary list. The catalogue tracks sentence-skeletons (setups), not just exact phrases, because the slot-fillers swap while the shape repeats (for example "it's the question every [audit] turns on", "the cleanest way to hold it is as four layers").
+
+### Changed
+
+- `review` mode runs the Claudism Catalogue as an explicit AI-tell scan inside the Critique loop: quote each tell, name its family, give the fix. Three or more tells from different families flags the draft as AI-generated in the slop verdict.
+- The generator modes (`brief`, `spec`, `stories`, `metrics`) now run a **Voice pass** as a post-generation gate, scanning their own prose against the Slop Taxonomy and Claudism Catalogue before delivering. `stories` and `metrics` gained a dedicated voice step; `brief` and `spec` append it to their existing slop-test step.
+- The PM Slop Test in `SKILL.md` gained a universal "reads as written, not generated" check pointing at the catalogue, so `decide`, `setup`, and `discover` inherit the voice gate too.
+
+---
+
 ## 2.1.0 - 2026-05-20
 
 ### Added
