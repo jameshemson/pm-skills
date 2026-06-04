@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.4.0 - 2026-06-04
+
+### Added
+
+- **Prevention rules** for the Claude register in `reference/foundations.md`: a pre-generation discipline (write plainly the first time, with before/after examples) that sits alongside the existing post-generation Voice pass and review-mode detection. The catalogue now has three uses, in order of leverage: prevention, the post-generation voice pass, and detection. Prevention is framed honestly as rate-reduction, not elimination, since the register is the model's default; the voice pass stays as the backstop.
+
+### Changed
+
+- The generator modes (`brief`, `spec`, `stories`, `metrics`) point at the Prevention rules at their generation step, so they write to avoid the register up front rather than only cleaning up after.
+- `SKILL.md` notes the Claudism Catalogue's prevention rules fire pre-generation alongside the PM Reflex Rejection, and that prevention applies when generating prose in any mode.
+
+---
+
 ## 2.3.0 - 2026-06-04
 
 ### Added

@@ -96,11 +96,25 @@ The slop taxonomy above catches the GPT-era tells: thesaurus vocabulary, "it's n
 
 Why a PM should care: an exec or eng lead who clocks these tells stops reading for content and starts reading for tells. The moment they conclude "this was generated, not thought", the doc loses authority no matter how correct it is. In a review, flag these the way you flag a vanity metric: quote the exact phrase, name what it is faking, give the fix.
 
-This catalogue has two entry points. The `review` mode runs it on a draft the user brings in. The generator modes (`brief`, `spec`, `stories`, `metrics`, and any mode that emits a written artifact) run it as a post-generation voice pass on their own output, the same way they run the PM Slop Test, before delivering. Same catalogue, applied to whatever was just written.
+This catalogue has three uses, in order of leverage. First, **prevention**: write plainly the first time so the tells never appear (rules below). Second, the **post-generation voice pass**: the generator modes scan their own output and rewrite what slipped through. Third, **detection**: the `review` mode runs it on a draft the user brings in. Prevention is the goal; the other two are the safety net, and the safety net stays, because this register is the model's default and instruction alone will not fully suppress it. Aim for a lower rate, not zero.
 
 The hardest tells are not words, they are setups: a fixed sentence skeleton with swappable slots. The example phrases below are illustrations; the skeleton is what actually repeats. Match the shape, not the literal words. "It's the question every audit turns on" and "it's the constraint every migration runs into" are the same tell.
 
 One tell is not a verdict. Three or more from different families below means the draft reads as AI-generated and needs a voice pass before it reaches its audience.
+
+**Prevention: write plainly the first time.** Catching a tell after writing it is cleanup. Not reaching for it is the point. Write to these rules before you start, not only the voice pass after:
+
+- One idea per sentence. Short declaratives. Concrete subject, verb, object.
+- State the point. Do not announce that you are about to make it, reframe it, push back, or be honest. The reader cannot see the scaffolding and does not want to.
+- No metaphor unless it carries information the plain word does not.
+- No universal ("every X", "for structural reasons") you cannot cite a basis for.
+- No tidy decomposition ("three layers", "the cleanest way to think about this") unless the cut points change what the reader does.
+- Cut the closer. End on the last real point, not a punchline.
+
+Before and after:
+- Slop: "Let me push back: it's not that the metric is wrong, it's that it games easily. That's the structural spine." Plain: "The metric games easily. A team can raise it without helping one user."
+- Slop: "Here's what's actually interesting, and it's the question every roadmap turns on." Plain: "The roadmap turns on one trade-off: breadth now or depth later."
+- Slop: "The way to hold the scope is as three clean layers." Plain: "Two things are in scope, one is not. Here they are."
 
 **1. Performative pushback.** Signals critical engagement without doing any. Announces a challenge, then concedes or restates the user's point in fancier words.
 - Tells: "Let me push back on that", "Let me refine your load-bearing claim rather than just accepting it", "The one place I'd still push", "you're doing zero moves there", "I'd challenge the premise here".
