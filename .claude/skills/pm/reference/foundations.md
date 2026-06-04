@@ -90,6 +90,85 @@ Teach yourself to recognise these patterns in PM output.
 
 ---
 
+## The Claudism Catalogue
+
+The slop taxonomy above catches the GPT-era tells: thesaurus vocabulary, "it's not X, it's Y", em dashes. Those are now widely known and easy to scrub. This section catches the newer register: the Claude analytical voice that sounds like sharp thinking but is pattern-matched. The vocabulary can be clean and the doc can still read machine-extruded, because the moves give it away.
+
+Why a PM should care: an exec or eng lead who clocks these tells stops reading for content and starts reading for tells. The moment they conclude "this was generated, not thought", the doc loses authority no matter how correct it is. In a review, flag these the way you flag a vanity metric: quote the exact phrase, name what it is faking, give the fix.
+
+This catalogue has two entry points. The `review` mode runs it on a draft the user brings in. The generator modes (`brief`, `spec`, `stories`, `metrics`, and any mode that emits a written artifact) run it as a post-generation voice pass on their own output, the same way they run the PM Slop Test, before delivering. Same catalogue, applied to whatever was just written.
+
+The hardest tells are not words, they are setups: a fixed sentence skeleton with swappable slots. The example phrases below are illustrations; the skeleton is what actually repeats. Match the shape, not the literal words. "It's the question every audit turns on" and "it's the constraint every migration runs into" are the same tell.
+
+One tell is not a verdict. Three or more from different families below means the draft reads as AI-generated and needs a voice pass before it reaches its audience.
+
+**1. Performative pushback.** Signals critical engagement without doing any. Announces a challenge, then concedes or restates the user's point in fancier words.
+- Tells: "Let me push back on that", "Let me refine your load-bearing claim rather than just accepting it", "The one place I'd still push", "you're doing zero moves there", "I'd challenge the premise here".
+- Fakes: independent judgement. Real pushback names the specific claim and the specific counter-evidence. This just performs the posture.
+- Fix: cut the announcement. State the disagreement and the reason, or delete it.
+
+**2. The reframe announcement.** Telegraphs a reframe instead of doing one. Promises the interesting part is elsewhere, then rarely delivers it.
+- Tells: "Here's what's actually interesting", "the gap is what's actually interesting", "the real question is", "the deeper point is", "what's really going on here", "Zoom out", "Let's step back".
+- Fakes: insight. If the reframe is real, just make it. The signpost is the tell.
+- Fix: delete the signpost and lead with the reframed point. If nothing is behind it, cut the sentence.
+
+**3. Naming the move.** Meta-labels its own rhetoric as if narrating the analysis makes it true.
+- Tells: "The tell:", "the move here is", "what's load-bearing here is", "the thing that's actually doing the work", "and that's the crux".
+- Fakes: precision. Calling a claim "load-bearing" does not make it load-bearing.
+- Fix: make the point without narrating that you are making it.
+
+**4. Structural metaphor and forced conceit.** Reaches for building, skeleton, or vivid-clothing imagery to sound rigorous, dressing an abstract point in a physical metaphor it does not need.
+- Tells: "the structural spine", "load-bearing claim", "the scaffolding", "the connective tissue", "the through-line", "pull one and the other goes inert", "the foundation this rests on". And the personifying conceit: "your message is wearing content-clothes", "two problems wearing one coat", "the claim is doing a lot of heavy lifting".
+- Fakes: systems thinking. The metaphor stands in for the actual mechanism.
+- Fix: describe the real dependency or distinction in plain terms, or cut the metaphor.
+
+**5. The antithesis flip.** The reversal that announces itself. A close cousin of the slop taxonomy's sentence-pattern slop above ("it's not X, it's Y"), extended to its current variants.
+- Tells: "not just X but Y", "isn't X so much as Y", "X isn't the problem; Y is", "Two things can be true at once", "the emptiness IS the content".
+- Fakes: paradox and depth. It is a sentence template, not an idea.
+- Fix: say it directly. "The metric games easily" beats "It's not that the metric is wrong, it's that it games easily".
+
+**6. False candor, flattery, and the validation stamp.** Performs honesty, intimacy, or assessment to buy trust it has not earned. Two shapes: flattering the person, and certifying their premise as legitimate before engaging it.
+- Flattery tells: "You're absolutely right", "Great question", "That's a sharp observation", "Let me be honest", "I'll be direct", "the honest answer is", "To be clear", "Real talk".
+- Validation-stamp tells: "This is a real gap", "This is a real problem", "That's a genuine tension", "You're onto something real here", "This is the right question to be asking".
+- Fakes: a relationship and a stake, plus the appearance of having assessed. Candor is saying the hard thing, not announcing that you are about to. A stamp that the premise is "real" is not engagement with the premise.
+- Fix: drop the preamble and engage the substance directly. Cut the flattery and the stamp entirely.
+
+**7. The aphoristic closer.** A short, punchy fragment dropped to sound profound. Often a one-line sentence standing alone for cadence.
+- Tells: "That's the structural spine.", "That's the whole game.", "And that changes everything.", "Simple as that.", any fragment whose only job is to feel like a mic drop.
+- Fakes: a hard-won conclusion. The rhythm does the work the argument should.
+- Fix: end on the substantive point. If the closer adds no information, cut it.
+
+**8. Emphasis and rhythm tics.** Typographic and structural habits that signal "this is the important part" instead of earning it.
+- Tells: CAPS mid-sentence for emphasis ("the emptiness IS the content"), bolding a key phrase mid-sentence, the compulsive rule of three (every list and sentence arriving in triads), uniform paragraph length, the colon-into-list reflex.
+- Fakes: emphasis and structure. Real emphasis comes from word choice and placement, not typography.
+- Fix: let the sentence carry the weight. Vary list length to what the content needs. Break the triads.
+
+**9. The false universal.** Inflates one local, specific point into a categorical law so it reads as settled wisdom. The claim about this situation gets dressed as the hinge of an entire class.
+- Setup (the skeleton, the bracketed slot varies): "it's the question every [audit] turns on", "this is what every [migration] comes down to", "every good [strategy] does this", "the thing every [PM] eventually learns", "this is the [X] that makes or breaks it".
+- Fakes: authority and consensus. The universal is asserted, never shown, and is usually unfalsifiable.
+- Fix: make the claim about this specific situation and back it. Drop the "every X" frame unless you can cite the basis for it.
+
+**10. The clean mental model.** Hands over an invented decomposition as if it were the natural, canonical one. Usually a suspiciously round number and a "clean" or "crisp" stamp.
+- Setup: "the cleanest way to think about this is...", "the cleanest way to hold it is as four layers", "there are basically three kinds of...", "this splits neatly into two...", "the right frame here is X versus Y".
+- Fakes: a rigorous framework. The number is arbitrary, "cleanest" is unearned, and the model often does no work beyond looking orderly.
+- Fix: keep a decomposition only if it changes what the reader does. Justify the cut points, or drop the framing and state the content plainly.
+
+**11. The strategy-memo register.** The compressed, confident, insight-dense voice of a VC memo or strategy essay. Packs a thesis, a market gap, and a moat into knowing shorthand that sounds like operator instinct while skipping the evidence for any of it. Common in positioning and strategy docs.
+- Setups (the skeleton, the bracketed slot varies):
+  - Present-state compression: "we run [access and posture] today", "today we do [X and Y]". States current scope crisply to tee up a gap.
+  - Proof and gap: "two vendors prove the model and show the gap", "[X] proves the thesis and exposes the opening".
+  - Structural blind spot: "the rest of the field misses this for structural reasons", "incumbents can't follow for structural reasons".
+  - The held tension: "one tension to hold honestly", "a tension to hold here", "two things to hold at once".
+  - Game framing: calling decisions "moves" ("the move here is", "the smart move is", "they're out of moves").
+- Fakes: strategic clarity and operator judgement. The shorthand asserts the thesis, the gap, and the moat at once, with evidence for none of them.
+- Fix: name the actual capability, the actual gap with the evidence for it, and the actual reason a competitor has not closed it. Cut the "move" framing and the "to hold honestly" flourish.
+
+**Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux". Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
+
+This catalogue is meant to grow. When you catch a new Claude tell in the wild, add it to the right family with an example and the fix.
+
+---
+
 ## Anti-Patterns in PM Work
 
 ### Feature Factory

@@ -51,6 +51,7 @@ The most important quality check for any PM output. If you showed this artifact 
 - [ ] **Assumptions stated**: what are you assuming true that you have not verified?
 - [ ] **Trade-offs explicit**: what are you giving up by choosing this approach?
 - [ ] **Concise enough to read**: could this be half as long without losing substance? If a section exists only to sound thorough, cut it.
+- [ ] **Reads as written, not generated**: scan for AI-register tells using the Claudism Catalogue in [reference/foundations.md](reference/foundations.md). Performative pushback, the false universal, the clean-mental-model setup, the validation stamp. Rewrite any you find before delivering.
 
 The heavier procedures, the full PM Reflex Rejection that fires pre-generation, the full slop taxonomy, and the PM anti-patterns, live in [reference/foundations.md](reference/foundations.md). Modes load it when they need it.
 
