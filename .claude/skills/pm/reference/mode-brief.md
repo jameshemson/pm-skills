@@ -28,6 +28,8 @@ Before generating, gather:
 
 ## Step 3: Generate the Brief
 
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+
 ### Problem Context
 The specific problem, for whom, in what context. Include evidence where available (support tickets, usage data, customer quotes). Connect to product strategy and current objectives.
 
