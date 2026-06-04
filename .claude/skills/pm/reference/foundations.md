@@ -94,27 +94,39 @@ Teach yourself to recognise these patterns in PM output.
 
 The slop taxonomy above catches the GPT-era tells: thesaurus vocabulary, "it's not X, it's Y", em dashes. Those are now widely known and easy to scrub. This section catches the newer register: the Claude analytical voice that sounds like sharp thinking but is pattern-matched. The vocabulary can be clean and the doc can still read machine-extruded, because the moves give it away.
 
-Why a PM should care: an exec or eng lead who clocks these tells stops reading for content and starts reading for tells. The moment they conclude "this was generated, not thought", the doc loses authority no matter how correct it is. In a review, flag these the way you flag a vanity metric: quote the exact phrase, name what it is faking, give the fix.
+A PM should care because an exec or eng lead who clocks these tells stops reading for content and starts reading for the tells. The moment they conclude "this was generated, not thought", the doc loses authority no matter how correct it is. In a review, flag these the way you flag a vanity metric: quote the exact phrase, name what it is faking, give the fix.
 
 This catalogue has three uses, in order of leverage. First, **prevention**: write plainly the first time so the tells never appear (rules below). Second, the **post-generation voice pass**: the generator modes scan their own output and rewrite what slipped through. Third, **detection**: the `review` mode runs it on a draft the user brings in. Prevention is the goal; the other two are the safety net, and the safety net stays, because this register is the model's default and instruction alone will not fully suppress it. Aim for a lower rate, not zero.
 
-The hardest tells are not words, they are setups: a fixed sentence skeleton with swappable slots. The example phrases below are illustrations; the skeleton is what actually repeats. Match the shape, not the literal words. "It's the question every audit turns on" and "it's the constraint every migration runs into" are the same tell.
+The hardest tells are sentence skeletons with swappable slots, not single words. The example phrases below are illustrations; the skeleton is what repeats. Match the shape, not the literal words. "It's the question every audit turns on" and "it's the constraint every migration runs into" are the same tell.
 
 One tell is not a verdict. Three or more from different families below means the draft reads as AI-generated and needs a voice pass before it reaches its audience.
 
-**Prevention: write plainly the first time.** Catching a tell after writing it is cleanup. Not reaching for it is the point. Write to these rules before you start, not only the voice pass after:
+**Prevention: write plainly the first time.** Catching a tell after writing it is cleanup. The goal is not to reach for it at all. The standard for "plain" here comes from Ann Handley's *Everybody Writes*, applied to PM docs. Write to it before you start, not only in the voice pass after.
 
-- One idea per sentence. Short declaratives. Concrete subject, verb, object.
-- State the point. Do not announce that you are about to make it, reframe it, push back, or be honest. The reader cannot see the scaffolding and does not want to.
+Her rules:
+- Lead with the most important words. Cut throat-clearing openers like "There is", "It's worth noting", and "The purpose of this is".
+- One idea per sentence, most under 25 words. Concrete subject, verb, object.
+- Active voice, present tense. The subject does the thing.
+- Short, common words. "use", not "utilise". Make every word carry meaning, and delete the ones that do not, starting with "very", "really", "actually", and "fundamentally".
+- Show, do not tell. "A team can raise it without helping one user" beats "the metric is misaligned".
+- Write for the reader. Answer what is in it for them and why they should care. Assume they know nothing, but never that they are stupid.
+- No one ever complained that a document was too easy to understand.
+
+The tells to avoid:
+- State the point. Do not announce that you are about to make it, reframe it, push back, or be honest. The reader cannot see the setup and does not want to.
 - No metaphor unless it carries information the plain word does not.
 - No universal ("every X", "for structural reasons") you cannot cite a basis for.
-- No tidy decomposition ("three layers", "the cleanest way to think about this") unless the cut points change what the reader does.
+- No tidy decomposition ("three layers", "the cleanest way to think about this", "four things have to hold") unless the cut points change what the reader does.
+- No colon used to set up a one-clause payoff. If the bit after the colon could be its own sentence, write the sentence.
 - Cut the closer. End on the last real point, not a punchline.
 
-Before and after:
+Before and after (each "plain" version follows Handley's rules above):
 - Slop: "Let me push back: it's not that the metric is wrong, it's that it games easily. That's the structural spine." Plain: "The metric games easily. A team can raise it without helping one user."
 - Slop: "Here's what's actually interesting, and it's the question every roadmap turns on." Plain: "The roadmap turns on one trade-off: breadth now or depth later."
-- Slop: "The way to hold the scope is as three clean layers." Plain: "Two things are in scope, one is not. Here they are."
+- Slop: "The way to hold the scope is as three clean layers." Plain: "Search and filters are in scope. Saved views are out of scope for now."
+- Slop: "Here's the catch: the metric games easily." Plain: "The metric games easily."
+- Slop: "For the launch to land, four things have to hold." Plain: "The launch works only if sales can demo it in under ten minutes and support can clear tickets without escalating."
 
 **1. Performative pushback.** Signals critical engagement without doing any. Announces a challenge, then concedes or restates the user's point in fancier words.
 - Tells: "Let me push back on that", "Let me refine your load-bearing claim rather than just accepting it", "The one place I'd still push", "you're doing zero moves there", "I'd challenge the premise here".
@@ -153,7 +165,7 @@ Before and after:
 - Fix: end on the substantive point. If the closer adds no information, cut it.
 
 **8. Emphasis and rhythm tics.** Typographic and structural habits that signal "this is the important part" instead of earning it.
-- Tells: CAPS mid-sentence for emphasis ("the emptiness IS the content"), bolding a key phrase mid-sentence, the compulsive rule of three (every list and sentence arriving in triads), uniform paragraph length, the colon-into-list reflex.
+- Tells: CAPS mid-sentence for emphasis ("the emptiness IS the content"), bolding a key phrase mid-sentence, the compulsive rule of three (every list and sentence arriving in triads), uniform paragraph length, the colon-into-list reflex, the clipped parallel negation ("Search and filters ship now. Saved views do not."), where a short second sentence mirrors and negates the first for cadence.
 - Fakes: emphasis and structure. Real emphasis comes from word choice and placement, not typography.
 - Fix: let the sentence carry the weight. Vary list length to what the content needs. Break the triads.
 
@@ -184,7 +196,18 @@ Before and after:
 - Fakes: significance and synthesis. Real significance is argued in its own right, not asserted as an aside.
 - Fix: cut it. If the broader point is real and worth making, give it its own claim with the reasoning that supports it.
 
-**Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux". Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
+**13. The colon reveal.** Uses a colon to manufacture a beat of suspense before a short payoff, as if the pause were the insight. Distinct from family 8's colon-into-list reflex (colon, then bullets); this is the mid-prose colon doing dramatic work. The pattern is [short label] + colon + [the actual point], repeated until every paragraph in the doc opens the same way.
+- Tells: "Here's the catch: it games easily", "The problem: nobody owns it", "One tension: speed versus safety", "The tell: it reframes without delivering", "What changed: everything", "The result: a roadmap nobody trusts".
+- Fakes: emphasis and timing. The colon borrows the rhythm of a reveal without an argument behind it. Repeated across a doc, every point arrives with the same engineered pause.
+- Fix: write the full sentence. "The metric games easily" beats "The catch: it games easily". Keep a colon only when what follows is a genuine list or a definition the colon is structurally introducing, not a one-clause punchline.
+
+**14. The conditions checklist (the logician's "hold").** Presents a set of requirements as formal necessary conditions, usually with a round number and the verb "hold" borrowed from logic and maths, where "X holds" means "X is true". Dresses a judgement call as a satisfied proof.
+- Setup (the bracketed slots vary): "for this to work, [four] things have to hold", "[three] conditions have to hold", "this only works if [Y] holds", "the assumption that has to hold is...", "the invariant here is...".
+- Note: "hold" is a Claude favourite in three senses, and only this one is family 14. Here it means be true. In family 11 ("a tension to hold") it means keep in mind. In family 10 ("the way to hold this is as four layers") it means grasp or understand. Flag any of the three.
+- Fakes: rigour. A real precondition is testable and you say how you would check it. The borrowed-logic "hold" makes a soft list of hopes sound like a theorem, and the count is usually arbitrary (the same point survives as three conditions or as five).
+- Fix: list the actual requirements and, for each, how you would know it is met. Drop the "have to hold" framing and the tidy number.
+
+**Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux", "hold" (in any of its overused senses: "X holds" = is true, "a tension to hold" = keep in mind, "the way to hold this" = grasp or understand). Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
 
 This catalogue is meant to grow. When you catch a new Claude tell in the wild, add it to the right family with an example and the fix.
 
