@@ -12,7 +12,7 @@ There is no build system. Skills are markdown files used directly by Claude Code
 
 **Plugin config**: `.claude-plugin/plugin.json` (metadata, version) and `.claude-plugin/marketplace.json` (marketplace listing). Update the description in both when the skill changes.
 
-**Versioning**: Bump the version in both `plugin.json` and `marketplace.json` with every release. Use semver: patch for fixes, minor for new/changed modes or reference content, major for breaking changes.
+**Versioning**: Bump the version in both `plugin.json` and `marketplace.json` with every release. Use semver: patch for fixes, minor for new/changed modes or reference content, major for breaking changes. Every bump also gets a `CHANGELOG.md` entry and an update to the version in the website footer (`~/repos/skillsfor-pm-site/public/index.html`) - the footer went five versions stale once; do not let it drift again.
 
 ---
 
