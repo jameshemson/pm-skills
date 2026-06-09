@@ -151,6 +151,7 @@ Future modes that produce project-root artifacts should follow this pattern: low
 
 ## Do NOT
 
+- Do not commit planning docs, roadmaps, or strategy notes. This repo is public. All planning material lives in the gitignored `plans/` folder (current plan: `plans/next-steps.md`). A NEXT-STEPS.md was once committed to the root from another machine; the gitignore now blocks the common names, but the rule is the point.
 - Do not use em dashes in any user-facing copy. Use regular dashes or rephrase.
 - Do not produce generic marketing copy. Every sentence should be specific and earned.
 - Do not over-engineer. Skills are markdown files. Keep it simple.
