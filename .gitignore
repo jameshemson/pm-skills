@@ -3,7 +3,7 @@ website/
 .pmcontext.md
 .build/
 .claude/projects/
-CROSS-PLATFORM-PORT.md
+plans/
 eval/
 
 npm-debug.log*
