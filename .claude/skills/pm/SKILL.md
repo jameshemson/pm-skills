@@ -53,6 +53,8 @@ The most important quality check for any PM output. If you showed this artifact 
 - [ ] **Concise enough to read**: could this be half as long without losing substance? If a section exists only to sound thorough, cut it.
 - [ ] **Reads as written, not generated**: scan for AI-register tells using the Claudism Catalogue in [reference/foundations.md](reference/foundations.md). Performative pushback, the false universal, the clean-mental-model setup, the validation stamp. Rewrite any you find before delivering.
 
+In the `review` mode, these checks feed the verdict band - SLOP / ROUGH / SOLID / SHIP - defined in [reference/knowledge-craft-score.md](reference/knowledge-craft-score.md).
+
 The heavier procedures live in [reference/foundations.md](reference/foundations.md): the PM Reflex Rejection and the Claudism Catalogue's prevention rules, which both fire pre-generation; the full slop taxonomy and Claudism Catalogue, for post-generation checks; and the PM anti-patterns. Modes load it when they need it. Prevention beats cleanup: when generating prose in any mode, write to the prevention rules as you go, not only the checks after.
 
 ## Commands
@@ -65,7 +67,7 @@ The heavier procedures live in [reference/foundations.md](reference/foundations.
 | `spec` | Write a full product specification: metrics, risks, rollout, scope | [reference/mode-spec.md](reference/mode-spec.md) |
 | `stories` | Break a feature into testable, JTBD-framed user stories | [reference/mode-stories.md](reference/mode-stories.md) |
 | `metrics` | Define primary, secondary, guardrail, and counter-metrics | [reference/mode-metrics.md](reference/mode-metrics.md) |
-| `review` | Adversarially critique a doc, plan, strategy, or message | [reference/mode-review.md](reference/mode-review.md) |
+| `review` | Adversarially critique a doc, plan, strategy, or message - verdict: SLOP / ROUGH / SOLID / SHIP | [reference/mode-review.md](reference/mode-review.md) |
 | `decide` | Structure a decision: options, weighted criteria, trade-offs, bias - and log to `pmdecisions.md` | [reference/mode-decide.md](reference/mode-decide.md) |
 | `discover` | Plan customer conversations for truth, or debrief them | [reference/mode-discover.md](reference/mode-discover.md) |
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.7.0 - 2026-06-09
+
+### Added
+
+- **The verdict band.** `review` mode now ends Critique with one of four verdicts - SLOP / ROUGH / SOLID / SHIP - picked by findings-anchored gates (Claudism family count, slop-test failures, P0/P1 counts) defined in the new `reference/knowledge-craft-score.md`. The 0-100 score behind the band is internal and never displayed. Includes the self-grading disclosure: a band that rises after applied Refine fixes measures "Claude fixed what Claude flagged", not the author's own revision.
+
+### Changed
+
+- The band replaces the previous readiness verdict (Ready / Needs Work / Not Ready) in the Critique deliverable.
+
+---
+
 ## 2.6.1 - 2026-06-09
 
 ### Changed
