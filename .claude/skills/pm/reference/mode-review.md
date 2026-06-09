@@ -30,6 +30,7 @@ Adversarial and document-type-aware. The job is to find everything wrong before 
 Load these every time:
 - [foundations.md](foundations.md) for the full slop taxonomy and the Claudism Catalogue.
 - [knowledge-review-personas.md](knowledge-review-personas.md) for persona-based review.
+- [knowledge-craft-score.md](knowledge-craft-score.md) for the verdict band: the four bands, their gates, and the delivery format.
 
 Then load **one** knowledge file by document type. Each knowledge file carries a "Critiquing this artifact" section with the type-specific checklist. This file does not duplicate it.
 
@@ -55,7 +56,7 @@ For a **retro** document, the type-specific critique tests the retro itself: was
 
 Rank every finding: **P0** blocking (cannot proceed), **P1** important (proceed but resolve soon), **P2** minor. Multi-persona findings rank above single-persona ones at the same severity.
 
-Deliver: a slop verdict, the top 3-5 critical gaps (what is wrong, why it matters concretely, a specific fix), persona findings, the ranked question list with persona attribution, any contradictions, genuine strengths, and a readiness verdict (Ready / Needs Work / Not Ready).
+Deliver: a slop verdict, the top 3-5 critical gaps (what is wrong, why it matters concretely, a specific fix), persona findings, the ranked question list with persona attribution, any contradictions, genuine strengths, and the craft verdict: one band of SLOP / ROUGH / SOLID / SHIP, picked by the gates in `knowledge-craft-score.md` and delivered with the one-sentence reason and what would move the draft up one band. Compute the internal score for the gates; never headline it.
 
 Then stop and emit this exact prompt to the user: **"Want me to draft fixes for the P0s and P1s now?"** If zero P0 or P1 findings exist, the prompt becomes: **"Want me to refine the P2s, or is this ready?"** Wait for the user's answer.
 
