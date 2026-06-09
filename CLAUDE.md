@@ -57,6 +57,7 @@ The architecture mirrors impeccable 3.1.1. Reference files are at:
     ├── knowledge-decision-making.md
     ├── knowledge-specification.md
     ├── knowledge-communication.md
+    ├── knowledge-craft-score.md  # verdict band: bands, gates, internal score
     ├── knowledge-prioritisation.md
     ├── knowledge-leadership.md
     ├── knowledge-positioning.md
@@ -129,7 +130,7 @@ Break a feature into user stories with acceptance criteria. Each story must be i
 Define success metrics: primary (one only), secondary (2-3), guardrail (must not get worse), and counter-metrics (gaming detection). Forces baselines, specific targets, measurement plans, and confounding factor analysis.
 
 ### review
-Adversarially critique a doc, plan, strategy, stakeholder message, or any PM artifact. Runs a Frame, Critique, Refine loop. Document-type-aware: routes to the relevant knowledge file for specification, strategy, positioning, metrics, retro, stakeholder comms, or roadmap artifacts. Absorbs the function of the former translate, stakeholders, audit, and retro skills.
+Adversarially critique a doc, plan, strategy, stakeholder message, or any PM artifact. Runs a Frame, Critique, Refine loop. Document-type-aware: routes to the relevant knowledge file for specification, strategy, positioning, metrics, retro, stakeholder comms, or roadmap artifacts. Absorbs the function of the former translate, stakeholders, audit, and retro skills. Ends with a blunt verdict band: SLOP, ROUGH, SOLID, or SHIP, with the score behind it kept internal.
 
 ### decide
 Structure a decision: options, weighted criteria, trade-offs, bias checks. Uses the Thinking in Bets framework. Separates decision quality from outcome quality. Flags cognitive biases. Output: recommendation with explicit trade-offs and what you are accepting by choosing this path.
