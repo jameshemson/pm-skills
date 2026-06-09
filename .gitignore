@@ -6,6 +6,13 @@ website/
 plans/
 eval/
 
+# Planning docs never go in the public repo (they live in plans/)
+NEXT-STEPS.md
+NEXT-STEPS*.md
+ROADMAP.md
+TODO.md
+NOTES.md
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
