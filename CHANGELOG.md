@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.6.1 - 2026-06-09
+
+### Changed
+
+- Plugin and marketplace descriptions now lead with critique ("Claude generates, pm-skills critiques") instead of a flat nine-mode list, and frame the drafting modes as critique-inflected.
+- README adds the companion anchor to Anthropic's official PM plugin: pm-skills is the second opinion it can't give you, with no dependency between them.
+- CLAUDE.md versioning rule now requires a CHANGELOG entry and a website footer version update with every bump.
+
+---
+
+## 2.6.0 - 2026-06-04
+
+_(Entry added retroactively on 2026-06-09; the release shipped without one.)_
+
+### Added
+
+- New Claudism family: **the colon reveal** (family 13). The dramatic mid-prose colon ("Here's the catch: it games easily"), distinct from family 8's colon-into-list reflex.
+- New Claudism family: **the conditions checklist** (family 14). The logician's "hold" ("four things have to hold"), naming the three overused senses of "hold" (be true / keep in mind / grasp), added to register vocabulary.
+- Family 8 now names the **clipped parallel negation** ("X ships now. Y does not.") as a rhythm tic.
+
+### Changed
+
+- The "plain" rewrite standard is grounded in Ann Handley's _Everybody Writes_: lead with the most important words, one idea per sentence, active voice, short common words, show don't tell.
+
+---
+
 ## 2.5.0 - 2026-06-04
 
 ### Added

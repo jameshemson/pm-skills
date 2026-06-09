@@ -1,7 +1,7 @@
 {
   "name": "pm",
-  "description": "Product management as one Claude Code skill. The pm skill routes to nine modes (teach, setup, brief, spec, stories, metrics, review, decide, discover) backed by a curated PM knowledge base. Claude generates, pm-skills critiques.",
-  "version": "2.6.0",
+  "description": "Claude generates, pm-skills critiques. An adversarial review mode critiques any PM doc (briefs, specs, strategy, messages) against curated frameworks, and the drafting modes run the same critique on their own output. Nine modes in one pm skill: teach, setup, brief, spec, stories, metrics, review, decide, discover.",
+  "version": "2.6.1",
   "author": {
     "name": "James Hemson"
   },

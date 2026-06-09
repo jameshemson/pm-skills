@@ -4,6 +4,8 @@ Claude can draft your PRD. It can't tell you it's slop.
 
 pm-skills can. One skill, nine modes that critique and sharpen the product docs your AI generates.
 
+Already using [Anthropic's official PM plugin](https://claude.com/plugins/product-management)? It generates PRDs, roadmaps, and stakeholder updates. pm-skills reviews them. No dependency between the two; pm-skills critiques any PM doc, whoever or whatever wrote it.
+
 > **Quick start:** Visit [pmskills.co](https://pmskills.co) or jump to [Installation](#installation).
 
 ## Why pm-skills?
@@ -11,8 +13,8 @@ pm-skills can. One skill, nine modes that critique and sharpen the product docs 
 Ask AI to write a PRD and you get a ten-thousand word dissertation that says nothing. Generic preambles, vague success metrics, happy-path specs. Engineering reads it and sends back questions in the first hour.
 
 pm-skills fights that with:
-- **One skill, nine modes** covering every core PM workflow
-- **Framework-backed critique** that pushes back before producing output
+- **Adversarial critique at the core**: `review` finds the gaps in any doc before your audience does
+- **Drafting modes that critique their own output**: brief, spec, stories, and metrics all end with the same review pass
 - **The PM Slop Test** that catches vague artifacts before engineering does
 
 ## The Skill: pm
