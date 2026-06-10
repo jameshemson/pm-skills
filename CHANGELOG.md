@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.9.1 - 2026-06-10
+
+### Fixed
+
+- **Voice alone no longer gates SLOP.** Gate 1's Claudism-family clause now requires weak substance too: three or more families AND three or more failed slop-test checks (five failed checks still gate SLOP regardless of voice). Calibration runs showed three borderline single-instance tells could band a substantively strong spec SLOP, and tell detection on borderline instances is noisy run to run. A register-heavy but sound document now bands by gates 2-4 and is held out of SHIP by the existing tell-cap; the review still names the register in the slop verdict. This closes the contradiction with the 2.9.0 voice-finding rule, which already said voice alone lands SOLID at best.
+
+---
+
 ## 2.9.0 - 2026-06-10
 
 ### Added
