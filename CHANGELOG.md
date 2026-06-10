@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.12.0 - 2026-06-10
+
+### Added
+
+- **Template camouflage** named as substance slop item 10. AI-PRD tool output (ChatPRD, Figma AI PRD, template mills) produces complete section structure with generic content - structure used as evidence of thinking. The detection test is regeneration, not length: cover the heading and read the section; if the text could sit under the same heading in any product's document, the section is camouflage. Each camouflaged section fails the slop-test check it fakes (once, not twice). Reviews of tool-generated PRDs lead with the doc-level diagnosis: "template camouflage: N of M sections regenerable from their headings". Voice slop items renumber 10-12 to 11-13.
+- `review` Critique step 1 now instructs: for any document with standard template structure, run the camouflage test once, section by section, before line-level scans - the doc-level diagnosis frames the itemised findings.
+
+---
+
 ## 2.11.1 - 2026-06-10
 
 ### Fixed
