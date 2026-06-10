@@ -31,8 +31,10 @@ The band moves only when the findings move. If the user contests the band, resta
 The gates count P0s and P1s, so the band is only as stable as the severity calls. Rank every substance finding by its effect on the document's audience, not by how bad it sounds. The type checklists in the knowledge files identify findings; this section ranks them.
 
 - **P0 - the document's primary action is blocked.** The audience cannot do the thing the document exists to make them do, or would do the wrong work if they tried.
-- **P1 - the audience can start, but the gap comes back.** The document gets used, then bounced back for the named gap within its first real use.
-- **P2 - quality erosion only.** Fixing it improves the document; not fixing it changes nothing about what the reader does next.
+- **P1 - the document gets sent back, or commitment is blocked.** The audience cannot commit (fund it, sprint-plan it, send it) until the gap closes, or they return the document for revision. A question the audience can ask and have answered in the room - sprint planning, the review meeting, a reply - without the document being revised is not a P1; it is a P2.
+- **P2 - quality erosion and clarifying questions.** Fixing it improves the document; not fixing it changes nothing about whether the audience commits. Includes every gap the audience resolves by asking.
+
+A ready document still generates questions. The engineering read-through doctrine (knowledge-specification.md) allows up to three clarifying questions before a spec has gaps; do not convert ordinary clarifying questions into P1s. The test is not "will the audience ask about this" - they will always ask about something - but "must the document change before the audience can commit".
 
 Anchors by document type (examples of the principle, not an exhaustive registry):
 
@@ -46,7 +48,7 @@ Anchors by document type (examples of the principle, not an exhaustive registry)
 
 For a type with no row here, rank from the three definitions and say which one you applied.
 
-**Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the audience will send it back for this" (P1), or "this just erodes it" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1.
+**Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the document must change before the audience can commit" (P1), or "this just erodes it, or they can ask" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1. The commonest inflation is the question-shaped P1: a finding phrased as "the audience will ask X" is a P2 unless the answer has to land in the document before commitment.
 
 **Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
 
