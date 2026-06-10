@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.13.0 - 2026-06-10
+
+### Added
+
+- **Persona rows for comms, roadmap, and retro.** The persona selection table in `knowledge-review-personas.md` now prescribes personas for stakeholder message / comms (Exec, Critic; add Customer for customer-facing comms), roadmap / prioritisation (Exec, Critic, Dev), and retro / post-launch review (Critic, Exec) - the three doc types empirically confirmed as improvised choices before this release.
+- **OKR routing.** The document-type table in `mode-review.md` now routes "OKRs, quarterly goals" to `knowledge-metrics.md`. That file's Critiquing section gains a five-checkbox OKR block: outcome-framed objective, measures not milestones, baselines present, at most one aspirational KR labelled as such, and no KR outside the team's influence.
+- **Context staleness nudge.** `teach` mode now writes `last_updated: YYYY-MM-DD` at the top of the Product Context section and refreshes it on every update (adding it if absent in an older file). The Context Gathering Protocol fires one non-blocking nudge when `last_updated` is more than six months old; no line means no nudge.
+
+### Changed
+
+- **Persona count is table-driven.** "Pick 3-4 personas" is replaced with "pick the personas the table lists for the document type (2-4)" everywhere - in the selection table header and in `mode-review.md` Phase 2. The three new rows above make this concrete for every doc type now covered.
+
+---
+
 ## 2.12.0 - 2026-06-10
 
 ### Added

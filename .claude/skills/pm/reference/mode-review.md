@@ -45,12 +45,13 @@ Then load **one** knowledge file by document type. Each knowledge file carries a
 | retro, post-launch review | [knowledge-decision-making.md](knowledge-decision-making.md) |
 | a message, announcement, or internal comms | [knowledge-communication.md](knowledge-communication.md) |
 | roadmap, prioritisation | [knowledge-prioritisation.md](knowledge-prioritisation.md) |
+| OKRs, quarterly goals | [knowledge-metrics.md](knowledge-metrics.md) |
 | other or unclassified | the generic fallback checklist below |
 
 Run, in order:
 
 1. **The PM Slop Test.** Apply every check from the PM Slop Test in `SKILL.md`. Flag each failure with the exact text that triggers it and what should replace it. Then apply the full slop taxonomy from `foundations.md` for substance and voice slop. For any document with standard template structure, run the template-camouflage test from the taxonomy once, section by section, before the line-level scans - the doc-level diagnosis frames the itemised findings. Then run the **Claudism Catalogue** from `foundations.md`: scan for AI-register tells, quote each one, name its family, and give the fix. Three or more tells from different families means the draft reads as AI-generated; say so in the slop verdict, because an audience that clocks it discounts the whole document.
-2. **Persona-based review.** Select 3-4 personas from `knowledge-review-personas.md` using its selection table. Adopt each perspective independently: finish one persona's full assessment before starting the next, no cross-contamination. Then synthesize: where two or more personas flag the same issue, that is a high-confidence gap.
+2. **Persona-based review.** Select the personas its selection table lists for the document type (2-4) from `knowledge-review-personas.md`. Adopt each perspective independently: finish one persona's full assessment before starting the next, no cross-contamination. Then synthesize: where two or more personas flag the same issue, that is a high-confidence gap.
 3. **Type-specific critique.** Apply the "Critiquing this artifact" checklist from the loaded knowledge file.
 4. **Strategic-alignment check** (the absorbed `audit` function). Using product context, ask: does this connect to a stated outcome, or is it drift? Is the evidence strong, medium, weak, or none? Is this the highest-value use of the team's time? Name one hard question the team is avoiding.
 
