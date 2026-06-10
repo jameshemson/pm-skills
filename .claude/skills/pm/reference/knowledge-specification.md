@@ -138,6 +138,8 @@ How does this get to users?
 
 Before you ship a spec, run this test. For each item, the answer must be specific and verifiable:
 
+(The canonical ten-check list lives in SKILL.md. The table below illustrates six of the checks applied to one spec; it is not the list.)
+
 | Check | Pass | Fail |
 |---|---|---|
 | Who is this for? | "Team admins in orgs with 50+ members" | "Users" |
