@@ -54,7 +54,7 @@ Run, in order:
 
 For a **retro** document, the type-specific critique tests the retro itself: was the hypothesis reconstructed before results were seen (hindsight-bias guard)? Is decision quality separated from outcome quality (a good bet with a bad outcome is not a bad decision)? Are the learnings specific and actionable, not "we learned a lot"?
 
-Rank every finding: **P0** blocking (cannot proceed), **P1** important (proceed but resolve soon), **P2** minor. Multi-persona findings rank above single-persona ones at the same severity.
+Rank every substance finding by the severity anchors in [knowledge-craft-score.md](knowledge-craft-score.md): P0 (the document's primary action is blocked), P1 (the audience proceeds but the gap bounces it back), P2 (quality erosion only). Voice findings - Claudism tells and voice slop - carry no severity; they reach the verdict only through the SLOP and SHIP gates. Multi-persona findings rank above single-persona ones at the same severity.
 
 Deliver: a slop verdict, the top 3-5 critical gaps (what is wrong, why it matters concretely, a specific fix), persona findings, the ranked question list with persona attribution, any contradictions, genuine strengths, and the craft verdict: one band of SLOP / ROUGH / SOLID / SHIP, picked by the gates in `knowledge-craft-score.md` and delivered with the one-sentence reason and what would move the draft up one band. Compute the internal score for the gates; never headline it.
 
