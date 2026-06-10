@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.14.0 - 2026-06-10
+
+### Changed
+
+- **P1 means the document must change before the audience can commit.** Previously "the gap bounces it back", which let every "engineering will ask this" finding rank P1. Calibration showed an adversarial review can always mint such findings, making SHIP (zero P1s) unreachable and SOLID unstable, and contradicting the read-through doctrine that a ready spec generates up to three clarifying questions. Questions the audience can ask and have answered in the room now rank P2; the tie-break names the question-shaped P1 as the commonest inflation. One sentence in `mode-review.md` and the anchors in `knowledge-craft-score.md` updated together.
+
+---
+
 ## 2.13.1 - 2026-06-10
 
 ### Fixed
