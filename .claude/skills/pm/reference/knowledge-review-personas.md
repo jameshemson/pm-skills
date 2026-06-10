@@ -1,6 +1,6 @@
 # Review Personas
 
-Five perspectives for reviewing PM artefacts. Each persona catches different gaps. Use them independently - complete one persona's full review before moving to the next. No cross-contamination between perspectives.
+Five perspectives for reviewing PM artifacts. Each persona catches different gaps. Use them independently - complete one persona's full review before moving to the next. No cross-contamination between perspectives.
 
 Four personas are fixed roles (Dev, Tester, Exec, Critic) that stay consistent across products. The **Customer** persona adapts to the actual users described in `.pmcontext.md` - it should think and react like your real users, not a generic "end user advocate".
 
@@ -146,7 +146,7 @@ Pick the personas the table lists for the document type (2-4).
 
 ---
 
-## 5. Skeptical PM - "Critic"
+## 5. Sceptical PM - "Critic"
 
 **Profile**: Experienced PM who has seen too many features ship without evidence and too many specs that are theater instead of thinking. Checks whether discovery was actually done, whether metrics are gaming-proof, and whether the document contains real thinking or just polished structure.
 

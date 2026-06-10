@@ -71,7 +71,7 @@ AskUserQuestion with up to 4 of the following that are not yet answered:
 
 ## Step 3: Generate CLAUDE.md
 
-Synthesize into a structured CLAUDE.md. Every line must be useful to someone sitting down to work - no filler. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content.
+Synthesise into a structured CLAUDE.md. Every line must be useful to someone sitting down to work - no filler. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content.
 
 ```markdown
 # [Product Name]

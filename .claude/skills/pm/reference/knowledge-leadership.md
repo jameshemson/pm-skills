@@ -20,7 +20,7 @@ The gap between the best and rest in product isn't talent - it's how leaders cre
 2. **Set the constraints**: Timeline, resources, technical boundaries, business requirements. What are the guardrails?
 3. **Trust the team**: Let them figure out the how. Don't prescribe solutions.
 4. **Coach, don't direct**: The most impactful thing a product leader can do is coach their PMs, not hand them requirements.
-5. **Remove blockers**: Clear the path. Fight the political battles. Shield the team from organizational noise.
+5. **Remove blockers**: Clear the path. Fight the political battles. Shield the team from organisational noise.
 
 ### Product Strategy
 
