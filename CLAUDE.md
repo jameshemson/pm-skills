@@ -61,7 +61,6 @@ The architecture mirrors impeccable 3.1.1. Reference files are at:
     ├── knowledge-prioritisation.md
     ├── knowledge-leadership.md
     ├── knowledge-positioning.md
-    ├── knowledge-prompting.md
     ├── knowledge-review-personas.md
     └── knowledge-metrics.md
 ```

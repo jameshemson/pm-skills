@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.8.0 - 2026-06-10
+
+### Added
+
+- The Demand-Side Sales four-forces framework (push, pull, anxiety, habit) now lives in `knowledge-discovery.md`, where `discover` mode has pointed all along. The pointer was broken; the model is now where the mode says it is.
+- Routing aliases: `critique`, `audit`, `translate`, `sharpen`, and `retro` route straight to `review`; `debrief` and `interview` route to `discover`'s sub-modes. Previously `debrief` dead-ended.
+- The slop taxonomy gains mirror slop, four register words, the overused-qualifier list, and three verb-inflation tells, merged from the retired prompting reference.
+
+### Removed
+
+- `knowledge-prompting.md`. It was referenced by nothing and carried a second, diverging copy of the slop taxonomy. Its unique detection content moved to `foundations.md`; the rest is in git history.
+
+### Changed
+
+- The Claudism Catalogue's growth note now tells a runtime agent to flag unclassified tells in review output instead of editing what may be a read-only installed file.
+
+---
+
 ## 2.7.0 - 2026-06-09
 
 ### Added
