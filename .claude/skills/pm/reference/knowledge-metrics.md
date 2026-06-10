@@ -120,18 +120,12 @@ For each metric:
 - [Date]: Early signal check - any surprises?
 - [Date]: Full evaluation - did it work?
 
+### What Would Change the Targets
+[Conditions that would make you revise targets up, down, or change the metrics entirely]
+
 ---
 
-## Metric Quality Test
-
-Check every metric against:
-
-- [ ] **Outcome, not output**: Does this measure what changed for users, not what you shipped?
-- [ ] **Connected to value**: If this metric improves, does a real person's life get better?
-- [ ] **Not a vanity metric**: Would you be comfortable showing this to a skeptical board member as proof of impact?
-- [ ] **Actionable**: If this metric drops, do you know what to investigate?
-- [ ] **Honest**: Are you choosing this metric because it's meaningful, or because it's likely to look good?
-- [ ] **Simple enough**: Can you explain what this metric means to a non-technical stakeholder in one sentence?
+The delivery-gate checklist lives in [mode-metrics.md](mode-metrics.md) Step 5; this file owns definitions, the review checklist below owns critique.
 
 ---
 
