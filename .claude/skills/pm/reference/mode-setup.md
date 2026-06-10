@@ -19,46 +19,59 @@ Note what you found. This reduces the questions you need to ask.
 
 ## Step 2: Interview the User
 
-STOP and call the AskUserQuestion tool. Ask only about what you could not infer from the codebase scan. Group by topic.
+**How to run the interview**
 
-**Product domain**
-- What does this product do? (One sentence)
-- B2B, B2C, B2B2C, platform, or internal tool?
-- Lifecycle stage: pre-PMF, growth, scale, mature?
-- What are the key domain concepts the team uses?
+Use AskUserQuestion in rounds of at most 4 questions per call. Run round by round - do not queue all questions at once.
 
-**Team structure**
+Before each round: pre-fill any question the codebase scan already answered, and pre-fill any question the user already answered earlier in this conversation. Present pre-fills as "I read X from the codebase - does that match?" inside the round, not as silent assumptions. If the user's answer contradicts a pre-fill, the user's answer wins.
+
+Questions that have genuinely enumerable options (B2B/B2C, lifecycle stage, team model, decision framework) go in AskUserQuestion rounds. Questions whose answers are free-form (one-sentence product description, key domain concepts) are asked as open prompts in conversation between rounds - do not force them into multiple-choice.
+
+If a round's questions were all answered by the scan or earlier in the conversation, skip that round entirely.
+
+After Round 2, STOP. Offer exactly two options via AskUserQuestion:
+- "Generate CLAUDE.md from what we have"
+- "Keep going (one more short round)"
+
+If the user exits early, sections not yet covered are written as gaps. Continue to Round 3 only if the user chooses to keep going.
+
+---
+
+**Round 1 - product domain and team structure**
+
+Open prompt first (in conversation): "What does this product do in one sentence, and what are the key domain concepts the team uses?"
+
+Then AskUserQuestion with up to 4 of the following that the scan did not answer:
+- B2B, B2C, B2B2C, platform, or internal tool? Lifecycle stage: pre-PMF, growth, scale, or mature?
 - Empowered product teams or feature teams?
 - Who is on the product team? (Roles, not names)
-- How are decisions made? (Who has authority for what)
-- Who are the key stakeholders and what do they care about?
+- How are decisions made and who has authority for what? Who are the key stakeholders?
 
-**Ways of working**
+---
+
+**Round 2 - ways of working and quality standards**
+
+AskUserQuestion with up to 4 of the following that are not yet answered:
 - What does your development process look like? (Sprint length, ceremonies, workflow)
-- Output-focused (shipping features) or outcome-focused (moving metrics)?
-- What does "done" mean? (Specific quality gates, or ship and iterate?)
-- How do specs and briefs get written and reviewed?
+- What does "done" mean - specific quality gates, or ship and iterate?
+- What does a good spec look like on this team? What are the most common gaps?
+- What makes engineering push back repeatedly? Any specific standards for testing, documentation, or code review?
 
-**Quality standards**
-- What does a good spec look like on this team?
-- What are the most common gaps in specs or briefs?
-- What makes engineering push back repeatedly?
-- Specific standards for testing, documentation, or code review?
+After this round: offer the early exit (see above).
 
-**Communication norms**
-- How does the team communicate? (Slack, docs, meetings, async vs sync)
-- What format do stakeholder updates take?
-- Naming conventions, writing style, language choices?
-- Anything the team explicitly avoids?
+---
 
-**AI usage**
-- How is the team currently using AI?
-- What works well? What does not?
+**Round 3 - communication norms and AI usage** (offered only if user chose to keep going)
+
+AskUserQuestion with up to 4 of the following that are not yet answered:
+- How does the team communicate? (Slack, docs, meetings, async vs sync) What format do stakeholder updates take?
+- Naming conventions, writing style, language choices? Anything the team explicitly avoids?
+- How is the team currently using AI? What works well? What does not?
 - Any rules about AI use? (Security, confidentiality, review requirements)
 
 ## Step 3: Generate CLAUDE.md
 
-Synthesize into a structured CLAUDE.md. Every line must be useful to someone sitting down to work - no filler.
+Synthesize into a structured CLAUDE.md. Every line must be useful to someone sitting down to work - no filler. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content.
 
 ```markdown
 # [Product Name]
