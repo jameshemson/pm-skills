@@ -12,11 +12,11 @@ This fires PRE-generation (before you write). The PM Slop Test fires POST-genera
 
 ### Step 1: Anchor in the specific product context
 
-Before generating any PM artefact, write down three concrete words that describe the specific product situation. Not generic labels like "enterprise", "SaaS", or "mobile app". Situation-specific anchors like "high-churn, regulated, legacy-migration" or "pre-PMF, developer-tool, open-source-competitor". Every sentence you write should connect to these three words.
+Before generating any PM artifact, write down three concrete words that describe the specific product situation. Not generic labels like "enterprise", "SaaS", or "mobile app". Situation-specific anchors like "high-churn, regulated, legacy-migration" or "pre-PMF, developer-tool, open-source-competitor". Every sentence you write should connect to these three words.
 
 ### Step 2: List your reflex defaults, then reject them
 
-For the artefact you are about to generate, check each relevant category below. If what you were about to write matches an item in the reflex list, stop and replace it with something specific to the product context from Step 1.
+For the artifact you are about to generate, check each relevant category below. If what you were about to write matches an item in the reflex list, stop and replace it with something specific to the product context from Step 1.
 
 **Personas**
 - "Busy professionals aged 25-45 who value efficiency"
@@ -59,7 +59,7 @@ For the artefact you are about to generate, check each relevant category below. 
 
 ### Step 3: Generate with the replacements
 
-Now produce the artefact. Use context-specific alternatives from your product context instead of the rejected defaults. Every persona, metric, acceptance criterion, and risk should be specific enough that it could only belong to THIS product.
+Now produce the artifact. Use context-specific alternatives from your product context instead of the rejected defaults. Every persona, metric, acceptance criterion, and risk should be specific enough that it could only belong to THIS product.
 
 ### Step 4: Cross-check the result
 

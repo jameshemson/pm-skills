@@ -1,7 +1,7 @@
 {
   "name": "pm",
   "description": "Claude generates, pm-skills critiques. An adversarial review mode critiques any PM doc (briefs, specs, strategy, messages) against curated frameworks, and the drafting modes run the same critique on their own output. Nine modes in one pm skill: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
-  "version": "2.13.0",
+  "version": "2.13.1",
   "author": {
     "name": "James Hemson"
   },
