@@ -75,6 +75,7 @@ The heavier procedures live in [reference/foundations.md](reference/foundations.
 
 1. **No argument**: render the commands table above as the user-facing menu. Ask what the user wants to do.
 2. **First word matches a mode**: load `reference/mode-<word>.md` and follow its instructions. Everything after the mode name is the target.
-3. **First word does not match a mode**: treat the whole input as a document or a request to sharpen, and default into the `review` mode. Critique is the most common need; open by confirming intent before critiquing.
+3. **First word matches an alias**: route per this table, with everything after the word as the target. `critique`, `audit`, `translate`, `sharpen`, `retro` route to the `review` mode (for `retro`, the target is a retro document). `debrief` routes to the `discover` mode's debrief sub-mode; `interview` routes to its plan sub-mode. An alias with no target falls through to the destination mode's own no-input handling.
+4. **First word matches neither a mode nor an alias**: treat the whole input as a document or a request to sharpen, and default into the `review` mode. Critique is the most common need; open by confirming intent before critiquing.
 
 The Context Gathering Protocol runs first regardless of mode. A mode may end by pointing at another mode (`review` often points at `discover` or `decide`); because every mode is part of this one skill, that is a continuation in the same conversation, not a new invocation.

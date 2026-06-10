@@ -83,6 +83,32 @@ Successful products integrate the entire experience around the job - not just th
 
 ---
 
+## The Four Forces (Bob Moesta, Demand-Side Sales)
+
+People do not switch to a new product because it is good. They switch when the forces pushing them toward change outweigh the forces holding them in place. Every buying or adoption decision is a tug-of-war between four forces:
+
+**Push of the situation**: pain with how things work today. The workaround that keeps breaking, the report that takes a Friday afternoon, the moment the current tool visibly cost money or face. Push comes from the struggling moment, not from your product.
+
+**Pull of the new solution**: the attraction of a better way. What the person imagines their day looks like if the problem were gone. Pull is about their imagined progress, not your feature list.
+
+**Anxiety of the new solution**: fear of switching. Will it work? What does it cost to learn? Who else has to sign off? What if it fails mid-migration? Anxiety is rarely stated unprompted; it surfaces as stalling.
+
+**Habit of the present**: comfort with the status quo. The current way is known, already paid for, and woven into other routines. Habit is the silent force; people defend it without noticing they are doing it.
+
+The inequality that predicts switching:
+
+    push + pull > anxiety + habit
+
+If the left side does not clearly outweigh the right, people stay put no matter how good the solution is. A "nice to have" problem is one where push and pull are real but too weak to beat the right side.
+
+Using the forces in discovery:
+
+- Design questions that probe each force separately. `mode-discover.md` carries the question bank; this section is the model behind it.
+- In a debrief, map every substantive statement to a force and rate each force weak, medium, or strong with the quote that supports the rating.
+- Anxiety and habit answers are the most decision-relevant and the least volunteered. If your notes contain only push and pull, the conversation was a pitch, not discovery.
+
+---
+
 ## Design Sprint (Jake Knapp)
 
 A five-day process for answering critical business questions through design, prototyping, and testing. Compresses months of debate into one focused week.
