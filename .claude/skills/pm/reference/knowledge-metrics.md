@@ -154,3 +154,10 @@ Use this section when reviewing a metrics document (for any feature, initiative,
 - [ ] Instrumentation not in place with no plan to add it. The metric is aspirational, not real.
 - [ ] Timeframe too short to see signal (one week for a retention metric) or too long to be actionable (12 months for anything).
 - [ ] Confounding factors not mentioned. Every launch has them; pretending otherwise is theater.
+
+**For OKRs specifically:**
+- [ ] The objective is an outcome, not a feature list with a date.
+- [ ] Each key result is a measure, not a milestone ("launch X by Y" is a milestone, not a KR).
+- [ ] Every key result has a baseline - no baseline means no honest evaluation at quarter end.
+- [ ] At most one KR is aspirational; if flagged as such, it is explicitly labelled.
+- [ ] No KR is outside the team's influence - if the team ships nothing, the KR must not still move.
