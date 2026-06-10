@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.13.1 - 2026-06-10
+
+### Fixed
+
+- Spelling normalised to British English throughout the skill pack; "theater" kept deliberately as brand vocabulary.
+
+---
+
 ## 2.13.0 - 2026-06-10
 
 ### Added

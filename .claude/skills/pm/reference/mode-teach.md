@@ -86,7 +86,7 @@ If the user has no strong preferences, skip this round. Default frameworks in ea
 
 ## Step 3: Write Product Context
 
-Synthesize findings and answers into a structured context file. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content. Exception: Ways of Working is omitted entirely if not covered, as it is optional.
+Synthesise findings and answers into a structured context file. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content. Exception: Ways of Working is omitted entirely if not covered, as it is optional.
 
 ```markdown
 ## Product Context

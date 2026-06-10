@@ -51,7 +51,7 @@ Then load **one** knowledge file by document type. Each knowledge file carries a
 Run, in order:
 
 1. **The PM Slop Test.** Apply every check from the PM Slop Test in `SKILL.md`. Flag each failure with the exact text that triggers it and what should replace it. Then apply the full slop taxonomy from `foundations.md` for substance and voice slop. For any document with standard template structure, run the template-camouflage test from the taxonomy once, section by section, before the line-level scans - the doc-level diagnosis frames the itemised findings. Then run the **Claudism Catalogue** from `foundations.md`: scan for AI-register tells, quote each one, name its family, and give the fix. Three or more tells from different families means the draft reads as AI-generated; say so in the slop verdict, because an audience that clocks it discounts the whole document.
-2. **Persona-based review.** Select the personas its selection table lists for the document type (2-4) from `knowledge-review-personas.md`. Adopt each perspective independently: finish one persona's full assessment before starting the next, no cross-contamination. Then synthesize: where two or more personas flag the same issue, that is a high-confidence gap.
+2. **Persona-based review.** Select the personas its selection table lists for the document type (2-4) from `knowledge-review-personas.md`. Adopt each perspective independently: finish one persona's full assessment before starting the next, no cross-contamination. Then synthesise: where two or more personas flag the same issue, that is a high-confidence gap.
 3. **Type-specific critique.** Apply the "Critiquing this artifact" checklist from the loaded knowledge file.
 4. **Strategic-alignment check** (the absorbed `audit` function). Using product context, ask: does this connect to a stated outcome, or is it drift? Is the evidence strong, medium, weak, or none? Is this the highest-value use of the team's time? Name one hard question the team is avoiding.
 
@@ -83,7 +83,7 @@ For a document that matches no type in the routing table, critique against this.
 - **Audience**: is it written for a specific named reader, or for "everyone" (which means no one)?
 - **Claims**: is every assertion either evidenced or explicitly flagged as an assumption?
 - **Specificity**: are there numbers, names, and concrete examples, or only generalities?
-- **Completeness**: what would a skeptical reader immediately ask that the document does not answer?
+- **Completeness**: what would a sceptical reader immediately ask that the document does not answer?
 - **Scope**: is it clear what this document does and does not cover?
 - **Slop**: run the PM Slop Test and the `foundations.md` taxonomy regardless of type.
 - **Action**: is the next step explicit, with an owner?

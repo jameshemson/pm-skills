@@ -35,14 +35,14 @@ For each metric, fill the fields from the Measurement Plan section in [knowledge
 
 - [ ] **Outcome, not output**: Does this measure what changed for users, not what you shipped?
 - [ ] **Connected to value**: If this metric improves, does a real person's life get better?
-- [ ] **Not a vanity metric**: Would you show this to a skeptical board member as proof of impact?
+- [ ] **Not a vanity metric**: Would you show this to a sceptical board member as proof of impact?
 - [ ] **Actionable**: If this metric drops, do you know what to investigate?
 - [ ] **Honest**: Are you choosing this because it is meaningful, or because it is likely to look good?
 - [ ] **Simple enough**: Can you explain it to a non-technical stakeholder in one sentence?
 
 ## Step 6: Voice Pass
 
-Scan every prose section (the initiative framing, counter-metric rationale, confounding-factor notes) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A metrics doc that reads as generated invites the skeptical board member to discount it. If a fix introduces a new tell, fix the fix.
+Scan every prose section (the initiative framing, counter-metric rationale, confounding-factor notes) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A metrics doc that reads as generated invites the sceptical board member to discount it. If a fix introduces a new tell, fix the fix.
 
 Use the Output Format in [knowledge-metrics.md](knowledge-metrics.md).
 
