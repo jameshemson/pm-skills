@@ -19,6 +19,8 @@ Before critiquing, understand the situation. Critiquing in a vacuum produces gen
 - **What is the situation?** What is happening right now that makes this document necessary? What is at stake if it lands badly?
 - **What does the user want from the review?** Sharpen for the same audience, retarget to a new audience, or pressure-test the thinking itself?
 
+If the Context Gathering Protocol entered session-only mode, fold its three questions into this Frame conversation (the audience question above already covers part of question 1) - one interview, not two. The critique then proceeds at full depth; only the persistence differs.
+
 **If the user brought no draft at all**, they want generation, not critique. Do not critique an empty input. Point them to a generator mode: `brief`, `spec`, `stories`, or `metrics`. Then stop.
 
 Detect the document type from the content and the user's answers. It selects the knowledge file in the next phase.
