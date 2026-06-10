@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.10.0 - 2026-06-10
+
+### Added
+
+- **Session-only escape hatch.** The Context Gathering Protocol no longer forces new users into the teach interview before they can do any work. When no `.pmcontext.md` exists, the skill now offers a fork via AskUserQuestion: set up context properly (recommended, persists to `.pmcontext.md`) or answer three fixed questions for this session only. Session-only answers are never written to any file. Every deliverable produced on the session-only path carries one line noting the limitation and one closing pointer to `pm teach`; neither repeats.
+- **Three fixed session questions.** (1) What is the product, in one sentence, and who uses it? (2) What outcome is the work in front of us supposed to move? (3) What is the team explicitly NOT doing right now? These map to the three context sections modes lean on most.
+- **Review merges the session questions into Frame.** When the protocol enters session-only mode, `review` folds the three questions into its existing Frame conversation rather than running a separate gate - one interview, not two.
+- **Edge case handling.** When the document under review is not about this repo's product (a colleague's doc, an example), session-only is the right path and the three questions target that product. When running outside any project directory, session-only is the default; choosing `teach` gets a warning about where `.pmcontext.md` will land.
+
+---
+
 ## 2.9.1 - 2026-06-10
 
 ### Fixed

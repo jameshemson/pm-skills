@@ -17,7 +17,13 @@ Gathering order, fastest first:
 
 1. **Loaded instructions / CLAUDE.md**: if a **Product Context** section is already in your loaded instructions or in CLAUDE.md, proceed.
 2. **`.pmcontext.md`**: if not, read `.pmcontext.md` from the project root. If it exists with product, users, business model, team, and technical constraints, proceed.
-3. **`teach` mode (required)**: if neither source has context, route into the `teach` mode NOW, before the requested work. Do not skip it. Do not infer strategy, personas, or constraints from the codebase.
+3. **No context found - offer the fork.** STOP and call the AskUserQuestion tool. Question: "No product context is set up for this project. PM output without it is generic; how do you want to proceed?" Options: "Set up context now (Recommended)" - runs the `teach` mode, takes a few minutes, persists to `.pmcontext.md` for every future session; "Three quick questions, this session only" - enough context to work now, nothing saved.
+
+   **Session-only contract.** Ask exactly three questions, then proceed: (1) What is the product, in one sentence, and who uses it? (2) What outcome is the work in front of us supposed to move? (3) What is the team explicitly NOT doing right now? In the `review` mode, fold these into Frame rather than asking separately. Session-only answers are never written to any file. Every deliverable produced this way carries one line: "Built from session-only context; `pm teach` makes this permanent and sharper." Say it once in the deliverable and once at the end of the conversation, never more.
+
+   **When the document is not about this repo's product** (a colleague's doc, an example), session-only is the right path and the three questions are about that product - do not read this repo's `.pmcontext.md` for it. **When running outside a project directory**, default to session-only; if the user chooses `teach`, warn that `.pmcontext.md` will be written to the current directory.
+
+   Do not infer strategy, personas, or constraints from the codebase on either path.
 
 The `decide` mode additionally reads `pmdecisions.md` at the project root if present, and the `decisions_log:` key from `.pmcontext.md`. See [reference/mode-decide.md](reference/mode-decide.md).
 
