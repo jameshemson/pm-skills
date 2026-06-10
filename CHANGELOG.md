@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.11.1 - 2026-06-10
+
+### Fixed
+
+- **mode/knowledge duplication collapsed for metrics.** mode-metrics.md carried near-verbatim copies of the interrogation questions, metric-stack definitions, target fields, measurement-plan fields, and the output format from knowledge-metrics.md. The mode now holds procedure and pointers; knowledge-metrics.md is the single source for definitions. The output-table divergence is resolved - two Secondary rows is canonical, matching the "2-3 secondary metrics" rule. The Metric Quality Test has one home: mode-metrics.md Step 5 (the delivery gate). knowledge-metrics.md's copy is replaced with a one-line pointer. Calibration not required; no gate-relevant file touched.
+
+---
+
 ## 2.11.0 - 2026-06-10
 
 ### Changed
