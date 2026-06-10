@@ -17,7 +17,7 @@ Review ends with a band verdict, not a number. The bands are SLOP, ROUGH, SOLID,
 
 Evaluated in order. Lower band wins. Bounds are inclusive.
 
-1. **SLOP** if: three or more Claudism families are present, OR five or more of the ten PM Slop Test checks in SKILL.md fail, OR there is no real substance to critique.
+1. **SLOP** if: three or more Claudism families are present AND three or more of the ten PM Slop Test checks in SKILL.md fail, OR five or more of the ten checks fail regardless of voice, OR there is no real substance to critique. Voice alone never gates SLOP: a register-heavy document with sound substance bands by gates 2-4 and is held out of SHIP by the tell-cap.
 2. **ROUGH** if: any P0 finding exists, or three or more P1s.
 3. **SOLID** if: no P0s and at most two P1s (any number of P2s).
 4. **SHIP** if: no P0s, no P1s, and fewer than three Claudism tells in total (individual instances, distinct from the family count in the SLOP gate).
@@ -48,7 +48,7 @@ For a type with no row here, rank from the three definitions and say which one y
 
 **Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the audience will send it back for this" (P1), or "this just erodes it" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1.
 
-**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families) and the SHIP gate (fewer than three tells in total). A doc with heavy register but sound substance lands SOLID at best, never ROUGH on voice alone. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
+**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
 
 ---
 
