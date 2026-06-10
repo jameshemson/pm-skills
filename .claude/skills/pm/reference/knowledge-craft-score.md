@@ -17,7 +17,7 @@ Review ends with a band verdict, not a number. The bands are SLOP, ROUGH, SOLID,
 
 Evaluated in order. Lower band wins. Bounds are inclusive.
 
-1. **SLOP** if: three or more Claudism families are present, OR five or more PM Slop Test checks fail, OR there is no real substance to critique.
+1. **SLOP** if: three or more Claudism families are present, OR five or more of the ten PM Slop Test checks in SKILL.md fail, OR there is no real substance to critique.
 2. **ROUGH** if: any P0 finding exists, or three or more P1s.
 3. **SOLID** if: no P0s and at most two P1s (any number of P2s).
 4. **SHIP** if: no P0s, no P1s, and fewer than three Claudism tells in total (individual instances, distinct from the family count in the SLOP gate).

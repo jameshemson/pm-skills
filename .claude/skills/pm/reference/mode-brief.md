@@ -65,15 +65,7 @@ Questions that need answers before work starts. Flag who should answer each.
 
 ## Step 4: Run the Slop Test
 
-Before delivering, check:
-
-- [ ] Audience specified (not "users" - which users, for whom is this written?)
-- [ ] Problem stated (not "better experience" - what is broken?)
-- [ ] Success measurable (not "positive feedback" - what metric?)
-- [ ] Edge cases covered (not just the happy path)
-- [ ] Scope bounded (at least 3 things explicitly out of scope)
-- [ ] Dependencies named
-- [ ] Assumptions stated
+Run the canonical PM Slop Test from `SKILL.md` (already in your context) - all ten checks. Do not maintain a local copy of the list here; SKILL.md is the single source.
 
 If any check fails, fix it before delivering. State which assumptions you made and what you could not verify.
 

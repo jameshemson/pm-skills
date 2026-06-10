@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.8.1 - 2026-06-10
+
+### Fixed
+
+- The PM Slop Test existed in three diverging copies (10 checks in SKILL.md, 7 in `brief`, 8 in `spec`), and the SLOP gate counted failures against an unnamed list. SKILL.md's ten checks are now the single canonical list; `brief` and `spec` reference it, and the gate names its denominator ("five or more of the ten"). `brief` and `spec` therefore now also check trade-offs, concision, and register tells at the checklist level.
+
+---
+
 ## 2.8.0 - 2026-06-10
 
 ### Added
