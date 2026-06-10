@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.9.0 - 2026-06-10
+
+### Added
+
+- **Severity anchors.** P0, P1, and P2 are now defined by their effect on the document's audience, with per-type anchor examples for specs, metrics docs, strategy docs, stakeholder messages, and roadmaps, plus a tie-break rule that biases toward the lower severity. The ROUGH/SOLID boundary rests on these counts; they now have calibration behind them. Lives in `knowledge-craft-score.md` beside the gates they feed.
+- **The voice-finding rule.** Claudism tells and voice slop never carry P-severities; they reach the verdict only through the SLOP gate (family count) and the SHIP gate (tell count). A register-heavy but substantively sound doc lands SOLID at best, never ROUGH on voice alone. A tell that hides a substance gap is logged on both tracks.
+
+---
+
 ## 2.8.1 - 2026-06-10
 
 ### Fixed

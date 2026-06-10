@@ -26,6 +26,32 @@ The band moves only when the findings move. If the user contests the band, resta
 
 ---
 
+## Severity anchors
+
+The gates count P0s and P1s, so the band is only as stable as the severity calls. Rank every substance finding by its effect on the document's audience, not by how bad it sounds. The type checklists in the knowledge files identify findings; this section ranks them.
+
+- **P0 - the document's primary action is blocked.** The audience cannot do the thing the document exists to make them do, or would do the wrong work if they tried.
+- **P1 - the audience can start, but the gap comes back.** The document gets used, then bounced back for the named gap within its first real use.
+- **P2 - quality erosion only.** Fixing it improves the document; not fixing it changes nothing about what the reader does next.
+
+Anchors by document type (examples of the principle, not an exhaustive registry):
+
+| Type | P0 looks like | P1 looks like |
+|---|---|---|
+| Spec / brief | A core flow has no acceptance criteria; no primary success metric; the problem statement restates the solution | Rollback plan with no trigger condition; a dependency with no owner; one major state family (empty / error / concurrent) missing from edge cases |
+| Metrics doc | No baseline for the primary metric; two primary metrics | A guardrail with no threshold; a secondary metric that duplicates the primary; no counter-metrics |
+| Strategy doc | No exclusions anywhere (a strategy that rules nothing out); where-to-play contradicts capabilities | The most fragile assumption is unnamed; "how to win" would read true of the nearest competitor |
+| Stakeholder message | The ask is missing or unfindable | The recipient's predictable objection is unaddressed; the ask is buried below the context |
+| Roadmap | Every item is a feature with no outcome attached | Same confidence at month 1 and month 9; dependencies on other teams invisible |
+
+For a type with no row here, rank from the three definitions and say which one you applied.
+
+**Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the audience will send it back for this" (P1), or "this just erodes it" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1.
+
+**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families) and the SHIP gate (fewer than three tells in total). A doc with heavy register but sound substance lands SOLID at best, never ROUGH on voice alone. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
+
+---
+
 ## The internal score
 
 Place the integer within the band by thirds - low, mid, or high - judged from severity counts. More P1s and P2s push toward the low third of the band. Fewer push toward the high third. Claim no more precision than that. The integer is never displayed, never headlined, and nothing stores it yet.
