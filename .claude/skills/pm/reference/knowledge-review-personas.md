@@ -8,7 +8,7 @@ Four personas are fixed roles (Dev, Tester, Exec, Critic) that stay consistent a
 
 ## Persona Selection Table
 
-Pick 3-4 personas based on what you're reviewing.
+Pick the personas the table lists for the document type (2-4).
 
 | Document Type | Personas | Why |
 |---|---|---|
@@ -18,6 +18,9 @@ Pick 3-4 personas based on what you're reviewing.
 | User-facing feature | Customer, Dev, Tester | User value + buildability |
 | Metrics framework | Critic, Exec | Evidence and gaming-resistance |
 | Decision doc | Critic, Exec, Dev | Rigour, alignment, feasibility |
+| Stakeholder message / comms | Exec, Critic | Does the ask land with this recipient; is the claimed evidence real (add Customer for customer-facing comms) |
+| Roadmap / prioritisation | Exec, Critic, Dev | Strategic connection and opportunity cost; evidence behind impact scores; feasibility of the sequencing |
+| Retro / post-launch review | Critic, Exec | Decision-vs-outcome separation and honest fielding; accountability for the called result |
 
 ---
 
@@ -180,7 +183,7 @@ This section explains how to apply the personas when running a critique on a doc
 
 ### How to select and sequence personas
 
-Use the Persona Selection Table at the top of this file to pick 3-4 personas based on document type. Do not use all five on every document - that produces noise, not signal.
+Use the Persona Selection Table at the top of this file to pick the personas it lists for the document type (2-4). Do not use all five on every document - that produces noise, not signal.
 
 **Run one persona completely before starting the next.** Each persona must read the document fresh from their perspective. If you let the Dev persona inform the Critic persona mid-review, you cross-contaminate the perspectives and the Critic will miss what the Critic alone would catch.
 

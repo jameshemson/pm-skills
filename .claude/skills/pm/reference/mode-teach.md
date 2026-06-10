@@ -91,6 +91,8 @@ Synthesize findings and answers into a structured context file. For any section 
 ```markdown
 ## Product Context
 
+last_updated: YYYY-MM-DD
+
 ### Product
 [What it does, B2B/B2C/other, business model, growth model. If B2B: buyer vs user distinction]
 
@@ -116,7 +118,7 @@ Synthesize findings and answers into a structured context file. For any section 
 [Preferred decision frameworks, checklists, doc formats, approaches to avoid. Only include if the user has preferences - omit entirely if they use defaults.]
 ```
 
-Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place. Do not overwrite or remove other sections (for example, a `## Settings` section managed by other modes such as `decide`).
+Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place; always refresh `last_updated` to today's date when updating the section, and add the line if an older file lacks it. Do not overwrite or remove other sections (for example, a `## Settings` section managed by other modes such as `decide`).
 
 Then STOP and call the AskUserQuestion tool: ask whether to also append the Product Context to CLAUDE.md. If yes, append or update the section there.
 
