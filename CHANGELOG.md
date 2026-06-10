@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.11.0 - 2026-06-10
+
+### Changed
+
+- **teach and setup interview in bounded rounds.** Both onboarding modes now run the interview in rounds of at most 4 questions per AskUserQuestion call, ordered by what downstream modes consume most. Questions with genuinely enumerable options go in AskUserQuestion rounds; free-text questions (vision, job-to-be-done, hardest problem) are open prompts in conversation between rounds. After Round 2, the user is offered an early exit; unanswered sections are written as `[Not captured - ask me and update this section]` rather than invented. Ways of Working remains omit-if-empty.
+
+---
+
 ## 2.10.0 - 2026-06-10
 
 ### Added
