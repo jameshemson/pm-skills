@@ -31,6 +31,18 @@ If a **Ways of Working** section exists in `.pmcontext.md` or CLAUDE.md, prefer 
 
 Without context, the output is theater. Context is the quality gate.
 
+## Reading source documents
+
+When the target is a binary office document (`.docx`, `.pptx`, `.xlsx`), never read the raw file or its unzipped XML - the markup turns a five-page document into tens of thousands of tokens of noise. Convert to markdown first:
+
+1. `markitdown <file>` if installed, or `uvx markitdown <file>` if uv is available. Handles all three formats.
+2. Otherwise `pandoc <file> -t markdown` for `.docx`, or `textutil -convert txt <file> -stdout` on macOS.
+3. If no converter is available, ask the user to export the document as markdown, plain text, or PDF rather than attempting to parse the binary.
+
+**Leave nothing behind.** Convert to stdout and read from the command output; never write converted markdown into the project or beside the source file. If the output is too large for one pass, write it under `$TMPDIR`, read it from there, and delete it when done. A conversion copy of a source document must never land anywhere git or a sync tool can pick it up - these documents are often sensitive. Mention the conversion in one passing line ("Converting board-deck.pptx to read it - temporary copy, deleted after") and move on; do not ask permission to convert.
+
+For spreadsheets, never convert the whole workbook blind: full-sheet markdown tables can swamp the conversation. List the sheet names and dimensions first, then extract only the sheets or ranges the mode needs. PDFs need no conversion; read them directly.
+
 ## PM Principles
 
 Non-negotiable. Every mode enforces them.
