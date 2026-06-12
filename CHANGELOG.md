@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.15.0 - 2026-06-12
+
+### Added
+
+- **Reading source documents.** New shared-context section in `SKILL.md`, inherited by all nine modes: point a mode at a `.docx`, `.pptx`, or `.xlsx` and it reads the document cleanly and leaves nothing behind. Conversion goes to stdout or a system temp file deleted after use, never into the project or beside the source, so no markdown copy of a sensitive document can land where git or a sync tool picks it up - previously this was improvised per session, which is exactly how stray conversion files get littered. Converter order: `markitdown` if present, then `pandoc`, then `textutil`; if none is available the skill asks for an export rather than parsing the binary. Spreadsheets are inspected sheet-by-sheet rather than converted whole; PDFs are read directly. No new dependency, no permission prompts, one passing line of narration.
+
+---
+
 ## 2.14.0 - 2026-06-10
 
 ### Changed
