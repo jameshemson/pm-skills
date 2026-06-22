@@ -156,3 +156,16 @@ Future modes that produce project-root artifacts should follow this pattern: low
 - Do not produce generic marketing copy. Every sentence should be specific and earned.
 - Do not over-engineer. Skills are markdown files. Keep it simple.
 - Do not invent frameworks. Use the ones from the reference files. The value is curation and opinionation, not invention.
+
+## Working style
+
+- Read the relevant files before making claims about the code. Don't speculate about code you haven't opened.
+- Act directly on clear, reversible work (edits, tests, local commands). When intent is ambiguous, or an action is hard to reverse or affects shared systems, ask or investigate first, then proceed.
+- State the assumptions you're making so they can be corrected.
+- If you see a clearly better approach, give it in 2-4 bullets, then proceed unless it needs a decision from me.
+- For substantial features, use /build rather than freelancing.
+
+## Writing plans (Sonnet plans, Opus implements)
+
+- Be explicit and scoped: the implementer follows the plan literally and won't infer unstated requirements or generalize from one case to others. State the files, acceptance criteria, edge cases, and what's out of scope.
+- Keep it minimal: plan only what the task needs. No extra abstractions, files, configurability, or defensive code that wasn't asked for.
