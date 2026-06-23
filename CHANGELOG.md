@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.16.0 - 2026-06-23
+
+### Added
+
+Three AI-voice tells, sourced from a ~90,000-post Reddit analysis of what makes writing read as AI-generated (89,239 posts pulled, 7,984 on-topic, plus a 600-post hand-audited sample). The data ranks tells by what human readers actually cite, which is the same concern the slop detector runs on.
+
+- **Assistant-artifact slop, an absolute voice tell.** New item 14 in the Slop Taxonomy (`foundations.md`): leftover chat scaffolding the generator forgot to strip - trailing offers ("Would you like me to..."), form-letter sign-offs ("I hope this helps"), and model self-reference ("as a large language model"). Flagged on a single instance anywhere, the same standard as the em dash; `knowledge-craft-score.md` now caps the band at SOLID when either is present, never lower, clearing once removed. Closes the one tell family the data ranks high (leftover assistant boilerplate appears in thousands of cited posts) that the taxonomy had no entry for. Most likely to leak from the tail of a generated artifact, because the model's native turn-ending move is to offer follow-up.
+- **Uniform-rhythm slop, promoted to a named structural tell.** New item 15 in the Slop Taxonomy: sentences and paragraphs of even length and shape, the second-most-cited AI tell in the data and entirely keyword-invisible. Previously a buried clause in Sentence pattern slop (12) and Claudism family 8; both now point to the single home. Makes lexical-clean necessary but not sufficient - a draft with no flagged words but machine-even meter no longer reads as clean, and the review pass measures length variance instead of only scanning vocabulary.
+- **The over-corrected anti-AI register, Claudism family 15.** The mirror of the whole catalogue: prose straining not to read as AI (staccato fragments, forced lowercase, bolted-on "real talk", em-dash avoidance contortions) is its own tell, clocked just as fast. Guards the skill's own voice pass from trading one detectable default for another, and lets `review` flag a draft that has been aggressively de-slopped into fake-casual rather than waving it through as human.
+
+---
+
 ## 2.15.0 - 2026-06-12
 
 ### Added
