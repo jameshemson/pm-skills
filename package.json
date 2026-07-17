@@ -1,0 +1,14 @@
+{
+  "name": "pm-skills",
+  "version": "2.17.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/transform.test.mjs scripts/build.test.mjs",
+    "check:sync": "node scripts/check-sync.mjs",
+    "check:structure": "node scripts/check-structure.mjs",
+    "check:claude-parity": "node scripts/check-claude-parity.mjs",
+    "verify": "npm test && npm run check:sync && npm run check:structure && npm run check:claude-parity"
+  }
+}
