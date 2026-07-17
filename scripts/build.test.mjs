@@ -138,6 +138,19 @@ test('preserves an unexpected file, exits nonzero, and leaves inventory unchange
   assert.equal(readFileSync(join(fx.repositoryRoot, fx.inventoryPath), 'utf8'), before);
 }));
 
+test('preserves an uninventoried file at an expected destination and leaves inventory unchanged', withFixture(async (fx) => {
+  mkdirSync(join(fx.repositoryRoot, 'generated/pm'), { recursive: true });
+  const destination = join(fx.repositoryRoot, 'generated/pm/SKILL.md');
+  const original = Buffer.from('user-owned bytes\n');
+  writeFileSync(destination, original);
+  const inventoryBefore = readFileSync(join(fx.repositoryRoot, fx.inventoryPath));
+
+  await assert.rejects(() => run(fx), /unexpected file.*generated\/pm\/SKILL\.md/i);
+
+  assert.deepEqual(readFileSync(destination), original);
+  assert.deepEqual(readFileSync(join(fx.repositoryRoot, fx.inventoryPath)), inventoryBefore);
+}));
+
 test('removes only a stale prior-inventory regular file', withFixture(async (fx) => {
   mkdirSync(join(fx.repositoryRoot, 'generated/pm'), { recursive: true });
   writeFileSync(join(fx.repositoryRoot, 'generated/pm/stale.md'), 'generated\n');

@@ -23,6 +23,17 @@ const TREES = {
   codexRepository: '.agents/skills/pm',
   codexPlugin: 'plugins/pm/skills/pm',
 };
+const LINE_LIMITS = {
+  router: 200,
+  review: 150,
+};
+const QUESTION_CAP_PATTERNS = {
+  claude: /(?:one (?:through|to) four|at most four|up to four) questions/i,
+  codex: /(?:one (?:through|to) three|at most three|up to three) questions/i,
+};
+const SESSION_EXECUTION_RANGE_PATTERN = /Steps? 1(?:-| through )7/i;
+const SESSION_ONLY_SKIPPED_STEPS = ['0', '8'];
+const GIT_SYMLINK_MODE = '120000';
 const failures = [];
 const fail = (message) => failures.push(message);
 
@@ -104,8 +115,10 @@ function assertCommonTree(label, root) {
   assertLinks(label, root);
   const router = text(join(root, 'SKILL.md'));
   const review = text(join(root, 'reference/mode-review.md'));
-  if (lineCount(router) > 200) fail(`${label}: SKILL.md is ${lineCount(router)} lines (limit 200)`);
-  if (lineCount(review) > 150) fail(`${label}: mode-review.md is ${lineCount(review)} lines (limit 150)`);
+  const routerLineCount = lineCount(router);
+  const reviewLineCount = lineCount(review);
+  if (routerLineCount > LINE_LIMITS.router) fail(`${label}: SKILL.md is ${routerLineCount} lines (limit ${LINE_LIMITS.router})`);
+  if (reviewLineCount > LINE_LIMITS.review) fail(`${label}: mode-review.md is ${reviewLineCount} lines (limit ${LINE_LIMITS.review})`);
   for (const mode of MODES) {
     if (!new RegExp(`^\\|\\s*\`?${mode}\`?\\s*\\|`, 'm').test(router)) fail(`${label}: commands table is missing mode ${mode}`);
   }
@@ -131,8 +144,8 @@ function assertDecisionContract(label, root) {
   const sessionMatch = decide.match(/## Session-only execution\n([\s\S]*?)(?=\n## Step 0:)/i);
   if (!sessionMatch) fail(`${label}: decide lacks a bounded session-only section before Step 0`);
   const session = sessionMatch?.[1] ?? '';
-  if (!/(?:Steps? 1(?:-| through )7|Steps? 1.?7)/i.test(session)) fail(`${label}: decide must run Steps 1-7 for session-only context`);
-  for (const step of ['0', '8']) if (!new RegExp(`skip[^\\n]*Step ${step}|Step ${step}[^\\n]*skip`, 'i').test(session)) fail(`${label}: decide must skip Step ${step} for session-only context`);
+  if (!SESSION_EXECUTION_RANGE_PATTERN.test(session)) fail(`${label}: decide must include the complete session-only execution range`);
+  for (const step of SESSION_ONLY_SKIPPED_STEPS) if (!new RegExp(`skip[^\\n]*Step ${step}|Step ${step}[^\\n]*skip`, 'i').test(session)) fail(`${label}: decide must skip Step ${step} for session-only context`);
   if (!/(?:do not|never)[^\n]*(?:read|write|log)/i.test(session)) fail(`${label}: decide must prohibit session-only persistent reads and writes`);
   const persistent = decide.slice(decide.search(/## Step 0:/i));
   if (!/Read `pmdecisions\.md`|read prior decision history/i.test(persistent) || !/Read `\.pmcontext\.md`|persistent settings/i.test(persistent)) fail(`${label}: persistent decision reads must live outside the session-only section`);
@@ -153,9 +166,9 @@ function assertSource() {
   const withoutClaude = stripProviderBlocks(all, 'claude');
   if (/AskUserQuestion/.test(withoutClaude)) fail('source: AskUserQuestion appears outside a Claude provider block');
   const claudeBlocks = [...all.matchAll(/<!-- provider:claude -->([\s\S]*?)<!-- \/provider -->/g)].map((match) => match[1]).join('\n');
-  if (!/(?:one (?:through|to) four|at most four|up to four|1(?:-| to )4) questions/i.test(claudeBlocks)) fail('source: Claude structured input is not capped at four questions');
+  if (!QUESTION_CAP_PATTERNS.claude.test(claudeBlocks)) fail('source: Claude structured input is not capped at four questions');
   const codexBlocks = [...all.matchAll(/<!-- provider:codex -->([\s\S]*?)<!-- \/provider -->/g)].map((match) => match[1]).join('\n');
-  if (!/(?:one (?:through|to) three|at most three|1(?:-| to )3) questions/i.test(codexBlocks)) fail('source: Codex structured input is not capped at three questions');
+  if (!QUESTION_CAP_PATTERNS.codex.test(codexBlocks)) fail('source: Codex structured input is not capped at three questions');
   if (!/(?:fallback|unavailable)[^\n]*(?:conversation|ask directly)|(?:conversation|ask directly)[^\n]*(?:fallback|unavailable)/i.test(codexBlocks)) fail('source: Codex structured-input conversational fallback is missing');
   if (!all.includes('{{INSTRUCTIONS_FILE}}')) fail('source: instruction-file target is not tokenized');
   assertSymlinkContract('source', root);
@@ -173,12 +186,12 @@ function assertRenderedTree(label, relRoot, kind) {
   if (/\{\{[A-Z_]+\}\}|<!-- \/?provider/.test(all)) fail(`${label}: unresolved transform syntax remains`);
   if (kind === 'claude') {
     if (!all.includes('AskUserQuestion')) fail(`${label}: AskUserQuestion behavior is missing`);
-    if (!/(?:one (?:through|to) four|at most four|up to four|1(?:-| to )4) questions/i.test(all)) fail(`${label}: structured question cap of four is missing`);
+    if (!QUESTION_CAP_PATTERNS.claude.test(all)) fail(`${label}: structured question cap of four is missing`);
     if (!all.includes('CLAUDE.md') || all.includes('AGENTS.md')) fail(`${label}: instruction target must be CLAUDE.md only`);
     if (!router.includes('/pm')) fail(`${label}: /pm invocation is missing`);
   } else {
     if (all.includes('AskUserQuestion')) fail(`${label}: Claude question tool leaked into Codex output`);
-    if (!/(?:one (?:through|to) three|at most three|1(?:-| to )3) questions/i.test(all)) fail(`${label}: structured question cap of three is missing`);
+    if (!QUESTION_CAP_PATTERNS.codex.test(all)) fail(`${label}: structured question cap of three is missing`);
     if (!/(?:fallback|unavailable)[^\n]*(?:conversation|ask directly)|(?:conversation|ask directly)[^\n]*(?:fallback|unavailable)/i.test(all)) fail(`${label}: conversational fallback is missing`);
     if (!all.includes('AGENTS.md') || all.includes('CLAUDE.md')) fail(`${label}: instruction target must be AGENTS.md only`);
     assertSymlinkContract(label, root);
@@ -241,10 +254,10 @@ function assertRepositoryShape() {
   if (!existsSync(agents)) fail('AGENTS.md is missing');
   else {
     const stat = lstatSync(agents);
-    if (!stat.isSymbolicLink()) fail('AGENTS.md must remain a symlink (git mode 120000)');
+    if (!stat.isSymbolicLink()) fail(`AGENTS.md must remain a symlink (git mode ${GIT_SYMLINK_MODE})`);
     else if (readlinkSync(agents) !== 'CLAUDE.md' || readFileSync(agents, 'utf8') !== readFileSync(join(ROOT, 'CLAUDE.md'), 'utf8') || realpathSync(agents) !== realpathSync(join(ROOT, 'CLAUDE.md'))) fail('AGENTS.md must target CLAUDE.md');
     const indexLine = gitLines(['ls-files', '-s', '--', 'AGENTS.md'])[0] ?? '';
-    if (!indexLine.startsWith('120000 ')) fail('AGENTS.md must remain git mode 120000');
+    if (!indexLine.startsWith(`${GIT_SYMLINK_MODE} `)) fail(`AGENTS.md must remain git mode ${GIT_SYMLINK_MODE}`);
   }
 }
 

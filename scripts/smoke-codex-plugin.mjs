@@ -20,6 +20,7 @@ const MARKETPLACE_NAME = "pm-skills";
 const PLUGIN_NAME = "pm";
 const PLUGIN_ID = `${PLUGIN_NAME}@${MARKETPLACE_NAME}`;
 const FIXTURE_PREFIX = "pm-codex-plugin-smoke-";
+const CODEX_COMMAND_MAX_BUFFER_BYTES = 10485760;
 const EXPECTED_SKILL_FILES = [
   "SKILL.md",
   "reference/foundations.md",
@@ -95,7 +96,7 @@ function runCodex(args, context) {
     cwd: context.projectRoot,
     env: context.childEnvironment,
     encoding: "utf8",
-    maxBuffer: 10 * 1024 * 1024,
+    maxBuffer: CODEX_COMMAND_MAX_BUFFER_BYTES,
     stdio: ["ignore", "pipe", "pipe"],
   });
 
@@ -172,8 +173,11 @@ async function validateInstalledPlugin(installedPath, repositoryPluginRoot, expe
 
   const repositorySkillRoot = path.join(repositoryPluginRoot, "skills", PLUGIN_NAME);
   const repositorySkillTree = await listTree(repositorySkillRoot);
-  assert.deepEqual(repositorySkillTree.files, EXPECTED_SKILL_FILES, "repository Codex skill must contain exactly 21 files");
-  assert.equal(repositorySkillTree.files.length, 21, "repository Codex skill file count changed");
+  assert.deepEqual(
+    repositorySkillTree.files,
+    EXPECTED_SKILL_FILES,
+    `repository Codex skill must contain the exact ${EXPECTED_SKILL_FILES.length}-file inventory`,
+  );
 
   const installedTree = await listTree(installedPath);
   const expectedInstalledFiles = [
@@ -296,16 +300,23 @@ try {
     projectRoot,
     usedCodexHomes: [],
   };
+  const codexCommands = Object.freeze({
+    addMarketplace: ["plugin", "marketplace", "add", repositoryRealPath, "--json"],
+    listMarketplaces: ["plugin", "marketplace", "list", "--json"],
+    listAvailablePlugins: ["plugin", "list", "--available", "--marketplace", MARKETPLACE_NAME, "--json"],
+    addPlugin: ["plugin", "add", PLUGIN_ID, "--json"],
+    listInstalledPlugins: ["plugin", "list", "--marketplace", MARKETPLACE_NAME, "--json"],
+  });
 
   const addMarketplace = requireObject(
-    runCodex(["plugin", "marketplace", "add", repositoryRealPath, "--json"], commandContext),
+    runCodex(codexCommands.addMarketplace, commandContext),
     "marketplace add result",
   );
   assert.equal(addMarketplace.marketplaceName, MARKETPLACE_NAME);
   samePath(addMarketplace.installedRoot, repositoryRealPath, "marketplace add used the wrong local root");
 
   const marketplaceList = requireObject(
-    runCodex(["plugin", "marketplace", "list", "--json"], commandContext),
+    runCodex(codexCommands.listMarketplaces, commandContext),
     "marketplace list result",
   );
   const listedMarketplace = requireArray(marketplaceList.marketplaces, "listed marketplaces").find(
@@ -317,7 +328,7 @@ try {
   samePath(listedMarketplace.marketplaceSource.source, repositoryRealPath, "marketplace source is not the local repository");
 
   const availablePlugins = requireObject(
-    runCodex(["plugin", "list", "--available", "--marketplace", MARKETPLACE_NAME, "--json"], commandContext),
+    runCodex(codexCommands.listAvailablePlugins, commandContext),
     "available plugin list",
   );
   assert.deepEqual(requireArray(availablePlugins.installed, "installed plugins before add"), []);
@@ -332,7 +343,7 @@ try {
   samePath(availablePlugin.source?.path, repositoryPluginRoot, "available plugin source path is wrong");
 
   const addPlugin = requireObject(
-    runCodex(["plugin", "add", PLUGIN_ID, "--json"], commandContext),
+    runCodex(codexCommands.addPlugin, commandContext),
     "plugin add result",
   );
   assert.equal(addPlugin.pluginId, PLUGIN_ID);
@@ -342,7 +353,7 @@ try {
   assert.equal(typeof addPlugin.installedPath, "string");
 
   const installedPlugins = requireObject(
-    runCodex(["plugin", "list", "--marketplace", MARKETPLACE_NAME, "--json"], commandContext),
+    runCodex(codexCommands.listInstalledPlugins, commandContext),
     "installed plugin list",
   );
   const installedPlugin = requireArray(installedPlugins.installed, "installed plugins").find(
@@ -355,7 +366,11 @@ try {
   assert.equal(installedPlugin.installed, true);
   assert.equal(installedPlugin.enabled, true);
 
-  assert.equal(commandContext.usedCodexHomes.length, 5, "unexpected number of Codex commands in smoke test");
+  assert.equal(
+    commandContext.usedCodexHomes.length,
+    Object.keys(codexCommands).length,
+    "unexpected number of Codex commands in smoke test",
+  );
   assert(
     commandContext.usedCodexHomes.every(
       (usedHome) => path.resolve(usedHome) === path.resolve(codexHome) && path.resolve(usedHome) !== normalCodexHome,
@@ -375,7 +390,7 @@ try {
   cleanupFinished = true;
   console.log(`PASS: isolated marketplace ${MARKETPLACE_NAME} discovered from ${repositoryRealPath}`);
   console.log(`PASS: installed and listed ${PLUGIN_ID} ${repositoryPluginManifest.version} in isolated CODEX_HOME`);
-  console.log("PASS: installed manifest and exact 21-file Codex skill are self-contained and byte-identical");
+  console.log(`PASS: installed manifest and exact ${EXPECTED_SKILL_FILES.length}-file Codex skill are self-contained and byte-identical`);
   console.log("PASS: successful isolated state and project fixtures removed");
 } catch (error) {
   console.error(`FAIL: ${error.stack ?? error.message}`);
