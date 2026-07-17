@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.17.0 - 2026-07-17
+
+### Added
+
+- **Native Codex distribution.** The `pm` skill now ships through a Codex marketplace and self-contained plugin, and through `.agents/skills/pm` for repository discovery. Installed plugin users invoke `$pm:pm`; repository users invoke `$pm`. Claude Code installation and `/pm` remain supported.
+- **One canonical source and checked generation.** Maintainers edit `source/skills/pm`; `npm run build` renders the Claude tree, Codex repository tree, and Codex plugin tree. A generated-file inventory bounds stale cleanup, while sync, structure, Claude parity, plugin validation, skill validation, and an isolated Codex install smoke catch drift before release.
+- **Provider-specific interaction seams.** Claude retains four-question structured interview batches. Codex uses at most three structured questions when that input is available and falls back to direct conversation for free text or unavailable tooling.
+
+### Changed
+
+- **Instruction-file safety.** Codex setup and teach target `AGENTS.md`. Existing symlinks are resolved and reported, preserved when their target stays inside the project, and refused when broken or project-external. This repository's tracked `AGENTS.md -> CLAUDE.md` link remains intact.
+- **Session-only decisions stay session-only.** `decide` now runs Steps 1-7 on the session-only path while skipping prior-decision reads, settings changes, and decision-log writes.
+
+---
+
 ## 2.16.0 - 2026-06-23
 
 ### Added
