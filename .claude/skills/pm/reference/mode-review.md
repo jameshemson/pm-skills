@@ -14,6 +14,8 @@ Run a **Frame -> Critique -> Refine** loop. Do not skip Frame. After Critique, a
 
 Before critiquing, understand the situation. Critiquing in a vacuum produces generic findings. Ask only what the user has not already told you:
 
+Use AskUserQuestion when structured options fit, with at most four questions per call. Ask free-form questions directly in conversation.
+
 - **What is this document, and what is it for?** A spec, a strategy doc, a message, a retro? What decision or action does it need to drive?
 - **Who is the audience?** Not "users" or "stakeholders" but which people, what level, what function, and what they care about. If the document is a message to one specific person, their role and what they want from it is enough; do not profile the person. Keep what you learn about the audience in this conversation, not in a file.
 - **What is the situation?** What is happening right now that makes this document necessary? What is at stake if it lands badly?

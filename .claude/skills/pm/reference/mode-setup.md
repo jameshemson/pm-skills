@@ -1,12 +1,13 @@
 # Mode: setup
 
-Generate a CLAUDE.md tailored to a product team. Not a generic template - this interviews the user about their specific team, product domain, and ways of working, then produces a file that makes AI effective for everyone on the team.
+Generate team instructions in CLAUDE.md, tailored to a product team. Not a generic template - this interviews the user about their specific team, product domain, and ways of working, then produces a file that makes AI effective for everyone on the team.
 
 Consult [knowledge-leadership.md](knowledge-leadership.md) for team structure principles (empowered teams, context vs control, trust frameworks) and [knowledge-communication.md](knowledge-communication.md) for audience-specific communication norms.
 
 ## Step 1: Explore the Codebase
 
 Before asking questions, scan the project for existing context:
+
 
 - **Existing CLAUDE.md**: What is already configured
 - **README**: Project description, setup, contribution guidelines
@@ -21,15 +22,13 @@ Note what you found. This reduces the questions you need to ask.
 
 **How to run the interview**
 
-Use AskUserQuestion in rounds of at most 4 questions per call. Run round by round - do not queue all questions at once.
+Use AskUserQuestion in rounds of at most four questions per call. Run round by round - do not queue all questions at once. Put questions with genuinely enumerable options in AskUserQuestion rounds. Ask free-form questions as open prompts in conversation between rounds.
 
 Before each round: pre-fill any question the codebase scan already answered, and pre-fill any question the user already answered earlier in this conversation. Present pre-fills as "I read X from the codebase - does that match?" inside the round, not as silent assumptions. If the user's answer contradicts a pre-fill, the user's answer wins.
 
-Questions that have genuinely enumerable options (B2B/B2C, lifecycle stage, team model, decision framework) go in AskUserQuestion rounds. Questions whose answers are free-form (one-sentence product description, key domain concepts) are asked as open prompts in conversation between rounds - do not force them into multiple-choice.
-
 If a round's questions were all answered by the scan or earlier in the conversation, skip that round entirely.
 
-After Round 2, STOP. Offer exactly two options via AskUserQuestion:
+After Round 2, STOP. Offer exactly two options through the active provider's question method:
 - "Generate CLAUDE.md from what we have"
 - "Keep going (one more short round)"
 
@@ -41,7 +40,7 @@ If the user exits early, sections not yet covered are written as gaps. Continue 
 
 Open prompt first (in conversation): "What does this product do in one sentence, and what are the key domain concepts the team uses?"
 
-Then AskUserQuestion with up to 4 of the following that the scan did not answer:
+Then ask up to the active provider limit from the following items that the scan did not answer:
 - B2B, B2C, B2B2C, platform, or internal tool? Lifecycle stage: pre-PMF, growth, scale, or mature?
 - Empowered product teams or feature teams?
 - Who is on the product team? (Roles, not names)
@@ -51,7 +50,7 @@ Then AskUserQuestion with up to 4 of the following that the scan did not answer:
 
 **Round 2 - ways of working and quality standards**
 
-AskUserQuestion with up to 4 of the following that are not yet answered:
+Ask up to the active provider limit from the following items that are not yet answered:
 - What does your development process look like? (Sprint length, ceremonies, workflow)
 - What does "done" mean - specific quality gates, or ship and iterate?
 - What does a good spec look like on this team? What are the most common gaps?
@@ -63,7 +62,7 @@ After this round: offer the early exit (see above).
 
 **Round 3 - communication norms and AI usage** (offered only if user chose to keep going)
 
-AskUserQuestion with up to 4 of the following that are not yet answered:
+Ask up to the active provider limit from the following items that are not yet answered:
 - How does the team communicate? (Slack, docs, meetings, async vs sync) What format do stakeholder updates take?
 - Naming conventions, writing style, language choices? Anything the team explicitly avoids?
 - How is the team currently using AI? What works well? What does not?
@@ -116,8 +115,9 @@ Present the generated CLAUDE.md and ask:
 - Is anything wrong or outdated?
 - Should this include the Product Context from `.pmcontext.md`?
 
-Incorporate feedback and write the final version to CLAUDE.md in the project root. If a CLAUDE.md already exists, present a diff of proposed changes rather than overwriting.
+
+Incorporate feedback and write the final version to CLAUDE.md in the project root. If CLAUDE.md already exists, present a diff of proposed changes rather than overwriting.
 
 ---
 
-If product context has not been captured yet, run `pm teach` first - setup builds on it.
+If product context has not been captured yet, run `/pm teach` first - setup builds on it.
