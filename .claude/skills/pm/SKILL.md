@@ -5,7 +5,7 @@ description: Use when the user is writing, sharpening, critiquing, reviewing, au
 argument-hint: "[teach · setup · brief · spec · stories · metrics · review · decide · discover] [target]"
 ---
 
-Opinionated, framework-backed product management as a set of modes. Claude generates, pm-skills critiques: every mode forces real thinking and rejects the polished, generic output that passes for PM work.
+Opinionated, framework-backed product management as a set of modes. AI generates, pm-skills critiques: every mode forces real thinking and rejects the polished, generic output that passes for PM work.
 
 ## Context Gathering Protocol
 
@@ -16,16 +16,18 @@ Code cannot supply this. Code tells you what was built, not why, for whom, or wh
 Gathering order, fastest first:
 
 1. **Loaded instructions / CLAUDE.md**: if a **Product Context** section is already in your loaded instructions or in CLAUDE.md, proceed.
-2. **`.pmcontext.md`**: if not, read `.pmcontext.md` from the project root. If it exists with product, users, business model, team, and technical constraints, proceed. If its `last_updated` is more than six months old, say once: "Context was captured <date> - still accurate? (`pm teach` updates it; continuing as-is.)" Then proceed. No `last_updated` line means no nudge.
-3. **No context found - offer the fork.** STOP and call the AskUserQuestion tool. Question: "No product context is set up for this project. PM output without it is generic; how do you want to proceed?" Options: "Set up context now (Recommended)" - runs the `teach` mode, takes a few minutes, persists to `.pmcontext.md` for every future session; "Three quick questions, this session only" - enough context to work now, nothing saved.
+2. **`.pmcontext.md`**: if not, read `.pmcontext.md` from the project root. If it exists with product, users, business model, team, and technical constraints, proceed. If its `last_updated` is more than six months old, say once: "Context was captured <date> - still accurate? (`/pm teach` updates it; continuing as-is.)" Then proceed. No `last_updated` line means no nudge.
+3. **No context found - offer the fork.** STOP and ask: "No product context is set up for this project. PM output without it is generic; how do you want to proceed?" Options: "Set up context now (Recommended)" - runs the `teach` mode, takes a few minutes, persists to `.pmcontext.md` for every future session; "Three quick questions, this session only" - enough context to work now, nothing saved.
 
-   **Session-only contract.** Ask exactly three questions, then proceed: (1) What is the product, in one sentence, and who uses it? (2) What outcome is the work in front of us supposed to move? (3) What is the team explicitly NOT doing right now? In the `review` mode, fold these into Frame rather than asking separately. Session-only answers are never written to any file. Every deliverable produced this way carries one line: "Built from session-only context; `pm teach` makes this permanent and sharper." Say it once in the deliverable and once at the end of the conversation, never more.
+   Use AskUserQuestion for this fork, with at most four questions in one call. Use direct conversation for free-text answers.
+
+   **Session-only contract.** Ask exactly three questions, then proceed: (1) What is the product, in one sentence, and who uses it? (2) What outcome is the work in front of us supposed to move? (3) What is the team explicitly NOT doing right now? In the `review` mode, fold these into Frame rather than asking separately. Session-only answers are never written to any file. Every deliverable produced this way carries one line: "Built from session-only context; `/pm teach` makes this permanent and sharper." Say it once in the deliverable and once at the end of the conversation, never more.
 
    **When the document is not about this repo's product** (a colleague's doc, an example), session-only is the right path and the three questions are about that product - do not read this repo's `.pmcontext.md` for it. **When running outside a project directory**, default to session-only; if the user chooses `teach`, warn that `.pmcontext.md` will be written to the current directory.
 
    Do not infer strategy, personas, or constraints from the codebase on either path.
 
-The `decide` mode additionally reads `pmdecisions.md` at the project root if present, and the `decisions_log:` key from `.pmcontext.md`. See [reference/mode-decide.md](reference/mode-decide.md).
+With persistent context, the `decide` mode additionally reads `pmdecisions.md` at the project root if present, and the `decisions_log:` key from `.pmcontext.md`. Session-only `decide` runs Steps 1-7 and skips all persistent history, settings, and logging. See [reference/mode-decide.md](reference/mode-decide.md).
 
 If a **Ways of Working** section exists in `.pmcontext.md` or CLAUDE.md, prefer the user's frameworks, checklists, and doc formats over a mode's defaults. The user's way of working takes precedence.
 
@@ -86,7 +88,7 @@ The heavier procedures live in [reference/foundations.md](reference/foundations.
 | `stories` | Break a feature into testable, JTBD-framed user stories | [reference/mode-stories.md](reference/mode-stories.md) |
 | `metrics` | Define primary, secondary, guardrail, and counter-metrics | [reference/mode-metrics.md](reference/mode-metrics.md) |
 | `review` | Adversarially critique a doc, plan, strategy, or message - verdict: SLOP / ROUGH / SOLID / SHIP | [reference/mode-review.md](reference/mode-review.md) |
-| `decide` | Structure a decision: options, weighted criteria, trade-offs, bias - and log to `pmdecisions.md` | [reference/mode-decide.md](reference/mode-decide.md) |
+| `decide` | Structure a decision: options, weighted criteria, trade-offs, bias; persistent-context runs may log to `pmdecisions.md`, session-only runs never do | [reference/mode-decide.md](reference/mode-decide.md) |
 | `discover` | Plan customer conversations for truth, or debrief them | [reference/mode-discover.md](reference/mode-discover.md) |
 
 ## Routing rules
