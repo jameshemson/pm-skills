@@ -1,6 +1,6 @@
 # Mode: setup
 
-Generate team instructions in CLAUDE.md, tailored to a product team. Not a generic template - this interviews the user about their specific team, product domain, and ways of working, then produces a file that makes AI effective for everyone on the team.
+Generate team instructions in AGENTS.md, tailored to a product team. Not a generic template - this interviews the user about their specific team, product domain, and ways of working, then produces a file that makes AI effective for everyone on the team.
 
 Consult [knowledge-leadership.md](knowledge-leadership.md) for team structure principles (empowered teams, context vs control, trust frameworks) and [knowledge-communication.md](knowledge-communication.md) for audience-specific communication norms.
 
@@ -8,8 +8,9 @@ Consult [knowledge-leadership.md](knowledge-leadership.md) for team structure pr
 
 Before asking questions, scan the project for existing context:
 
+Before reading an existing AGENTS.md, inspect the path itself. If it is a symlink, resolve and report its target while preserving the link. Read it only when the resolved target is inside the project. If the target is broken or resolves outside the project, stop and request an explicit safe choice instead of reading it.
 
-- **Existing CLAUDE.md**: What is already configured
+- **Existing AGENTS.md**: What is already configured
 - **README**: Project description, setup, contribution guidelines
 - **Package.json / config**: Tech stack, scripts, tooling
 - **CI/CD**: Build process, test requirements, deployment pipeline
@@ -22,14 +23,14 @@ Note what you found. This reduces the questions you need to ask.
 
 **How to run the interview**
 
-Use AskUserQuestion in rounds of at most four questions per call. Run round by round - do not queue all questions at once. Put questions with genuinely enumerable options in AskUserQuestion rounds. Ask free-form questions as open prompts in conversation between rounds.
+Use the structured user-input tool when available, in rounds of at most three questions per call. Run round by round - do not queue all questions at once. Put questions with genuinely enumerable options in structured rounds. Ask free-form questions as open prompts in conversation between rounds. If structured input is unavailable, fall back to asking directly in conversation.
 
 Before each round: pre-fill any question the codebase scan already answered, and pre-fill any question the user already answered earlier in this conversation. Present pre-fills as "I read X from the codebase - does that match?" inside the round, not as silent assumptions. If the user's answer contradicts a pre-fill, the user's answer wins.
 
 If a round's questions were all answered by the scan or earlier in the conversation, skip that round entirely.
 
 After Round 2, STOP. Offer exactly two options through the active provider's question method:
-- "Generate CLAUDE.md from what we have"
+- "Generate AGENTS.md from what we have"
 - "Keep going (one more short round)"
 
 If the user exits early, sections not yet covered are written as gaps. Continue to Round 3 only if the user chooses to keep going.
@@ -68,9 +69,9 @@ Ask up to the active provider limit from the following items that are not yet an
 - How is the team currently using AI? What works well? What does not?
 - Any rules about AI use? (Security, confidentiality, review requirements)
 
-## Step 3: Generate CLAUDE.md
+## Step 3: Generate AGENTS.md
 
-Synthesise into a structured CLAUDE.md. Every line must be useful to someone sitting down to work - no filler. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content.
+Synthesise into a structured AGENTS.md. Every line must be useful to someone sitting down to work - no filler. For any section not reached because the user exited early or a round was skipped, write `[Not captured - ask me and update this section]` as the section body rather than omitting the section or inventing content.
 
 ```markdown
 # [Product Name]
@@ -109,15 +110,16 @@ Include concrete examples where possible ("A good commit message looks like: ...
 
 ## Step 4: Review and Iterate
 
-Present the generated CLAUDE.md and ask:
+Present the generated AGENTS.md and ask:
 - Does this accurately reflect how your team works?
 - Is anything missing that would help a new team member (or AI) be effective?
 - Is anything wrong or outdated?
 - Should this include the Product Context from `.pmcontext.md`?
 
+Before preparing a diff, inspect AGENTS.md again. If it is a symlink, resolve and report its target, then diff the resolved target only when it remains inside the project. Preserve the symlink node. If the target is broken or resolves outside the project, stop and request an explicit safe choice. Revalidate the same path and resolved target immediately before writing; write through the link without replacing it only while the target remains inside the project.
 
-Incorporate feedback and write the final version to CLAUDE.md in the project root. If CLAUDE.md already exists, present a diff of proposed changes rather than overwriting.
+Incorporate feedback and write the final version to AGENTS.md in the project root. If AGENTS.md already exists, present a diff of proposed changes rather than overwriting.
 
 ---
 
-If product context has not been captured yet, run `/pm teach` first - setup builds on it.
+If product context has not been captured yet, run `pm teach` first - setup builds on it.

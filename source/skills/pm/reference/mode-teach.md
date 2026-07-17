@@ -11,7 +11,7 @@ Before asking anything, scan the project to discover what you can:
 - **Database schemas / API definitions**: Domain model, core entities, relationships
 - **Existing tests**: What's tested reveals what matters and what's risky
 - **CI/CD configuration**: Deployment process, environments, release cadence
-- **CLAUDE.md or similar**: Existing team conventions, definitions of done, workflow norms
+- **{{INSTRUCTIONS_FILE}} or similar**: Existing team conventions, definitions of done, workflow norms
 - **Git history (recent)**: Active areas of development, team focus, pace of change
 
 Note what you learned and what remains unclear. Code tells you what was built, not why, for whom, or what trade-offs were made.
@@ -20,7 +20,12 @@ Note what you learned and what remains unclear. Code tells you what was built, n
 
 **How to run the interview**
 
+<!-- provider:claude -->
 Use AskUserQuestion in rounds of at most four questions per call. Run round by round - do not queue all questions at once. Put questions with genuinely enumerable options in AskUserQuestion rounds. Ask free-form questions as open prompts in conversation between rounds.
+<!-- /provider -->
+<!-- provider:codex -->
+Use the structured user-input tool when available, in rounds of at most three questions per call. Run round by round - do not queue all questions at once. Put questions with genuinely enumerable options in structured rounds. Ask free-form questions as open prompts in conversation between rounds. If structured input is unavailable, fall back to asking directly in conversation.
+<!-- /provider -->
 
 Before each round: pre-fill any question the codebase scan already answered, and pre-fill any question the user already answered earlier in this conversation. Present pre-fills as "I read X from the codebase - does that match?" inside the round, not as silent assumptions. If the user's answer contradicts a pre-fill, the user's answer wins.
 
@@ -118,11 +123,14 @@ last_updated: YYYY-MM-DD
 
 Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place; always refresh `last_updated` to today's date when updating the section, and add the line if an older file lacks it. Do not overwrite or remove other sections (for example, a `## Settings` section managed by other modes such as `decide`).
 
-Then STOP and use the active provider's question method to ask whether to also append the Product Context to CLAUDE.md. If yes, append or update the section there.
+Then STOP and use the active provider's question method to ask whether to also append the Product Context to {{INSTRUCTIONS_FILE}}. If yes, append or update the section there.
 
+<!-- provider:codex -->
+Before writing {{INSTRUCTIONS_FILE}}, inspect the path and resolve it without following an unknown link blindly. If it is a symlink, report its resolved target and preserve the link. Write through the link only when the resolved target is inside the project. If the target is broken or resolves outside the project, stop and request an explicit safe choice instead of writing.
+<!-- /provider -->
 
 Confirm completion and summarize the key context that will now guide all future `pm` mode work.
 
 ---
 
-Once context is in place, `/pm setup` generates a team CLAUDE.md that builds on it.
+Once context is in place, `{{PM_INVOCATION}} setup` generates a team {{INSTRUCTIONS_FILE}} that builds on it.

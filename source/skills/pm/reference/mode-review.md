@@ -1,6 +1,6 @@
 # Mode: review
 
-The flagship mode. The user brings a document they or Claude already wrote; `review` makes it sharper. Critique is the most common PM need, so unmatched input defaults here.
+The flagship mode. The user brings a document they or {{ASSISTANT_NAME}} already wrote; `review` makes it sharper. Critique is the most common PM need, so unmatched input defaults here.
 
 This mode absorbs four old skills. Their function lives inside the loop, not as separate modes:
 - **translate**: rewriting a doc for a different audience (handled in Frame and Refine).
@@ -14,7 +14,12 @@ Run a **Frame -> Critique -> Refine** loop. Do not skip Frame. After Critique, a
 
 Before critiquing, understand the situation. Critiquing in a vacuum produces generic findings. Ask only what the user has not already told you:
 
+<!-- provider:claude -->
 Use AskUserQuestion when structured options fit, with at most four questions per call. Ask free-form questions directly in conversation.
+<!-- /provider -->
+<!-- provider:codex -->
+Use the structured user-input tool when it is available and structured options fit, with at most three questions per call. Ask free-form questions directly in conversation. If structured input is unavailable, fall back to asking directly in conversation.
+<!-- /provider -->
 
 - **What is this document, and what is it for?** A spec, a strategy doc, a message, a retro? What decision or action does it need to drive?
 - **Who is the audience?** Not "users" or "stakeholders" but which people, what level, what function, and what they care about. If the document is a message to one specific person, their role and what they want from it is enough; do not profile the person. Keep what you learn about the audience in this conversation, not in a file.

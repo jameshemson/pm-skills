@@ -136,7 +136,7 @@ If Step 1 was skipped (no constraint articulated, no options ruled out, no trade
 If `.pmcontext.md` does not have a `decisions_log:` key under a `## Settings` section:
 
 - STOP and ask: "Log decisions to `pmdecisions.md` in this repo by default?" Options: "Yes", "No".
-  Use AskUserQuestion for this choice, with at most four questions in one call.
+  Use the structured user-input tool when it is available, with at most three questions in one call. If it is unavailable, fall back to asking directly in conversation.
 - Write the answer to `.pmcontext.md` as `decisions_log: enabled` or `decisions_log: disabled` under a `## Settings` section. If the section does not exist, create it; if it exists, update the key in place. Do not modify any other section of `.pmcontext.md`.
 
 If `decisions_log: disabled`, do not log. Stop here.
@@ -180,7 +180,7 @@ If the user names a prior decision:
 After writing, count entries (lines matching `^## ` in `pmdecisions.md`) and total lines (`wc -l`). If either count exceeds 30 entries OR 600 lines, whichever first:
 
 - STOP and ask: "`pmdecisions.md` is getting long. Move superseded entries to `pmdecisions-archive.md`?" Options: "Yes", "Not now".
-  Use AskUserQuestion for this choice, with at most four questions in one call.
+  Use the structured user-input tool when it is available, with at most three questions in one call. If it is unavailable, fall back to asking directly in conversation.
 - If yes, move every entry with `status: superseded` from `pmdecisions.md` to `pmdecisions-archive.md` (create `pmdecisions-archive.md` if absent, same format, archived entries appended in chronological order). Do not delete - only move.
 
 ### Error handling
@@ -195,4 +195,4 @@ If any file write fails (read-only mount, permission denied, disk full, file loc
 
 A decision document that presents the chosen option as obviously correct is not a decision document - it is a justification. The value is in making trade-offs visible, not making the choice feel inevitable.
 
-Once a decision is made, `/pm brief` or `/pm spec` turns the chosen option into an actionable engineering document.
+Once a decision is made, `pm brief` or `pm spec` turns the chosen option into an actionable engineering document.
