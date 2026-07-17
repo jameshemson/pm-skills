@@ -1,0 +1,33 @@
+{
+  "name": "pm",
+  "version": "2.17.0",
+  "description": "AI generates, pm-skills critiques. An adversarial PM skill pack that critiques product artifacts against curated frameworks. Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
+  "author": {
+    "name": "James Hemson",
+    "url": "https://github.com/jameshemson"
+  },
+  "homepage": "https://github.com/jameshemson/pm-skills",
+  "repository": "https://github.com/jameshemson/pm-skills",
+  "license": "MIT",
+  "keywords": [
+    "product-management",
+    "pm",
+    "critique",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PM Skills",
+    "shortDescription": "Adversarial PM critique in nine modes.",
+    "longDescription": "AI generates, pm-skills critiques. An adversarial PM skill pack that critiques product artifacts against curated frameworks. Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
+    "developerName": "James Hemson",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/jameshemson/pm-skills",
+    "brandColor": "#E8432F",
+    "defaultPrompt": "Critique this PM artifact and tell me what is missing."
+  }
+}
