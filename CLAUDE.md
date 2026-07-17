@@ -1,63 +1,93 @@
-# CLAUDE.md
+# Repository instructions
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file is shared guidance for coding agents working in this repository. `AGENTS.md` is a tracked mode-`120000` symlink to this file so Claude Code and Codex read the same rules. Preserve that symlink and edit `CLAUDE.md`, not `AGENTS.md`, when the shared guidance changes.
 
 ## Development
 
-There is no build system. Skills are markdown files used directly by Claude Code.
+There is no application build or runtime dependency. The product is a set of Markdown skill files plus a small Node-based generation and validation pipeline.
 
-**Skill location**: the skill lives at `.claude/skills/pm/` and is edited there directly. `.claude-plugin/plugin.json` references `./.claude/skills`. There is one copy; there is no source-to-runtime sync step.
+**Canonical skill source**: Edit `source/skills/pm/` only. It contains `SKILL.md` and the 20 files under `reference/`.
 
-**Skill invocation**: The single user-invokable skill is `pm` (invoked as `/pm`). It routes to nine modes via keyword matching. There are no separate per-mode commands.
+**Generated distributions**: `npm run build` renders the canonical source to all three committed runtime trees:
 
-**Plugin config**: `.claude-plugin/plugin.json` (metadata, version) and `.claude-plugin/marketplace.json` (marketplace listing). Update the description in both when the skill changes.
+- `.claude/skills/pm/` for Claude Code
+- `.agents/skills/pm/` for Codex repository discovery
+- `plugins/pm/skills/pm/` for the Codex plugin payload
 
-**Versioning**: Bump the version in both `plugin.json` and `marketplace.json` with every release. Use semver: patch for fixes, minor for new/changed modes or reference content, major for breaking changes. Every bump also gets a `CHANGELOG.md` entry and an update to the version in the website footer (`~/repos/skillsfor-pm-site/public/index.html`) - the footer went five versions stale once; do not let it drift again.
+Never hand-edit a generated runtime tree. `scripts/generated-inventory.json` records files owned by the generator. The builder may remove only stale regular files recorded in that inventory and refuses unexpected files or symlinks.
 
----
+**Invocation**: The single user-invokable skill is `pm`. Claude Code invokes it as `/pm`. Codex invokes the installed plugin as `$pm:pm` and the repository skill as `$pm`. The skill routes to nine modes by keyword; there are no separate per-mode skills.
 
-# PM Skills - Claude Code Skill Pack for Product Managers
+**Plugin configuration**:
 
-## What This Project Is
+- Claude: `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
+- Codex marketplace: `.agents/plugins/marketplace.json`
+- Codex plugin: `plugins/pm/.codex-plugin/plugin.json`
 
-A Claude Code skill pack for product managers. One skill, nine modes. Opinionated PM expertise encoded as a single AI skill that routes to the right workflow by keyword. The positioning: "Claude generates, pm-skills critiques."
+Keep plugin and marketplace descriptions semantically aligned when the skill changes.
+
+**Build and validation**:
+
+```sh
+npm run build
+npm test
+npm run check:sync
+npm run check:structure
+npm run check:claude-parity
+ANTHROPIC_API_KEY=dry-run-placeholder node eval/run.js --dry-run
+uv run --isolated --with PyYAML python /Users/jameshemson/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/pm
+uv run --isolated --with PyYAML python /Users/jameshemson/.codex/skills/.system/skill-creator/scripts/quick_validate.py plugins/pm/skills/pm
+node scripts/smoke-codex-plugin.mjs
+```
+
+`npm run verify` runs the unit, sync, structure, and Claude parity checks. Run the full command set above before a release. The existing eval remains Anthropic-only and must read the generated Claude output.
+
+**Versioning**: Use semver. Bump `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, and `plugins/pm/.codex-plugin/plugin.json` together. Every bump also requires a `CHANGELOG.md` entry and the same version in the website footer at `~/repos/skillsfor-pm-site/public/index.html`. The footer once went five versions stale; check it every release.
+
+## Provider seams
+
+Shared behavior belongs in the canonical source. Provider differences use only the exact provider blocks and fixed tokens supported by `scripts/transform.mjs`; do not add another provider abstraction casually.
+
+- Claude output keeps `/pm`, `CLAUDE.md`, Claude-compatible frontmatter, and structured interview batches of at most four questions.
+- Codex output keeps `$pm` or `$pm:pm` in documentation, targets `AGENTS.md`, allows at most three structured questions when structured input is available, and uses direct conversation for free text or fallback.
+- Codex setup and teach preserve an existing `AGENTS.md` symlink. They resolve and report its target, write through only when that target is inside the project, and stop on a broken or project-external target.
+- Session-only `decide` runs Steps 1-7. It skips prior-decision reads and all settings or decision-log writes.
+
+The tracked `AGENTS.md -> CLAUDE.md` symlink in this repository is intentional. Do not replace it with a copied file.
+
+## What this project is
+
+pm-skills is an opinionated PM skill pack for Claude Code and Codex. One skill routes to nine modes. The positioning is: "AI generates, pm-skills critiques."
 
 **Tagline:** "Stop adding tools. Start adding skills."
 
-This is NOT another PM tool. It encodes opinionated PM expertise as one AI skill. Every mode forces real thinking and rejects polished, generic output.
+This is not another PM tool. It encodes curated PM expertise and forces explicit thinking instead of polished, generic output.
 
-## The Marketing Website
+## Marketing website
 
-A landing page lives in a separate repo (`~/repos/skillsfor-pm-site`). Use `/impeccable:frontend-design` to build or update it. The tone matches the product: direct, no-bullshit, anti-theater.
+The landing page lives in the separate `~/repos/skillsfor-pm-site` repository. Use the `impeccable` skill for website work. Keep its direct, anti-theater tone and existing warm-paper, red-pencil visual system. Release work in this repository does not authorize committing or publishing the website repository.
 
----
+## Skill pack architecture
 
-## Skill Pack Architecture
-
-The architecture mirrors impeccable 3.1.1. Reference files are at:
-`~/.claude/plugins/cache/impeccable/impeccable/3.1.1/.claude/skills/`
-
-### File Structure
-
-```
-.claude/skills/pm/
-├── SKILL.md                      # Router: shared context, commands table, routing rules
+```text
+source/skills/pm/
+├── SKILL.md
 └── reference/
-    ├── foundations.md            # PM Reflex Rejection, slop taxonomy, anti-patterns
-    ├── mode-teach.md             # teach mode: product-context capture
-    ├── mode-setup.md             # setup mode: team CLAUDE.md generator
-    ├── mode-brief.md             # brief mode: audience-aware brief
-    ├── mode-spec.md              # spec mode: full product specification
-    ├── mode-stories.md           # stories mode: JTBD-framed user stories
-    ├── mode-metrics.md           # metrics mode: primary/secondary/guardrail/counter
-    ├── mode-review.md            # review mode: Frame -> Critique -> Refine
-    ├── mode-decide.md            # decide mode: structured decision with bias checks
-    ├── mode-discover.md          # discover mode: customer-conversation planning and debrief
+    ├── foundations.md
+    ├── mode-teach.md
+    ├── mode-setup.md
+    ├── mode-brief.md
+    ├── mode-spec.md
+    ├── mode-stories.md
+    ├── mode-metrics.md
+    ├── mode-review.md
+    ├── mode-decide.md
+    ├── mode-discover.md
     ├── knowledge-discovery.md
     ├── knowledge-decision-making.md
     ├── knowledge-specification.md
     ├── knowledge-communication.md
-    ├── knowledge-craft-score.md  # verdict band: bands, gates, internal score
+    ├── knowledge-craft-score.md
     ├── knowledge-prioritisation.md
     ├── knowledge-leadership.md
     ├── knowledge-positioning.md
@@ -65,107 +95,104 @@ The architecture mirrors impeccable 3.1.1. Reference files are at:
     └── knowledge-metrics.md
 ```
 
-Plugin config:
+The exact file set is a release contract. Update structural checks deliberately if the inventory changes.
 
-```
-.claude-plugin/
-├── plugin.json          # Plugin metadata
-└── marketplace.json     # Marketplace registration
-```
-
-### SKILL.md Format
+Canonical `SKILL.md` frontmatter is:
 
 ```yaml
 ---
-name: skill-name
-description: One-line description
+name: pm
 user-invokable: true
+description: One-line description
 argument-hint: "[mode] [target]"
 ---
-
-[Markdown body]
 ```
 
----
+The transform preserves this frontmatter for Claude and emits only `name` and `description` for Codex.
 
-## Anti-Theater Design Principles
+## Anti-theater design principles
 
-Every mode must follow these principles:
+Every mode follows these principles:
 
-- **Ask hard questions before generating.** The `decide` mode should not produce a decision doc from a one-liner. It pushes back: "What's the constraint? What did you rule out? Why not the simpler option?"
-- **Challenge, not just produce.** The `review` mode is adversarial: "Your spec doesn't cover what happens when X fails."
-- **Require context.** The `brief` mode with a loaded context file catches real edge cases. Without context, it produces theater. Context is the quality gate.
-- **Output substance over polish.** Bullet points and trade-offs, not formatted slide-ready prose.
-- **The PM Slop Test.** "If you showed this artifact to engineering and they came back with 10 clarifying questions in the first hour, it is slop. A good artifact anticipates the questions."
+- **Ask hard questions before generating.** A one-line request is not enough context for a defensible decision.
+- **Challenge, not just produce.** Review should find the missing failure path before engineering does.
+- **Require context.** Context is the quality gate for product strategy, users, and business constraints.
+- **Output substance over polish.** Prefer trade-offs and concrete bullets to slide-ready prose.
+- **Run the PM Slop Test.** If engineering returns ten clarifying questions in the first hour, the artifact was not ready.
 
-### Context Gathering Protocol
+### Context gathering protocol
 
-Every mode checks for product context before generating:
-1. Check CLAUDE.md for a **Product Context** section
-2. Check `.pmcontext.md` in the project root
-3. If neither exists, route into the `teach` mode first
-4. NEVER attempt to infer product strategy, user personas, or business constraints from code alone
+Every generated runtime checks for product context before generating:
 
----
+1. Check the provider instruction file for a **Product Context** section: `CLAUDE.md` for Claude, `AGENTS.md` for Codex.
+2. Check `.pmcontext.md` in the project root.
+3. If neither exists, offer persistent `teach` or the bounded session-only path.
+4. Never infer product strategy, personas, or business constraints from code alone.
 
-## Mode Descriptions
+## Mode descriptions
 
 ### teach
-Capture product context once per project. Explores codebase and asks clarifying questions about product, users, business model, team structure, and technical constraints. Writes `.pmcontext.md` to the project root for all modes to reference.
+
+Capture product context once per project. Explore the codebase, ask about product, users, business model, team structure, and technical constraints, then write `.pmcontext.md`.
 
 ### setup
-Generate a CLAUDE.md for a product team. Interviews about team structure, product domain, tech stack, communication norms, definition of done, and stakeholder expectations.
+
+Generate repository instructions for a product team from its structure, domain, stack, communication norms, definition of done, and stakeholder expectations.
 
 ### brief
-Write an audience-aware brief from a design, screenshot, or feature description. Asks for the target audience rather than assuming engineering. Output: problem context, user stories, acceptance criteria, edge cases, dependencies, out-of-scope. Runs the PM Slop Test on output.
+
+Write an audience-aware brief with problem context, user stories, acceptance criteria, edge cases, dependencies, and explicit exclusions. Run the PM Slop Test before delivery.
 
 ### spec
-Write a full product specification. Deeper than brief: includes success metrics, rollback plan, phased delivery, and risks. Forces explicit out-of-scope items. Uses the four risks framework.
+
+Write a full product specification with success metrics, rollback, phased delivery, risks, and explicit out-of-scope items. Use the four risks framework.
 
 ### stories
-Break a feature into user stories with acceptance criteria. Each story must be independently valuable, testable, and sprint-sized. Uses JTBD framing. Flags hidden dependencies.
+
+Break a feature into independently valuable, testable, sprint-sized user stories. Use JTBD framing and flag hidden dependencies.
 
 ### metrics
-Define success metrics: primary (one only), secondary (2-3), guardrail (must not get worse), and counter-metrics (gaming detection). Forces baselines, specific targets, measurement plans, and confounding factor analysis.
+
+Define one primary metric, two or three secondary metrics, guardrails, and counter-metrics. Require baselines, targets, measurement plans, and confounding-factor analysis.
 
 ### review
-Adversarially critique a doc, plan, strategy, stakeholder message, or any PM artifact. Runs a Frame, Critique, Refine loop. Document-type-aware: routes to the relevant knowledge file for specification, strategy, positioning, metrics, retro, stakeholder comms, or roadmap artifacts. Absorbs the function of the former translate, stakeholders, audit, and retro skills. Ends with a blunt verdict band: SLOP, ROUGH, SOLID, or SHIP, with the score behind it kept internal.
+
+Adversarially critique a PM artifact through Frame, Critique, and Refine. Route by document type to the relevant knowledge file. End with SLOP, ROUGH, SOLID, or SHIP; keep the numeric score internal.
 
 ### decide
-Structure a decision: options, weighted criteria, trade-offs, bias checks. Uses the Thinking in Bets framework. Separates decision quality from outcome quality. Flags cognitive biases. Output: recommendation with explicit trade-offs and what you are accepting by choosing this path.
+
+Structure options, weighted criteria, trade-offs, and bias checks using Thinking in Bets. Separate decision quality from outcome quality and state what the recommendation accepts.
 
 ### discover
-Plan customer conversations that get truth, not politeness. Uses Mom Test and Demand-Side Sales forces. Can also debrief after conversations to extract real signal.
 
----
+Plan or debrief customer conversations using Mom Test and Demand-Side Sales principles. Extract observed signal instead of politeness.
 
 ## Project-root artifacts and naming
 
-Modes that write working files to the user's project root use the `pm`-prefix-no-hyphen root: `pmdecisions.md`. This matches the existing `.pmcontext.md` convention. Modifier suffixes use a single hyphen: `pmdecisions-archive.md`.
+Modes that write working files use a lowercase `pm` prefix with no hyphen before the root, such as `pmdecisions.md`. Modifier suffixes use one hyphen, such as `pmdecisions-archive.md`.
 
-The `.pmcontext.md` file keeps its dotfile form because it is configuration set up once via `teach` mode and rarely edited, not a working file.
+`.pmcontext.md` remains a dotfile because it is project configuration, not a working artifact. The `decisions_log: enabled | disabled` key under `## Settings` controls persistent decision logging. Any mode that updates `.pmcontext.md` must preserve sections it does not own.
 
-The `decisions_log: enabled | disabled` key under a `## Settings` section in `.pmcontext.md` controls whether `decide` mode writes to `pmdecisions.md` in this repo. The key is set on first `decide` run via the AskUserQuestion tool and persists across sessions.
+## Do not
 
-Future modes that produce project-root artifacts should follow this pattern: lowercase `pm` prefix, no hyphen between prefix and root, single hyphen separating modifier suffixes. Any mode that updates `.pmcontext.md` must preserve sections it does not own (for example, `## Settings`).
-
-## Do NOT
-
-- Do not commit planning docs, roadmaps, or strategy notes. This repo is public. All planning material lives in the gitignored `plans/` folder (current plan: `plans/next-steps.md`). A NEXT-STEPS.md was once committed to the root from another machine; the gitignore now blocks the common names, but the rule is the point.
-- Do not use em dashes in any user-facing copy. Use regular dashes or rephrase.
-- Do not produce generic marketing copy. Every sentence should be specific and earned.
-- Do not over-engineer. Skills are markdown files. Keep it simple.
-- Do not invent frameworks. Use the ones from the reference files. The value is curation and opinionation, not invention.
+- Do not commit planning documents, roadmaps, or strategy notes. This repository is public. Private planning material stays in ignored `plans/` and `.build/` paths. Treat `eval/` as an excluded release path unless a task explicitly targets the evaluator.
+- Do not add release changes under `.codex/skills` or OpenCode paths.
+- Do not use Unicode em dashes in user-facing copy. Use a regular dash or rewrite the sentence.
+- Do not produce generic marketing copy. Every sentence must be specific and earned.
+- Do not over-engineer. The product is Markdown plus a small generation pipeline.
+- Do not invent frameworks. Use the curated frameworks in the reference files.
+- Do not add modes, MCP servers, telemetry, automated updates, or review memory unless the user explicitly expands scope.
 
 ## Working style
 
-- Read the relevant files before making claims about the code. Don't speculate about code you haven't opened.
-- Act directly on clear, reversible work (edits, tests, local commands). When intent is ambiguous, or an action is hard to reverse or affects shared systems, ask or investigate first, then proceed.
-- State the assumptions you're making so they can be corrected.
-- If you see a clearly better approach, give it in 2-4 bullets, then proceed unless it needs a decision from me.
-- For substantial features, use /build rather than freelancing.
+- Read relevant files before making claims about the repository.
+- Act directly on clear, reversible work. Investigate or ask before hard-to-reverse or shared-system changes.
+- State assumptions so they can be corrected.
+- If there is a clearly better approach, explain it in two to four bullets, then proceed unless it requires a decision.
+- Use the `build` workflow for substantial features.
+- Preserve unrelated user changes in a dirty worktree.
 
-## Writing plans (Sonnet plans, Opus implements)
+## Writing plans
 
-- Be explicit and scoped: the implementer follows the plan literally and won't infer unstated requirements or generalize from one case to others. State the files, acceptance criteria, edge cases, and what's out of scope.
-- Keep it minimal: plan only what the task needs. No extra abstractions, files, configurability, or defensive code that wasn't asked for.
+- Be explicit and scoped. Name files, acceptance criteria, edge cases, and exclusions.
+- Keep plans minimal. Do not add abstractions, files, configurability, or defensive work beyond the task.
