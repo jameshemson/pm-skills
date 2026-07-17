@@ -24,6 +24,7 @@ const EXACT_ALLOWED = new Set([
   'reference/knowledge-craft-score.md', 'reference/knowledge-review-personas.md',
 ]);
 const ALLOWED = new Set([...SEMANTIC, ...EXACT_ALLOWED]);
+const CLAUDE_QUESTION_CAP_PATTERN = /(?:at most|up to) (?:four questions|4(?: questions)?)/i;
 
 function parseArgs(argv) {
   let base = DEFAULT_BASE;
@@ -61,26 +62,26 @@ function semanticFailures(path, content) {
     need(content.includes('/pm teach'), 'missing /pm invocation');
     need(content.includes('CLAUDE.md'), 'missing CLAUDE.md target');
     need(content.includes('AskUserQuestion'), 'missing AskUserQuestion fork');
-    need(/at most four questions|up to 4 questions/i.test(content), 'AskUserQuestion is not capped at four');
+    need(CLAUDE_QUESTION_CAP_PATTERN.test(content), 'AskUserQuestion is not capped at four');
     need(/Ask exactly three questions/i.test(content), 'session-only router is not exactly three questions');
   } else if (path === 'reference/mode-teach.md' || path === 'reference/mode-setup.md') {
     need(content.includes('CLAUDE.md'), 'missing CLAUDE.md target');
     need(content.includes('AskUserQuestion'), 'missing AskUserQuestion behavior');
-    need(/at most 4 questions|at most four questions|up to 4/i.test(content), 'AskUserQuestion is not capped at four');
+    need(CLAUDE_QUESTION_CAP_PATTERN.test(content), 'AskUserQuestion is not capped at four');
     need(content.includes('/pm'), 'missing /pm continuation');
   } else if (path === 'reference/mode-review.md') {
     need(content.includes('AskUserQuestion'), 'missing AskUserQuestion behavior');
-    need(/at most four questions|up to 4/i.test(content), 'AskUserQuestion is not capped at four');
+    need(CLAUDE_QUESTION_CAP_PATTERN.test(content), 'AskUserQuestion is not capped at four');
     need(/session-only/i.test(content), 'missing session-only review behavior');
   } else if (path === 'reference/mode-decide.md') {
     const session = content.match(/## Session-only execution\n([\s\S]*?)(?=\n## Step 0:)/i)?.[1] ?? '';
     need(Boolean(session), 'missing bounded session-only section');
-    need(/skip Step 0 and Step 8/i.test(session), 'session-only does not skip Steps 0 and 8');
-    need(/Run Steps 1-7/i.test(session), 'session-only does not run Steps 1-7');
+    need(/skip Step 0 and Step 8/i.test(session), 'session-only skip contract is missing');
+    need(/Run Steps 1-7/i.test(session), 'session-only execution range is missing');
     need(/Do not read[^\n]*(?:history|settings)/i.test(session), 'session-only does not prohibit persistent reads');
     need(/do not write[^\n]*(?:files|settings)|do not[^\n]*log/i.test(session), 'session-only does not prohibit persistent writes');
     need(content.includes('AskUserQuestion'), 'missing AskUserQuestion behavior');
-    need(/at most four questions|up to 4/i.test(content), 'AskUserQuestion is not capped at four');
+    need(CLAUDE_QUESTION_CAP_PATTERN.test(content), 'AskUserQuestion is not capped at four');
     need(content.includes('/pm brief') && content.includes('/pm spec'), 'missing /pm continuations');
   }
   return issues;
@@ -93,14 +94,14 @@ function exactByteFailures(path, current, baseline) {
 function runSelfTest(base) {
   const fixtures = {
     'SKILL.md': 'Use /pm teach. Read CLAUDE.md. Use AskUserQuestion with at most four questions. Ask exactly three questions.\n',
-    'reference/mode-teach.md': 'Read CLAUDE.md. Use AskUserQuestion with at most 4 questions. Continue with /pm setup.\n',
-    'reference/mode-setup.md': 'Write CLAUDE.md. Use AskUserQuestion with up to 4 questions. Continue with /pm teach.\n',
+    'reference/mode-teach.md': 'Read CLAUDE.md. Use AskUserQuestion with at most four questions. Continue with /pm setup.\n',
+    'reference/mode-setup.md': 'Write CLAUDE.md. Use AskUserQuestion with up to four questions. Continue with /pm teach.\n',
     'reference/mode-decide.md': '## Session-only execution\nSkip Step 0 and Step 8. Run Steps 1-7. Do not read prior history or settings. Do not write files or settings and do not log.\n\n## Step 0: Read prior\nUse AskUserQuestion with at most four questions. Then /pm brief or /pm spec.\n',
     'reference/mode-review.md': 'Use AskUserQuestion with at most four questions. Session-only review differs only in persistence.\n',
   };
   const mutations = {
     'SKILL.md': (value) => value.replace('CLAUDE.md', 'AGENTS.md'),
-    'reference/mode-teach.md': (value) => value.replace('at most 4', 'at most 5'),
+    'reference/mode-teach.md': (value) => value.replace('at most four', 'at most five'),
     'reference/mode-setup.md': (value) => value.replace('AskUserQuestion', 'ask somehow'),
     'reference/mode-decide.md': (value) => value.replace('Do not read', 'Read'),
     'reference/mode-review.md': (value) => value.replace('at most four', 'at most five'),
