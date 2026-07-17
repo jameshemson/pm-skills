@@ -1,6 +1,6 @@
 # Mode: setup
 
-Generate a {{INSTRUCTIONS_FILE}} tailored to a product team. Not a generic template - this interviews the user about their specific team, product domain, and ways of working, then produces a file that makes AI effective for everyone on the team.
+Generate team instructions in {{INSTRUCTIONS_FILE}}, tailored to a product team. Not a generic template - this interviews the user about their specific team, product domain, and ways of working, then produces a file that makes AI effective for everyone on the team.
 
 Consult [knowledge-leadership.md](knowledge-leadership.md) for team structure principles (empowered teams, context vs control, trust frameworks) and [knowledge-communication.md](knowledge-communication.md) for audience-specific communication norms.
 

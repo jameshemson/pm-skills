@@ -20,15 +20,13 @@ Note what you learned and what remains unclear. Code tells you what was built, n
 
 **How to run the interview**
 
-Use AskUserQuestion in rounds of at most 4 questions per call. Run round by round - do not queue all questions at once.
+Use AskUserQuestion in rounds of at most four questions per call. Run round by round - do not queue all questions at once. Put questions with genuinely enumerable options in AskUserQuestion rounds. Ask free-form questions as open prompts in conversation between rounds.
 
 Before each round: pre-fill any question the codebase scan already answered, and pre-fill any question the user already answered earlier in this conversation. Present pre-fills as "I read X from the codebase - does that match?" inside the round, not as silent assumptions. If the user's answer contradicts a pre-fill, the user's answer wins.
 
-Questions that have genuinely enumerable options (B2B/B2C, lifecycle stage, team model, decision framework) go in AskUserQuestion rounds. Questions whose answers are free-form (one-sentence product description, vision, job-to-be-done, hardest problem) are asked as open prompts in conversation between rounds - do not force them into multiple-choice.
-
 If a round's questions were all answered by the scan or earlier in the conversation, skip that round entirely.
 
-After Round 2, STOP. Offer exactly two options via AskUserQuestion:
+After Round 2, STOP. Offer exactly two options through the active provider's question method:
 - "Write the context file from what we have"
 - "Keep going (two more short rounds)"
 
@@ -40,7 +38,7 @@ If the user exits early, sections not yet covered are written as gaps. Continue 
 
 Open prompt first (in conversation): "What does this product do in one sentence?"
 
-Then AskUserQuestion with up to 4 of the following that the scan did not answer:
+Then ask up to the active provider limit from the following items that the scan did not answer:
 - B2B, B2C, B2B2C, platform, or internal tool? (If B2B, also ask: who is the buyer vs the end user?)
 - Business model: SaaS, marketplace, transactional, freemium, or enterprise?
 - Growth model: product-led, sales-led, marketing-led, or partnerships?
@@ -52,7 +50,7 @@ Then AskUserQuestion with up to 4 of the following that the scan did not answer:
 
 Open prompt (in conversation): "What job are they hiring this product to do - the underlying struggle, not the feature?"
 
-Then AskUserQuestion with up to 4 of the following that are not yet answered:
+Then ask up to the active provider limit from the following items that are not yet answered:
 - Who are the primary users? What is their context when using the product?
 - What were they doing before? What is the real competitive alternative?
 - Current strategic focus: what are you explicitly NOT doing right now?
@@ -66,7 +64,7 @@ After this round: offer the early exit (see above).
 
 Open prompt (in conversation): "What is the hardest product problem you are facing right now?"
 
-Then AskUserQuestion with up to 4 of the following that are not yet answered:
+Then ask up to the active provider limit from the following items that are not yet answered:
 - Empowered product teams or feature teams?
 - How do product decisions get made? Who are the key stakeholders?
 - What does "done" mean on this team?
@@ -76,7 +74,7 @@ Then AskUserQuestion with up to 4 of the following that are not yet answered:
 
 **Round 4 - ways of working** (offered, skippable)
 
-AskUserQuestion with up to 4 of the following:
+Ask up to the active provider limit from the following items:
 - Preferred framework for product decisions? (RICE, ICE, custom scorecard, or something else)
 - Any checklists or considerations you always run through before greenlighting work?
 - Preferred formats for specs, briefs, or decision docs?
@@ -120,10 +118,11 @@ last_updated: YYYY-MM-DD
 
 Write this to `.pmcontext.md` in the project root. If the file already exists, update the Product Context section in place; always refresh `last_updated` to today's date when updating the section, and add the line if an older file lacks it. Do not overwrite or remove other sections (for example, a `## Settings` section managed by other modes such as `decide`).
 
-Then STOP and call the AskUserQuestion tool: ask whether to also append the Product Context to CLAUDE.md. If yes, append or update the section there.
+Then STOP and use the active provider's question method to ask whether to also append the Product Context to CLAUDE.md. If yes, append or update the section there.
+
 
 Confirm completion and summarize the key context that will now guide all future `pm` mode work.
 
 ---
 
-Once context is in place, `pm setup` generates a team CLAUDE.md that builds on it.
+Once context is in place, `/pm setup` generates a team CLAUDE.md that builds on it.
