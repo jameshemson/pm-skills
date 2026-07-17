@@ -1,0 +1,21 @@
+{
+  "name": "pm-skills",
+  "interface": {
+    "displayName": "PM Skills"
+  },
+  "plugins": [
+    {
+      "name": "pm",
+      "description": "AI generates, pm-skills critiques. An adversarial PM skill pack that critiques product artifacts against curated frameworks. Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
+      "source": {
+        "source": "local",
+        "path": "./plugins/pm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

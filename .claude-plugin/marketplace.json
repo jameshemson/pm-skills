@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-skills",
   "metadata": {
-    "description": "Claude generates, pm-skills critiques. The critic for PM docs in Claude Code: adversarial review at the core, framework-backed, anti-theater, with drafting modes that critique their own output."
+    "description": "AI generates, pm-skills critiques. An adversarial PM skill pack with nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP."
   },
   "owner": {
     "name": "James Hemson"
@@ -10,15 +10,26 @@
   "plugins": [
     {
       "name": "pm",
-      "description": "Claude generates, pm-skills critiques. An adversarial review mode critiques any PM doc against curated frameworks, and the drafting modes run the same critique on their own output. Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
-      "version": "2.16.0",
+      "description": "AI generates, pm-skills critiques. An adversarial PM skill pack that critiques product artifacts against curated frameworks. Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
+      "version": "2.17.0",
       "author": {
         "name": "James Hemson"
       },
       "source": "./",
       "category": "product-management",
       "homepage": "https://github.com/jameshemson/pm-skills",
-      "tags": ["product-management", "pm", "specs", "briefs", "user-stories", "decisions", "discovery", "metrics", "critique", "skills"]
+      "tags": [
+        "product-management",
+        "pm",
+        "specs",
+        "briefs",
+        "user-stories",
+        "decisions",
+        "discovery",
+        "metrics",
+        "critique",
+        "skills"
+      ]
     }
   ]
 }
