@@ -211,13 +211,13 @@ function renderOutputs(root, sourceRoot, sourceAbsolute, outputs) {
   return rendered;
 }
 
-function assertNoUnexpectedFiles(root, outputs, expected, prior) {
+function assertNoUnexpectedFiles(root, outputs, prior) {
   const unexpected = [];
   for (const output of outputs) {
     ensureDirectory(root, output.root, { create: false, label: `output ${output.root}` });
     for (const file of walkRegularFiles(root, output.absolute, `output ${output.root}`)) {
       const repositoryPath = `${output.root}/${file}`;
-      if (!expected.has(repositoryPath) && !prior.has(repositoryPath)) unexpected.push(repositoryPath);
+      if (!prior.has(repositoryPath)) unexpected.push(repositoryPath);
     }
   }
   if (unexpected.length) fail(`unexpected file(s) in generated outputs: ${unexpected.sort().join(', ')}`);
@@ -295,7 +295,7 @@ export async function buildGeneratedTrees({ repositoryRoot: rootPath, sourceRoot
   const rendered = renderOutputs(root, sourceRoot, sourceAbsolute, outputs);
   const expected = new Set(rendered.map(({ destination }) => destination));
 
-  assertNoUnexpectedFiles(root, outputs, expected, inventory.files);
+  assertNoUnexpectedFiles(root, outputs, inventory.files);
 
   const stale = new Set([...inventory.files].filter((file) => !expected.has(file)));
   removeStaleFiles(root, outputs, stale);
