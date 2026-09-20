@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.18.0 - 2026-09-20
+
+### Added
+
+- **The noun problem, Claudism family 16.** Nominalisation and the verbless fragment, the two habits a widely shared r/ClaudeCode post named as the reason current model prose reads like a smart but bad writer. Nominalisation turns the verb into a noun hung on a weak verb ("made an attempt at" for "tried", "the improvement of the performance of the system" for "the system got faster"). The verbless fragment drops the verb for a trailing modifier ("The runner, built.") and loses the actor, the tense, and whether the work is done. The family also names the coined-noun payoff, where a nominalised action becomes a capitalised term of art ("The Walk", "credential-provenance collision") and the doc starts citing a thing nobody built. Handley's subject-verb-object rule already asked for the verb at prevention time; the catalogue had no detection entry for its absence, so `review` waved through a draft with clean vocabulary and no verbs. Adds a "keep the verb" prevention rule, a before/after pair, the checklist mention in `SKILL.md`, and the family in the eval rubric.
+
+### Changed
+
+- **Claude parity now checks meaning, not bytes.** The 2.17.0 check pinned every non-allowlisted Claude file to a pre-Codex commit, which made this release's first content edit to `foundations.md` fail CI and would have failed every future one. `check:sync` already proves the generated trees match the canonical source, so `check:claude-parity` now runs its semantic guards on every Claude file, every time: no Codex-only syntax, and `/pm`, `CLAUDE.md`, the four-question AskUserQuestion cap, and the session-only `decide` contract all present. The `--base` flag is gone.
+
+---
+
 ## 2.17.0 - 2026-07-17
 
 ### Added

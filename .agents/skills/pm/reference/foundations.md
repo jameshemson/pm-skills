@@ -126,6 +126,7 @@ The tells to avoid:
 - No tidy decomposition ("three layers", "the cleanest way to think about this", "four things have to hold") unless the cut points change what the reader does.
 - No colon used to set up a one-clause payoff. If the bit after the colon could be its own sentence, write the sentence.
 - Cut the closer. End on the last real point, not a punchline.
+- Keep the verb. The action is a verb, not a noun hung on "made", "conduct", "provide", or "perform", and never a fragment with the verb dropped ("The runner, built."). Every sentence names who does what.
 
 Before and after (each "plain" version follows Handley's rules above):
 - Slop: "Let me push back: it's not that the metric is wrong, it's that it games easily. That's the structural spine." Plain: "The metric games easily. A team can raise it without helping one user."
@@ -133,6 +134,7 @@ Before and after (each "plain" version follows Handley's rules above):
 - Slop: "The way to hold the scope is as three clean layers." Plain: "Search and filters are in scope. Saved views are out of scope for now."
 - Slop: "Here's the catch: the metric games easily." Plain: "The metric games easily."
 - Slop: "For the launch to land, four things have to hold." Plain: "The launch works only if sales can demo it in under ten minutes and support can clear tickets without escalating."
+- Slop: "The team made an attempt at a reduction of churn through a re-engagement of lapsed accounts. The pilot, run." Plain: "The team tried to cut churn by re-engaging lapsed accounts. We ran the pilot for eight weeks."
 
 **1. Performative pushback.** Signals critical engagement without doing any. Announces a challenge, then concedes or restates the user's point in fancier words.
 - Tells: "Let me push back on that", "Let me refine your load-bearing claim rather than just accepting it", "The one place I'd still push", "you're doing zero moves there", "I'd challenge the premise here".
@@ -217,6 +219,13 @@ Before and after (each "plain" version follows Handley's rules above):
 - Tells: staccato three-word fragments on every beat (uniform rhythm in a new costume), forced lowercase in an otherwise standard context, a "look", "here's the thing", or "real talk" cold open bolted onto formal content, a "lol" or profanity dropped in to seem off-the-cuff, and conspicuous em-dash avoidance where every natural dash is contorted into an ellipsis, a colon, or a reworded sentence. A deliberately inserted typo is the extreme form.
 - Fakes: a human voice. It is the absence of voice dressed up as casual. All-short sentences are as mechanical as all-medium ones. The contortion to dodge a dash is as legible as the dash would have been.
 - Fix: do not over-apply the rules. The fix for a dash is a comma or a full stop in a sentence you would actually write, not an ellipsis. The fix for the smooth voice is a real voice, a register chosen on purpose, not forced casual. Vary sentence length for real, long ones included.
+
+**16. The noun problem: nominalisation and the verbless fragment.** Two shapes of one habit. The verb goes missing and a noun stands in for the action. Each says what a plain subject-verb-object sentence says, from further away from who did what and when. A reader who cannot find the verb cannot tell whether the thing happened, so this family hits status updates, decision records, and specs hardest.
+- Nominalisation tells: the action turned into a noun and hung on a weak verb. "made an attempt at" for "tried", "conduct a review of" for "review", "provide a summary of" for "summarise", "never a walk through the steps" for "do not walk through the steps". The chained form stacks nouns behind "of": "the improvement of the performance of the system" for "the system got faster", "the validation of the completeness of the migration" for "we checked the migration copied every row".
+- Verbless-fragment tells: the verb dropped and a trailing modifier left in its place. "The runner, built." for "We built the runner." "The metric, defined." "Stakeholders, aligned." In documents the commoner form is the note-style fragment: "No regressions reported.", "Copy change only, no engineering work.", "No re-consent flow in v1." Either way the line loses the actor, the tense, and whether the work is done, which is exactly what a reviewer needs from it.
+- Coined-noun tells: a nominalised action promoted to a term of art and then reused as if it named something real. "The Walk", "the orchestration", "the validation surface", "credential-provenance collision" for "someone signs up with Google but an account with that email already exists". Once the action is a noun it can be capitalised, defined, and cited, and the doc starts referring to a thing nobody built. Family 4's "load-bearing" is the same move applied to an adjective.
+- Fakes: precision and economy. The noun looks technical and the fragment looks tight. Both hide the verb that would say who does what.
+- Fix: put the verb back. Name the actor, use the verb for the action, and let the object take it. "We built the runner." "Engineering reviewed the spec on Tuesday." "The system got faster." If a coined noun survives the rewrite, define it once in plain words or replace it with the sentence it stands for.
 
 **Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux", "hold" (in any of its overused senses: "X holds" = is true, "a tension to hold" = keep in mind, "the way to hold this" = grasp or understand). Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
 
