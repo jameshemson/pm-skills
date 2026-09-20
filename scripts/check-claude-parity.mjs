@@ -1,10 +1,15 @@
 #!/usr/bin/env node
-import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const DEFAULT_BASE = 'b820b43b6aa4f54afd23c17858ba7a135ea37b86';
+// Guards the generated Claude tree's provider semantics. The Codex build must never
+// leak Codex-only syntax into Claude output, and the Claude-specific contracts
+// (/pm, CLAUDE.md, AskUserQuestion capped at four, session-only decide) must survive
+// every regeneration. Byte parity with a frozen pre-Codex commit was the original
+// migration check; check:sync now proves the trees match the canonical source, so
+// this script checks meaning, not bytes, and content edits to the source stay legal.
+
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const PM_ROOT = join(ROOT, '.claude/skills/pm');
 const REFERENCES = [
@@ -20,21 +25,15 @@ const SEMANTIC = new Set([
   'SKILL.md', 'reference/mode-teach.md', 'reference/mode-setup.md',
   'reference/mode-decide.md', 'reference/mode-review.md',
 ]);
-const EXACT_ALLOWED = new Set([
-  'reference/knowledge-craft-score.md', 'reference/knowledge-review-personas.md',
-]);
-const ALLOWED = new Set([...SEMANTIC, ...EXACT_ALLOWED]);
 const CLAUDE_QUESTION_CAP_PATTERN = /(?:at most|up to) (?:four questions|4(?: questions)?)/i;
 
 function parseArgs(argv) {
-  let base = DEFAULT_BASE;
   let selfTest = false;
-  for (let i = 0; i < argv.length; i += 1) {
-    if (argv[i] === '--self-test') selfTest = true;
-    else if (argv[i] === '--base' && argv[i + 1]) base = argv[++i];
-    else throw new Error(`Unknown or incomplete argument: ${argv[i]}`);
+  for (const arg of argv) {
+    if (arg === '--self-test') selfTest = true;
+    else throw new Error(`Unknown argument: ${arg}`);
   }
-  return { base, selfTest };
+  return { selfTest };
 }
 
 function filesUnder(root, prefix = '') {
@@ -46,11 +45,6 @@ function filesUnder(root, prefix = '') {
     else result.push(rel);
   }
   return result.sort();
-}
-
-function baseBytes(base, path) {
-  const repoPath = `.claude/skills/pm/${path}`;
-  return execFileSync('git', ['show', `${base}:${repoPath}`], { cwd: ROOT, encoding: null, stdio: ['ignore', 'pipe', 'pipe'] });
 }
 
 function semanticFailures(path, content) {
@@ -87,11 +81,7 @@ function semanticFailures(path, content) {
   return issues;
 }
 
-function exactByteFailures(path, current, baseline) {
-  return current.equals(baseline) ? [] : [`${path}: bytes differ from base`];
-}
-
-function runSelfTest(base) {
+function runSelfTest() {
   const fixtures = {
     'SKILL.md': 'Use /pm teach. Read CLAUDE.md. Use AskUserQuestion with at most four questions. Ask exactly three questions.\n',
     'reference/mode-teach.md': 'Read CLAUDE.md. Use AskUserQuestion with at most four questions. Continue with /pm setup.\n',
@@ -111,40 +101,29 @@ function runSelfTest(base) {
     if (semanticFailures(path, fixtures[path]).length) problems.push(`self-test fixture is invalid: ${path}`);
     if (!semanticFailures(path, mutations[path](fixtures[path])).length) problems.push(`self-test mutation escaped detection: ${path}`);
   }
-  for (const path of EXACT_ALLOWED) {
-    const original = baseBytes(base, path);
-    const mutated = Buffer.concat([original, Buffer.from('\nmutation\n')]);
-    if (exactByteFailures(path, original, original).length) problems.push(`self-test exact-byte baseline is invalid: ${path}`);
-    if (!exactByteFailures(path, mutated, original).length) problems.push(`self-test exact-byte mutation escaped detection: ${path}`);
-  }
+  const leak = 'Plain reference text.\nUse request_user_input when available.\n';
+  if (!semanticFailures('reference/foundations.md', leak).length) problems.push('self-test Codex-only leak escaped detection');
   if (problems.length) throw new Error(problems.join('; '));
-  console.log('PASS: Claude parity self-test rejected mutations for all seven allowlisted paths.');
+  console.log('PASS: Claude parity self-test rejected mutations for all five semantic paths and a Codex-only leak.');
 }
 
 const failures = [];
 try {
-  const { base, selfTest } = parseArgs(process.argv.slice(2));
+  const { selfTest } = parseArgs(process.argv.slice(2));
   if (selfTest) {
-    runSelfTest(base);
+    runSelfTest();
   } else {
     const actual = filesUnder(PM_ROOT);
     for (const path of EXPECTED.filter((path) => !actual.includes(path))) failures.push(`missing current Claude path: .claude/skills/pm/${path}`);
     for (const path of actual.filter((path) => !EXPECTED.includes(path))) failures.push(`unexpected current Claude path: .claude/skills/pm/${path}`);
 
     for (const path of EXPECTED) {
-      const repoPath = `.claude/skills/pm/${path}`;
-      let baseline;
-      try { baseline = baseBytes(base, path); }
-      catch (error) { failures.push(`cannot read base path ${repoPath} from ${base}: ${error.stderr?.toString().trim() || error.message}`); continue; }
-      if (!existsSync(join(PM_ROOT, path))) continue;
-      const current = readFileSync(join(PM_ROOT, path));
-      const changed = !current.equals(baseline);
-      if (changed && !ALLOWED.has(path)) failures.push(`unapproved Claude change: ${repoPath}`);
-      if (EXACT_ALLOWED.has(path)) failures.push(...exactByteFailures(path, current, baseline).map(() => `Claude path must remain byte-identical to base: ${repoPath}`));
-      if (SEMANTIC.has(path) && changed) failures.push(...semanticFailures(path, current.toString('utf8')).map((issue) => `changed Claude semantics invalid: ${issue}`));
+      const absolute = join(PM_ROOT, path);
+      if (!existsSync(absolute)) continue;
+      failures.push(...semanticFailures(path, readFileSync(absolute, 'utf8')).map((issue) => `Claude semantics invalid: ${issue}`));
     }
 
-    if (!failures.length) console.log(`PASS: Claude parity matches ${base}; changed allowlisted paths satisfy Claude semantics.`);
+    if (!failures.length) console.log(`PASS: all ${EXPECTED.length} Claude paths are present and keep their Claude semantics.`);
   }
 } catch (error) {
   failures.push(error.message);

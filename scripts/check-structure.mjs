@@ -5,7 +5,7 @@ import { dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const VERSION = '2.17.0';
+const VERSION = '2.18.0';
 const REPOSITORY = 'https://github.com/jameshemson/pm-skills';
 const MODES = ['teach', 'setup', 'brief', 'spec', 'stories', 'metrics', 'review', 'decide', 'discover'];
 const REFERENCES = [
@@ -274,7 +274,7 @@ function assertSite(path) {
   for (const command of [
     '/plugin marketplace add jameshemson/pm-skills', '/plugin install pm@pm-skills', '/pm',
     'codex plugin marketplace add jameshemson/pm-skills', 'codex plugin add pm@pm-skills', '$pm:pm',
-    '.agents/skills/pm', '$pm', 'pm-skills v2.17.0',
+    '.agents/skills/pm', '$pm', `pm-skills v${VERSION}`,
   ]) if (!content.includes(command)) fail(`site: missing ${command}`);
   if (!/AI skill pack|skill pack for product managers/i.test(content)) fail('site: provider-neutral AI skill-pack positioning is missing');
   if (/Claude Code skill pack|skill pack for Claude/i.test(content)) fail('site: positioning still claims a Claude-only skill pack');
