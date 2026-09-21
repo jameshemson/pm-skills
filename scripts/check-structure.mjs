@@ -5,7 +5,7 @@ import { dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const VERSION = '2.18.0';
+const VERSION = '2.19.0';
 const REPOSITORY = 'https://github.com/jameshemson/pm-skills';
 const MODES = ['teach', 'setup', 'brief', 'spec', 'stories', 'metrics', 'review', 'decide', 'discover'];
 const REFERENCES = [

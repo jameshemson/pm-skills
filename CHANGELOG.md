@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.19.0 - 2026-09-20
+
+### Added
+
+Five tells from Wikipedia's "Signs of AI writing" guide, the catalogue the WikiProject AI Cleanup editors maintain from dated examples in real edits. It confirmed most of the existing taxonomy (significance inflation, the antithesis flip, the rule of three, boldface, em dashes, chat leftovers, the vocabulary list) and exposed these gaps.
+
+- **The trailing participle, Voice slop 16.** A sentence that ends with an "-ing" phrase doing fake analysis: "..., ensuring alignment with the roadmap", "..., enabling teams to move faster", "..., highlighting the need for guardrails". Wikipedia's most-cited sentence-level sign, and a spec staple. Comes with a delete test and a fix.
+- **The labelled line, third shape of Claudism family 16.** A label and a colon where a sentence should be ("Pilot: 20 companies, 8 weeks.") and its bulleted form with a bold label per item. The 2.18.0 calibration run had filed these lines under family 16 with no name for them; now they have one, with the boundary against family 13 and family 8 stated. The prose form counts once per document and only when most paragraphs open with a label, because the first calibration pass counted five instances in a five-paragraph email; the bulleted form counts on sight.
+- **Unfilled placeholders, fourth shape of assistant-artifact slop.** "[N]", "[TBD]", "[insert metric]", "XX%". Absolute, like the other three shapes: one instance fails the draft.
+- **Weasel attribution under False confidence slop.** "Industry reports show", "experts agree", "users consistently tell us", with no source, count, or date.
+- **The availability pivot under Hedge slop.** Admit the number is missing, then reason from it anyway: "exact churn figures are unavailable, but benchmarks suggest 8-10%".
+
+### Changed
+
+- **The SHIP gate separates mechanical tells from judgement calls.** The gate used to allow two tells of any kind, a cushion set in June for run-to-run detection noise when the catalogue had eleven families. It now allows two judgement-call tells and zero mechanical ones. Mechanical tells are the shapes a reader spots without judgement: the em dash, assistant-artifact slop in all four shapes (now including placeholders), and the bold-label bullet list, three or more consecutive bullets each opening with a bold label and a colon. The first two were already single-instance blockers; the list form is new. The cushion is stated for what it is, reviewer noise, not an allowance, and the review still quotes and fixes every tell it finds.
+
+---
+
 ## 2.18.0 - 2026-09-20
 
 ### Added
