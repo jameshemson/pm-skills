@@ -1,6 +1,6 @@
 {
   "name": "pm",
-  "version": "2.19.0",
+  "version": "2.19.1",
   "description": "AI generates, pm-skills critiques. An adversarial PM skill pack that critiques product artifacts against curated frameworks. Nine modes: teach, setup, brief, spec, stories, metrics, review, decide, discover. Verdicts are blunt: SLOP / ROUGH / SOLID / SHIP.",
   "author": {
     "name": "James Hemson",

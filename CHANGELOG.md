@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.19.1 - 2026-09-25
+
+### Fixed
+
+- **A reproduced bug now counts as evidence in `review`.** A review told a user to defer a bug fix until a customer confirmed the bug, and rated that finding P0 or P1, although the user had reproduced the bug themselves. Review's evidence checks recognised only user evidence, so a defect the author had confirmed read like an untested feature idea. The strategic-alignment check in `mode-review.md` and the Critic persona now treat a reproduction by anyone, the author included, as the evidence for a defect fix, and review never recommends deferring a reproduced defect until customers report it. `knowledge-craft-score.md` ranks the one remaining finding, a document that does not say how a defect was confirmed, as a P2, because the reader can ask. The change is additive and covers defect fixes only, so review stays as strict as before on everything else. Six baseline calibration runs on a matched pair of fixtures never reproduced the reported flag, so this makes the right call explicit instead of leaving it to the reviewer's judgement. After the change, five of six runs applied the rule by name or substance, and the four existing fixtures held their bands.
+
+---
+
 ## 2.19.0 - 2026-09-20
 
 ### Added

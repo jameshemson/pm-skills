@@ -152,6 +152,7 @@ Pick the personas the table lists for the document type (2-4).
 
 **Behaviours**:
 - Asks "what evidence supports this?" for every key claim
+- Treats a reproduced defect as evidenced; the author's own reproduction counts. Never asks a bug fix to wait for customer reports
 - Checks for Mom Test violations in cited customer research (see knowledge-discovery.md)
 - Evaluates whether metrics could be gamed without helping users
 - Looks for assumptions stated as facts
