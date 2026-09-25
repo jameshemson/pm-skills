@@ -48,6 +48,8 @@ Anchors by document type (examples of the principle, not an exhaustive registry)
 
 For a type with no row here, rank from the three definitions and say which one you applied.
 
+A reproduced defect fix without customer reports is not a finding. A document that does not say how a defect was confirmed gets a P2, because the reader can ask.
+
 **Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the document must change before the audience can commit" (P1), or "this just erodes it, or they can ask" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1. The commonest inflation is the question-shaped P1: a finding phrased as "the audience will ask X" is a P2 unless the answer has to land in the document before commitment.
 
 **Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP gate on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
