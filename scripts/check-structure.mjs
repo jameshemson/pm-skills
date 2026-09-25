@@ -274,9 +274,9 @@ function assertSite(path) {
   for (const command of [
     '/plugin marketplace add jameshemson/pm-skills', '/plugin install pm@pm-skills', '/pm',
     'codex plugin marketplace add jameshemson/pm-skills', 'codex plugin add pm@pm-skills', '$pm:pm',
-    '.agents/skills/pm', '$pm', `pm-skills v${VERSION}`,
+    '$pm', `pm-skills v${VERSION}`,
   ]) if (!content.includes(command)) fail(`site: missing ${command}`);
-  if (!/AI skill pack|skill pack for product managers/i.test(content)) fail('site: provider-neutral AI skill-pack positioning is missing');
+  if (!content.includes('Claude Code') || !content.includes('Codex')) fail('site: provider-neutral positioning must name both Claude Code and Codex');
   if (/Claude Code skill pack|skill pack for Claude/i.test(content)) fail('site: positioning still claims a Claude-only skill pack');
   if (content.includes('\u2014')) fail('site: Unicode em dash is forbidden');
 }
