@@ -13,13 +13,17 @@ If `.pmcontext.md` has a Ways of Working section, apply any metric format or too
 
 Interrogate the initiative first - the four questions and the pushback list live in [knowledge-metrics.md](knowledge-metrics.md) (Before Defining Metrics). Do not skip the pushback.
 
+If the user brought a metric that fails, rebuild it with them (Rebuilding a weak metric in [knowledge-metrics.md](knowledge-metrics.md)) instead of only rejecting it.
+
 ## Step 2: Define the Metric Stack
 
 <!-- Definitions live in knowledge-metrics.md; do not copy them back here. -->
 
 Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
 
-Apply the metric stack from [knowledge-metrics.md](knowledge-metrics.md): exactly one primary, 2-3 secondaries each justified by what they add, 1-3 guardrails with thresholds and a named response, and counter-metrics that would catch gaming.
+Find candidates before you pick: walk Goal, Signal, Metric through one lens chosen by initiative type (Finding the Metrics in [knowledge-metrics.md](knowledge-metrics.md)). Offer the lens yourself; do not wait for the user to name one.
+
+Then apply the metric stack from [knowledge-metrics.md](knowledge-metrics.md): exactly one primary, 2-3 secondaries each justified by what they add, 1-3 guardrails with thresholds and a named response, and counter-metrics that would catch gaming.
 
 ## Step 3: Set Targets
 
