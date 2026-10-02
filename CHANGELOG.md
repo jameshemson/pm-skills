@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.20.0 - 2026-10-02
+
+### Added
+
+- **`metrics` now helps you find the metric, not only check it.** A user working out metrics had to suggest HEART themselves: the mode tested candidates hard but never proposed any, and none of five baseline eval outputs named a framework. A new "Finding the Metrics" section in `knowledge-metrics.md` works down from the goal, to the user behaviour that would show it was met, to a number that counts that behaviour. This is the Goals-Signals-Metrics process from Google's HEART framework (Rodden, Hutchinson and Fu, 2010). The mode then picks one lens by asking whether users are meant to notice the change: HEART for a feature or UX change, AARRR (Dave McClure) for a funnel problem, a North Star with its input metrics for a product-level goal, and no framework for reliability, performance or infrastructure work. The lens only finds candidates. The metric stack still forces one primary, and a document that fills every HEART category or every funnel stage is flagged in review.
+- **The document shows its working in plain sentences.** It says what goal the primary serves and which behaviour it counts, names the strongest candidate it did not pick and what that choice gives up, and marks any unknown baseline as unknown with the query that would fill it, plus the value the team is planning around with a confidence.
+- **Weak metrics get rebuilt, not just rejected.** When a metric fails, whether the user brought it or a review flagged it, the mode walks back to the goal it stood for and rebuilds it, asking for the goal first if no document states it. In `review`, a P0 or P1 about metrics, in a metrics doc or the Success Metrics section of a spec or brief, now loads `knowledge-metrics.md` during Refine and rebuilds each failing metric that way.
+
+### Evidence
+
+Three runs per version of the five metrics fixtures through `eval/run.js`: the mean skilled score rose from 13.6 to 14.9 out of 20, assumptions from 1.73 to 1.87, trade-offs from 1.13 to 1.80, and the Claude-register score from 0.60 to 0.87 (higher is cleaner). The first draft of the section scored worse than 2.19.1, because the model copied its wording, AI tells included, into every output; the shipped text was rewritten until that stopped. The review band calibration held: SHIP fixture 3 of 3 SHIP, and `spec-rough` stayed ROUGH while its rebuilt Success Metrics gained a counter-metric for recoded outcomes, a comparison group, and planning baselines with confidence.
+
+---
+
 ## 2.19.1 - 2026-09-25
 
 ### Fixed

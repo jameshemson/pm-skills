@@ -18,6 +18,43 @@ Push back on:
 
 ---
 
+## Finding the Metrics: Goal, Signal, Metric
+
+Most weak metrics come from starting at the number. Build down from the goal instead. This is the Goals-Signals-Metrics process from Google's HEART framework (Rodden, Hutchinson and Fu, 2010), and it works whichever lens you use.
+
+1. **Goal**: What should be true for the user or the business if this works? One sentence, taken from the interrogation above.
+2. **Signal**: What would a user do, stop doing, or say that shows the goal was met? Prefer behaviour over attitude where both exist. List a few; some will not be measurable today.
+3. **Metric**: Turn the strongest measurable signal into a count, rate or duration over a named population and time window. "Share of new workspaces that invite a second teammate within 7 days", not "collaboration".
+
+This is working, not output. In the document, the chain for the primary metric reads as one or two ordinary sentences, the way you would explain it to a colleague: "Warehouse pickers should find the right bin without calling a supervisor, so the primary metric is the share of pick lists completed with no supervisor call." The reader can then argue with a link instead of the number. Then name the strongest candidate you did not pick as primary, and what picking the primary over it gives up, in plain sentences: "Median pick time was the runner-up. Leaving it as a secondary means a team that picks faster but still calls supervisors does not count as a success."
+
+### Pick one lens
+
+Use one lens to produce candidates. The lens gives you a longlist; the metric stack below forces the choice. In the document, name the lens once, inside the sentence that gives the reason, and give the reason as what the change is: "HEART task success fits because the change is to an existing checkout flow." When no lens fits, say so once, with the reason: "No framework fits, because users are not meant to notice this change."
+
+Choose by one question first: are users meant to notice this change? If they are not, no lens fits, even when the work touches an existing flow.
+
+| Initiative | Lens | What to take from it |
+|---|---|---|
+| A change users are meant to notice: a new or changed feature or UX inside an existing flow | HEART (Happiness, Engagement, Adoption, Retention, Task success) | The 1-2 categories the change is meant to move. Leave the rest out. |
+| A growth, activation or funnel problem | AARRR (Dave McClure: Acquisition, Activation, Retention, Referral, Revenue) | The one stage the initiative targets, measured as that stage's conversion. The stage after it makes a natural counter-metric, because it catches activation gains that churn straight away. |
+| A product-level or multi-team goal | North Star metric and its input metrics | The input metric the work moves. The team rarely owns the North Star; write the link from input to North Star as an assumption with a confidence. |
+| A change users are meant not to notice: reliability, performance, infrastructure, a like-for-like replacement of a tool | No lens | Pick the signal directly: latency, error rate, time to finish the job, tickets raised. |
+
+Rules:
+- A lens only finds candidates and never gets its own section. Filling every HEART category or every funnel stage means nothing was chosen.
+- Finding candidates adds nothing to the Output Format and replaces nothing in it. Guardrail responses, counter-metrics, exceed and failure definitions, and exclusions all still appear.
+- If the goal is lagging (retention, revenue), a leading signal can be the primary only when the assumed link to the lagging outcome is stated. Keep the lagging measure as a secondary.
+- Never invent a baseline for a metric you built. Mark it unknown and name the query or instrument that would produce it. Then state the value the team is planning around as an assumption, with a confidence and what changes if the query disagrees: "Unknown; pull from the orders table. Planning on about 30% (60% confident); below 20%, the target drops to 25%."
+
+### Rebuilding a weak metric
+
+When a metric fails the requirements below, whether the user brought it or a review flagged it, do not stop at rejecting it. Walk back up the chain: ask what goal it was standing in for, find the signal that goal implies, and rebuild. "Engagement with the new dashboard" becomes goal (account managers prepare QBRs without exporting to spreadsheets), signal (QBR prep happens in the product and exports drop), metric (share of QBR decks built from a dashboard share link, per month).
+
+If the goal is not stated anywhere, ask for it in one question before drafting a replacement. Do not guess one.
+
+---
+
 ## The Metric Stack
 
 ### Primary Metric
@@ -95,7 +132,7 @@ For each metric:
 ## Output Format
 
 ### Initiative
-[What you're measuring and why]
+[What you're measuring and why. Say in plain sentences what goal the primary metric serves and which user behaviour it counts, and name the lens inside the reason if one was used]
 
 ### Metric Stack
 
@@ -150,6 +187,8 @@ Use this section when reviewing a metrics document (for any feature, initiative,
 - [ ] No counter-metrics. Every metric can be gamed; the doc should acknowledge how.
 - [ ] Missing baseline. "We'll measure improvement" is not a plan.
 - [ ] Vanity metrics: MAUs, page views, downloads, app store ratings without context.
+- [ ] A metric nobody can trace to a goal and a signal. If the doc cannot say what user behaviour the number stands for, the fix is to rebuild it (Rebuilding a weak metric), not reword it.
+- [ ] Every category of a framework filled: all five HEART categories, every funnel stage. Nothing was chosen. Ask which one the initiative is meant to move.
 - [ ] Metrics the team can't influence. If the team ships nothing, does the metric still move? Then it's not theirs to own.
 - [ ] Instrumentation not in place with no plan to add it. The metric is aspirational, not real.
 - [ ] Timeframe too short to see signal (one week for a retention metric) or too long to be actionable (12 months for anything).
