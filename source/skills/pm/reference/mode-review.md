@@ -78,6 +78,7 @@ Once the situation is understood, help fix the draft. Do not stop at a list of p
 
 - **Be surgical.** Targeted edits to the specific lines that failed Critique, not a wholesale rewrite. Show the original text and the replacement so the user sees the change. A rewrite that loses the author's voice and intent is not a refinement.
 - **If the review was a retarget** (rewriting for a different audience): lead with what matters to that audience, strip what they do not need, add what they do, and match their format and channel. Confirm the new structure with the user before producing the full draft.
+- **Build metrics, do not just reword them.** When a P0 or P1 is about metrics, in a metrics doc or the success-metrics section of a spec or brief, load [knowledge-metrics.md](knowledge-metrics.md) even if the routing table loaded another file. Rebuild each failing metric from goal to signal to metric, pick the lens by initiative type, and mark any baseline you cannot find as unknown with the query that would produce it. If the doc never states the goal, ask for it before drafting.
 - **Slop-test the output.** The refined text must itself pass the PM Slop Test before you show it. Refining one slop into another is failure. If a fix you wrote does not pass, fix the fix.
 
 Deliver the refined sections (or the retargeted draft), plus a short note on what changed and why.
