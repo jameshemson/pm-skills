@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.21.2 - 2026-10-07
+
+### Fixed
+
+- **Specs state their trade-offs, and keep the skill's own checks out of the document.** Spec mode printed its working into the spec: the Slop Test results and an "engineering read-through" listing gaps, in 9 of 10 specs. The spec template also had no place for trade-offs, so that printed check was often the only spot where a spec said what it was giving up. The Proposed Solution section now asks for the main alternative considered, why it was not chosen, and the cost the team accepts. The Slop Test and the read-through run on the draft and fix what they find; anything they cannot fix goes in the reply after the spec, and so does the pointer to `stories` mode.
+
+### Evidence
+
+Generator A/B on specs, 10 pairs, against 2.21.1: 0.30 points higher (95% CI -0.40 to 0.90), no printed checks (2.21.1: 9 of 10), and a trade-off stated in the body of 9 of 10 specs. Taking the checks out without the trade-offs slot had cost 0.70 points, because the trade-offs went with them. A version that applied the rule to every mode through `SKILL.md` was not shipped: only specs printed their checks, and the metrics scores dipped in that run (-0.90, CI -2.30 to 0.50), so the rule lives in spec mode only.
+
+---
+
 ## 2.21.1 - 2026-10-07
 
 ### Fixed
