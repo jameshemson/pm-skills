@@ -32,6 +32,8 @@ Evidence the problem exists (data, research, support tickets), previous attempts
 ### 3. Proposed Solution
 For each component: user-facing behaviour, system behaviour, happy path walkthrough (step by step), error handling (every failure mode and the system's response), data model changes, API changes.
 
+Then say what this approach gives up: the main alternative you considered, why you did not choose it, and the cost the team accepts by going this way.
+
 ### 4. User Stories and Acceptance Criteria
 Each story: As a [specific user type], I want to [specific action], so that [specific, measurable outcome connected to their JTBD].
 
@@ -82,9 +84,9 @@ List the top 5 reasons for failure. For each: likelihood (percentage), mitigatio
 
 ## Step 4: Run the Slop Test
 
-Run the canonical PM Slop Test from `SKILL.md` (already in your context) - every check. The spec must pass every one. Do not maintain a local copy of the list here; SKILL.md is the single source.
+Run the canonical PM Slop Test from `SKILL.md` (already in your context) - every check. The spec must pass every one. Do not maintain a local copy of the list here; SKILL.md is the single source. Run the checks on the draft and fix what fails; the checks and their results stay out of the spec. Name anything you could not fix in your reply, after the spec.
 
-**Engineering read-through test**: "An engineer reading this spec should be able to start work with no more than 3 clarifying questions. If they would have more, the following gaps exist: [list them]."
+**Engineering read-through test**: an engineer reading this spec should be able to start work with no more than 3 clarifying questions. If they would have more, close the gaps in the spec, and name any you cannot close in your reply.
 
 **Voice pass.** Then scan every prose section (problem statement, context, rationale, risks) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A spec that reads as generated loses authority with engineering. If a fix introduces a new tell, fix the fix.
 
@@ -94,4 +96,4 @@ Structured document with numbered sections, clear headers, scannable formatting.
 
 ---
 
-If the user wants stories broken out from this spec, point them to `stories` mode.
+If the user wants stories broken out from this spec, point them to `stories` mode in your reply, after the spec.
