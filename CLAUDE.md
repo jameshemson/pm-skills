@@ -40,7 +40,7 @@ uv run --isolated --with PyYAML python ~/.codex/skills/.system/skill-creator/scr
 node scripts/smoke-codex-plugin.mjs
 ```
 
-`npm run verify` runs the unit, sync, structure, and Claude parity checks. Run the full command set above before a release. The existing eval remains Anthropic-only and must read the generated Claude output.
+`npm run verify` runs the unit, sync, structure, and Claude parity checks. Run the full command set above before a release. The existing eval remains Anthropic-only and must read the generated Claude output. Any claim that the skill beats no skill needs `eval/run.js --placebo`: neutral text of the same token count, loaded the same way, separates what the skill's content does from what its length does.
 
 **Versioning**: Use semver. Bump `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, and `plugins/pm/.codex-plugin/plugin.json` together. Every bump also requires a `CHANGELOG.md` entry and the same version in the website footer at `public/index.html` in the website repo. The footer once went five versions stale; check it every release.
 

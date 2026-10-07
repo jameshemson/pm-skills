@@ -129,6 +129,7 @@ The tells to avoid:
 - No colon used to set up a one-clause payoff. If the bit after the colon could be its own sentence, write the sentence.
 - Cut the closer. End on the last real point, not a punchline.
 - Keep the verb. The action is a verb, not a noun hung on "made", "conduct", "provide", or "perform", and never a fragment with the verb dropped ("The runner, built."). Every sentence names who does what.
+- Write for a reader who saw none of the conversation. Give each name agreed in the session its meaning where it first appears, and put any fact the session settled into the document.
 
 Before and after (each "plain" version follows Handley's rules above):
 - Slop: "Let me push back: it's not that the metric is wrong, it's that it games easily. That's the structural spine." Plain: "The metric games easily. A team can raise it without helping one user."
@@ -137,6 +138,7 @@ Before and after (each "plain" version follows Handley's rules above):
 - Slop: "Here's the catch: the metric games easily." Plain: "The metric games easily."
 - Slop: "For the launch to land, four things have to hold." Plain: "The launch works only if sales can demo it in under ten minutes and support can clear tickets without escalating."
 - Slop: "The team made an attempt at a reduction of churn through a re-engagement of lapsed accounts. The pilot, run." Plain: "The team tried to cut churn by re-engaging lapsed accounts. We ran the pilot for eight weeks."
+- Slop: "If the lite tier slips, we fall back to plan B." Plain: "If the cheaper plan without exports misses the June 3 launch, we launch with the two current plans and add it in July."
 
 **1. Performative pushback.** Signals critical engagement without doing any. Announces a challenge, then concedes or restates the user's point in fancier words.
 - Tells: "Let me push back on that", "Let me refine your load-bearing claim rather than just accepting it", "The one place I'd still push", "you're doing zero moves there", "I'd challenge the premise here".
@@ -229,6 +231,14 @@ Before and after (each "plain" version follows Handley's rules above):
 - Coined-noun tells: a nominalised action promoted to a term of art and then reused as if it named something real. "The Walk", "the orchestration", "the validation surface", "credential-provenance collision" for "someone signs up with Google but an account with that email already exists". Once the action is a noun it can be capitalised, defined, and cited, and the doc starts referring to a thing nobody built. Family 4's "load-bearing" is the same move applied to an adjective.
 - Fakes: precision and economy. The noun looks technical and the fragment looks tight. Both hide the verb that would say who does what.
 - Fix: put the verb back. Name the actor, use the verb for the action, and let the object take it. "We built the runner." "Engineering reviewed the spec on Tuesday." "The system got faster." "The pilot runs eight weeks across 20 companies with assigned CSMs." If a coined noun survives the rewrite, define it once in plain words or replace it with the sentence it stands for.
+
+**17. Room shorthand.** Plain words that mean something only to people who were in the conversation. A label agreed during the session, a fact the session settled, or a verb the session gave a private sense appears in the document as if the reader had been there. No word looks like jargon, so a jargon check passes it, and the reader cannot tell what they are missing. The modes that interview before they write are the most exposed, because the reader saw none of the interview. This is the curse of knowledge (knowledge-communication.md) at the level of single words. Distinct from family 16's coined noun, which sounds technical; room shorthand sounds ordinary.
+- Label tells: a name coined in the session and used without its meaning, or explained only further down, often in a terms or decisions table placed after the summary that already used it. "We ship the lite tier with the banner." "Rollout follows the two-region rule." The worst case is a working name the session itself called misleading, kept anyway.
+- Settled-fact tells: something the session worked out, referred to as if the reader knows it. "the original bug", "six weeks gives us room", "v2" with no release named, "as agreed".
+- Private-verb tells: a verb of movement standing in for a plain statement of what changes. "the export work gets pulled forward", "whichever lands first wins", "we push for it if capacity opens".
+- Test: read the document as someone who saw none of the conversation. For each name, number and "the X", can that reader say what it refers to from the text before it? Count each unexplained referent once per document, however often it recurs. It is a judgement call, because whether a reader knows a name depends on who the reader is.
+- Fakes: shared context. The writer still carries the conversation, so the document reads as complete to them and as a set of gaps to everyone else.
+- Fix: say what the thing is where it first appears, in the sentence itself. Keep a label only if the reader will use it afterwards, and give its meaning the first time. Write into the document any fact from the session that the document depends on. Rename a working name the session called misleading.
 
 **Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux", "hold" (in any of its overused senses: "X holds" = is true, "a tension to hold" = keep in mind, "the way to hold this" = grasp or understand). Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
 

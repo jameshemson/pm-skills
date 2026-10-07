@@ -65,7 +65,7 @@ Questions that need answers before work starts. Flag who should answer each.
 
 ## Step 4: Run the Slop Test
 
-Run the canonical PM Slop Test from `SKILL.md` (already in your context) - all ten checks. Do not maintain a local copy of the list here; SKILL.md is the single source.
+Run the canonical PM Slop Test from `SKILL.md` (already in your context) - every check. Do not maintain a local copy of the list here; SKILL.md is the single source.
 
 If any check fails, fix it before delivering. State which assumptions you made and what you could not verify.
 

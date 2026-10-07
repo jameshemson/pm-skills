@@ -82,7 +82,7 @@ List the top 5 reasons for failure. For each: likelihood (percentage), mitigatio
 
 ## Step 4: Run the Slop Test
 
-Run the canonical PM Slop Test from `SKILL.md` (already in your context) - all ten checks. The spec must pass every one. Do not maintain a local copy of the list here; SKILL.md is the single source.
+Run the canonical PM Slop Test from `SKILL.md` (already in your context) - every check. The spec must pass every one. Do not maintain a local copy of the list here; SKILL.md is the single source.
 
 **Engineering read-through test**: "An engineer reading this spec should be able to start work with no more than 3 clarifying questions. If they would have more, the following gaps exist: [list them]."
 
