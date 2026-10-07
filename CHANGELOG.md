@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.21.1 - 2026-10-07
+
+### Fixed
+
+- **`stories` now says why the stories exist.** The output opens with a short paragraph before the first story: the problem the stories solve and for whom, the metric they should move (with its baseline and target, or how it would be measured if neither is known), and what is out of scope, with the reason for each exclusion. The stories template had no place for the problem or the metric, so a story set failed the skill's own Slop Test on both, and in 2.21.0's generator A/B `stories` scored the same as no skill (13.2 against 13.4 out of 20). The closing pointer to `review` mode now goes in the reply after the stories, so mode names no longer land inside the document.
+
+### Evidence
+
+Generator A/B on the five fixtures, three runs, 15 pairs: 2.21.1 scored 2.27 points above 2.21.0 (95% CI 1.47 to 3.00) and 1.60 above no skill (0.73 to 2.47). Metrics rose 0.87, scope 0.73 and problem statement 0.47. All 15 story sets opened with the problem, the metric and the scope (2.21.0: 5 of 15), and they ran 9% shorter. A first version that listed exclusions without reasons lost scope points instead (-0.33), because a bare list does not tell the team why the rest waits; the shipped wording asks for the reason.
+
+---
+
 ## 2.21.0 - 2026-10-07
 
 ### Added
