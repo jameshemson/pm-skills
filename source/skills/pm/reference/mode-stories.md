@@ -104,6 +104,8 @@ Scan the prose in each story (the JTBD framing, the notes, any rationale) agains
 
 ## Output Format
 
+Open with a short paragraph before the first story: the problem the stories solve and for whom, the metric they should move (with its baseline and target if known; if not, say so and how it would be measured), and what is out of scope, with the reason for each exclusion. Someone planning from the stories alone should know why they exist and why the rest waits.
+
 ```
 ### Story N: [Short descriptive title]
 
@@ -121,4 +123,4 @@ End with the dependency map and suggested sequencing.
 
 ---
 
-If any stories feel underspecified or risky, point the user to `review` mode.
+If any stories feel underspecified or risky, point the user to `review` mode in your reply, after the stories.
