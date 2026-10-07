@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.21.0 - 2026-10-07
+
+### Added
+
+- **Room shorthand, Claudism family 17.** Plain words that mean something only to people who were in the conversation. A label agreed during the session ("the lite tier"), a fact the session settled ("six weeks gives us room"), or a verb the session gave a private sense ("the export work gets pulled forward") turns up in the document as if the reader had been there. No word looks like jargon, so a jargon check passes it, and the reader cannot tell what is missing. The modes that interview before they write are the most exposed, because the reader saw none of the interview. The family is distinct from family 16's coined noun, which sounds technical. It counts once per unexplained name, as a judgement call, and comes with a prevention rule (write for a reader who saw none of the conversation) and a before/after pair.
+- **A Slop Test check for it: "Readable without the conversation".** Could someone who saw none of the session follow every name, number and reference? The check lives in `SKILL.md`, so it reaches every mode, including `decide`, which does not load `foundations.md`. The Slop Test now has eleven checks.
+
+### Changed
+
+- **The session-only line moves out of the document.** "Built from session-only context; `/pm teach` makes this permanent and sharper" now goes in the reply after the deliverable. In testing it kept landing inside documents meant for a VP or a tech lead, who cannot act on it.
+- **Mode and gate text no longer counts the Slop Test checks.** `mode-brief.md` and `mode-spec.md` said "all ten checks" and the SLOP gate in `knowledge-craft-score.md` said "of the ten", which went stale with the new check. They now say "every check", and the gate keeps its thresholds of three and five failed checks.
+
+### Evidence
+
+A blind trial ran on live multi-turn conversations in which the user coined labels along the way. Each conversation was forked into endings with no skill, with 2.20.0, with this release, and with a placebo of neutral text matched to the skill's token count and loaded the same way. 2.20.0 made the tell worse than no skill: 5.8 instances per document against 2.2. This release brings it to 2.3, lower than 2.20.0 in 10 of 12 conversations (p = 0.012) and below the placebo (3.8). Labels the user coined and left unexplained fell from 47% to 10%. On fresh held-out conversations this release averaged 1.7 against 2.6 with no skill, but that gap is inside the noise: the release fixes the regression and does not yet beat no skill. The generator A/B showed no quality change against 2.20.0 (-0.02 out of 20, 95% CI -0.55 to 0.53, 58 pairs), and the review band calibration held 6 of 6, with the SHIP fixture at SHIP 3 of 3.
+
+---
+
 ## 2.20.0 - 2026-10-02
 
 ### Added
