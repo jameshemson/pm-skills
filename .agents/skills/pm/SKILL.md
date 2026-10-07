@@ -19,7 +19,7 @@ Gathering order, fastest first:
 
    Use the structured user-input tool when it is available, with at most three questions in one call. Use direct conversation for free-text answers. If structured input is unavailable, fall back to asking directly in conversation.
 
-   **Session-only contract.** Ask exactly three questions, then proceed: (1) What is the product, in one sentence, and who uses it? (2) What outcome is the work in front of us supposed to move? (3) What is the team explicitly NOT doing right now? In the `review` mode, fold these into Frame rather than asking separately. Session-only answers are never written to any file. Every deliverable produced this way carries one line: "Built from session-only context; `pm teach` makes this permanent and sharper." Say it once in the deliverable and once at the end of the conversation, never more.
+   **Session-only contract.** Ask exactly three questions, then proceed: (1) What is the product, in one sentence, and who uses it? (2) What outcome is the work in front of us supposed to move? (3) What is the team explicitly NOT doing right now? In the `review` mode, fold these into Frame rather than asking separately. Session-only answers are never written to any file. After a deliverable produced this way, add one line to your reply, outside the document: "Built from session-only context; `pm teach` makes this permanent and sharper." The document may go to readers who have never used this skill, so the line never goes inside it. Say it once, never more.
 
    **When the document is not about this repo's product** (a colleague's doc, an example), session-only is the right path and the three questions are about that product - do not read this repo's `.pmcontext.md` for it. **When running outside a project directory**, default to session-only; if the user chooses `teach`, warn that `.pmcontext.md` will be written to the current directory.
 
@@ -68,6 +68,7 @@ The most important quality check for any PM output. If you showed this artifact 
 - [ ] **Dependencies named**: which teams, systems, or decisions does this depend on?
 - [ ] **Assumptions stated**: what are you assuming true that you have not verified?
 - [ ] **Trade-offs explicit**: what are you giving up by choosing this approach?
+- [ ] **Readable without the conversation**: could someone who saw none of this session follow every name, number and reference? Explain each label from the session where it first appears ("the lite tier" becomes "the cheaper plan without exports"), and write in any fact the document relies on.
 - [ ] **Concise enough to read**: could this be half as long without losing substance? If a section exists only to sound thorough, cut it.
 - [ ] **Reads as written, not generated**: scan for AI-register tells using the Claudism Catalogue in [reference/foundations.md](reference/foundations.md). Performative pushback, the false universal, the clean-mental-model setup, the validation stamp, the missing verb ("made an attempt at", "The runner, built."). Rewrite any you find before delivering.
 
