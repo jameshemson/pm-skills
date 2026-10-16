@@ -100,7 +100,7 @@ For each story: which sprint it fits in and why it is sequenced there.
 
 ## Step 7: Voice Pass
 
-Scan the prose in each story (the JTBD framing, the notes, any rationale) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. Stories that read as generated get less trust in planning. If a fix introduces a new tell, fix the fix.
+Scan the prose in each story (the JTBD framing, the notes, any rationale) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. Stories that read as generated get less trust in planning. If a fix introduces a new tell, fix the fix.
 
 ## Output Format
 

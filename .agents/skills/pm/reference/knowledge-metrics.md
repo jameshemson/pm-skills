@@ -30,7 +30,7 @@ This is working, not output. In the document, the chain for the primary metric r
 
 ### Pick one lens
 
-Use one lens to produce candidates. The lens gives you a longlist; the metric stack below forces the choice. In the document, name the lens once, inside the sentence that gives the reason, and give the reason as what the change is: "HEART task success fits because the change is to an existing checkout flow." When no lens fits, say so once, with the reason: "No framework fits, because users are not meant to notice this change."
+Use one lens to produce candidates. The lens gives you a longlist; the metric stack below forces the choice. Keep the lens out of the document. Give the metric, and the reason as what the change is and what the metric counts: "Task success, because the change is to an existing checkout flow." Do not label the Goal, Signal and Metric steps in the document, and when no lens fits, say nothing about lenses.
 
 Choose by one question first: are users meant to notice this change? If they are not, no lens fits, even when the work touches an existing flow.
 
@@ -132,7 +132,7 @@ For each metric:
 ## Output Format
 
 ### Initiative
-[What you're measuring and why. Say in plain sentences what goal the primary metric serves and which user behaviour it counts, and name the lens inside the reason if one was used]
+[What you're measuring and why. Say in plain sentences what goal the primary metric serves and which user behaviour it counts]
 
 ### Metric Stack
 
