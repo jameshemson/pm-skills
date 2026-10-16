@@ -43,6 +43,9 @@ Then load **one** knowledge file by document type. Each knowledge file carries a
 | spec, brief, PRD, user stories | [knowledge-specification.md](knowledge-specification.md) |
 | strategy doc | [knowledge-decision-making.md](knowledge-decision-making.md) |
 | positioning doc, one-pager | [knowledge-positioning.md](knowledge-positioning.md) |
+| PRFAQ (press release and FAQ), working-backwards doc | [knowledge-positioning.md](knowledge-positioning.md) |
+| tenets, principles | [knowledge-decision-making.md](knowledge-decision-making.md) |
+| decision record | [knowledge-decision-making.md](knowledge-decision-making.md) |
 | metrics doc | [knowledge-metrics.md](knowledge-metrics.md) |
 | retro, post-launch review | [knowledge-decision-making.md](knowledge-decision-making.md) |
 | a message, announcement, or internal comms | [knowledge-communication.md](knowledge-communication.md) |
@@ -61,6 +64,8 @@ Run, in order:
 7. **Merge the plain pass.** Keep every finding from it unless the document itself shows it is wrong; when in doubt, keep it. Merge it with any of yours that describes the same problem, and rank it with the rest. Do not drop a finding because none of your checks raised it: the plain pass exists to catch what the checks miss.
 
 For a **retro** document, the type-specific critique tests the retro itself: was the hypothesis reconstructed before results were seen (hindsight-bias guard)? Is decision quality separated from outcome quality (a good bet with a bad outcome is not a bad decision)? Are the learnings specific and actionable, not "we learned a lot"?
+
+**Every fix suits the document.** Each kind of document has its own job: a PRFAQ argues the case and states what customers are promised; tenets state the principles that settle trade-offs; a decision record records one decision and why; a roadmap sets the order of work; a spec says what to build. Fix the document in its own form. When the right fix belongs somewhere else, such as status tracking or a task list for a PRFAQ, implementation detail for tenets, or open tasks for a decision record, say which document it belongs in and keep the change here to a line or a link.
 
 Give every substance finding a severity from the anchors in [knowledge-craft-score.md](knowledge-craft-score.md): P0 (the document's primary action is blocked), P1 (the document must change before the audience can commit), P2 (quality erosion, and every question the audience can simply ask). Severity sets the verdict band. Then order the findings by the RICE score defined in the same file: P0s first, then the rest by score, highest first. Voice findings - Claudism tells and voice slop - carry no severity and no score; they reach the verdict only through the SLOP and SHIP gates.
 
