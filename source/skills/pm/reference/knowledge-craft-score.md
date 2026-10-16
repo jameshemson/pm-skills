@@ -61,7 +61,7 @@ Severity decides the band. RICE decides the order the user reads the findings in
 - **Confidence**: how sure you are that the problem is real. 100% = the document's own words show it, or it contradicts the product context; 80% = a strong inference from the document; 50% = it depends on facts the document does not give.
 - **Effort**: what fixing the document takes, as a label: quick fix (a sentence or two), needs a decision (one the author can make now), or needs research (data, or someone else's decision).
 
-Score = Reach × Impact × Confidence. Effort is not part of the score: how much a fix costs is the author's call, and it should never push a bigger problem below a smaller one. Put P0s first whatever their score, since a blocked document is blocked; order everything else by score, highest first. Show the factors with each finding, `[P1 · R2 I3 C80% = 4.8 · quick fix]`, so the user can disagree with one factor rather than the whole order. Score each factor on its own; never adjust one to reach an order you had already decided.
+Score = Reach × Impact × Confidence. Effort is not part of the score: how much a fix costs is the author's call, and it should never push a bigger problem below a smaller one. Put P0s first whatever their score, since a blocked document is blocked; order everything else by score, highest first. Show the ranking as the last line of each finding, in plain words and never as letters, so the user can see why it sits where it does and disagree with one factor rather than the whole order: `Ranked 4.8: affects everyone who acts on it, would mean work redone, 80% sure it is real. Needs a decision.` Take the words from the anchors above (everyone, most of them, one group, an edge case; would lead to deciding or building the wrong thing, would mean work redone, would slow them down, polish; the confidence as a percentage), then the Effort label. Score each factor on its own; never adjust one to reach an order you had already decided.
 
 **Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP gate on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
 
@@ -80,6 +80,18 @@ When a later release adds re-review trajectory, a score change counts as movemen
 ---
 
 ## Delivery format
+
+Open the findings with one line saying how they are ordered: by how many readers each problem affects, how bad it is if left unfixed, and how sure the review is that it is real. Then give each finding in this shape, the problem first and the fix straight after it:
+
+```
+1. **The brief never says who approves the price change.** (P1)
+   Fix: name the approver and the date they will decide, in the Decision section.
+   Why it matters: finance and sales will each assume the other signs it off.
+   Where: Decision, "pricing to be confirmed".
+   Ranked 4.8: affects everyone who acts on it, would mean work redone, 80% sure it is real. Needs a decision.
+```
+
+The headline is one sentence that names the problem. The fix is concrete enough to act on without rereading the finding. Keep each line to one sentence.
 
 The verdict line follows this structure:
 
