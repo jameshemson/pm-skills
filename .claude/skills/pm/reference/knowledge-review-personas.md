@@ -15,6 +15,8 @@ Pick the personas the table lists for the document type (2-4).
 | Engineering brief | Dev, Tester | Buildability and testability |
 | Full spec | Dev, Tester, Exec | Full coverage |
 | Strategy or positioning doc | Exec, Critic | Strategic rigor |
+| PRFAQ (press release and FAQ) | Exec, Customer, Critic | Is the case made, and would a customer believe and want what is promised |
+| Tenets / principles | Exec, Critic | Do they settle real trade-offs, and are they specific enough to say no to something |
 | User-facing feature | Customer, Dev, Tester | User value + buildability |
 | Metrics framework | Critic, Exec | Evidence and gaming-resistance |
 | Decision doc | Critic, Exec, Dev | Rigour, alignment, feasibility |

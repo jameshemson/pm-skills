@@ -91,7 +91,7 @@ Open the findings with one line saying how they are ordered: by how many readers
    Ranked 4.8: affects everyone who acts on it, would mean work redone, 80% sure it is real. Needs a decision.
 ```
 
-The headline is one sentence that names the problem. The fix is concrete enough to act on without rereading the finding. Keep each line to one sentence.
+The headline is one sentence that names the problem. The fix is concrete enough to act on without rereading the finding, and suits the kind of document under review (see `mode-review.md`). Keep each line to one sentence.
 
 The verdict line follows this structure:
 

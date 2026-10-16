@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.0.2 - 2026-10-16
+
+### Fixed
+
+- **Review fixes now suit the kind of document.** A review of a PRFAQ told the author to add a status column to its go/no-go list, as if the PRFAQ were a task tracker. PRFAQs, tenets and decision records had no entry in review's document-type table, so they fell through to the generic checklist. They now load the positioning guidance (PRFAQs) and the decision-making guidance (tenets and decision records), and the persona table has rows for PRFAQs and tenets. A new rule says every fix suits the document: a PRFAQ argues the case and states the promise, tenets settle trade-offs, a decision record records one decision and why, a roadmap orders the work. When the right fix belongs in another document, the review says which one and keeps the change here to a line or a link.
+
+### Evidence
+
+- **Fix quality.** An Opus judge rated the fixes for the first five findings of every review on eight real drafts, each reviewed three times on Opus and three times on Sonnet: "I'd do exactly this", "right idea, needs work", "wrong or not doable" or "no fix". The judge's worked examples were the maintainer's own blind ratings of 30 findings, and on those its fix ratings matched his within one step 30 times out of 30 (weighted kappa 0.74). Fixes the judge would use as written: 72% for 3.0.2 against 61% for 3.0.1 on Opus, and 49% against 53% on Sonnet. On the PRFAQ, wrong fixes halved (6 to 3). Plain Claude: 55% on Opus and 28% on Sonnet, with no fix at all for 16% and 30% of its first five findings.
+- **Finding problems.** Of the important problems most other reviews also found, 3.0.2 caught 76% against 68% for plain Claude on Opus, and 72% against 60% on Sonnet, ahead on 7 and 6 of the 8 documents; level with 3.0.1 within the noise.
+- **Band calibration** on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 5 of 5 ROUGH, `spec-solid` SOLID 4 of 5 with one ROUGH at the three-P1 boundary on two genuine gaps (which the fixture rules allow), `message-ship` 3 of 3 SOLID, both runs without a subagent ROUGH, and neither bug-fix plan drew a request for customer evidence.
+
+---
+
 ## 3.0.1 - 2026-10-16
 
 ### Changed
