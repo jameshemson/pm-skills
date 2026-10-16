@@ -1,8 +1,8 @@
 # Review Personas
 
-Five perspectives for reviewing PM artifacts. Each persona catches different gaps. Use them independently - complete one persona's full review before moving to the next. No cross-contamination between perspectives.
+Six perspectives for reviewing PM artifacts. Each persona catches different gaps. Use them independently - complete one persona's full review before moving to the next. No cross-contamination between perspectives.
 
-Four personas are fixed roles (Dev, Tester, Exec, Critic) that stay consistent across products. The **Customer** persona adapts to the actual users described in `.pmcontext.md` - it should think and react like your real users, not a generic "end user advocate".
+Five personas are fixed roles (Dev, Tester, Exec, Critic, Sec) that stay consistent across products. The **Customer** persona adapts to the actual users described in `.pmcontext.md` - it should think and react like your real users, not a generic "end user advocate".
 
 ---
 
@@ -22,6 +22,8 @@ Pick the personas the table lists for the document type (2-4).
 | Roadmap / prioritisation | Exec, Critic, Dev | Strategic connection and opportunity cost; evidence behind impact scores; feasibility of the sequencing |
 | Retro / post-launch review | Critic, Exec | Decision-vs-outcome separation and honest fielding; accountability for the called result |
 
+
+Add **Sec** to any document type when the product stores personal data, has accounts or sign-in, lets people share with each other, takes payments, or sends user data to a third-party service.
 ---
 
 ## 1. Senior Engineer - "Dev"
@@ -43,6 +45,8 @@ Pick the personas the table lists for the document type (2-4).
 - Are the API contracts and data models clear?
 - What happens on network failure, timeout, invalid input?
 - Is the data migration path specified for existing users?
+- What happens when an operation is interrupted halfway (a crash, a retry, a second attempt), and where does each piece of state live?
+- Will it work on the platform as described: OS and app-store rules, API and version behaviour, concurrency, retries, background and offline behaviour?
 
 **Red flags**:
 - Acceptance criteria containing "appropriately", "smoothly", "as expected"
@@ -72,6 +76,7 @@ Pick the personas the table lists for the document type (2-4).
 - Is there a data migration test plan?
 - What's the permission matrix (who can see/do what)?
 - How do I test the rollback scenario?
+- Does every requirement have a check, and does every check trace back to a requirement?
 
 **Red flags**:
 - "User can successfully X" without defining what success means
@@ -134,6 +139,7 @@ Pick the personas the table lists for the document type (2-4).
 - What happens to my existing data, settings, or habits?
 - Is this solving my problem or the product team's problem?
 - Would I pay for this? Would I switch from my current solution for this?
+- As a new user with no help from the team, would I understand it and get through setup?
 
 **Red flags**:
 - Problem statement that restates the solution rather than describing a real struggle
@@ -166,6 +172,8 @@ Pick the personas the table lists for the document type (2-4).
 - Are the stated risks real concerns or boilerplate padding?
 - What's the cheapest experiment you could run instead of building the full thing?
 - Has anyone actually validated that users want this, or is it an internal assumption?
+- Is evidence from people close to the author (friends, colleagues, testers recruited personally) treated as weak?
+- What were the alternatives, including doing nothing or doing something smaller?
 
 **Red flags**:
 - "Users want X" without citing specific conversations or data
@@ -178,13 +186,41 @@ Pick the personas the table lists for the document type (2-4).
 
 ---
 
+## 6. Security and Privacy Engineer - "Sec"
+
+**Profile**: Engineer responsible for user data and access. Reads specs to find what data the product touches, who can reach it, and what happens when someone should no longer have access. Has seen privacy promises made in product copy with nothing in the design behind them.
+
+**Behaviours**:
+- Traces every piece of personal data from collection to storage to deletion
+- Looks for data that leaks into logs, analytics, error reports, notifications or backups
+- Checks the rules on invites, links and sharing
+- Asks how access is removed, not only how it is granted
+- Checks that every third party receiving user data is named
+
+**Test questions**:
+- What personal data does it collect, where is it stored, who can see it, and how long is it kept?
+- Does data end up anywhere the document does not mention: logs, analytics, error reports, notifications, backups?
+- Who can join, invite or share, and what stops an invite or link reaching the wrong person (expiry, single use, tied to an identity)?
+- How is access removed when someone leaves, and what happens to what they could already see?
+- Which third parties receive user data, and is each one named, with its agreement and where the data is held?
+- What could a careless or malicious user reach through this that they should not?
+- Can a user export or delete their data, and does the document's privacy promise match what the design does?
+
+**Red flags**:
+- A privacy promise with no mechanism behind it
+- Sharing or invites with no rules
+- No way to remove someone's access
+- A data-protection or compliance step stated as done with nothing to show it is
+
+---
+
 ## Critiquing this artifact
 
 This section explains how to apply the personas when running a critique on a document. The personas are not decorative - they are lenses that surface different failure modes. Apply them in a structured sequence, not simultaneously.
 
 ### How to select and sequence personas
 
-Use the Persona Selection Table at the top of this file to pick the personas it lists for the document type (2-4). Do not use all five on every document - that produces noise, not signal.
+Use the Persona Selection Table at the top of this file to pick the personas it lists for the document type (2-4). Do not use all six on every document - that produces noise, not signal.
 
 **Run one persona completely before starting the next.** Each persona must read the document fresh from their perspective. If you let the Dev persona inform the Critic persona mid-review, you cross-contaminate the perspectives and the Critic will miss what the Critic alone would catch.
 
@@ -210,7 +246,7 @@ For each finding, record:
 - The exact location in the document (section and quote)
 - The severity: blocker (requires revision before use), concern (requires discussion), observation (worth noting)
 
-Do not aggregate findings across personas before reporting. Keep them separated by persona - this shows the document owner which type of reader will have which type of problem.
+Record which persona surfaced each finding; the findings are then ranked together with the rest of the review.
 
 ### When persona findings conflict
 

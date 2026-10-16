@@ -52,6 +52,17 @@ A reproduced defect fix without customer reports is not a finding. A document th
 
 **Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the document must change before the audience can commit" (P1), or "this just erodes it, or they can ask" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1. The commonest inflation is the question-shaped P1: a finding phrased as "the audience will ask X" is a P2 unless the answer has to land in the document before commitment.
 
+## Ordering findings: RICE
+
+Severity decides the band. RICE decides the order the user reads the findings in, so the first finding is the one that matters most. Score every substance finding on Reach, Impact and Confidence, and label its Effort:
+
+- **Reach**: how many of the people who act on the document, or use what it describes, the problem touches. 3 = all of them, 2 = most, 1 = one group, 0.5 = an edge case.
+- **Impact**: what happens to them if it stays unfixed. 3 = they decide or build the wrong thing, 2 = the document comes back or work is redone, 1 = it slows them down, 0.5 = polish.
+- **Confidence**: how sure you are that the problem is real. 100% = the document's own words show it, or it contradicts the product context; 80% = a strong inference from the document; 50% = it depends on facts the document does not give.
+- **Effort**: what fixing the document takes, as a label: quick fix (a sentence or two), needs a decision (one the author can make now), or needs research (data, or someone else's decision).
+
+Score = Reach × Impact × Confidence. Effort is not part of the score: how much a fix costs is the author's call, and it should never push a bigger problem below a smaller one. Put P0s first whatever their score, since a blocked document is blocked; order everything else by score, highest first. Show the factors with each finding, `[P1 · R2 I3 C80% = 4.8 · quick fix]`, so the user can disagree with one factor rather than the whole order. Score each factor on its own; never adjust one to reach an order you had already decided.
+
 **Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP gate on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
 
 ---
