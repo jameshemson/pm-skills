@@ -42,6 +42,8 @@ node scripts/smoke-codex-plugin.mjs
 
 `npm run verify` runs the unit, sync, structure, and Claude parity checks. Run the full command set above before a release. The existing eval remains Anthropic-only and must read the generated Claude output. Any claim that the skill beats no skill needs `eval/run.js --placebo`: neutral text of the same token count, loaded the same way, separates what the skill's content does from what its length does.
 
+**Testing review changes**: `npm run verify` proves the trees build; it says nothing about how the skill behaves. After any change to `mode-review.md`, `knowledge-craft-score.md`, `knowledge-review-personas.md`, `foundations.md` or `SKILL.md`, also run the band calibration (`eval/calibrate-review.mjs`) and, before claiming review got better, the real-draft review test (`eval/run-candidate.sh`), which compares a candidate with the release and with plain Claude on real drafts. Both are local and gitignored; `eval/REVIEW-TEST.md` is the runbook, with the pass bar and the pitfalls that have produced wrong results. Only `review` reads the first three files, so a change confined to them cannot affect the drafting modes; a change to `foundations.md` or `SKILL.md` also needs `eval/run.js`.
+
 **Versioning**: Use semver. Bump `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, and `plugins/pm/.codex-plugin/plugin.json` together. Every bump also requires a `CHANGELOG.md` entry and the same version in the website footer at `~/repos/skillsfor-pm-site/public/index.html`. The footer once went five versions stale; check it every release.
 
 ## Provider seams

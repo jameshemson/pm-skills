@@ -1,5 +1,37 @@
 # Changelog
 
+## 3.0.0 - 2026-10-16
+
+This release changes how review works. Tested on real drafts, the 2.x review found about as much as plain Claude asked "Review this. What's missing, and what should be improved?", and it led with style. 3.0.0 runs that plain review inside the skill, after its own checks, and merges the two into one list ranked by what matters. The review output changes shape, and each review now starts a subagent, hence the major version.
+
+### Changed
+
+- **Review gets a second opinion and merges it.** After its own checks, review runs one plain-Claude pass as a subagent on a smaller, faster model (Haiku in Claude Code). The subagent gets the plain request, the user's own words about audience or purpose if they gave any, and "Do not load or use any skills.", and nothing else. Review keeps every finding from it unless the document shows the finding is wrong. The skill's checks run first so the plain pass cannot steer them. Where no subagent tool is available, review skips the pass and says so in one line.
+- **One ranked list of findings.** Findings are no longer grouped by persona. Each substance finding keeps its P0, P1 or P2 severity, which still sets the verdict band, and the list is ordered by a RICE score (Reach × Impact × Confidence), shown on each finding as `[P1 · R2 I3 C80% = 4.8 · quick fix]`, so you can dispute one factor instead of the whole order. P0s come first. Effort is a label and never part of the score, so a costly fix cannot push a bigger problem down the list.
+- **Voice checks run after the substance checks.** The Slop Test and the Claudism scan come last, and their findings follow the substance findings as one compact list, one line each.
+
+### Added
+
+- **A security and privacy reader.** Review adds it for any product that stores personal data, has accounts, lets people share, takes payments or sends user data to a third party. It traces personal data from collection to deletion, looks for data leaking into logs, analytics and error reports, checks the rules on invites and links, asks how access is removed, and checks that every third party is named.
+- **A check of the document against itself and its context.** Every claim, status, date, number and rule is compared with every other place the document or the product context mentions it, and each mismatch is quoted from both places. A factual claim with no source is flagged as an assumption that needs an owner to confirm it.
+- **A tougher strategic check.** It runs even when the user has stated the purpose, weighs the work against the next-best use of the same effort, and asks what would have to be true for the bet to pay off.
+- **Sharper reader questions** in the existing personas: operations interrupted halfway, platform and app-store rules, requirements that trace to checks, setup with no help from the team, evidence from people close to the author, and smaller alternatives, including doing nothing.
+
+### Fixed
+
+- **Fewer "not X, it's Y" flips and logician's "hold"s in drafts.** The voice passes in `brief`, `spec`, `metrics` and `stories` now start with these two tells, and the Slop Test names them.
+- **Metrics documents no longer name the framework.** The lens (HEART, AARRR, a North Star) still finds the candidates; the document gives the metric and the reason for it, without the label.
+
+### Evidence
+
+- **Real-draft review test.** Four drafts that Claude wrote for the maintainer's own side projects (a PRFAQ, a spec, a brief and a decision record). Plain Claude, 2.21.2 and 3.0.0 each reviewed every draft three times, in fresh sessions, with no audience or purpose given. Opus merged every review's findings, blind to their source, into one list of distinct problems per document; Haiku matched problems to reviews against quotes; Haiku and Opus both had to agree that a problem matters. Of the important problems that at least half of the other reviews of a document also raised (reviews by the same version left out of that count), one review caught 80% with 3.0.0, 68% with 2.21.2 and 63% with plain Claude. Two earlier builds of the same design caught 84% and 79%, against 65% and 69% for plain Claude, and the same reviews scored twice move by about 5 points. Against every important problem any review found, one review caught 65%, 53% and 50%; one review cannot get near 100% on that measure, since three 3.0.0 reviews together caught 87%. Weighted by importance and by the reference reviewers' votes, the measure the release bar uses, 3.0.0 scored 61% against 48% and 45%, ahead of 2.21.2 on every document by 7 to 17 points, and about level with a plain review and a separate 2.21.2 review taken together (64%). Of the first five problems in each review, 4.6 mattered for 3.0.0, 4.2 for plain Claude and 3.4 for 2.21.2. A review costs about $0.55 and takes about 3 minutes, against about $0.45 for 2.21.2.
+- **Why the plain pass runs on a smaller model with "Do not load or use any skills."** On the same model as the review, the subagent loaded this skill itself in 34 of 43 reviews, which turned the second opinion into a second run of the same checks. On Haiku it did so in 3 of 26 before the instruction, and in 0 of 28 after it.
+- **Band calibration**, as headless Claude Code sessions on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 3 of 3 ROUGH, `spec-solid` 5 of 5 SOLID, `message-ship` 3 of 3 SOLID, both runs without a subagent tool ROUGH, and neither bug-fix plan drew a request for customer evidence. `spec-solid` was corrected first: the new review found two real errors in it (a quiet-hours rule that suppressed overnight correction texts, and a target its own numbers could not reach).
+- **Generator A/B for the voice fixes**, 3.0.0 against 2.21.2, 40 documents each across Opus and Sonnet: writing scores unchanged (17.4 and 16.9 out of 20, against 17.5 and 17.0; no skill 14.1 and 12.2). Framework names in the ten metrics documents fell from 10 to 0, antithesis flips from 8 to 5 (no skill 26), and "hold" from 13 to 7 (no skill 6), all of that drop on Opus.
+- **Costs to know about.** The merged pass adds P1s, so a near-perfect document is harder to rate SHIP: `message-ship` landed SOLID in all three runs, where 2.21.2 reached SHIP in 3 of 5. A review with Refine accepted turned the rough spec into a plannable one and grew it from 831 to 1,886 words.
+
+---
+
 ## 2.21.2 - 2026-10-07
 
 ### Fixed

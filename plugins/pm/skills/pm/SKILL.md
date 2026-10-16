@@ -70,7 +70,7 @@ The most important quality check for any PM output. If you showed this artifact 
 - [ ] **Trade-offs explicit**: what are you giving up by choosing this approach?
 - [ ] **Readable without the conversation**: could someone who saw none of this session follow every name, number and reference? Explain each label from the session where it first appears ("the lite tier" becomes "the cheaper plan without exports"), and write in any fact the document relies on.
 - [ ] **Concise enough to read**: could this be half as long without losing substance? If a section exists only to sound thorough, cut it.
-- [ ] **Reads as written, not generated**: scan for AI-register tells using the Claudism Catalogue in [reference/foundations.md](reference/foundations.md). Performative pushback, the false universal, the clean-mental-model setup, the validation stamp, the missing verb ("made an attempt at", "The runner, built."). Rewrite any you find before delivering.
+- [ ] **Reads as written, not generated**: scan for AI-register tells using the Claudism Catalogue in [reference/foundations.md](reference/foundations.md). The antithesis flip ("not X, it's Y" and its variants), the logician's "hold" ("the assumption holds" for "is true"), performative pushback, the false universal, the clean-mental-model setup, the validation stamp, the missing verb ("made an attempt at", "The runner, built."). Rewrite any you find before delivering.
 
 In the `review` mode, these checks feed the verdict band - SLOP / ROUGH / SOLID / SHIP - defined in [reference/knowledge-craft-score.md](reference/knowledge-craft-score.md).
 
