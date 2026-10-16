@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.1 - 2026-10-16
+
+### Changed
+
+- **Review findings are easier to read.** In 3.0.0 each finding opened with a tag like `[P1 · R3 I3 C80% = 7.2 · needs a decision]`, and the fix sat in the middle of a paragraph. Now the list opens with one line saying how it is ordered, and each finding starts with the problem in one bold sentence and its severity, then the fix on a line of its own, then why it matters and where it is. The ranking comes last, in plain words: "Ranked 7.2: affects everyone who acts on it, would lead to building the wrong thing, 80% sure it is real. Needs a decision." The order and the scoring are unchanged.
+
+### Fixed
+
+- **The Codex plugin manifest gave the wrong licence.** It said MIT; pm-skills is Apache 2.0, as the LICENSE file says. The manifest now says `Apache-2.0`.
+
+### Evidence
+
+Band calibration on the new layout, as headless Claude Code sessions on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 5 of 5 ROUGH, `spec-solid` 5 of 5 SOLID, `message-ship` 3 of 3 SOLID, both runs without a subagent tool ROUGH, and neither bug-fix plan drew a request for customer evidence. Reviews list as many problems as before (13 to 16 per review) and run a little longer, because of the labelled lines. The rough spec's missing risks section was raised in 3 of 5 runs, close to the bar, as on recent releases (2 of 3, then 3 of 3).
+
+---
+
 ## 3.0.0 - 2026-10-16
 
 This release changes how review works. Tested on real drafts, the 2.x review found about as much as plain Claude asked "Review this. What's missing, and what should be improved?", and it led with style. 3.0.0 runs that plain review inside the skill, after its own checks, and merges the two into one list ranked by what matters. The review output changes shape, and each review now starts a subagent, hence the major version.
