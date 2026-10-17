@@ -1,5 +1,22 @@
 # Changelog
 
+## 3.0.3 - 2026-10-17
+
+### Changed
+
+- **Review findings are grouped by what happens if they stay unfixed.** Findings now sit under four headings, in this order: Blocks the work (someone cannot build, ship or decide, or would build the wrong thing; only P0s and P1s), Breaks it for users (wrong results, lost or exposed data, a flow that does not work), Imprecise (loose reasoning, numbers or measures) and Polish. Within a group they are ordered by how many people the problem touches and how sure the review is that it is real. Each finding is placed by its consequence, not by how bad it sounds or how much analysis it took to find. The plain-words ranking line at the end of each finding is gone: with the headings showing why a finding sits where it does, it read as a stamp. A finding now says when it is an inference and what it depends on, and its fix line says when the fix needs a decision or data first.
+- **Wording is hygiene.** Wording problems, including any the plain pass raises, are never ranked among the substance findings. They follow as one list, and every one is fixed before the document is shared. The verdict names severities ("no P0s") rather than saying "no blockers", so it cannot contradict the Blocks the work heading.
+
+### Evidence
+
+- **Why the order changed.** The maintainer marked the reviewing model's order of the problems in four drafts as too high, about right or too low. Of 52 placements, 35 were about right. Where he moved problems, measurement and analytical precision went down, and what blocks the work or breaks for users went up.
+- **Order.** Against those marks, 3.0.3 did not clearly beat 3.0.2, even on the four drafts the rule came from. Of the problems he ranked highest, about six a draft, 2.9 sat in the first five findings on Opus (3.0.2 2.7, plain Claude 2.4) and 2.4 on Sonnet (3.0.2 2.7, plain Claude 2.8). Measured against chance, neither difference from 3.0.2 meets the test's bar. All 24 reviews used the new headings.
+- **Fix quality.** The same Opus judge as in 3.0.2, on the first five findings of every review of eight drafts, three reviews per model: fixes it would use as written rose from 49% to 64% on Sonnet and were 68% against 72% on Opus; wrong or not doable fell from 4% to 3% and 2%.
+- **Finding problems.** Of the important problems most other reviews also found, 3.0.3 caught 80% against 71% for plain Claude on Opus, and 73% against 60% on Sonnet, ahead on 7 and 8 of the 8 drafts: the same lead as 3.0.2. Reviews are about 150 words shorter.
+- **Band calibration** on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 3 of 3 ROUGH and both runs without a subagent ROUGH, `spec-solid` 5 of 5 SOLID across both candidates (one run first stopped to ask for product context and was rerun), `message-ship` 4 of 4 SOLID, and neither bug-fix plan drew a request for customer evidence. The rough spec's missing risks section was raised in 1 of 3 runs, below the bar, a known weak spot (2 of 5 on 3.0.1), and one run rated the missing primary metric P1 rather than P0, still ROUGH.
+
+---
+
 ## 3.0.2 - 2026-10-16
 
 ### Fixed
