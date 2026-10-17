@@ -52,18 +52,29 @@ A reproduced defect fix without customer reports is not a finding. A document th
 
 **Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the document must change before the audience can commit" (P1), or "this just erodes it, or they can ask" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1. The commonest inflation is the question-shaped P1: a finding phrased as "the audience will ask X" is a P2 unless the answer has to land in the document before commitment.
 
-## Ordering findings: RICE
+## Ordering findings
 
-Severity decides the band. RICE decides the order the user reads the findings in, so the first finding is the one that matters most. Score every substance finding on Reach, Impact and Confidence, and label its Effort:
+Severity decides the band. The order decides what the user deals with first, so it follows what happens if each problem stays unfixed. Put every substance finding in one of four groups and give the groups in this order:
 
-- **Reach**: how many of the people who act on the document, or use what it describes, the problem touches. 3 = all of them, 2 = most, 1 = one group, 0.5 = an edge case.
-- **Impact**: what happens to them if it stays unfixed. 3 = they decide or build the wrong thing, 2 = the document comes back or work is redone, 1 = it slows them down, 0.5 = polish.
+1. **Blocks the work.** Someone cannot build, ship or decide until it is fixed, or would build or decide the wrong thing. Every P0 is here, and only P0s and P1s are: a P2 never blocks the work.
+2. **Breaks it for users.** What the document describes would fail the people who use it: wrong results, lost or exposed data, a flow that does not work.
+3. **Imprecise.** The reasoning, numbers or measures are loose, so a later call may be off or work redone, but nothing is blocked and nothing breaks for users.
+4. **Polish.** Fixing it improves the document and changes nothing else.
+
+Place each finding by what happens if it stays unfixed, not by how bad it sounds or how much analysis it took to find. A loose metric definition is imprecise even when it took a page of reasoning to spot; a decision with no recommended default blocks the work even though the fix is one line.
+
+Within a group, order by Reach and Confidence, the two factors of RICE that stay:
+
+- **Reach**: how many of the people who act on the document, or use what it describes, the problem touches: everyone, most of them, one group, or an edge case.
 - **Confidence**: how sure you are that the problem is real. 100% = the document's own words show it, or it contradicts the product context; 80% = a strong inference from the document; 50% = it depends on facts the document does not give.
-- **Effort**: what fixing the document takes, as a label: quick fix (a sentence or two), needs a decision (one the author can make now), or needs research (data, or someone else's decision).
 
-Score = Reach × Impact × Confidence. Effort is not part of the score: how much a fix costs is the author's call, and it should never push a bigger problem below a smaller one. Put P0s first whatever their score, since a blocked document is blocked; order everything else by score, highest first. Show the ranking as the last line of each finding, in plain words and never as letters, so the user can see why it sits where it does and disagree with one factor rather than the whole order: `Ranked 4.8: affects everyone who acts on it, would mean work redone, 80% sure it is real. Needs a decision.` Take the words from the anchors above (everyone, most of them, one group, an edge case; would lead to deciding or building the wrong thing, would mean work redone, would slow them down, polish; the confidence as a percentage), then the Effort label. Score each factor on its own; never adjust one to reach an order you had already decided.
+Label each finding's Effort as well: quick fix (a sentence or two), needs a decision (one the author can make now), or needs research (data, or someone else's decision). Effort never moves a finding: how much a fix costs is the author's call, and it should never push a bigger problem below a smaller one.
 
-**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP gate on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding ranked by these anchors.
+Give the findings under a heading for each group, in the order above, numbered straight through, and leave out a group with no findings: **Blocks the work**, **Breaks it for users**, **Imprecise**, **Polish**. The heading shows the user why a finding sits where it does, so they can disagree with one placing rather than the whole order. Show reach and confidence only when they change what the user does: when a finding is an inference, say so in its "Why it matters" line and name the fact it depends on, as in `Not certain: it depends on who owns refunds, which the brief doesn't say.` Add the effort to the fix line only when it is not a quick fix: `This one needs your decision.` or `This needs data first.` Judge each part on its own; never adjust one to reach an order you had already decided.
+
+**Wording is hygiene.** Wording problems, including any the plain pass raises as findings, are never ranked among the substance findings. They come after the substance findings, as one list, and every one is fixed before the document is shared: when the author forwards it to someone senior, it cannot read as AI-written, because a reader who spots the phrasing stops trusting the substance.
+
+**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP gate on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding placed in the groups above.
 
 ---
 
@@ -81,19 +92,20 @@ When a later release adds re-review trajectory, a score change counts as movemen
 
 ## Delivery format
 
-Open the findings with one line saying how they are ordered: by how many readers each problem affects, how bad it is if left unfixed, and how sure the review is that it is real. Then give each finding in this shape, the problem first and the fix straight after it:
+Give the substance findings under the group headings, each finding in this shape, the problem first and the fix straight after it:
 
 ```
+**Blocks the work**
+
 1. **The brief never says who approves the price change.** (P1)
-   Fix: name the approver and the date they will decide, in the Decision section.
+   Fix: name the approver and the date they will decide, in the Decision section. This one needs your decision.
    Why it matters: finance and sales will each assume the other signs it off.
    Where: Decision, "pricing to be confirmed".
-   Ranked 4.8: affects everyone who acts on it, would mean work redone, 80% sure it is real. Needs a decision.
 ```
 
-The headline is one sentence that names the problem. The fix is concrete enough to act on without rereading the finding, and suits the kind of document under review (see `mode-review.md`). Keep each line to one sentence.
+The headline is one sentence that names the problem. The fix is concrete enough to act on without rereading the finding, and suits the kind of document under review (see `mode-review.md`). Keep each line to one sentence, plus the effort note on the fix line when there is one.
 
-The verdict line follows this structure:
+The verdict line follows this structure. Name P0s and P1s by severity, never as "blockers" or "nothing blocks", so the verdict never contradicts the Blocks the work heading:
 
 `Verdict: BAND - [one sentence naming the gate that fired]. [One sentence: what moves it up one band.]`
 
@@ -104,7 +116,7 @@ Verdict: SLOP - four Claudism families and six failed slop-test checks; the doc 
 analysis without doing any. Cutting the register tells and adding one measurable success
 metric moves it to ROUGH.
 
-Verdict: SOLID - no blockers; two P1s remain (no rollback plan, unowned API dependency).
+Verdict: SOLID - no P0s; two P1s remain (no rollback plan, unowned API dependency).
 Closing both P1s moves it to SHIP.
 ```
 
