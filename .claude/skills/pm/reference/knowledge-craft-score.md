@@ -1,6 +1,6 @@
 # Craft Score
 
-Review ends with a band verdict, not a number. The bands are SLOP, ROUGH, SOLID, and SHIP. A blunt band name that lands without ambiguity is more useful than a score that invites negotiation over decimal points. Run-to-run scoring jitter on language models is real, so the integer behind the band is internal and the band is the unit a user sees.
+Review ends with a band verdict, not a number. The bands are SLOP, ROUGH, SOLID, and SHIP. A blunt band name that cannot be misread is more useful than a score that invites negotiation over decimal points. Run-to-run scoring jitter on language models is real, so the integer behind the band is internal and the band is the unit a user sees.
 
 ---
 
@@ -13,22 +13,22 @@ Review ends with a band verdict, not a number. The bands are SLOP, ROUGH, SOLID,
 
 ---
 
-## Gates: how the band is picked
+## How the band is picked
 
 Evaluated in order. Lower band wins. Bounds are inclusive.
 
-1. **SLOP** if: three or more Claudism families are present AND three or more of the PM Slop Test checks in SKILL.md fail, OR five or more fail regardless of voice, OR there is no real substance to critique. Voice alone never gates SLOP: a register-heavy document with sound substance bands by gates 2-4 and is held out of SHIP by the tell-cap.
+1. **SLOP** if: three or more Claudism families are present AND three or more of the PM Slop Test checks in SKILL.md fail, OR five or more fail regardless of voice, OR there is no real substance to critique. Voice alone never makes a document SLOP: a register-heavy document with sound substance is banded by rules 2 to 4 and held out of SHIP by the tell cap.
 2. **ROUGH** if: any P0 finding exists, or three or more P1s.
 3. **SOLID** if: no P0s and at most two P1s (any number of P2s).
-4. **SHIP** if: no P0s, no P1s, no mechanical tell anywhere, and fewer than three judgement-call tells in total (individual instances, distinct from the family count in the SLOP gate). Mechanical tells are the shapes a reader spots without judgement, so one instance caps the band at SOLID until removed: the em dash; assistant-artifact slop in any of its four shapes (Voice slop 14 in foundations.md, including an unfilled placeholder); and the bold-label bullet list, three or more consecutive bullets each opening with a bold label and a colon (the list form of Claudism family 16). Every other tell is a judgement call, and the cushion of two exists because the June 2026 calibration saw the same sentence judged a tell in one run and clean in the next. The cushion is for reviewer noise, not a quality allowance: quote and fix all of them.
+4. **SHIP** if: no P0s, no P1s, no mechanical tell anywhere, and fewer than three judgement-call tells in total (individual instances, distinct from the family count in the SLOP rule). Mechanical tells are the patterns a reader spots without judgement, so one instance caps the band at SOLID until removed: the em dash; assistant-artifact slop in any of its four shapes (Voice slop 14 in foundations.md, including an unfilled placeholder); and the bold-label bullet list, three or more consecutive bullets each opening with a bold label and a colon (the list form of Claudism family 16). Every other tell is a judgement call, and the cushion of two exists because the June 2026 calibration saw the same sentence judged a tell in one run and clean in the next. The cushion is for reviewer noise, not a quality allowance: quote and fix all of them.
 
-The band moves only when the findings move. If the user contests the band, restate the gate that fired and the findings behind it.
+The band moves only when the findings move. If the user contests the band, restate the rule that set it and the findings behind it.
 
 ---
 
 ## Severity anchors
 
-The gates count P0s and P1s, so the band is only as stable as the severity calls. Rank every substance finding by its effect on the document's audience, not by how bad it sounds. The type checklists in the knowledge files identify findings; this section ranks them.
+The rules count P0s and P1s, so the band is only as stable as the severity calls. Rank every substance finding by its effect on the document's audience, not by how bad it sounds. The type checklists in the knowledge files identify findings; this section ranks them.
 
 - **P0 - the document's primary action is blocked.** The audience cannot do the thing the document exists to make them do, or would do the wrong work if they tried.
 - **P1 - the document gets sent back, or commitment is blocked.** The audience cannot commit (fund it, sprint-plan it, send it) until the gap closes, or they return the document for revision. A question the audience can ask and have answered in the room - sprint planning, the review meeting, a reply - without the document being revised is not a P1; it is a P2.
@@ -50,7 +50,7 @@ For a type with no row here, rank from the three definitions and say which one y
 
 A reproduced defect fix without customer reports is not a finding. A document that does not say how a defect was confirmed gets a P2, because the reader can ask.
 
-**Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the document must change before the audience can commit" (P1), or "this just erodes it, or they can ask" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1. The commonest inflation is the question-shaped P1: a finding phrased as "the audience will ask X" is a P2 unless the answer has to land in the document before commitment.
+**Tie-break.** When torn between two severities, ask which sentence is true: "the audience cannot act on this" (P0), "the document must change before the audience can commit" (P1), or "this just erodes it, or they can ask" (P2). Still torn after that: take the lower severity and say so in the finding. An inflated P0 costs the verdict more credibility than a conservative P1. The commonest inflation is the question-shaped P1: a finding phrased as "the audience will ask X" is a P2 unless the answer has to be in the document before commitment.
 
 ## Ordering findings
 
@@ -74,7 +74,7 @@ Give the findings under a heading for each group, in the order above, numbered s
 
 **Wording is hygiene.** Wording problems, including any the plain pass raises as findings, are never ranked among the substance findings. They come after the substance findings, as one list, and every one is fixed before the document is shared: when the author forwards it to someone senior, it cannot read as AI-written, because a reader who spots the phrasing stops trusting the substance.
 
-**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP gate (three or more families alongside weak substance) and the SHIP gate (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP gate on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance lands SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding placed in the groups above.
+**Voice findings carry no severity.** Claudism tells and voice slop are not P0/P1/P2; they reach the band only through the SLOP rule (three or more families alongside weak substance) and the SHIP rule (fewer than three tells in total). The mechanical tells are the exception and reach the SHIP rule on a single instance: the em dash, assistant-artifact slop, and the bold-label bullet list. Any one alone caps the band at SOLID, never lower, and clears once removed. A doc with heavy register but sound substance is SOLID at best, never lower, on voice alone: the tell-cap bars it from SHIP until the voice pass is done. When a tell also hides a substance gap - a false universal asserting an unevidenced claim, a clean mental model papering over an unmade decision - log it twice: once as a voice finding, once as a substance finding placed in the groups above.
 
 ---
 
@@ -107,7 +107,7 @@ The headline is one sentence that names the problem. The fix is concrete enough 
 
 The verdict line follows this structure. Name P0s and P1s by severity, never as "blockers" or "nothing blocks", so the verdict never contradicts the Blocks the work heading:
 
-`Verdict: BAND - [one sentence naming the gate that fired]. [One sentence: what moves it up one band.]`
+`Verdict: BAND - [one sentence naming the findings that set the band, by severity]. [One sentence: what moves it up one band.]`
 
 Examples:
 
@@ -130,4 +130,4 @@ When the user applied Refine fixes from this same conversation and asks for a re
 
 ## On the name SLOP
 
-The blunt name is deliberate. Clear is kind - a label that softens the verdict delays the author from fixing the real problem. If real users report it stings rather than lands, soften the label, never the threshold behind it.
+The blunt name is deliberate. Clear is kind - a label that softens the verdict delays the author from fixing the real problem. If real users find that it stings more than it helps, soften the label, never the threshold behind it.

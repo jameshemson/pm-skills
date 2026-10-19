@@ -28,7 +28,7 @@ Before generating, gather:
 
 ## Step 3: Generate the Brief
 
-Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, and again in the Voice pass afterward.
 
 ### Problem Context
 The specific problem, for whom, in what context. Include evidence where available (support tickets, usage data, customer quotes). Connect to product strategy and current objectives.
@@ -65,11 +65,11 @@ Questions that need answers before work starts. Flag who should answer each.
 
 ## Step 4: Run the Slop Test
 
-Run the canonical PM Slop Test from `SKILL.md` (already in your context) - every check. Do not maintain a local copy of the list here; SKILL.md is the single source.
+Run the PM Slop Test from `SKILL.md` (already in your context) - every check. Do not maintain a local copy of the list here; SKILL.md is the single source.
 
 If any check fails, fix it before delivering. State which assumptions you made and what you could not verify.
 
-**Voice pass.** Then scan every prose section against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A brief that reads as generated loses authority with the team. If a fix introduces a new tell, fix the fix.
+**Voice pass.** Then scan every prose section against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same check the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A brief that reads as generated loses authority with the team. If a fix introduces a new tell, fix the fix.
 
 ## Output Format
 

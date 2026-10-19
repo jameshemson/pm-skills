@@ -1,6 +1,6 @@
 # Communication
 
-How to make ideas stick, write clearly, and translate across audiences. Communication is not about what you say - it's about what lands.
+How to make ideas stick, write clearly, and translate across audiences. Communication is judged by what the audience takes away.
 
 ---
 
@@ -16,7 +16,7 @@ Find the core. Strip to the essential message. If you could only tell them one t
 
 - "We're building search for large teams" not "We're enhancing the team management experience with intelligent filtering and discovery capabilities"
 - Force yourself to prioritise. If everything is important, nothing is.
-- Simple does not mean dumbed down. It means finding the essence and communicating it crisply.
+- Simple does not mean dumbed down. It means finding the essence and saying it plainly.
 
 ### Unexpected
 
@@ -202,7 +202,7 @@ A stakeholder message must be calibrated to the specific person: their prioritie
 - The message opens with what the sender wants, not what the recipient cares about
 - The ask is buried at the end after three paragraphs of context
 - The message treats all stakeholders as a group ("wanted to share an update with everyone") rather than addressing one person's specific situation
-- Objections that are predictable for this specific person are not addressed, leaving them to surface in the meeting instead
+- Objections that are predictable for this specific person are not addressed, leaving them to come up in the meeting instead
 - The message is one length regardless of the relationship - a three-paragraph update to a daily collaborator or a three-sentence ask to someone who needs full context
 - The level of formality does not match the actual relationship (over-formal with a close collaborator, too casual with a new executive)
 - The message is informational when it should be a request, or is a request disguised as information to soften the ask

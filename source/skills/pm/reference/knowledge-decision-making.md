@@ -18,7 +18,7 @@ Life is poker, not chess. In chess, you can see the whole board. In product, you
 
 ### Tools
 
-**Pre-mortem**: Before committing to a decision, imagine it's six months later and it failed spectacularly. Why? This surfaces risks that optimism hides. Your brain is better at explaining past events than predicting future ones - exploit that by making the failure feel real.
+**Pre-mortem**: Before committing to a decision, imagine it's six months later and it failed spectacularly. Why? This brings out risks that optimism hides. Your brain is better at explaining past events than predicting future ones - exploit that by making the failure feel real.
 
 **10-10-10**: How will this decision feel in 10 minutes, 10 months, and 10 years? Helps escape emotional short-termism. The decision to delay a launch feels painful in 10 minutes but smart in 10 months if it avoids a broken customer experience.
 
@@ -101,7 +101,7 @@ A strategy document must make integrated choices, not state a set of aspirations
 - [ ] **Explicit not-doing list.** For every where-to-play choice, the document names what is excluded. A strategy with no exclusions is not a strategy.
 - [ ] **How to win is differentiated.** The stated advantage would not apply to your nearest competitor. "Best-in-class UX" is not differentiation unless you have evidence your UX is genuinely and measurably better in ways that matter to the target customer.
 - [ ] **Capabilities and management systems are specified.** What must the team be uniquely good at? What metrics, processes, and structures make the strategy operational day to day?
-- [ ] **The cascade is coherent.** Each level reinforces the others. If where-to-play says enterprise but capabilities are built for self-serve, the cascade is broken. Check every level for contradictions.
+- [ ] **The levels fit together.** Each level reinforces the others. If where-to-play says enterprise but capabilities are built for self-serve, the cascade is broken. Check every level for contradictions.
 - [ ] **At least one "what would have to be true" test is run.** The document names the key assumptions and identifies the most fragile one.
 
 **Common failure modes for strategy documents:**

@@ -16,7 +16,7 @@ Before challenging the new decision, check the project's decision history.
 
 If `.pmcontext.md` does not exist at the project root, this mode does not run - SKILL.md routes to `teach` first per the Context Gathering Protocol. Step 0 assumes `.pmcontext.md` is present.
 
-- Read `pmdecisions.md` at the project root if it exists. Scan for entries with `status: open` or with a `revisit:` value whose condition looks met against current product context. If any are surfaced, name them to the user before proceeding to Step 1 - the fresh decision may be a continuation of an open thread, not a new question. Read what you can; do not block on entries you cannot parse.
+- Read `pmdecisions.md` at the project root if it exists. Scan for entries with `status: open` or with a `revisit:` value whose condition looks met against current product context. If you find any, name them to the user before proceeding to Step 1 - the fresh decision may be a continuation of an open thread, not a new question. Read what you can; do not block on entries you cannot parse.
 - Read `.pmcontext.md` for the `decisions_log:` key under a `## Settings` section. Values: `enabled` or `disabled`. Remember the value for Step 8. If the key is absent, Step 8 will ask once and persist the answer.
 
 Step 0 is a context load. It does not block Step 1.
@@ -127,7 +127,7 @@ For each failure mode (top 3-5):
 
 ## Step 8: Log the decision
 
-The recommendation is in conversation. Step 8 makes it durable so future sessions can recover the context.
+The recommendation is in conversation. Step 8 saves it so future sessions can recover the context.
 
 If Step 1 was skipped (no constraint articulated, no options ruled out, no trade-offs made visible), do not log. The whole point of the log is durability of *real* decisions. Stop here.
 
@@ -195,7 +195,7 @@ After writing, count entries (lines matching `^## ` in `pmdecisions.md`) and tot
 
 ### Error handling
 
-If any file write fails (read-only mount, permission denied, disk full, file locked), surface this one-line acknowledgement to the user: "Could not write pmdecisions.md - decision kept in conversation only." Continue without crashing. The decision remains in the transcript.
+If any file write fails (read-only mount, permission denied, disk full, file locked), show the user this one-line note: "Could not write pmdecisions.md - decision kept in conversation only." Continue without crashing. The decision remains in the transcript.
 
 ### Concurrency
 
