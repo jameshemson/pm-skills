@@ -130,6 +130,7 @@ The tells to avoid:
 - Cut the closer. End on the last real point, not a punchline.
 - Keep the verb. The action is a verb, not a noun hung on "made", "conduct", "provide", or "perform", and never a fragment with the verb dropped ("The runner, built."). Every sentence names who does what.
 - Write for a reader who saw none of the conversation. Give each name agreed in the session its meaning where it first appears, and put any fact the session settled into the document.
+- State each assumption once, where it applies, in a plain sentence that names who will confirm it. Do not announce what the document does not know, will not invent or does not claim.
 
 Before and after (each "plain" version follows Handley's rules above):
 - Slop: "Let me push back: it's not that the metric is wrong, it's that it games easily. That's the structural spine." Plain: "The metric games easily. A team can raise it without helping one user."
@@ -161,18 +162,19 @@ Before and after (each "plain" version follows Handley's rules above):
 - Fix: describe the real dependency or distinction in plain terms, or cut the metaphor.
 
 **5. The antithesis flip.** The reversal that announces itself. A close cousin of the slop taxonomy's sentence-pattern slop above ("it's not X, it's Y"), extended to its current variants.
-- Tells: "not just X but Y", "isn't X so much as Y", "X isn't the problem; Y is", "Two things can be true at once", "the emptiness IS the content".
+- Tells: "not just X but Y", "isn't X so much as Y", "X isn't the problem; Y is", "Two things can be true at once", "the emptiness IS the content", and the short reframe, which renames a thing to sound sharper: "This is a query, not a project", "they bought the idea and not the use", "a guess, not a number". A plain instruction or distinction is fine ("use the signed release, not the cache"); the tell is the relabelling.
 - Fakes: paradox and depth. It is a sentence template, not an idea.
 - Fix: say it directly. "The metric games easily" beats "It's not that the metric is wrong, it's that it games easily".
 
-**6. False candor, flattery, and the validation stamp.** Performs honesty, intimacy, or assessment to buy trust it has not earned. Two shapes: flattering the person, and certifying their premise as legitimate before engaging it.
+**6. False candor, flattery, and the validation stamp.** Performs honesty, intimacy, or assessment to buy trust it has not earned. Three shapes: flattering the person, certifying their premise as legitimate before engaging it, and announcing the document's own honesty.
 - Flattery tells: "You're absolutely right", "Great question", "That's a sharp observation", "Let me be honest", "I'll be direct", "the honest answer is", "To be clear", "Real talk".
 - Validation-stamp tells: "This is a real gap", "This is a real problem", "That's a genuine tension", "You're onto something real here", "This is the right question to be asking".
+- Announced-honesty tells: "What we do not have, and this spec does not invent", "The likelihoods are my estimates, not data", "This brief does not claim more than that", "My thresholds are guesses, so move them if you disagree".
 - Fakes: a relationship and a stake, plus the appearance of having assessed. Candor is saying the hard thing, not announcing that you are about to. A stamp that the premise is "real" is not engagement with the premise.
-- Fix: drop the preamble and engage the substance directly. Cut the flattery and the stamp entirely.
+- Fix: drop the preamble and engage the substance directly. Cut the flattery and the stamp entirely. For announced honesty, keep the assumption and drop the announcement: state it once, where it applies, with who will confirm it ("The likelihoods are estimates; the ops lead confirms them by 3 November").
 
 **7. The aphoristic closer.** A short, punchy fragment dropped to sound profound. Often a one-line sentence standing alone for cadence.
-- Tells: "That's the structural spine.", "That's the whole game.", "And that changes everything.", "Simple as that.", any fragment whose only job is to feel like a mic drop.
+- Tells: "That's the structural spine.", "That's the whole game.", "And that changes everything.", "Simple as that.", "Partial product, partial trust.", any fragment whose only job is to feel like a mic drop.
 - Fakes: a hard-won conclusion. The rhythm does the work the argument should.
 - Fix: end on the substantive point. If the closer adds no information, cut it.
 
