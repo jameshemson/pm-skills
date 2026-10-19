@@ -20,7 +20,7 @@ Pick the personas the table lists for the document type (2-4).
 | User-facing feature | Customer, Dev, Tester | User value + buildability |
 | Metrics framework | Critic, Exec | Evidence and gaming-resistance |
 | Decision doc | Critic, Exec, Dev | Rigour, alignment, feasibility |
-| Stakeholder message / comms | Exec, Critic | Does the ask land with this recipient; is the claimed evidence real (add Customer for customer-facing comms) |
+| Stakeholder message / comms | Exec, Critic | Does the ask work for this recipient; is the claimed evidence real (add Customer for customer-facing comms) |
 | Roadmap / prioritisation | Exec, Critic, Dev | Strategic connection and opportunity cost; evidence behind impact scores; feasibility of the sequencing |
 | Retro / post-launch review | Critic, Exec | Decision-vs-outcome separation and honest fielding; accountability for the called result |
 
@@ -196,7 +196,7 @@ Add **Sec** to any document type when the product stores personal data, has acco
 - Traces every piece of personal data from collection to storage to deletion
 - Looks for data that leaks into logs, analytics, error reports, notifications or backups
 - Checks the rules on invites, links and sharing
-- Asks how access is removed, not only how it is granted
+- Asks how access is removed as well as how it is granted
 - Checks that every third party receiving user data is named
 
 **Test questions**:
@@ -218,7 +218,7 @@ Add **Sec** to any document type when the product stores personal data, has acco
 
 ## Critiquing this artifact
 
-This section explains how to apply the personas when running a critique on a document. The personas are not decorative - they are lenses that surface different failure modes. Apply them in a structured sequence, not simultaneously.
+This section explains how to apply the personas when running a critique on a document. Each persona is a lens that catches a different kind of failure. Apply them one after another, never at once.
 
 ### How to select and sequence personas
 
@@ -243,18 +243,18 @@ For each persona, work through the full set of test questions and red flags befo
 ### How to report findings from persona-based review
 
 For each finding, record:
-- Which persona surfaced it
+- Which persona raised it
 - The specific test question or red flag it triggered
 - The exact location in the document (section and quote)
 - The severity: blocker (requires revision before use), concern (requires discussion), observation (worth noting)
 
-Record which persona surfaced each finding; the findings are then ranked together with the rest of the review.
+Record which persona raised each finding; the findings are then ranked together with the rest of the review.
 
 ### When persona findings conflict
 
 Different personas will sometimes reach opposite conclusions. The Dev wants more detail; the Exec wants less. The Customer wants plain language; the Tester needs precise technical criteria.
 
-These conflicts are real. Do not resolve them silently. Surface the tension explicitly: "Dev needs precise error state specifications, but the current spec is written for an exec audience and lacks them." The document owner must decide whether to write two versions or resolve the conflict in one.
+These conflicts are real. Do not resolve them silently. Name the tension: "Dev needs precise error state specifications, but the current spec is written for an exec audience and lacks them." The document owner must decide whether to write two versions or resolve the conflict in one.
 
 ### Calibrating the Customer persona before review
 

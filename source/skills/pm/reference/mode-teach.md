@@ -10,7 +10,7 @@ Before asking anything, scan the project to discover what you can:
 - **Package.json / config files**: Tech stack, dependencies, architecture patterns
 - **Database schemas / API definitions**: Domain model, core entities, relationships
 - **Existing tests**: What's tested reveals what matters and what's risky
-- **CI/CD configuration**: Deployment process, environments, release cadence
+- **CI/CD configuration**: Deployment process, environments, how often you release
 - **{{INSTRUCTIONS_FILE}} or similar**: Existing team conventions, definitions of done, workflow norms
 - **Git history (recent)**: Active areas of development, team focus, pace of change
 

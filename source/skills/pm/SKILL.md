@@ -36,7 +36,7 @@ With persistent context, the `decide` mode additionally reads `pmdecisions.md` a
 
 If a **Ways of Working** section exists in `.pmcontext.md` or {{INSTRUCTIONS_FILE}}, prefer the user's frameworks, checklists, and doc formats over a mode's defaults. The user's way of working takes precedence.
 
-Without context, the output is theater. Context is the quality gate.
+Without context, the output is theater. Context decides the quality.
 
 ## Reading source documents
 
@@ -81,7 +81,7 @@ The most important quality check for any PM output. If you showed this artifact 
 
 In the `review` mode, these checks feed the verdict band - SLOP / ROUGH / SOLID / SHIP - defined in [reference/knowledge-craft-score.md](reference/knowledge-craft-score.md).
 
-The heavier procedures live in [reference/foundations.md](reference/foundations.md): the PM Reflex Rejection and the Claudism Catalogue's prevention rules, which both fire pre-generation; the full slop taxonomy and Claudism Catalogue, for post-generation checks; and the PM anti-patterns. Modes load it when they need it. Prevention beats cleanup: when generating prose in any mode, write to the prevention rules as you go, not only the checks after.
+The heavier procedures live in [reference/foundations.md](reference/foundations.md): the PM Reflex Rejection and the Claudism Catalogue's prevention rules, which both run before you write; the full slop taxonomy and Claudism Catalogue, for post-generation checks; and the PM anti-patterns. Modes load it when they need it. Prevention beats cleanup: when generating prose in any mode, follow the prevention rules as you write, then run the checks.
 
 ## Commands
 

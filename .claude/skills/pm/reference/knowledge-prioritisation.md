@@ -107,7 +107,7 @@ Product work is two things: figuring out what to build (discovery) and building 
 ### Discovery
 
 - Purpose: Reduce risk and uncertainty before committing engineering resources
-- Cadence: Continuous, not a phase. Discovery never stops.
+- How often: continuously. Discovery never stops.
 - Activities: Customer interviews, prototype testing, data analysis, competitive research, experimentation
 - Output: Evidence-backed hypotheses about what to build and why
 - Owned by: Product, design, and engineering together (not product alone)
@@ -115,7 +115,7 @@ Product work is two things: figuring out what to build (discovery) and building 
 ### Delivery
 
 - Purpose: Build, ship, and iterate on validated solutions
-- Cadence: Sprints, continuous deployment, whatever works for the team
+- How often: sprints, continuous deployment, whatever works for the team
 - Activities: Design, development, testing, deployment, monitoring
 - Output: Working software that solves real problems
 - Owned by: The cross-functional product team
@@ -183,7 +183,7 @@ You can't mandate missionary teams. You create them by:
 - Giving them the problem, not the solution
 - Trusting them to find the best approach
 - Celebrating outcomes, not output
-- Including them in discovery, not just delivery
+- Including them in discovery as well as delivery
 
 ---
 
@@ -197,7 +197,7 @@ Use this checklist when reviewing a roadmap or a prioritisation decision. Both r
 
 **What a strong roadmap must contain:**
 
-- [ ] **Outcome-framed items.** Each item on the roadmap names the problem being solved or the metric being moved, not just the feature being built. "Member search for large teams - reduce time-to-assign" not just "member search."
+- [ ] **Outcome-framed items.** Each item on the roadmap names the problem being solved or the metric being moved as well as the feature being built: "Member search for large teams - reduce time-to-assign" rather than "member search."
 - [ ] **Strategic connection.** The roadmap connects to the current strategic bets. A reader should be able to see why this set of work, in this order, advances the stated where-to-play and how-to-win. If the roadmap could belong to any product team at any company, it is not connected to strategy.
 - [ ] **Time horizon is appropriate.** Near-term items (1-3 months) are specific and committed. Medium-term items (3-6 months) are directional. Long-term items (6+ months) are aspirational. A roadmap with the same level of specificity across 12 months is either lying about confidence or lying about time.
 - [ ] **Explicit trade-offs.** The roadmap shows what is NOT being done and why. If everything fits comfortably, either the team is under-resourced relative to ambitions or nothing hard was excluded.
@@ -219,8 +219,8 @@ Use this checklist when reviewing a roadmap or a prioritisation decision. Both r
 
 **What a strong prioritisation must contain:**
 
-- [ ] **Options considered before a decision.** The prioritisation names all the options that were in contention, not just the winner. If only one option was ever discussed, it is not a prioritisation, it is an announcement.
-- [ ] **Criteria are explicit and weighted.** The criteria used to evaluate options are stated. If all criteria are equally weighted, that is a choice that must be stated. Implicit criteria that favour a predetermined answer must be surfaced.
+- [ ] **Options considered before a decision.** The prioritisation names every option that was in contention, the winner and the rest. If only one option was ever discussed, it is not a prioritisation, it is an announcement.
+- [ ] **Criteria are explicit and weighted.** The criteria used to evaluate options are stated. If all criteria are equally weighted, that is a choice that must be stated. Implicit criteria that favour a predetermined answer must be named.
 - [ ] **Evidence is cited for impact estimates.** High impact scores must be justified. "We think this will move retention by 20%" needs supporting evidence or must be flagged as an assumption.
 - [ ] **Opportunity cost is stated.** What is not getting done because of this choice? A prioritisation that does not name the opportunity cost has not fully considered the trade-off.
 - [ ] **The four risks are addressed.** Value risk, usability risk, feasibility risk, viability risk. A prioritisation that addresses only feasibility ("can we build it in time?") has missed three risks.

@@ -21,7 +21,7 @@ Push back on vague inputs. "We need a better dashboard" is not spec-ready. "Ente
 
 ## Step 2: Write the Specification
 
-Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, and again in the Voice pass afterward.
 
 ### 1. Problem Statement
 The specific problem, for whom, in what context. Observable in the wild - not a restated feature request.
@@ -84,11 +84,11 @@ List the top 5 reasons for failure. For each: likelihood (percentage), mitigatio
 
 ## Step 4: Run the Slop Test
 
-Run the canonical PM Slop Test from `SKILL.md` (already in your context) - every check. The spec must pass every one. Do not maintain a local copy of the list here; SKILL.md is the single source. Run the checks on the draft and fix what fails; the checks and their results stay out of the spec. Name anything you could not fix in your reply, after the spec.
+Run the PM Slop Test from `SKILL.md` (already in your context) - every check. The spec must pass every one. Do not maintain a local copy of the list here; SKILL.md is the single source. Run the checks on the draft and fix what fails; the checks and their results stay out of the spec. Name anything you could not fix in your reply, after the spec.
 
 **Engineering read-through test**: an engineer reading this spec should be able to start work with no more than 3 clarifying questions. If they would have more, close the gaps in the spec, and name any you cannot close in your reply.
 
-**Voice pass.** Then scan every prose section (problem statement, context, rationale, risks) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A spec that reads as generated loses authority with engineering. If a fix introduces a new tell, fix the fix.
+**Voice pass.** Then scan every prose section (problem statement, context, rationale, risks) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same check the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A spec that reads as generated loses authority with engineering. If a fix introduces a new tell, fix the fix.
 
 ## Output Format
 

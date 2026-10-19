@@ -8,7 +8,7 @@ Core PM procedures and quality checks. Loaded by modes that need them. Enforces 
 
 AI models produce predictable PM output regardless of context. The same personas, the same metrics, the same acceptance criteria, the same risk sections. This procedure forces you to name and reject those defaults before generating anything.
 
-This fires PRE-generation (before you write). The PM Slop Test fires POST-generation (after you write, before you deliver). Both must pass.
+This runs before you write. The PM Slop Test runs after you write, before you deliver. Both must pass.
 
 ### Step 1: Anchor in the specific product context
 
@@ -106,11 +106,11 @@ A PM should care because an exec or eng lead who clocks these tells stops readin
 
 This catalogue has three uses, in order of leverage. First, **prevention**: write plainly the first time so the tells never appear (rules below). Second, the **post-generation voice pass**: the generator modes scan their own output and rewrite what slipped through. Third, **detection**: the `review` mode runs it on a draft the user brings in. Prevention is the goal; the other two are the safety net, and the safety net stays, because this register is the model's default and instruction alone will not fully suppress it. Aim for a lower rate, not zero.
 
-The hardest tells are sentence skeletons with swappable slots, not single words. The example phrases below are illustrations; the skeleton is what repeats. Match the shape, not the literal words. "It's the question every audit turns on" and "it's the constraint every migration runs into" are the same tell.
+The hardest tells are sentence skeletons with swappable slots, not single words. The example phrases below are illustrations; the skeleton is what repeats. Match the pattern; the words vary. "It's the question every audit turns on" and "it's the constraint every migration runs into" are the same tell.
 
-One tell is not a verdict. Three or more from different families below means the draft reads as AI-generated and needs a voice pass before it reaches its audience. The exceptions are the mechanical tells, which need no judgement to spot and so block SHIP on one instance: the em dash, assistant-artifact slop, and the bold-label bullet list. The gates in knowledge-craft-score.md name them.
+One tell is not a verdict. Three or more from different families below means the draft reads as AI-generated and needs a voice pass before it reaches its audience. The exceptions are the mechanical tells, which need no judgement to spot and so block SHIP on one instance: the em dash, assistant-artifact slop, and the bold-label bullet list. The band rules in knowledge-craft-score.md name them.
 
-**Prevention: write plainly the first time.** Catching a tell after writing it is cleanup. The goal is not to reach for it at all. The standard for "plain" here comes from Ann Handley's *Everybody Writes*, applied to PM docs. Write to it before you start, not only in the voice pass after.
+**Prevention: write plainly the first time.** Catching a tell after writing it is cleanup. The goal is not to reach for it at all. The standard for "plain" here comes from Ann Handley's *Everybody Writes*, applied to PM docs. Write to it from the start, and check again in the voice pass after.
 
 Her rules:
 - Lead with the most important words. Cut throat-clearing openers like "There is", "It's worth noting", and "The purpose of this is".
@@ -240,9 +240,9 @@ Before and after (each "plain" version follows Handley's rules above):
 - Fakes: shared context. The writer still carries the conversation, so the document reads as complete to them and as a set of gaps to everyone else.
 - Fix: say what the thing is where it first appears, in the sentence itself. Keep a label only if the reader will use it afterwards, and give its meaning the first time. Write into the document any fact from the session that the document depends on. Rename a working name the session called misleading.
 
-**Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux", "hold" (in any of its overused senses: "X holds" = is true, "a tension to hold" = keep in mind, "the way to hold this" = grasp or understand). Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
+**Register vocabulary.** The current Claude word-hoard, distinct from the delve/tapestry GPT list. Treat a cluster of these as a flag: "load-bearing", "tractable", "crisp", "surface" (as a verb), "gestures at", "in tension with", "orthogonal", "first-order / second-order", "downstream", "non-trivial", "the interesting tension", "fundamentally", "nuanced", "the crux", "hold" (in any of its overused senses: "X holds" = is true, "a tension to hold" = keep in mind, "the way to hold this" = grasp or understand). Claude's engineering register belongs to the same hoard when it turns up outside code: "gated on" and "X-gated", "landed" and "landed cleanly", "the honest shape", "one honest caveat", "that's not nothing", "a durable path forward", "X-shaped", "canonical", "cadence", "blast radius", "byte-identical". Replace with plain English, as in the slop taxonomy's AI vocabulary slop above.
 
-The catalogue grows in the pm-skills repository, not at runtime. If a review surfaces a tell that fits no family, flag it in the review output as an unclassified tell so the user can report it; do not edit this file, which may be a read-only installed copy.
+The catalogue grows in the pm-skills repository, not at runtime. If a review finds a tell that fits no family, flag it in the review output as an unclassified tell so the user can report it; do not edit this file, which may be a read-only installed copy.
 
 ---
 

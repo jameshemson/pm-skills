@@ -45,9 +45,9 @@ The PM coaching conversation:
 ### Stakeholder Management
 
 Transform stakeholders from demanding features to trusting outcomes:
-- **Share evidence, not just conclusions**: "Here's what we learned from 15 customer interviews" not "we've decided to build X"
+- **Share the evidence with the conclusion**: "Here's what we learned from 15 customer interviews" rather than "we've decided to build X"
 - **Invite them into discovery**: Let them watch customer interviews. Share research findings. Make them feel the problem.
-- **Demonstrate learning**: Regular updates on what you're learning, not just what you're building
+- **Demonstrate learning**: Regular updates on what you're learning as well as what you're building
 - **Deliver results**: Nothing builds trust like shipping something that moves the metric they care about
 
 ---

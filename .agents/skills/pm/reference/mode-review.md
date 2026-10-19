@@ -4,7 +4,7 @@ The flagship mode. The user brings a document they or the assistant already wrot
 
 This mode absorbs four old skills. Their function lives inside the loop, not as separate modes:
 - **translate**: rewriting a doc for a different audience (handled in Frame and Refine).
-- **stakeholders**: sharpening a message so it lands with its audience (handled in Frame and Refine).
+- **stakeholders**: sharpening a message so it works for its audience (handled in Frame and Refine).
 - **audit**: checking strategic alignment, evidence, and drift (a Critique check).
 - **retro**: evaluating a launch against expectations (the `retro` document type).
 
@@ -18,7 +18,7 @@ Use the structured user-input tool when it is available and structured options f
 
 - **What is this document, and what is it for?** A spec, a strategy doc, a message, a retro? What decision or action does it need to drive?
 - **Who is the audience?** Not "users" or "stakeholders" but which people, what level, what function, and what they care about. If the document is a message to one specific person, their role and what they want from it is enough; do not profile the person. Keep what you learn about the audience in this conversation, not in a file.
-- **What is the situation?** What is happening right now that makes this document necessary? What is at stake if it lands badly?
+- **What is the situation?** What is happening right now that makes this document necessary? What is at stake if it is received badly?
 - **What does the user want from the review?** Sharpen for the same audience, retarget to a new audience, or pressure-test the thinking itself?
 
 If the Context Gathering Protocol entered session-only mode, fold its three questions into this Frame conversation (the audience question above already covers part of question 1) - one interview, not two. The critique then proceeds at full depth; only the persistence differs.
@@ -34,7 +34,7 @@ Adversarial and document-type-aware. The job is to find everything wrong before 
 Load these every time:
 - [foundations.md](foundations.md) for the full slop taxonomy and the Claudism Catalogue.
 - [knowledge-review-personas.md](knowledge-review-personas.md) for persona-based review.
-- [knowledge-craft-score.md](knowledge-craft-score.md) for severity, the order of findings, and the verdict band: the four bands, their gates, and the delivery format.
+- [knowledge-craft-score.md](knowledge-craft-score.md) for severity, the order of findings, and the verdict band: the four bands, the rules that pick one, and the delivery format.
 
 Then load **one** knowledge file by document type. Each knowledge file carries a "Critiquing this artifact" section with the type-specific checklist. This file does not duplicate it.
 
@@ -67,15 +67,15 @@ For a **retro** document, the type-specific critique tests the retro itself: was
 
 **Every fix suits the document.** Each kind of document has its own job: a PRFAQ argues the case and states what customers are promised; tenets state the principles that settle trade-offs; a decision record records one decision and why; a roadmap sets the order of work; a spec says what to build. Fix the document in its own form. When the right fix belongs somewhere else, such as status tracking or a task list for a PRFAQ, implementation detail for tenets, or open tasks for a decision record, say which document it belongs in and keep the change here to a line or a link.
 
-Give every substance finding a severity from the anchors in [knowledge-craft-score.md](knowledge-craft-score.md): P0 (the document's primary action is blocked), P1 (the document must change before the audience can commit), P2 (quality erosion, and every question the audience can simply ask). Severity sets the verdict band. Then order the findings as the same file sets out: what blocks the work first (every P0 is there), then what breaks it for users, then what is imprecise, then polish; within each group, by reach and confidence. Voice findings - Claudism tells, voice slop, and any wording point the plain pass raises - carry no severity and are never ranked among the substance findings; they reach the verdict only through the SLOP and SHIP gates, and all of them are fixed before the document is shared.
+Give every substance finding a severity from the anchors in [knowledge-craft-score.md](knowledge-craft-score.md): P0 (the document's primary action is blocked), P1 (the document must change before the audience can commit), P2 (quality erosion, and every question the audience can simply ask). Severity sets the verdict band. Then order the findings as the same file sets out: what blocks the work first (every P0 is there), then what breaks it for users, then what is imprecise, then polish; within each group, by reach and confidence. Voice findings - Claudism tells, voice slop, and any wording point the plain pass raises - carry no severity and are never ranked among the substance findings; they reach the verdict only through the SLOP and SHIP rules, and all of them are fixed before the document is shared.
 
-Deliver, in this order: the substance findings under the group headings `knowledge-craft-score.md` sets out (Blocks the work, Breaks it for users, Imprecise, Polish, leaving out any group with no findings), numbered straight through, each finding in the shape that file shows (the problem in one bold sentence with its severity, then the fix on its own line, why it matters to the reader, and where it is), with contradictions and open questions placed in the same groups; genuine strengths, briefly; voice findings (Claudism tells and voice slop) as one compact list, one line each; the slop verdict; and the craft verdict: one band of SLOP / ROUGH / SOLID / SHIP, picked by the gates in `knowledge-craft-score.md` and delivered with the one-sentence reason and what would move the draft up one band. Compute the internal score for the gates; never headline it.
+Deliver, in this order: the substance findings under the group headings `knowledge-craft-score.md` sets out (Blocks the work, Breaks it for users, Imprecise, Polish, leaving out any group with no findings), numbered straight through, each finding in the layout that file shows (the problem in one bold sentence with its severity, then the fix on its own line, why it matters to the reader, and where it is), with contradictions and open questions placed in the same groups; genuine strengths, briefly; voice findings (Claudism tells and voice slop) as one compact list, one line each; the slop verdict; and the craft verdict: one band of SLOP / ROUGH / SOLID / SHIP, picked by the rules in `knowledge-craft-score.md` and delivered with the one-sentence reason and what would move the draft up one band. Compute the internal score for the rules; never headline it.
 
 Then stop and emit this exact prompt to the user: **"Want me to draft fixes for the P0s and P1s now?"** If zero P0 or P1 findings exist, the prompt becomes: **"Want me to refine the P2s, or is this ready?"** Wait for the user's answer.
 
 ## Phase 3: Refine
 
-Run Phase 3 only if the user accepted the Refine prompt. On decline, exit cleanly with the Critique output as the final deliverable.
+Run Phase 3 only if the user accepted the Refine prompt. On decline, stop: the Critique output is the final deliverable.
 
 Once the situation is understood, help fix the draft. Do not stop at a list of problems.
 
