@@ -19,7 +19,7 @@ If the user brought a metric that fails, rebuild it with them (Rebuilding a weak
 
 <!-- Definitions live in knowledge-metrics.md; do not copy them back here. -->
 
-Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, not only the Voice pass afterward.
+Write plainly from the first draft: apply the **Prevention** rules in [foundations.md](foundations.md) as you write, and again in the Voice pass afterward.
 
 Find candidates before you pick: walk Goal, Signal, Metric through one lens chosen by initiative type (Finding the Metrics in [knowledge-metrics.md](knowledge-metrics.md)). Offer the lens yourself; do not wait for the user to name one.
 
@@ -31,7 +31,7 @@ Set targets per the Setting Targets fields in [knowledge-metrics.md](knowledge-m
 
 ## Step 4: Define the Measurement Plan
 
-For each metric, fill the fields from the Measurement Plan section in [knowledge-metrics.md](knowledge-metrics.md): data source, instrumentation status, collection method, analysis approach, evaluation cadence, reviewer.
+For each metric, fill the fields from the Measurement Plan section in [knowledge-metrics.md](knowledge-metrics.md): data source, instrumentation status, collection method, analysis approach, how often it is evaluated, reviewer.
 
 **Confounding factors**: What else could move these metrics besides your work? Seasonality, other launches, external events, marketing campaigns. How will you account for these?
 
@@ -46,7 +46,7 @@ For each metric, fill the fields from the Measurement Plan section in [knowledge
 
 ## Step 6: Voice Pass
 
-Scan every prose section (the initiative framing, counter-metric rationale, confounding-factor notes) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same gate the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A metrics doc that reads as generated invites the sceptical board member to discount it. If a fix introduces a new tell, fix the fix.
+Scan every prose section (the initiative framing, counter-metric rationale, confounding-factor notes) against the Slop Taxonomy and the Claudism Catalogue in [foundations.md](foundations.md), the same check the `review` mode runs on drafts. Rewrite any AI-register tell, starting with the antithesis flip: find every sentence that sets up "not X" only to reverse it ("Success is not X. Success is Y.", "a scheduling problem, not a UI problem") and state the positive claim on its own. Then find every "hold" that means "is true" ("as long as these rules hold", "the assumption holds") and say what is true instead, or how you would check it. Then the rest: performative pushback, the false universal ("the question every X turns on"), the clean-mental-model setup ("the cleanest way to think about this is..."), structural metaphor, the validation stamp. A metrics doc that reads as generated invites the sceptical board member to discount it. If a fix introduces a new tell, fix the fix.
 
 Use the Output Format in [knowledge-metrics.md](knowledge-metrics.md).
 

@@ -91,7 +91,7 @@ People do not switch to a new product because it is good. They switch when the f
 
 **Pull of the new solution**: the attraction of a better way. What the person imagines their day looks like if the problem were gone. Pull is about their imagined progress, not your feature list.
 
-**Anxiety of the new solution**: fear of switching. Will it work? What does it cost to learn? Who else has to sign off? What if it fails mid-migration? Anxiety is rarely stated unprompted; it surfaces as stalling.
+**Anxiety of the new solution**: fear of switching. Will it work? What does it cost to learn? Who else has to sign off? What if it fails mid-migration? Anxiety is rarely stated unprompted; it shows up as stalling.
 
 **Habit of the present**: comfort with the status quo. The current way is known, already paid for, and woven into other routines. Habit is the silent force; people defend it without noticing they are doing it.
 
@@ -142,7 +142,7 @@ A five-day process for answering critical business questions through design, pro
 - Five customers, one-on-one, 60 minutes each
 - Structured interview: context questions first, then prototype walkthrough
 - The team watches via live stream, taking notes on a shared board
-- Five is enough: surfaces ~85% of usability issues. Don't over-research.
+- Five is enough: five users find about 85% of usability issues. Don't over-research.
 
 ### Key Principles
 

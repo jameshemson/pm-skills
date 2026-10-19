@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.0.5 - 2026-10-19
+
+### Changed
+
+- **The skill's own instructions no longer use the register they tell reviews to flag.** About 70 lines across 18 files were reworded where pm-skills itself wrote in Claude's register: "lands" for works or is received, "surface" for find or raise, "canonical", "cadence", "exit cleanly", "makes it durable", and a dozen "not just X" contrasts, including "Communication is not about what you say - it's about what lands", now "Communication is judged by what the audience takes away". The band rules are called rules, not gates.
+- **Claude's engineering register is in the catalogue.** "Gated on" and "X-gated", "landed cleanly", "the honest shape", "one honest caveat", "that's not nothing", "a durable path forward", "X-shaped", "canonical", "cadence", "blast radius" and "byte-identical" join the register vocabulary when they turn up outside code. Several come from the Claudish-English Dictionary at programasweights.com.
+- **The verdict names the findings that set the band** ("no P0s and two P1s"), not the rule number.
+
+### Evidence
+
+- **Band calibration** on Sonnet, before the verdict change: `spec-slop` 3 of 3 SLOP, `spec-rough` 5 of 5 ROUGH (two without the subagent), `spec-solid` 3 of 3 SOLID, `message-ship` 3 of 3 SOLID, and neither bug-fix plan drew a request for customer evidence. The rough spec's missing risks section was raised in 3 of 5 runs, against 1 of 3 on 3.0.3. After the verdict change, on the release build: every band right again (`spec-slop` 3 of 3, `spec-rough` 5 of 5, `spec-solid` 3 of 3, `message-ship` 3 of 3), the risks section raised in 4 of 5 runs, and 15 of 16 verdicts named the findings rather than a rule.
+- **Writing.** Four drafting tasks (two briefs, a spec, a metrics plan), each written twice on Sonnet by 3.0.4 and by 3.0.5. Per 1,000 words, Claude's engineering register fell from 0.24 to 0.17 and "not just X" from 0.09 to 0.04; other flagged tells were level (0.52 and 0.47), with no em dashes or bold-label lists in either. Asked which draft of each pair read more like a person wrote it, a blind Opus judge chose 3.0.5 in 3 of 8 pairs. The change is consistency with the skill's own rules, not a fix for drafts that read as AI: the patterns the judge pointed to, short "X, not Y" contrasts and sentences announcing what the document does not know, are not yet in the catalogue.
+
+---
+
 ## 3.0.4 - 2026-10-19
 
 ### Fixed

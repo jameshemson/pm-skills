@@ -14,7 +14,7 @@ If writing the spec was easy, you haven't thought hard enough.
 
 - A contract between product and engineering about what "done" means
 - A record of decisions made and why
-- A tool for surfacing unknowns before code is written
+- A tool for finding unknowns before code is written
 - A reference that reduces ambiguity during development
 
 ### What a Spec Is Not
@@ -138,7 +138,7 @@ How does this get to users?
 
 Before you ship a spec, run this test. For each item, the answer must be specific and verifiable:
 
-(The canonical ten-check list lives in SKILL.md. The table below illustrates six of the checks applied to one spec; it is not the list.)
+(The ten-check list lives in SKILL.md. The table below illustrates six of the checks applied to one spec; it is not the list.)
 
 | Check | Pass | Fail |
 |---|---|---|

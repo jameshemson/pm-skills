@@ -122,7 +122,7 @@ For each metric:
 - **Instrumentation needed**: What tracking needs to be added? Is it in place?
 - **Collection method**: Event tracking, survey, manual count, API call?
 - **Analysis approach**: Simple before/after, cohort analysis, A/B test?
-- **Evaluation cadence**: Daily check, weekly review, post-launch analysis?
+- **How often to evaluate**: Daily check, weekly review, post-launch analysis?
 - **Who reviews**: Who looks at this data and makes decisions from it?
 
 **Confounding factors**: What else could move these metrics besides your work? Seasonality, other launches, external events, marketing campaigns. How will you account for these?
