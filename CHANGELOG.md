@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.6 - 2026-10-19
+
+### Changed
+
+- **Two more patterns that read as AI are named, with examples.** The short relabel, which renames a thing to sound sharper ("This is a query, not a project", "a guess, not a number"), joins the antithesis flip; a plain instruction or distinction ("use the signed release, not the cache") is still fine. Announced honesty, where a document narrates its own candour about what it does not know ("this spec does not invent", "my estimates, not data"), becomes a third shape of false candour. Both were the commonest tells left in drafts after 3.0.5, because the catalogue named only their classic forms.
+- **Assumptions are stated plainly.** Every assumption is still flagged. The new rule is about how: once, where it applies, in a plain sentence that names who will confirm it, without announcing what the document does not know or will not invent.
+
+### Evidence
+
+- **Reviews catch the subtle tells.** Six 3.0.5 drafts held eight relabels or announced-honesty lines (each sorted by Sonnet from plain sentences first). Reviewed once each on Sonnet, 3.0.6 quoted 6 of the 8 as wording problems; 3.0.5 quoted 1. Eight phrases is a small sample: it shows the direction, not the size.
+- **Drafts.** Four drafting tasks, three drafts each on Sonnet. Per 1,000 words, announced honesty fell from 0.46 to 0.24 and the other flagged tells from 0.49 to 0.33; a blind Opus judge found 3.0.6's draft the more human of each pair in 7 of 12. A simple count of "X, not Y" sentences rose (0.55 to 0.72), because it also counts the plain distinctions a spec should make; sorted by Sonnet without knowing the version, relabels fell from 5 to 3. That sorting was added after the results, so both counts are reported.
+- **Band calibration** on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 5 of 5 ROUGH (two without the subagent), `spec-solid` 3 of 3 SOLID, `message-ship` 3 of 3 SOLID; the rough spec's missing risks section was raised in 2 of 5 runs. One bug-fix plan review stopped to ask for product context although the folder held it, as a 3.0.3 run once did; the other did not ask for customer evidence.
+- **Not in this release.** A cheap check after the merge, where a small subagent lists the second pass's points the merged list left out, cut the important findings lost on Opus from 2.3 to 1.3 a review but made the fixes worse there (64% usable as written against 71%) and added about a quarter to the cost.
+
+---
+
 ## 3.0.5 - 2026-10-19
 
 ### Changed
