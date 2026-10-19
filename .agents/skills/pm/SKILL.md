@@ -13,8 +13,8 @@ Code cannot supply this. Code tells you what was built, not why, for whom, or wh
 
 Gathering order, fastest first:
 
-1. **Loaded instructions / AGENTS.md**: if a **Product Context** section is already in your loaded instructions or in AGENTS.md, proceed.
-2. **`.pmcontext.md`**: if not, read `.pmcontext.md` from the project root. If it exists with product, users, business model, team, and technical constraints, proceed. If its `last_updated` is more than six months old, say once: "Context was captured <date> - still accurate? (`pm teach` updates it; continuing as-is.)" Then proceed. No `last_updated` line means no nudge.
+1. **`.pmcontext.md`**: read `.pmcontext.md` from the project root first, even when a **Product Context** section is also in your loaded instructions. `teach` writes it and keeps it current, so it wins unless the other section carries a later `last_updated` date. If it exists with product, users, business model, team, and technical constraints, proceed. If its `last_updated` is more than six months old, say once: "Context was captured <date> - still accurate? (`pm teach` updates it; continuing as-is.)" Then proceed. No `last_updated` line means no nudge.
+2. **Loaded instructions / AGENTS.md**: if there is no `.pmcontext.md`, use a **Product Context** section in your loaded instructions or in AGENTS.md, and proceed.
 3. **No context found - offer the fork.** STOP and ask: "No product context is set up for this project. PM output without it is generic; how do you want to proceed?" Options: "Set up context now (Recommended)" - runs the `teach` mode, takes a few minutes, persists to `.pmcontext.md` for every future session; "Three quick questions, this session only" - enough context to work now, nothing saved.
 
    Use the structured user-input tool when it is available, with at most three questions in one call. Use direct conversation for free-text answers. If structured input is unavailable, fall back to asking directly in conversation.

@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.0.4 - 2026-10-19
+
+### Fixed
+
+- **Product context from setup now wins over an older copy.** pm-skills read a Product Context section in CLAUDE.md (AGENTS.md on Codex) before `.pmcontext.md`, so a context pasted into CLAUDE.md months ago overrode the one `teach` keeps current. It now reads `.pmcontext.md` first, and uses the other section only when there is no `.pmcontext.md` or that section has a later `last_updated` date.
+
+### Evidence
+
+- **The fix.** In a project whose CLAUDE.md described an older version of the product and whose `.pmcontext.md` described the current one, 3.0.3 wrote from CLAUDE.md and 3.0.4 from `.pmcontext.md`, and said why.
+- **A bigger test, with a fairer baseline.** Earlier tests gave plain Claude the same product context as pm-skills, which someone without pm-skills set up would not have. This test used 24 drafts across six products, with contexts written by pm-skills' own setup, and three reviews of each kind on each model. Of the important problems most other reviews also found, 3.0.3 caught 83% against 64% for plain Claude with no context on Opus, and 76% against 63% on Sonnet. Giving plain Claude the context changed little (60% and 68%). Fixes the Opus judge would use as written: 69% against 48% on Opus and 56% against 34% on Sonnet, and plain Claude gave no fix at all for 17% and 29% of its first five findings. pm-skills reviews are about 1.7 times as long and cost about four times as much.
+- **What did not make it.** Four other changes were tested on the same drafts, and none is in this release. A stricter rule for Blocks the work tied with 3.0.3. A rule to report only what gets in the way found slightly fewer problems and gained nothing. One version combining shorter instructions, a wording-check script, a step that tries to refute the top findings, and web search found 5 to 8 points fewer. A rule for keeping a specific point when merging the second pass changed nothing. A merge done by a separate subagent found more problems but cost about 75% more per review, and is being tested further.
+
+---
+
 ## 3.0.3 - 2026-10-17
 
 ### Changed
