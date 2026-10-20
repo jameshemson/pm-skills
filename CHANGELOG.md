@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.0.7 - 2026-10-20
+
+### Changed
+
+- **Review headlines make sense on their own.** A user found all three top headlines of a review unreadable without the lines under them: "the test as written can't fail and can't run yet" did not say which test. The only rule was "one sentence that names the problem", so headlines were squeezed until they pointed at things only the review had in mind. A headline now names the thing the way the document does, with its section or a short quote, says what is wrong in plain words, and never talks about the review itself; when a value in a fix is the review's own suggestion, the fix line says so. Three examples show an unclear headline next to a clear one.
+- **The explanation goes in "Why it matters".** The headline stays one sentence. "Why it matters" is no longer held to one sentence and takes as many as the explanation needs.
+
+### Evidence
+
+- **Headlines.** Six drafts of different types, each reviewed once on Opus by 3.0.6 and by 3.0.7. Blind to the version, an Opus reader saw only the document and the headlines and said what each pointed at and how easily it understood it; a second Opus call checked each reading against the full finding. Understood on its own: 87% of 3.0.7's headlines against 71% of 3.0.6's. Readings that matched the finding: 89% against 88%, because a model with the document open can decode a compressed headline that a person skimming cannot. Headlines grew from 14 words to 19, none ran past one sentence, and reviews were slightly shorter (1,555 words against 1,654). Findings per review (13.8 against 13.3) and P1s (22 against 24) did not move, so verdicts do not shift. Six drafts and one review each show the direction, not the size. The headlines still read as unclear are mostly low-ranked P2s that group several things ("Some options and threats are missing").
+- **Band calibration** on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 5 of 5 ROUGH (two without the subagent), `spec-solid` 3 of 3 SOLID, `message-ship` 3 of 3 SOLID, and neither bug-fix plan drew a request for customer evidence. The rough spec's missing risks section was raised in 3 of 5 runs.
+
+---
+
 ## 3.0.6 - 2026-10-19
 
 ### Changed
