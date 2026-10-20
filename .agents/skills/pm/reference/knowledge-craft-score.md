@@ -103,7 +103,21 @@ Give the substance findings under the group headings, each finding in this shape
    Where: Decision, "pricing to be confirmed".
 ```
 
-The headline is one sentence that names the problem. The fix is concrete enough to act on without rereading the finding, and suits the kind of document under review (see `mode-review.md`). Keep each line to one sentence, plus the effort note on the fix line when there is one.
+The headline is one sentence that names the problem, and it must make sense on its own, because many readers skim the bold lines first. Someone who has read the document, but nothing else in the review, should be able to tell from the headline alone what is wrong and where. Name the thing the way the document names it, with its section or a short quote: "the two-week pilot in section 4" rather than "the test", "the £18k saving Acme reports" rather than "the Acme figure". Say what is wrong in plain words rather than a compressed verdict: "sets no result that would count as a failure" rather than "can't fail". The headline describes the document, never the review: when a value in a fix is your own suggestion, say so on the fix line ("90 days is my suggestion; the support lead should confirm it"). A longer headline the reader understands beats a short one they have to decode, but it stays one sentence: a headline that needs a second sentence is carrying the explanation, and the explanation goes in the "Why it matters" line.
+
+```
+Unclear: **The test as written can't fail and can't run yet.** (P1)
+Clear:   **The two-week pilot in section 4 has no result that counts as a failure, and it needs usage data the product doesn't collect.** (P1)
+         Why it matters: whatever the numbers show, the pilot will read as a success, so it cannot tell you whether to roll out. It also needs weekly usage counts, which nothing records yet, so it cannot start on 3 November.
+
+Unclear: **The Acme figure works against the price.** (P1)
+Clear:   **The £18k a year Acme says it saves is less than the £24k price, so quoting it argues against the price.** (P1)
+
+Unclear: **Two facts are asserted without a source.** (P2)
+Clear:   **The 40% adoption rate and the claim that most competitors charge per seat have no source.** (P2)
+```
+
+The fix is concrete enough to act on without rereading the finding, and suits the kind of document under review (see `mode-review.md`). Keep the headline and the fix to one sentence each, plus the effort note on the fix line when there is one. "Why it matters" takes as many sentences as the explanation needs.
 
 The verdict line follows this structure. Name P0s and P1s by severity, never as "blockers" or "nothing blocks", so the verdict never contradicts the Blocks the work heading:
 
