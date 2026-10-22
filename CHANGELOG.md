@@ -4,7 +4,7 @@
 
 ### Added
 
-- **Deep review.** Ask for a deep review and pm-skills runs the standard review, then has plain Claude read the draft twice more, once on Opus and once on Sonnet. It adds whatever those reads found that the standard review missed, each with its own fix. Ask at the start ("Do a deep review of spec.md") to get one list, or reply "deep review" after a standard review to get only the new findings, numbered on from the standard list. The standard review's findings are left as they were.
+- **Deep review.** Ask for a deep review and pm-skills runs the standard review, then has plain Claude read the draft twice more, once on Opus and once on Sonnet. It adds whatever those reads found that the standard review missed, each with its own fix. Ask at the start ("Do a deep review of spec.md with pm-skills") to get one list, or reply "deep review" after a standard review to get only the new findings, numbered on from the standard list. The standard review's findings are left as they were.
 - **Every standard review ends with the offer**: "For a more thorough check, ask for a deep review. I'll read the draft twice more and add anything new I find. It takes a few more minutes." The review doesn't ask up front, because asking first made every standard review about 40% dearer.
 
 ### Evidence
