@@ -1,5 +1,22 @@
 # Changelog
 
+## 3.1.0 - 2026-10-22
+
+### Added
+
+- **Deep review.** Ask for a deep review and pm-skills runs the standard review, then has plain Claude read the draft twice more, once on Opus and once on Sonnet. It adds whatever those reads found that the standard review missed, each with its own fix. Ask at the start ("Do a deep review of spec.md") to get one list, or reply "deep review" after a standard review to get only the new findings, numbered on from the standard list. The standard review's findings are left as they were.
+- **Every standard review ends with the offer**: "For a more thorough check, ask for a deep review. I'll read the draft twice more and add anything new I find. It takes a few more minutes." The review doesn't ask up front, because asking first made every standard review about 40% dearer.
+
+### Evidence
+
+- **Coverage.** Twelve real drafts, three reviews of each kind on Opus and on Sonnet, scored against the important problems most reviews agreed on. 3.0.7 caught 76% of them on Opus and 75% on Sonnet. A deep review from the start caught 91% on both, and a standard review followed by a deep one caught 95% and 92%. Both were ahead of 3.0.7 on every draft, on both models.
+- **Fixes.** Usable as written: 70% and 66% for a deep review from the start, against 67% and 58% for 3.0.7. An Opus judge, anchored on 30 hand-rated findings, graded every finding a deep review added on six drafts: 70% to 79% were worth fixing, 1 to 2% were wrong, and about four per review would change what gets decided or built.
+- **Cost and time.** A deep review from the start costs $1.53 on Opus and $0.84 on Sonnet and takes five to six minutes. Asked for after a standard review, the two together cost $2.34 and $1.20. A standard review costs $0.77 and $0.35, against 3.0.7's $0.72 and $0.32, and catches more: 82% and 76%, with fixes usable 71% and 64%.
+- **Band calibration** on Sonnet: `spec-slop` 3 of 3 SLOP, `spec-rough` 7 of 7 ROUGH (two without the subagent), `spec-solid` 3 of 3 SOLID, `message-ship` 3 of 3 SOLID; neither bug-fix plan drew a request for customer evidence. The rough spec's missing risks section was raised in 3 of 7 runs.
+- **Codex** runs the same steps, with the two extra reads on two different models where its subagent tool allows. The tests above ran on Claude Code.
+
+---
+
 ## 3.0.7 - 2026-10-20
 
 ### Changed
