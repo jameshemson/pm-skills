@@ -127,7 +127,7 @@ $pm plan customer interviews for a new onboarding flow
 
 The first form is for Claude Code, the second for the installed Codex plugin, and the third for Codex repository discovery.
 
-After a review, reply `deep review` for a more thorough check. To start with one, ask in plain words: `Do a deep review of path/to/spec.md`.
+After a review, reply `deep review` for a more thorough check. To start with one, ask in plain words: `Do a deep review of path/to/spec.md with pm-skills`.
 
 ## Development
 
