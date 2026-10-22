@@ -1,7 +1,7 @@
 ---
 name: pm
 user-invokable: true
-description: Use when the user is writing, sharpening, critiquing, reviewing, auditing, or pressure-testing a product document, structuring a decision, or planning customer research. Covers engineering briefs, product specs, PRDs, user stories, success metrics, roadmaps, strategy and positioning docs, and stakeholder messages. Handles audience framing, jobs-to-be-done, prioritisation, counter-metrics, trade-offs and bias checks, scope and edge cases, and product-context setup. Also use for a brief engineering keeps sending back with questions, a roadmap that is really just a feature list, or a metric that games easily. Not for writing or debugging code.
+description: Use when the user is writing, sharpening, critiquing, reviewing, auditing, or pressure-testing a product document, structuring a decision, or planning customer research. Covers engineering briefs, product specs, PRDs, user stories, success metrics, roadmaps, strategy and positioning docs, and stakeholder messages. Handles audience framing, jobs-to-be-done, prioritisation, counter-metrics, trade-offs and bias checks, scope and edge cases, and product-context setup. Also use for a brief engineering keeps sending back with questions, a roadmap that is really just a feature list, or a metric that games easily, and when someone asks for a deep or thorough review of a document. Not for writing or debugging code.
 argument-hint: "[teach · setup · brief · spec · stories · metrics · review · decide · discover] [target]"
 ---
 

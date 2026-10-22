@@ -52,7 +52,7 @@ Invocation depends on where the skill is running:
 
 | Mode | What it does |
 |---|---|
-| `review` | Adversarially critique any document, plan, strategy, or message |
+| `review` | Adversarially critique any document, plan, strategy, or message; ask for a deep review for a more thorough check |
 | `decide` | Structure a decision with weighted criteria and bias checks |
 | `discover` | Plan customer conversations for truth, or debrief them |
 
@@ -126,6 +126,8 @@ $pm plan customer interviews for a new onboarding flow
 ```
 
 The first form is for Claude Code, the second for the installed Codex plugin, and the third for Codex repository discovery.
+
+After a review, reply `deep review` for a more thorough check. To start with one, ask in plain words: `Do a deep review of path/to/spec.md`.
 
 ## Development
 
