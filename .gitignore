@@ -27,3 +27,7 @@ dist-tmp/
 # Claude Code per-machine permission grants. "Don't ask again" saves approved commands here,
 # including any secret typed into them, so it must never be committed.
 .claude/settings.local.json
+
+# Working folder of the impeccable design plugin (config, critiques, screenshots, caches).
+# Local working files, not part of the published skill pack.
+.impeccable/
